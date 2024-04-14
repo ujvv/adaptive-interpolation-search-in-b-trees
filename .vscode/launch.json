@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - Build and debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "INT",
+                    "value": "100000"
+                },
+                {
+                    "name": "LONG1",
+                    "value": "512"
+                },
+                {
+                    "name": "LONG2",
+                    "value": "512"
+                },
+                {
+                    "name": "FILE",
+                    "value": "data/urls"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
