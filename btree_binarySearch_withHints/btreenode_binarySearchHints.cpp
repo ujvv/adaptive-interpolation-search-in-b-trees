@@ -1,8 +1,10 @@
-#include "btreenode_template.hpp"
+#include "btreenode_binarySearchHints.hpp"
 #include "utils.hpp"
 
-BTreeNodeTemplate::BTreeNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
-  uint16_t minLength = std::min(lowerFence.len, upperFence.len);
+#include <iostream>
+
+BTreeNodeBinarySearchHints::BTreeNodeBinarySearchHints(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
+  uint16_t minLength = std::min(lowerFenceKey.size(), upperFenceKey.size());
   prefixLen = minLength;
   for (uint16_t i = 0; i < minLength; i++) {
     if (lowerFenceKey[i] != upperFenceKey[i]) {
@@ -20,7 +22,7 @@ BTreeNodeTemplate::BTreeNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span
   }
 
   // Insert lowerFenceKey
-  uint16_t lowerFenceKeySize = lowerFence.len - prefixLen;
+  uint16_t lowerFenceKeySize = lowerFenceKey.size() - prefixLen;
   if (lowerFenceKeySize > 0) {
     freeOffset -= lowerFenceKeySize;
     lowerFence.len = lowerFenceKeySize;
@@ -33,7 +35,7 @@ BTreeNodeTemplate::BTreeNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span
   }
 
   // Insert upperFenceKey
-  uint16_t upperFenceKeySize = upperFence.len - prefixLen;
+  uint16_t upperFenceKeySize = upperFenceKey.size() - prefixLen;
   if (upperFenceKeySize > 0) {
     freeOffset -= upperFenceKeySize;
     upperFence.len = upperFenceKeySize;
@@ -46,12 +48,12 @@ BTreeNodeTemplate::BTreeNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span
   }
 }
 
-uint16_t BTreeNodeTemplate::getSplitIndex() {
+uint16_t BTreeNodeBinarySearchHints::getSplitIndex() {
   uint16_t splitIndex = 0;
   uint16_t spaceUsedSoFar = 0;
   for (uint16_t i = 0; i < numKeys; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + i * sizeof(PageSlotTemplate));
-    uint16_t requiredSpace = slot->keyLength + slot->valueLength + sizeof(PageSlotTemplate);
+    auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + i * sizeof(PageSlotBinarySearchHints));
+    uint16_t requiredSpace = slot->keyLength + slot->valueLength + sizeof(PageSlotBinarySearchHints);
     spaceUsedSoFar += requiredSpace;
     if (spaceUsedSoFar <= CONTENT_SIZE / 2) {
       splitIndex = i;
@@ -62,7 +64,7 @@ uint16_t BTreeNodeTemplate::getSplitIndex() {
   return std::max((uint16_t) 1, splitIndex);
 }
 
-std::vector<std::vector<uint8_t>> BTreeNodeTemplate::getKeys() {
+std::vector<std::vector<uint8_t>> BTreeNodeBinarySearchHints::getKeys() {
   std::vector<std::vector<uint8_t>> keys(numKeys);
   for (uint16_t i = 0; i < numKeys; i++) {
     std::vector<uint8_t> key = getFullKey(i);
@@ -71,7 +73,7 @@ std::vector<std::vector<uint8_t>> BTreeNodeTemplate::getKeys() {
   return keys;
 }
 
-std::vector<std::string> BTreeNodeTemplate::getKeysAsString() {
+std::vector<std::string> BTreeNodeBinarySearchHints::getKeysAsString() {
   std::vector<std::string> keys(numKeys);
   for (uint16_t i = 0; i < numKeys; i++) {
     std::vector<uint8_t> key = getFullKey(i);
@@ -80,7 +82,7 @@ std::vector<std::string> BTreeNodeTemplate::getKeysAsString() {
   return keys;
 }
 
-std::vector<std::string> BTreeNodeTemplate::getShortenedKeysAsString() {
+std::vector<std::string> BTreeNodeBinarySearchHints::getShortenedKeysAsString() {
   std::vector<std::string> keys(numKeys);
   for (uint16_t i = 0; i < numKeys; i++) {
     auto key = getShortenedKey(i);
@@ -89,8 +91,8 @@ std::vector<std::string> BTreeNodeTemplate::getShortenedKeysAsString() {
   return keys;
 }
 
-bool BTreeNodeTemplate::keySmallerEqualThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key) {
-  auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
+bool BTreeNodeBinarySearchHints::keySmallerEqualThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key) {
+  auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + position * sizeof(PageSlotBinarySearchHints));
   if (keyHead < slot->keyHead) {
     return true;
   }
@@ -102,20 +104,20 @@ bool BTreeNodeTemplate::keySmallerEqualThanAtPosition(uint16_t position, uint32_
   return key <= getShortenedKey(position);
 }
 
-void BTreeNodeTemplate::updateHints() {
+void BTreeNodeBinarySearchHints::updateHints() {
   if (numKeys <= 16) {
     return;
   }
 
   uint16_t spacing = numKeys / 16;
   for (uint16_t i = 0; i < 16; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + i * spacing * sizeof(PageSlotTemplate));
+    auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + i * spacing * sizeof(PageSlotBinarySearchHints));
     hints[i] = slot->keyHead;
   }
 }
 
-std::pair<int, int> BTreeNodeTemplate::getHintRange(uint32_t keyHead) {
-  if (!this->isLeaf || numKeys <= 16) {
+std::pair<int, int> BTreeNodeBinarySearchHints::getHintRange(uint32_t keyHead) {
+  if (numKeys <= 16) {
     return std::make_pair(0, numKeys - 1);
   }
   uint16_t spacing = numKeys / 16;
@@ -144,7 +146,7 @@ std::pair<int, int> BTreeNodeTemplate::getHintRange(uint32_t keyHead) {
   return std::make_pair(left * spacing, right * spacing);
 }
 
-uint16_t BTreeNodeTemplate::getEntryIndexByKey(std::span<uint8_t> key) {
+uint16_t BTreeNodeBinarySearchHints::getEntryIndexByKey(std::span<uint8_t> key) {
   // Do a binary search to find the index of the entry where the key is / should contained
   // This function assumes that the key shares the same prefix as all the keys in the node
 
@@ -174,12 +176,19 @@ uint16_t BTreeNodeTemplate::getEntryIndexByKey(std::span<uint8_t> key) {
   return childIndex;
 }
 
-void BTreeNodeTemplate::compact() {
+void BTreeNodeBinarySearchHints::compact() {
   // Only the heap needs to be restructured, so compute where the heap starts
-  const uint16_t heapStart = numKeys * sizeof(PageSlotTemplate);
+  const uint16_t heapStart = numKeys * sizeof(PageSlotBinarySearchHints);
   const uint16_t compactableSize = CONTENT_SIZE - heapStart;
   uint8_t *buffer = reinterpret_cast<uint8_t *>(alloca(compactableSize));
   uint16_t insertionOffset = compactableSize;
+
+  // Copy Prefix
+  insertionOffset -= prefixLen;
+  if (prefixLen > 0) {
+    std::memcpy(buffer + insertionOffset, content + prefixOffset, prefixLen);
+  }
+  prefixOffset = heapStart + insertionOffset;
 
   // Copy the fence keys
   insertionOffset -= lowerFence.len;
@@ -196,7 +205,7 @@ void BTreeNodeTemplate::compact() {
 
   // Copy all entries to the buffer, but not the slots
   for (uint16_t i = 0; i < numKeys; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + i * sizeof(PageSlotTemplate));
+    auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + i * sizeof(PageSlotBinarySearchHints));
     uint16_t requiredSize = slot->keyLength + slot->valueLength;
     insertionOffset -= requiredSize;
     std::memcpy(buffer + insertionOffset, content + slot->offset, requiredSize);
@@ -208,21 +217,21 @@ void BTreeNodeTemplate::compact() {
   freeOffset = heapStart + insertionOffset;
 }
 
-void BTreeNodeTemplate::insertEntry(uint16_t position, std::span<uint8_t> key, std::span<uint8_t> value) {
+void BTreeNodeBinarySearchHints::insertEntry(uint16_t position, std::span<uint8_t> key, std::span<uint8_t> value) {
   // First trim the key to get rid of the prefix
   std::span<uint8_t> keyWithoutPrefix = key.subspan(prefixLen);
-  uint16_t requiredSpace = sizeof(PageSlotTemplate) + keyWithoutPrefix.size() + value.size();
+  uint16_t requiredSpace = sizeof(PageSlotBinarySearchHints) + keyWithoutPrefix.size() + value.size();
 
   // Compact the node if there is enough space in the node, but not enough contiguous space in the heap
-  bool overflows = freeOffset < requiredSpace || freeOffset - requiredSpace < static_cast<uint16_t>(numKeys * sizeof(PageSlotTemplate));
+  bool overflows = freeOffset < requiredSpace || freeOffset - requiredSpace < static_cast<uint16_t>(numKeys * sizeof(PageSlotBinarySearchHints));
   if (overflows) {
     compact();
   }
 
   // Move all slots after the insertion position one slot to the right
-  uint16_t moveFromOffset = position * sizeof(PageSlotTemplate);
-  uint16_t moveToOffset = (position + 1) * sizeof(PageSlotTemplate);
-  uint16_t moveSize = (numKeys - position) * sizeof(PageSlotTemplate);
+  uint16_t moveFromOffset = position * sizeof(PageSlotBinarySearchHints);
+  uint16_t moveToOffset = (position + 1) * sizeof(PageSlotBinarySearchHints);
+  uint16_t moveSize = (numKeys - position) * sizeof(PageSlotBinarySearchHints);
   if (moveSize > 0) {
     std::memmove(content + moveToOffset, content + moveFromOffset, moveSize);
   }
@@ -237,7 +246,7 @@ void BTreeNodeTemplate::insertEntry(uint16_t position, std::span<uint8_t> key, s
   }
 
   // Store the size and offset information in the new slot
-  auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
+  auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + position * sizeof(PageSlotBinarySearchHints));
   slot->offset = freeOffset;
   slot->keyLength = keyWithoutPrefix.size();
   slot->valueLength = value.size();
@@ -247,39 +256,39 @@ void BTreeNodeTemplate::insertEntry(uint16_t position, std::span<uint8_t> key, s
   numKeys++;
   spaceUsed += requiredSpace;
 }
-void BTreeNodeTemplate::insertEntry(uint16_t position, std::span<uint8_t> key, BTreeNodeTemplate *childPointer) { insertEntry(position, key, std::span<uint8_t>(reinterpret_cast<uint8_t *>(&childPointer), sizeof(BTreeNodeTemplate *))); }
+void BTreeNodeBinarySearchHints::insertEntry(uint16_t position, std::span<uint8_t> key, BTreeNodeBinarySearchHints *childPointer) { insertEntry(position, key, std::span<uint8_t>(reinterpret_cast<uint8_t *>(&childPointer), sizeof(BTreeNodeBinarySearchHints *))); }
 
-void BTreeNodeTemplate::eraseEntry(uint16_t position) {
+void BTreeNodeBinarySearchHints::eraseEntry(uint16_t position) {
   // If the rightmost child gets deleted, set the rightmost child to the child before it
   if (position == numKeys && !isLeaf) {
-    rightMostChildTemplate = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(position - 1);
+    rightMostChildBinarySearchHints = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(position - 1);
     eraseEntry(position - 1);
     return;
   }
 
   // Update the node state
-  auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
-  spaceUsed -= (sizeof(PageSlotTemplate) + slot->keyLength + slot->valueLength);
+  auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + position * sizeof(PageSlotBinarySearchHints));
+  spaceUsed -= (sizeof(PageSlotBinarySearchHints) + slot->keyLength + slot->valueLength);
 
   // Move the slots after the deleted slot one slot to the left
-  uint16_t moveFromOffset = (position + 1) * sizeof(PageSlotTemplate);
-  uint16_t moveToOffset = position * sizeof(PageSlotTemplate);
-  uint16_t moveSize = (numKeys - position - 1) * sizeof(PageSlotTemplate);
+  uint16_t moveFromOffset = (position + 1) * sizeof(PageSlotBinarySearchHints);
+  uint16_t moveToOffset = position * sizeof(PageSlotBinarySearchHints);
+  uint16_t moveSize = (numKeys - position - 1) * sizeof(PageSlotBinarySearchHints);
   std::memmove(content + moveToOffset, content + moveFromOffset, moveSize);
 
   numKeys--;
 }
 
-void BTreeInnerNodeTemplate::overwriteChild(uint16_t position, BTreeNodeTemplate *newChild) {
-  auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
-  std::memcpy(content + slot->offset + slot->keyLength, &newChild, sizeof(BTreeNodeTemplate *));
+void BTreeInnerNodeBinarySearchHints::overwriteChild(uint16_t position, BTreeNodeBinarySearchHints *newChild) {
+  auto slot = reinterpret_cast<PageSlotBinarySearchHints *>(content + position * sizeof(PageSlotBinarySearchHints));
+  std::memcpy(content + slot->offset + slot->keyLength, &newChild, sizeof(BTreeNodeBinarySearchHints *));
 }
 
-void BTreeNodeTemplate::destroy() {
+void BTreeNodeBinarySearchHints::destroy() {
   if (isLeaf) {
-    delete reinterpret_cast<BTreeLeafNodeTemplate *>(this);
+    delete reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(this);
   } else {
-    BTreeInnerNodeTemplate *innerNode = reinterpret_cast<BTreeInnerNodeTemplate *>(this);
+    BTreeInnerNodeBinarySearchHints *innerNode = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this);
     for (uint16_t i = 0; i <= numKeys; ++i) {
       innerNode->getChild(i)->destroy();
     }
@@ -287,14 +296,14 @@ void BTreeNodeTemplate::destroy() {
   }
 }
 
-BTreeNodeTemplate *BTreeNodeTemplate::splitNode(uint16_t splitIndex, std::span<uint8_t> splitKey) {
+BTreeNodeBinarySearchHints *BTreeNodeBinarySearchHints::splitNode(uint16_t splitIndex, std::span<uint8_t> splitKey) {
   // Create the new node
-  BTreeNodeTemplate *newNode = nullptr;
+  BTreeNodeBinarySearchHints *newNode = nullptr;
   auto upperFenceKey = getUpperFenceKey();
   if (isLeaf) {
-    newNode = new BTreeLeafNodeTemplate(splitKey, upperFenceKey);
+    newNode = new BTreeLeafNodeBinarySearchHints(splitKey, upperFenceKey);
   } else {
-    newNode = new BTreeInnerNodeTemplate(splitKey, upperFenceKey);
+    newNode = new BTreeInnerNodeBinarySearchHints(splitKey, upperFenceKey);
   }
 
   // Copy the entries starting from splitIndex+1 to the new node
@@ -304,10 +313,10 @@ BTreeNodeTemplate *BTreeNodeTemplate::splitNode(uint16_t splitIndex, std::span<u
   for (uint16_t i = splitIndex; i < initialEntryCount; ++i) {
     auto key = getFullKey(i);
     if (isLeaf) {
-      auto value = reinterpret_cast<BTreeLeafNodeTemplate *>(this)->getValue(i);
+      auto value = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(this)->getValue(i);
       newNode->insertEntry(insertIndex, key, value);
     } else {
-      auto child = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(i);
+      auto child = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(i);
       newNode->insertEntry(insertIndex, key, child);
     }
     ++insertIndex;
@@ -315,37 +324,38 @@ BTreeNodeTemplate *BTreeNodeTemplate::splitNode(uint16_t splitIndex, std::span<u
 
   // If it's a leaf, update the linkedlist
   if (isLeaf) {
-    newNode->nextLeafNodeTemplate = nextLeafNodeTemplate;
-    nextLeafNodeTemplate = reinterpret_cast<BTreeLeafNodeTemplate *>(newNode);
+    newNode->nextLeafNodeBinarySearchHints = nextLeafNodeBinarySearchHints;
+    nextLeafNodeBinarySearchHints = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(newNode);
   }
 
   return newNode;
 }
 
-std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTemplate::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
+std::optional<std::pair<BTreeNodeBinarySearchHints *, std::vector<uint8_t>>> BTreeNodeBinarySearchHints::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   if (!isLeaf) {
     uint16_t childIndex = getEntryIndexByKey(key);
-    auto toInsert = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(childIndex)->insert(key, value);
+    auto toInsert = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(childIndex)->insert(key, value);
     if (!toInsert.has_value()) {
       return std::nullopt;
     }
 
     // Insert the new node
-    BTreeNodeTemplate *nodeToInsert = toInsert->first;
+    BTreeNodeBinarySearchHints *nodeToInsert = toInsert->first;
     std::vector<uint8_t> keyToInsert = toInsert->second;
-    uint16_t requiredSpace = sizeof(PageSlotTemplate) + keyToInsert.size() + sizeof(BTreeNodeTemplate *);
+    uint16_t requiredSpace = sizeof(PageSlotBinarySearchHints) + keyToInsert.size() + sizeof(BTreeNodeBinarySearchHints *);
     bool canFit = spaceUsed + requiredSpace <= CONTENT_SIZE;
-    BTreeNodeTemplate* currentChild = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(childIndex);
+    BTreeNodeBinarySearchHints* currentChild = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(childIndex);
 
     // If the entry can fit, insert it and then the insertion process is finished
     if (canFit) {
       if (childIndex == numKeys) {
         insertEntry(childIndex, keyToInsert, currentChild);
-        reinterpret_cast<BTreeInnerNodeTemplate *>(this)->rightMostChildTemplate = nodeToInsert;
+        reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->rightMostChildBinarySearchHints = nodeToInsert;
       } else {
-        reinterpret_cast<BTreeInnerNodeTemplate *>(this)->overwriteChild(childIndex, nodeToInsert);
+        reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->overwriteChild(childIndex, nodeToInsert);
         insertEntry(childIndex, keyToInsert, currentChild);
       }
+      updateHints();
       return std::nullopt;
     }
 
@@ -358,17 +368,17 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
     std::vector<uint8_t> splitKey = getFullKey(splitIndex);
 
     // Create the new right sibling, the new node with the entries [splitIndex+1, numKeys]
-    BTreeInnerNodeTemplate *newRightSibling = reinterpret_cast<BTreeInnerNodeTemplate *>(splitNode(splitIndex + 1, splitKey));
-    newRightSibling->rightMostChildTemplate = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->rightMostChildTemplate;
+    BTreeInnerNodeBinarySearchHints *newRightSibling = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(splitNode(splitIndex + 1, splitKey));
+    newRightSibling->rightMostChildBinarySearchHints = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->rightMostChildBinarySearchHints;
 
     // Create a new node that will replace the current node because the prefixLen could change so all keys need to be reinserted
     auto lowerFenceKey = getLowerFenceKey();
-    BTreeInnerNodeTemplate *newThisChild = new BTreeInnerNodeTemplate(lowerFenceKey, splitKey);
+    BTreeInnerNodeBinarySearchHints *newThisChild = new BTreeInnerNodeBinarySearchHints(lowerFenceKey, splitKey);
 
     // Insert all the entreis remaining in the current node into the new node
     for (uint16_t i = 0; i <= splitIndex; ++i) {
       auto key = getFullKey(i);
-      auto child = reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(i);
+      auto child = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(i);
       newThisChild->insertEntry(i, key, child);
     }
 
@@ -384,7 +394,7 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
       // The new child will be the rightmost
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
-        newRightSibling->rightMostChildTemplate = nodeToInsert;
+        newRightSibling->rightMostChildBinarySearchHints = nodeToInsert;
       }
 
       else {
@@ -393,9 +403,12 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
       }
     }
 
+    newThisChild->updateHints();
+    newRightSibling->updateHints();
+
     // Swap the new node with the current one, delete the current one and return the new node to insert into the parent
     // with the corresponding split key
-    std::swap(*reinterpret_cast<BTreeInnerNodeTemplate *>(this), *newThisChild);
+    std::swap(*reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this), *newThisChild);
     delete newThisChild;
     return std::make_pair(newRightSibling, splitKey);
 
@@ -408,7 +421,7 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
       eraseEntry(insertIndex);
     }
 
-    uint16_t requiredSpace = sizeof(PageSlotTemplate) + keyWithoutPrefix.size() + value.size();
+    uint16_t requiredSpace = sizeof(PageSlotBinarySearchHints) + keyWithoutPrefix.size() + value.size();
     bool canFit = spaceUsed + requiredSpace <= CONTENT_SIZE;
 
     // If the key + value can fit in the current node, insert the entry
@@ -421,34 +434,34 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
     // Otherwise we need to split the node
     uint16_t splitIndex = getSplitIndex();
     std::vector<uint8_t> splitKey;
-    BTreeLeafNodeTemplate *newRightSibling = nullptr;
+    BTreeLeafNodeBinarySearchHints *newRightSibling = nullptr;
     uint16_t lastEntryIndex;
 
     // Determine the correct splitKey and the new right sibling as well as the index of the last key that should remain
     // In the current node
     if (insertIndex < splitIndex) {
       splitKey = getFullKey(splitIndex - 1);
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplate *>(splitNode(splitIndex, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(splitNode(splitIndex, splitKey));
       lastEntryIndex = splitIndex - 1;
     } else if (insertIndex > splitIndex) {
       splitKey = getFullKey(splitIndex);
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplate *>(splitNode(splitIndex + 1, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(splitNode(splitIndex + 1, splitKey));
       lastEntryIndex = splitIndex;
     } else {
       splitKey = std::vector<uint8_t>(key.begin(), key.end());
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplate *>(splitNode(splitIndex, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(splitNode(splitIndex, splitKey));
       lastEntryIndex = splitIndex - 1;
     }
 
     // Create a new node that will replace the current node because the prefixLen could change so all keys need to be reinserted
     auto lowerFenceKey = getLowerFenceKey();
-    BTreeLeafNodeTemplate *newThisChild = new BTreeLeafNodeTemplate(lowerFenceKey, splitKey);
-    newThisChild->nextLeafNodeTemplate = newRightSibling;
+    BTreeLeafNodeBinarySearchHints *newThisChild = new BTreeLeafNodeBinarySearchHints(lowerFenceKey, splitKey);
+    newThisChild->nextLeafNodeBinarySearchHints = newRightSibling;
 
     // Insert all the entreis remaining in the current node into the new node
     for (uint16_t i = 0; i <= lastEntryIndex; ++i) {
       auto key = getFullKey(i);
-      auto value = reinterpret_cast<BTreeLeafNodeTemplate *>(this)->getValue(i);
+      auto value = reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(this)->getValue(i);
       newThisChild->insertEntry(i, key, value);
     }
 
@@ -464,13 +477,13 @@ std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> BTreeNodeTem
     newThisChild->updateHints();
 
     // Swap the new node with the current one, delete the current one and return the new node to insert into the parent
-    std::swap(*reinterpret_cast<BTreeLeafNodeTemplate *>(this), *newThisChild);
+    std::swap(*reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(this), *newThisChild);
     delete newThisChild;
     return std::make_pair(newRightSibling, splitKey);
   }
 }
 
-bool BTreeNodeTemplate::remove(std::span<uint8_t> key) {
+bool BTreeNodeBinarySearchHints::remove(std::span<uint8_t> key) {
   if (isLeaf) {
     uint16_t entryIndex = getEntryIndexByKey(key);
     if (entryIndex < numKeys) {
@@ -485,6 +498,6 @@ bool BTreeNodeTemplate::remove(std::span<uint8_t> key) {
     return false;
   } else {
     uint16_t childIndex = getEntryIndexByKey(key);
-    return reinterpret_cast<BTreeInnerNodeTemplate *>(this)->getChild(childIndex)->remove(key);
+    return reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(this)->getChild(childIndex)->remove(key);
   }
 }

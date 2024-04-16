@@ -3,16 +3,19 @@
 
 #include "btree_template/btree_template.hpp"
 #include "btree_template/btreenode_template.hpp"
-//#include "btree_template_noHints/btree_template.hpp"
-//#include "btree_template_noHints/btreenode_template.hpp"
 //#include "btree_template_bigNode/btree_template.hpp"
 //#include "btree_template_bigNode/btreenode_template.hpp"
 
-//#include "btree_testCompare/btree.hpp"
-//#include "btree_testCompare/btreenode.hpp"
-
 #include "btree_binarySearch/btree_binarySearch.hpp"
 #include "btree_binarySearch/btreenode_binarySearch.hpp"
+#include "btree_binarySearch_withHints/btree_binarySearchHints.hpp"
+#include "btree_binarySearch_withHints/btreenode_binarySearchHints.hpp"
+
+#include "btree_linearSearch/btree_linearSearch.hpp"
+#include "btree_linearSearch/btreenode_linearSearch.hpp"
+
+#include "btree_interpolationSearch/btree_interpolationSearch.hpp"
+#include "btree_interpolationSearch/btreenode_interpolationSearch.hpp"
 
 #include "btree_plain_finished/btree.hpp"
 
@@ -24,21 +27,20 @@
 #include <iostream>
 
 struct Tester {
-    // BTree *btree
-    BTreeBinarySearch *btree;
+    BTreeLinearSearch *btree;
 
     BTreeTemplate *btreeTemplate;
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_binarySearch()), btreeTemplate(btree_create_template()), stdMap()  {}
+    Tester() : btree(btree_create_linearSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
 
-    ~Tester() { btree_destroy_binarySearch(btree); btree_destroy_template(btreeTemplate); }
+    ~Tester() { btree_destroy_linearSearch(btree); btree_destroy_template(btreeTemplate); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         stdMap[key] = value;
         
-        btree_insert_binarySearch(btree, key.data(), key.size(), value.data(), value.size());
+        btree_insert_linearSearch(btree, key.data(), key.size(), value.data(), value.size());
         btree_insert_template(btreeTemplate, key.data(), key.size(), value.data(), value.size());
     }
 
@@ -47,7 +49,7 @@ struct Tester {
         
         uint16_t lenOut = 0;
         uint16_t lenOutTemplate = 0;
-        uint8_t *value = btree_lookup_binarySearch(btree, key.data(), key.size(), lenOut);
+        uint8_t *value = btree_lookup_linearSearch(btree, key.data(), key.size(), lenOut);
         uint8_t *valueTemplate = btree_lookup_template(btreeTemplate, key.data(), key.size(), lenOutTemplate);
         std::span<uint8_t> spanTemplate = {valueTemplate, lenOutTemplate};
 
@@ -72,7 +74,7 @@ struct Tester {
             }
 
         bool wasPresentBtreeTemplate = btree_remove_template(btreeTemplate, key.data(), key.size());
-        bool wasPresentBtree = btree_remove_binarySearch(btree, key.data(), key.size());
+        bool wasPresentBtree = btree_remove_linearSearch(btree, key.data(), key.size());
         assert(wasPresentBtreeTemplate == wasPresentBtree);
 
         (void)wasPresentBtree;
@@ -155,7 +157,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_binarySearch(
+        btree_scan_linearSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
  
@@ -192,7 +194,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_binarySearch(
+        btree_scan_linearSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
                     assert(shouldContinue);
@@ -281,6 +283,72 @@ struct TesterPerformanceBinarySearch {
 
     void remove(std::vector<uint8_t> &key) {
             btree_remove_binarySearch(btreeBinarySearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceBinarySearchHints {
+
+    BTreeBinarySearchHints *btreeBinarySearchHints;
+
+    TesterPerformanceBinarySearchHints() : btreeBinarySearchHints(btree_create_binarySearchHints())  {}
+
+    ~TesterPerformanceBinarySearchHints() { btree_destroy_binarySearchHints(btreeBinarySearchHints); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_binarySearchHints(btreeBinarySearchHints, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutBinarySearchHints = 0;
+        btree_lookup_binarySearchHints(btreeBinarySearchHints, key.data(), key.size(), lenOutBinarySearchHints);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_binarySearchHints(btreeBinarySearchHints, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceLinearSearch {
+
+    BTreeLinearSearch *btreeLinearSearch;
+
+    TesterPerformanceLinearSearch() : btreeLinearSearch(btree_create_linearSearch())  {}
+
+    ~TesterPerformanceLinearSearch() { btree_destroy_linearSearch(btreeLinearSearch); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_linearSearch(btreeLinearSearch, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutLinearSearch = 0;
+        btree_lookup_linearSearch(btreeLinearSearch, key.data(), key.size(), lenOutLinearSearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_linearSearch(btreeLinearSearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceInterpolationSearch {
+
+    BTreeInterpolationSearch *btreeInterpolationSearch;
+
+    TesterPerformanceInterpolationSearch() : btreeInterpolationSearch(btree_create_interpolationSearch())  {}
+
+    ~TesterPerformanceInterpolationSearch() { btree_destroy_interpolationSearch(btreeInterpolationSearch); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSearch(btreeInterpolationSearch, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSearch = 0;
+        btree_lookup_interpolationSearch(btreeInterpolationSearch, key.data(), key.size(), lenOutInterpolationSearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSearch(btreeInterpolationSearch, key.data(), key.size());
     }
 };
 

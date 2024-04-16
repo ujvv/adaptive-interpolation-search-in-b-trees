@@ -20,9 +20,6 @@ void runTest(vector<vector<uint8_t>> &keys) {
         t.scanThrough(emptyKey);
         for (uint64_t i = 0; i < count; ++i) {
             t.insert(keys[i], keys[i]);
-            //if (i >= 28700) {
-            //    t.scanThrough(emptyKey);
-            //}
         }
     }
     {
@@ -165,9 +162,6 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     // Double Insert with different Values
     for (uint64_t i = (count*0.25), j = (count * 0.45); i < (count*0.5) && j >= 0; ++i, --j) {
         t.insert(keys[i], keys[j]);
-        if (i == 38427 || i == 38426) {
-            t.scanThrough(emptyKey);
-        }
     }
 
     // Check Tree Structure
@@ -297,16 +291,16 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
 void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformance t{};
+    TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceTempl t_templ{};
     TesterPerformanceMap t_map;
 
     uint64_t count = keys.size();
 
     {
-        PerfEventBlock peb(perf,count,{"insert"});
+        PerfEventBlock peb(perf,count,{"insert BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t.insert(keys[i], keys[i]);
+            t_binarySearch.insert(keys[i], keys[i]);
         }
     }
     {
@@ -322,9 +316,9 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
         }
     }*/
     {
-        PerfEventBlock peb(perf,count,{"lookup"});
+        PerfEventBlock peb(perf,count,{"lookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t.lookup(keys[i]);
+            t_binarySearch.lookup(keys[i]);
         }
     }
     {
@@ -340,9 +334,9 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
         }
     }*/
     {
-        PerfEventBlock peb(perf,count,{"remove"});
+        PerfEventBlock peb(perf,count,{"remove BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t.remove(keys[i]);
+            t_binarySearch.remove(keys[i]);
         }
     }
     {
@@ -362,7 +356,7 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
 void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformance t{};
+    TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceTempl t_templ{};
 
     uint64_t count = keys.size();
@@ -386,14 +380,14 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     std::random_shuffle(index4.begin(), index4.end());
 
     {
-        PerfEventBlock peb(perf,count,{"PerformanceTestMixed Eytzinger"});
+        PerfEventBlock peb(perf,count,{"PerformanceTestMixed BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t.insert(keys[i], keys[i]);
+            t_binarySearch.insert(keys[i], keys[i]);
         }
         for (uint64_t i = 0; i < count; ++i) {
-            t.lookup(keys[index2[i]]);
-            t.remove(keys[index3[i]]);
-            t.insert(keys[index3[i]], keys[index4[i]]);
+            t_binarySearch.lookup(keys[index2[i]]);
+            t_binarySearch.remove(keys[index3[i]]);
+            t_binarySearch.insert(keys[index3[i]], keys[index4[i]]);
         }
     }
     {
@@ -412,7 +406,7 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
 void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformance t{};
+    TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceTempl t_templ{};
 
     uint64_t count = keys.size();
@@ -429,26 +423,26 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     }
     std::random_shuffle(iteration3.begin(), iteration3.end());
 
-    // Pre-Insert all keys in Eytzinger btree and the template for the Lookup performance test
+    // Pre-Insert all keys in different Btrees for Lookup Performance Test
     for (uint64_t i = 0; i < count; ++i) {
-            t.insert(keys[i], keys[i]);
+            t_binarySearch.insert(keys[i], keys[i]);
             t_templ.insert(keys[i], keys[i]);
         }
     
     {
-        PerfEventBlock peb(perf,count,{"PerformanceTestLookup Eytzinger"});
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t.lookup(keys[i]);
+            t_binarySearch.lookup(keys[i]);
         }
         for (uint64_t i = 0; i < count; ++i) {
-            t.lookup(keys[iteration2[i]]);
+            t_binarySearch.lookup(keys[iteration2[i]]);
         }
         for (uint64_t i = 0; i < count; ++i) {
-            t.lookup(keys[iteration3[i]]);
+            t_binarySearch.lookup(keys[iteration3[i]]);
         }
     }
     {
-        PerfEventBlock peb(perf,count,{"PerformanceLookup Template"});
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_templ.lookup(keys[i]);
         }

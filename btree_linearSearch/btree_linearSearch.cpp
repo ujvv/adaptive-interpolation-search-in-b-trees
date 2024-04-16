@@ -1,22 +1,22 @@
-#include "btree.hpp"
-#include "btreenode.hpp"
+#include "btree_linearSearch.hpp"
+#include "btreenode_linearSearch.hpp"
 
 inline std::vector<uint8_t> toByteVector(uint8_t *b, unsigned l) { return std::vector<uint8_t>(b, b + l); }
 
-BTreeLeafNode *BTree::traverseToLeaf(std::span<uint8_t> key) {
-  BTreeNode *currentNode = root;
+BTreeLeafNodeLinearSearch *BTreeLinearSearch::traverseToLeaf_linearSearch(std::span<uint8_t> key) {
+  BTreeNodeLinearSearch *currentNode = root;
   while (!currentNode->isLeaf) {
     uint16_t childIndex = currentNode->getEntryIndexByKey(key);
-    currentNode = reinterpret_cast<BTreeInnerNode *>(currentNode)->getChild(childIndex);
+    currentNode = reinterpret_cast<BTreeInnerNodeLinearSearch *>(currentNode)->getChild(childIndex);
   }
-  return reinterpret_cast<BTreeLeafNode *>(currentNode);
+  return reinterpret_cast<BTreeLeafNodeLinearSearch *>(currentNode);
 }
 
-std::optional<std::span<uint8_t>> BTree::lookup(std::span<uint8_t> key) {
+std::optional<std::span<uint8_t>> BTreeLinearSearch::lookup(std::span<uint8_t> key) {
   if (root == nullptr) {
     return std::nullopt;
   }
-  BTreeLeafNode *leaf = traverseToLeaf(key);
+  BTreeLeafNodeLinearSearch *leaf = traverseToLeaf_linearSearch(key);
   uint16_t entryIndex = leaf->getEntryIndexByKey(key);
   if (entryIndex < leaf->numKeys) {
     auto existingKey = leaf->getFullKey(entryIndex);
@@ -28,9 +28,9 @@ std::optional<std::span<uint8_t>> BTree::lookup(std::span<uint8_t> key) {
   return std::nullopt;
 }
 
-void BTree::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
+void BTreeLinearSearch::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   if (root == nullptr) {
-    root = new BTreeLeafNode();
+    root = new BTreeLeafNodeLinearSearch();
   }
   auto toInsert = root->insert(key, value);
   if (!toInsert.has_value()) {
@@ -38,27 +38,27 @@ void BTree::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   }
 
   // We need to split the root
-  BTreeNode *nodeToInsert = toInsert->first;
+  BTreeNodeLinearSearch *nodeToInsert = toInsert->first;
   std::vector<uint8_t> splitKey = std::move(toInsert->second);
-  BTreeInnerNode *newRoot = new BTreeInnerNode();
+  BTreeInnerNodeLinearSearch *newRoot = new BTreeInnerNodeLinearSearch();
   newRoot->insertEntry(0, splitKey, root);
-  newRoot->rightMostChild = nodeToInsert;
+  newRoot->rightMostChildLinearSearch = nodeToInsert;
   root = newRoot;
 }
 
-void BTree::destroy() {
+void BTreeLinearSearch::destroy() {
   if (root != nullptr) {
     root->destroy();
   }
 }
 
-void BTree::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
+void BTreeLinearSearch::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
   if (root == nullptr) {
     return;
   }
 
   // Find the node that should contain the key
-  BTreeLeafNode *currentNode = traverseToLeaf(key);
+  BTreeLeafNodeLinearSearch *currentNode = traverseToLeaf_linearSearch(key);
   std::vector<uint8_t> keyVector(key.begin(), key.end());
   bool currentKeyValid = false;
   bool continueIteration = true;
@@ -82,11 +82,11 @@ void BTree::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bo
         continueIteration &= found_callback(keys[i].size(), valueSpan.data(), valueSpan.size());
       }
     }
-    currentNode = currentNode->nextLeafNode;
+    currentNode = currentNode->nextLeafNodeLinearSearch;
   }
 }
 
-bool BTree::remove(std::span<uint8_t> key) {
+bool BTreeLinearSearch::remove(std::span<uint8_t> key) {
   if (root == nullptr) {
     return false;
   }
@@ -94,22 +94,22 @@ bool BTree::remove(std::span<uint8_t> key) {
 }
 
 // create a new tree and return a pointer to it
-BTree *btree_create() { return new BTree(); };
+BTreeLinearSearch *btree_create_linearSearch() { return new BTreeLinearSearch(); };
 
-// destroy a tree created by btree_create
-void btree_destroy(BTree *t) {
+// destroy a tree created by btree_create_linearSearch
+void btree_destroy_linearSearch(BTreeLinearSearch *t) {
   t->destroy();
   delete t;
 }
 
 // return true iff the key was present
-bool btree_remove(BTree *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
+bool btree_remove_linearSearch(BTreeLinearSearch *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
 
 // replaces exising record if any
-void btree_insert(BTree *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
+void btree_insert_linearSearch(BTreeLinearSearch *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
 
 // returns a pointer to the associated value if present, nullptr otherwise
-uint8_t *btree_lookup(BTree *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
+uint8_t *btree_lookup_linearSearch(BTreeLinearSearch *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
   auto value = tree->lookup(std::span<uint8_t>(key, keyLength));
   if (!value.has_value()) {
     return nullptr;
@@ -123,4 +123,4 @@ uint8_t *btree_lookup(BTree *tree, uint8_t *key, uint16_t keyLength, uint16_t &p
 // the callback should be invoked with keyLength, value pointer, and value
 // length iteration stops if there are no more keys or the callback returns
 // false.
-void btree_scan(BTree *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }
+void btree_scan_linearSearch(BTreeLinearSearch *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }
