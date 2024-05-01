@@ -3,8 +3,8 @@
 
 #include "btree_template/btree_template.hpp"
 #include "btree_template/btreenode_template.hpp"
-//#include "btree_template_bigNode/btree_template.hpp"
-//#include "btree_template_bigNode/btreenode_template.hpp"
+#include "btree_template_bigNode/btree_templateBigNode.hpp"
+#include "btree_template_bigNode/btreenode_templateBigNode.hpp"
 
 #include "btree_binarySearch/btree_binarySearch.hpp"
 #include "btree_binarySearch/btreenode_binarySearch.hpp"
@@ -27,20 +27,20 @@
 #include <iostream>
 
 struct Tester {
-    BTreeLinearSearch *btree;
+    BTreeInterpolationSearch *btree;
 
     BTreeTemplate *btreeTemplate;
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_linearSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
+    Tester() : btree(btree_create_interpolationSearch()), btreeTemplate(btree_create_template()), stdMap()  {std::cout << "BTreeTemplate Nodes CONTENT_SIZE: " << btreeTemplate->root->CONTENT_SIZE << ", Tested BTree Nodes CONTENT_SIZE: " << btree->root->CONTENT_SIZE << std::endl;}
 
-    ~Tester() { btree_destroy_linearSearch(btree); btree_destroy_template(btreeTemplate); }
+    ~Tester() { btree_destroy_interpolationSearch(btree); btree_destroy_template(btreeTemplate); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         stdMap[key] = value;
         
-        btree_insert_linearSearch(btree, key.data(), key.size(), value.data(), value.size());
+        btree_insert_interpolationSearch(btree, key.data(), key.size(), value.data(), value.size());
         btree_insert_template(btreeTemplate, key.data(), key.size(), value.data(), value.size());
     }
 
@@ -49,7 +49,7 @@ struct Tester {
         
         uint16_t lenOut = 0;
         uint16_t lenOutTemplate = 0;
-        uint8_t *value = btree_lookup_linearSearch(btree, key.data(), key.size(), lenOut);
+        uint8_t *value = btree_lookup_interpolationSearch(btree, key.data(), key.size(), lenOut);
         uint8_t *valueTemplate = btree_lookup_template(btreeTemplate, key.data(), key.size(), lenOutTemplate);
         std::span<uint8_t> spanTemplate = {valueTemplate, lenOutTemplate};
 
@@ -74,75 +74,10 @@ struct Tester {
             }
 
         bool wasPresentBtreeTemplate = btree_remove_template(btreeTemplate, key.data(), key.size());
-        bool wasPresentBtree = btree_remove_linearSearch(btree, key.data(), key.size());
+        bool wasPresentBtree = btree_remove_interpolationSearch(btree, key.data(), key.size());
         assert(wasPresentBtreeTemplate == wasPresentBtree);
 
         (void)wasPresentBtree;
-    }
- 
-    void compare_btrees(std::vector<uint8_t> &key) {
-        /* 
-         if (btreeTemplate->root == nullptr) {
-                assert(btree->root == nullptr);
-                return;
-        }
-
-        BTreeLeafNodeTemplate *currentNodeTemplate = btreeTemplate->traverseToLeaf_template(key);
-        BTreeLeafNode *currentNode = btree->traverseToLeaf(key);
-
-        if (currentNodeTemplate == nullptr) {
-            assert(currentNode == nullptr);
-            return;
-        } else {
-            assert(currentNode != nullptr);
-        }
-
-        std::vector<uint8_t> keyVectorTemplate(key.begin(), key.end());
-        std::vector<uint8_t> keyVector(key.begin(), key.end());
-
-        bool currentKeyValidTemplate = false;
-        bool currentKeyValid = false;
-
-        int counter = 0;
-        while (currentNodeTemplate != nullptr) {
-            std::vector<std::vector<uint8_t>> keysTemplate = currentNodeTemplate->getKeys();
-            std::vector<std::vector<uint8_t>> keys = currentNode->getKeys();
-            assert(keysTemplate.size() == keys.size());
-
-            for (uint16_t i = 0; i < keysTemplate.size(); i++) {
-                if (!currentKeyValidTemplate && keysTemplate[i] >= keyVectorTemplate) {
-                    currentKeyValidTemplate = true;
-                }
-
-                if (currentKeyValidTemplate) {
-                    std::span<uint8_t> valueSpanTemplate = currentNodeTemplate->getValue(i);
-                    std::span<uint8_t> valueSpan = currentNode->getValue(i);
-
-                    assert(keysTemplate[i].size() == keys[i].size());
-
-                    if (keysTemplate[i].size() > 0) {
-                        assert(memcmp(keysTemplate[i].data(), keys[i].data(), keysTemplate[i].size()) == 0);
-                    }
-                    
-                    if (keysTemplate[i].size()==valueSpanTemplate.size()) {
-                        assert(keys[i].size()==valueSpan.size());
-                    }
-                    
-                    assert(valueSpanTemplate.size() == valueSpan.size());
-                    if (valueSpanTemplate.size() > 0) {
-                        assert(memcmp(valueSpanTemplate.data(), valueSpan.data(), valueSpanTemplate.size()) == 0);
-                    }
-                }
-            }
-            currentNodeTemplate = currentNodeTemplate->nextLeafNodeTemplate;
-            currentNode = currentNode->nextLeafNode;
-            if (currentNodeTemplate == nullptr) {
-                assert(currentNode == nullptr);
-            } else {
-                assert(currentNode != nullptr);
-            }
-        }
-*/
     }
 
     void scan(std::vector<uint8_t> &key,
@@ -157,7 +92,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_linearSearch(
+        btree_scan_interpolationSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
  
@@ -194,7 +129,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_linearSearch(
+        btree_scan_interpolationSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
                     assert(shouldContinue);
@@ -246,7 +181,7 @@ struct TesterPerformanceTempl {
 
     BTreeTemplate *btreeTemplate;
 
-    TesterPerformanceTempl() : btreeTemplate(btree_create_template())  {}
+    TesterPerformanceTempl() : btreeTemplate(btree_create_template())  {std::cout << "BTreeTemplate Nodes CONTENT_SIZE: " << btreeTemplate->root->CONTENT_SIZE << std::endl;}
 
     ~TesterPerformanceTempl() { btree_destroy_template(btreeTemplate); }
 
@@ -268,7 +203,7 @@ struct TesterPerformanceBinarySearch {
 
     BTreeBinarySearch *btreeBinarySearch;
 
-    TesterPerformanceBinarySearch() : btreeBinarySearch(btree_create_binarySearch())  {}
+    TesterPerformanceBinarySearch() : btreeBinarySearch(btree_create_binarySearch())  {std::cout << "BTree with BinarySearch Nodes CONTENT_SIZE: " << btreeBinarySearch->root->CONTENT_SIZE << std::endl;}
 
     ~TesterPerformanceBinarySearch() { btree_destroy_binarySearch(btreeBinarySearch); }
 
@@ -290,7 +225,7 @@ struct TesterPerformanceBinarySearchHints {
 
     BTreeBinarySearchHints *btreeBinarySearchHints;
 
-    TesterPerformanceBinarySearchHints() : btreeBinarySearchHints(btree_create_binarySearchHints())  {}
+    TesterPerformanceBinarySearchHints() : btreeBinarySearchHints(btree_create_binarySearchHints())  {std::cout << "BTree with BinarySearch and Hints Nodes CONTENT_SIZE: " << btreeBinarySearchHints->root->CONTENT_SIZE << std::endl;}
 
     ~TesterPerformanceBinarySearchHints() { btree_destroy_binarySearchHints(btreeBinarySearchHints); }
 
@@ -312,7 +247,7 @@ struct TesterPerformanceLinearSearch {
 
     BTreeLinearSearch *btreeLinearSearch;
 
-    TesterPerformanceLinearSearch() : btreeLinearSearch(btree_create_linearSearch())  {}
+    TesterPerformanceLinearSearch() : btreeLinearSearch(btree_create_linearSearch())  {std::cout << "BTree with LinearSearch Nodes CONTENT_SIZE: " << btreeLinearSearch->root->CONTENT_SIZE << std::endl;}
 
     ~TesterPerformanceLinearSearch() { btree_destroy_linearSearch(btreeLinearSearch); }
 
@@ -334,7 +269,7 @@ struct TesterPerformanceInterpolationSearch {
 
     BTreeInterpolationSearch *btreeInterpolationSearch;
 
-    TesterPerformanceInterpolationSearch() : btreeInterpolationSearch(btree_create_interpolationSearch())  {}
+    TesterPerformanceInterpolationSearch() : btreeInterpolationSearch(btree_create_interpolationSearch())  {std::cout << "BTree with InterpolationSearch Nodes CONTENT_SIZE: " << btreeInterpolationSearch->root->CONTENT_SIZE << std::endl;}
 
     ~TesterPerformanceInterpolationSearch() { btree_destroy_interpolationSearch(btreeInterpolationSearch); }
 

@@ -6,11 +6,11 @@ btree_template/btree_template.a: .FORCE
 btree_template/btree-optimized_template.a: .FORCE
 	cd btree_template;make btree-optimized_template.a
 
-#btree_template_bigNode/btree_templateBig.a: .FORCE
-#	cd btree_template_bigNode;make btree_templateBig.a
+btree_template_bigNode/btree_templateBig.a: .FORCE
+	cd btree_template_bigNode;make btree_templateBig.a
 
-#btree_template_bigNode/btree-optimized_templateBig.a: .FORCE
-#	cd btree_template_bigNode;make btree-optimized_templateBig.a
+btree_template_bigNode/btree-optimized_templateBig.a: .FORCE
+	cd btree_template_bigNode;make btree-optimized_templateBig.a
 
 btree_binarySearch/btree_binarySearch.a: .FORCE
 	cd btree_binarySearch;make btree_binarySearch.a

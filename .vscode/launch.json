@@ -15,6 +15,14 @@
                     "value": "100000"
                 },
                 {
+                    "name": "BYTE",
+                    "value": "500"
+                },
+                {
+                    "name": "VARIABLEBYTE",
+                    "value": "100000"
+                },
+                {
                     "name": "LONG1",
                     "value": "512"
                 },

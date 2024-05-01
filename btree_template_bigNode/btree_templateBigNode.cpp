@@ -1,22 +1,22 @@
-#include "btree_template.hpp"
-#include "btreenode_template.hpp"
+#include "btree_templateBigNode.hpp"
+#include "btreenode_templateBigNode.hpp"
 
 inline std::vector<uint8_t> toByteVector(uint8_t *b, unsigned l) { return std::vector<uint8_t>(b, b + l); }
 
-BTreeLeafNodeTemplate *BTreeTemplate::traverseToLeaf_template(std::span<uint8_t> key) {
-  BTreeNodeTemplate *currentNode = root;
+BTreeLeafNodeTemplateBigNode *BTreeTemplateBigNode::traverseToLeaf_templateBigNode(std::span<uint8_t> key) {
+  BTreeNodeTemplateBigNode *currentNode = root;
   while (!currentNode->isLeaf) {
     uint16_t childIndex = currentNode->getEntryIndexByKey(key);
-    currentNode = reinterpret_cast<BTreeInnerNodeTemplate *>(currentNode)->getChild(childIndex);
+    currentNode = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(currentNode)->getChild(childIndex);
   }
-  return reinterpret_cast<BTreeLeafNodeTemplate *>(currentNode);
+  return reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(currentNode);
 }
 
-std::optional<std::span<uint8_t>> BTreeTemplate::lookup(std::span<uint8_t> key) {
+std::optional<std::span<uint8_t>> BTreeTemplateBigNode::lookup(std::span<uint8_t> key) {
   if (root == nullptr) {
     return std::nullopt;
   }
-  BTreeLeafNodeTemplate *leaf = traverseToLeaf_template(key);
+  BTreeLeafNodeTemplateBigNode *leaf = traverseToLeaf_templateBigNode(key);
   uint16_t entryIndex = leaf->getEntryIndexByKey(key);
   if (entryIndex < leaf->numKeys) {
     auto existingKey = leaf->getFullKey(entryIndex);
@@ -28,9 +28,9 @@ std::optional<std::span<uint8_t>> BTreeTemplate::lookup(std::span<uint8_t> key) 
   return std::nullopt;
 }
 
-void BTreeTemplate::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
+void BTreeTemplateBigNode::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   if (root == nullptr) {
-    root = new BTreeLeafNodeTemplate();
+    root = new BTreeLeafNodeTemplateBigNode();
   }
   auto toInsert = root->insert(key, value);
   if (!toInsert.has_value()) {
@@ -38,27 +38,27 @@ void BTreeTemplate::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   }
 
   // We need to split the root
-  BTreeNodeTemplate *nodeToInsert = toInsert->first;
+  BTreeNodeTemplateBigNode *nodeToInsert = toInsert->first;
   std::vector<uint8_t> splitKey = std::move(toInsert->second);
-  BTreeInnerNodeTemplate *newRoot = new BTreeInnerNodeTemplate();
+  BTreeInnerNodeTemplateBigNode *newRoot = new BTreeInnerNodeTemplateBigNode();
   newRoot->insertEntry(0, splitKey, root);
-  newRoot->rightMostChildTemplate = nodeToInsert;
+  newRoot->rightMostChildTemplateBigNode = nodeToInsert;
   root = newRoot;
 }
 
-void BTreeTemplate::destroy() {
+void BTreeTemplateBigNode::destroy() {
   if (root != nullptr) {
     root->destroy();
   }
 }
 
-void BTreeTemplate::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
+void BTreeTemplateBigNode::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
   if (root == nullptr) {
     return;
   }
 
   // Find the node that should contain the key
-  BTreeLeafNodeTemplate *currentNode = traverseToLeaf_template(key);
+  BTreeLeafNodeTemplateBigNode *currentNode = traverseToLeaf_templateBigNode(key);
   std::vector<uint8_t> keyVector(key.begin(), key.end());
   bool currentKeyValid = false;
   bool continueIteration = true;
@@ -82,11 +82,11 @@ void BTreeTemplate::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::fun
         continueIteration &= found_callback(keys[i].size(), valueSpan.data(), valueSpan.size());
       }
     }
-    currentNode = currentNode->nextLeafNodeTemplate;
+    currentNode = currentNode->nextLeafNodeTemplateBigNode;
   }
 }
 
-bool BTreeTemplate::remove(std::span<uint8_t> key) {
+bool BTreeTemplateBigNode::remove(std::span<uint8_t> key) {
   if (root == nullptr) {
     return false;
   }
@@ -94,22 +94,22 @@ bool BTreeTemplate::remove(std::span<uint8_t> key) {
 }
 
 // create a new tree and return a pointer to it
-BTreeTemplate *btree_create_template() { return new BTreeTemplate(); };
+BTreeTemplateBigNode *btree_create_templateBigNode() { return new BTreeTemplateBigNode(); };
 
-// destroy a tree created by btree_create_template
-void btree_destroy_template(BTreeTemplate *t) {
+// destroy a tree created by btree_create_templateBigNode
+void btree_destroy_templateBigNode(BTreeTemplateBigNode *t) {
   t->destroy();
   delete t;
 }
 
 // return true iff the key was present
-bool btree_remove_template(BTreeTemplate *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
+bool btree_remove_templateBigNode(BTreeTemplateBigNode *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
 
 // replaces exising record if any
-void btree_insert_template(BTreeTemplate *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
+void btree_insert_templateBigNode(BTreeTemplateBigNode *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
 
 // returns a pointer to the associated value if present, nullptr otherwise
-uint8_t *btree_lookup_template(BTreeTemplate *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
+uint8_t *btree_lookup_templateBigNode(BTreeTemplateBigNode *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
   auto value = tree->lookup(std::span<uint8_t>(key, keyLength));
   if (!value.has_value()) {
     return nullptr;
@@ -123,4 +123,4 @@ uint8_t *btree_lookup_template(BTreeTemplate *tree, uint8_t *key, uint16_t keyLe
 // the callback should be invoked with keyLength, value pointer, and value
 // length iteration stops if there are no more keys or the callback returns
 // false.
-void btree_scan_template(BTreeTemplate *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }
+void btree_scan_templateBigNode(BTreeTemplateBigNode *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }

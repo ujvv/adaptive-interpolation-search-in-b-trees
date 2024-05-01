@@ -118,6 +118,9 @@ private:
   // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
   bool keySmallerEqualThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key);
 
+  // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
+  bool keySmallerThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key);
+
   // Checks if the given key is greater that the key at the given position, the given key should not contain the prefix
   bool keyLargerThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key) { return !keySmallerEqualThanAtPosition(position, keyHead, key); }
 

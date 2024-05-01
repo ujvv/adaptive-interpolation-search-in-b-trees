@@ -18,8 +18,12 @@ void runTest(vector<vector<uint8_t>> &keys) {
     {
         t.insert(emptyKey, keys[0]);
         t.scanThrough(emptyKey);
-        for (uint64_t i = 0; i < count; ++i) {
+        for (uint64_t i = 0, j = 0; i < count; ++i, j++) {
             t.insert(keys[i], keys[i]);
+            //if (i > 24000 && j >= 100) {
+                t.scanThrough(emptyKey);
+            //    j = 0;
+            //}
         }
     }
     {
@@ -112,7 +116,7 @@ void runTestZickZack(vector<vector<uint8_t>> &keys) {
     std::cout << "runTestZickZack PASSED" << std::endl;
 }
 
-void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
+void runTestMixed(vector<vector<uint8_t>> &keys) {
     vector<uint8_t> firstKey = keys[0];
     std::random_shuffle(keys.begin(), keys.end());
     Tester t{};
@@ -146,13 +150,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     }
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Double Insert
     for (uint64_t i = 0; i < (count*0.25); ++i) {
@@ -165,13 +164,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     }
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Remove half
     for (uint64_t i = 0; i < (count*0.25); ++i) {
@@ -183,13 +177,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     t.insert(emptyKey, emptyKey);
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Reshuffle Keys
     std::random_shuffle(keys.begin(), keys.end());
@@ -200,13 +189,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     }
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Lookup some
     for (uint64_t i = 0; i < (count*0.5); i += 5) {
@@ -223,13 +207,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     t.insert(emptyKey,emptyKey);
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Reshuffle Keys
     std::random_shuffle(keys.begin(), keys.end());
@@ -240,13 +219,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     }
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Lookup some
     for (uint64_t i = 0; i < (count*0.5); i += 7) {
@@ -263,13 +237,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     t.insert(emptyKey,emptyKey);
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     // Remove all
     for (uint64_t i = 0; i < count; ++i) {
@@ -277,13 +246,8 @@ void runTestMixed(vector<vector<uint8_t>> &keys, bool plain) {
     }
 
     // Check Tree Structure
-    if (!plain) {
-        t.compare_btrees(emptyKey);
-        t.compare_btrees(firstKey);
-    } else {
-        t.scanThrough(emptyKey);
-        t.scanThrough(firstKey);
-    }
+    t.scanThrough(emptyKey);
+    t.scanThrough(firstKey);
 
     std::cout << "runTestMixed PASSED" << std::endl;
 }
@@ -482,7 +446,82 @@ int main() {
         runTest(data);
         runTestReverse(data);
         runTestZickZack(data);
-        runTestMixed(data,true);
+        runTestMixed(data);
+    }
+
+    if (getenv("BYTE")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INT")); // Use number of entries from INT
+        uint16_t byteSize = atof(getenv("BYTE"));
+        
+        vector<uint8_t> singleBytes;
+        for (uint8_t i = 0; singleBytes.size() <= n + 1001; i++) {
+            singleBytes.push_back(i);
+        }
+        std::random_shuffle(singleBytes.begin(), singleBytes.end());
+
+        vector<uint64_t> randomIndex;
+        for(uint64_t i = 0; i < n; i++) {
+            randomIndex.push_back(i);
+        }
+        std::random_shuffle(randomIndex.begin(), randomIndex.end());
+
+        for (uint64_t i = 0; i < n; i++) {
+            vector<uint8_t> key;
+            for (uint16_t j = 0; j < byteSize; j++) {
+                key.push_back(singleBytes.at(randomIndex.at(i) + j));
+            }
+            data.push_back(key);
+        }
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
+        runTestReverse(data);
+        runTestZickZack(data);
+        runTestMixed(data);
+    }
+
+    if (getenv("VARIABLEBYTE")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("VARIABLEBYTE"));
+
+        uint16_t keyMaxByteSize = 1000;
+        uint16_t bigKeyByteSizeIterations = 0; // Number of iterations for keys over 500 Byte to focus mostly on keys under 500 byte
+        vector<uint16_t> keyByteSizes;
+        for (int j = 0; j < bigKeyByteSizeIterations; j++) {
+            for (uint16_t i = 0; i <= keyMaxByteSize && i < n; i++) {
+                keyByteSizes.push_back(i);
+            }
+        }
+        while(keyByteSizes.size() < n) {
+            for (uint16_t i = 0; i <= 500 && keyByteSizes.size() < n; i++) {
+                keyByteSizes.push_back(i);
+            }
+        }
+        vector<uint8_t> singleBytes;
+        for (uint8_t i = 0; singleBytes.size() <= keyByteSizes.size() + 1001; i++) {
+            singleBytes.push_back(i);
+        }
+        std::random_shuffle(singleBytes.begin(), singleBytes.end());
+
+        vector<uint64_t> randomIndex;
+        for(uint64_t i = 0; i < keyByteSizes.size(); i++) {
+            randomIndex.push_back(i);
+        }
+        std::random_shuffle(randomIndex.begin(), randomIndex.end());
+
+        for (uint64_t i = 0; i < keyByteSizes.size(); i++) {
+            vector<uint8_t> key;
+            for (uint16_t j = 0; j < keyByteSizes.at(i); j++) {
+                key.push_back(singleBytes.at(randomIndex.at(i) + j));
+            }
+            data.push_back(key);
+        }
+        runTest(data);
+        runTestReverse(data);
+        runTestZickZack(data);
+        runTestMixed(data);
     }
 
     if (getenv("LONG1")) {
@@ -500,7 +539,7 @@ int main() {
         runTest(data);
         runTestReverse(data);
         runTestZickZack(data);
-        runTestMixed(data,true);
+        runTestMixed(data);
     }
 
     if (getenv("LONG2")) {
@@ -516,7 +555,7 @@ int main() {
         //runPerformanceTestMixed(data, perf);
         //runPerformanceTestLookup(data, perf);
         runTest(data);
-        runTestMixed(data,true);
+        runTestMixed(data);
     }
 
     if (getenv("FILE")) {
@@ -530,7 +569,7 @@ int main() {
         //runPerformanceTestMixed(data, perf);
         //runPerformanceTestLookup(data, perf);
         runTest(data);
-        runTestMixed(data,true);
+        runTestMixed(data);
     }
     return 0;
 }

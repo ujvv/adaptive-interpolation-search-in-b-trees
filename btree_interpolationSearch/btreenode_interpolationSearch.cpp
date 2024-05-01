@@ -2,6 +2,8 @@
 #include "utils.hpp"
 
 #include <iostream>
+#include <cmath>
+#include <vector>
 
 BTreeNodeInterpolationSearch::BTreeNodeInterpolationSearch(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
   uint16_t minLength = std::min(lowerFenceKey.size(), upperFenceKey.size());
@@ -104,8 +106,21 @@ bool BTreeNodeInterpolationSearch::keySmallerEqualThanAtPosition(uint16_t positi
   return key <= getShortenedKey(position);
 }
 
+bool BTreeNodeInterpolationSearch::keySmallerThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key) {
+  auto slot = reinterpret_cast<PageSlotInterpolationSearch *>(content + position * sizeof(PageSlotInterpolationSearch));
+  if (keyHead < slot->keyHead) {
+    return true;
+  }
+  if (keyHead > slot->keyHead) {
+    return false;
+  }
+
+  // The key heads are equal, so we need to compare the full keys
+  return key < getShortenedKey(position);
+}
+
 uint16_t BTreeNodeInterpolationSearch::getEntryIndexByKey(std::span<uint8_t> key) {
-  // Do a binary search to find the index of the entry where the key is / should contained
+  // Do a interpolation search to find the index of the entry where the key is / should contained
   // This function assumes that the key shares the same prefix as all the keys in the node
 
   std::span<uint8_t> keyWithoutPrefix = key.subspan(prefixLen);
@@ -118,20 +133,103 @@ uint16_t BTreeNodeInterpolationSearch::getEntryIndexByKey(std::span<uint8_t> key
     return numKeys;
   }
 
-  // Simple InterpolationSearch:
-  uint16_t low = 0;
-  uint16_t high = numKeys - 1;
 
-  while (low <= high && keyLargerThanAtPosition(low, keyHead, keyWithoutPrefix) && keySmallerEqualThanAtPosition(high, keyHead, keyWithoutPrefix)) {
-    if (low == high) {
+  uint16_t left = 0;
+  uint16_t right = numKeys - 1;
+  uint16_t childIndex = right;
+  uint16_t next; // Interpolation "guessed" key-index
+
+  while (left < right) {
+    // Interpolation Search Calculation:
+    // next = (key - getKey(left)) / (getKey(right) - getKey(left)) * (right - left) + left
+    
+    // Dividend Calculation
+    std::vector<int> dividendVector;
+    dividendVector.reserve(6); // Extracting Max 6 bytes out of key for Interpolation Calculation
+    int dividendBytes = 0; // Counts total amount of bytes of byte-key subtract
+    auto difference = keyWithoutPrefix.size() - getShortenedKey(left).size();
+    for (int i = 0; i < difference && dividendVector.size() < 6; i++) {
+      if (keyWithoutPrefix[i] == 0 && dividendVector.size() == 0) {
+        continue; // Skip the bytes at the beginning that are zero
+      }
+      if (dividendVector.size() == 0) {
+        // Save total byte size of dividend at first highest byte where the entry is not zero
+        dividendBytes = keyWithoutPrefix.size() - i;
+      }
+      dividendVector.push_back(keyWithoutPrefix[i]);
     }
-  }
-  for (uint16_t pos = 0; pos < numKeys; pos++) {
-    if (keySmallerEqualThanAtPosition(pos, keyHead, keyWithoutPrefix)) {
-      return pos;
+    for (int i = 0; dividendVector.size() < 6 && i < getShortenedKey(left).size(); i++) {
+        int value = static_cast<int>(keyWithoutPrefix[i + difference]) - static_cast<int>(getShortenedKey(left)[i]);
+        if (dividendVector.size() == 0 && value == 0) {
+          continue; // Skip the bytes at the beginning that are zero
+        }
+        if (dividendVector.size() == 0) {
+          // Edge Case:
+          if (value < 0) {
+            return left;
+          }
+          // Save total byte size of dividend at first highest byte where the subtract is not zero
+          dividendBytes = getShortenedKey(left).size() - i;
+        }
+        dividendVector.push_back(value);
     }
+    uint64_t dividendDecimal = 0;
+    for (int i = 0; i < dividendVector.size(); i++) {
+      dividendDecimal += dividendVector.at(i) * std::pow(256, 6 - i - (6 - dividendVector.size()));
+    }
+
+    // Divisor Calculation
+    std::vector<uint8_t> divisorVector;
+    divisorVector.reserve(6); // Extracting Max 6 bytes out of key for Interpolation Calculation
+    int divisorBytes = 0; // Counts total amount of bytes of byte-key subtract
+    difference = getShortenedKey(right).size() - getShortenedKey(left).size();
+    for (int i = 0; i < difference && divisorVector.size() < 6; i++) {
+      if (getShortenedKey(right)[i] == 0 && divisorVector.size() == 0) {
+        continue; // Skip the bytes at the beginning that are zero
+      }
+      if (divisorVector.size() == 0) {
+        // Save total byte size of divisor at first highest byte where the entry is not zero
+        divisorBytes = getShortenedKey(right).size() - i;
+      }
+      divisorVector.push_back(getShortenedKey(right)[i]);
+    }
+    for (int i = 0; divisorVector.size() < 6 && i < getShortenedKey(left).size(); i++) {
+        int value = static_cast<int>(getShortenedKey(right)[i + difference]) - static_cast<int>(getShortenedKey(left)[i]);
+        if (divisorVector.size() == 0 && value == 0) {
+          continue; // Skip the bytes at the beginning that are zero
+        }
+        if (divisorVector.size() == 0) {
+          // Save total byte size of divisor at first highest byte where the subtract is not zero
+          divisorBytes = getShortenedKey(left).size() - i;
+        }
+        divisorVector.push_back(value);
+    }
+    uint64_t divisorDecimal = 0;
+    for (int i = 0; i < divisorVector.size(); i++) {
+      divisorDecimal += divisorVector.at(i) * std::pow(256, 6 - i - (6 - divisorVector.size()));
+    }
+
+    // Final Interpolation Calculations
+    double quotient = static_cast<double>(dividendDecimal) / static_cast<double>(divisorDecimal);
+    quotient = quotient / std::pow(256, (divisorBytes - divisorVector.size()) - (dividendBytes - dividendVector.size())); // Adjust for possible byte size difference between divisor and dividend keys
+    if (quotient > 1) {
+      return childIndex;
+    }
+    next = quotient * (right - left) + left;
+
+    // Compare new Interpolation next index with key
+    if (keySmallerEqualThanAtPosition(next, keyHead, keyWithoutPrefix)) {
+      childIndex = next;
+      right = next - 1;
+    } else {
+      // childIndex = next + 1;
+      left = next + 1;
+    }
+  } // end while
+  if (left == right && keySmallerEqualThanAtPosition(left, keyHead, keyWithoutPrefix)) {
+    return left;
   }
-  return numKeys;
+  return childIndex;
 }
 
 void BTreeNodeInterpolationSearch::compact() {
