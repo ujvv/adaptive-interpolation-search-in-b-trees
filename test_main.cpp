@@ -21,7 +21,7 @@ void runTest(vector<vector<uint8_t>> &keys) {
         for (uint64_t i = 0, j = 0; i < count; ++i, j++) {
             t.insert(keys[i], keys[i]);
             //if (i > 24000 && j >= 100) {
-                t.scanThrough(emptyKey);
+            //t.scanThrough(emptyKey);
             //    j = 0;
             //}
         }
@@ -214,8 +214,15 @@ void runTestMixed(vector<vector<uint8_t>> &keys) {
     std::random_shuffle(keys.begin(), keys.end());
     
     // Insert all
-    for (uint64_t i = 0; i < count; ++i) {
+    for (uint64_t i = 0, j = 0; i < count; ++i, j++) {
         t.insert(keys[i], keys[i]);
+        /*if (i > 24000 && j >= 1000) {
+            t.scanThrough(emptyKey);
+            j = 0;
+        }*/
+        if (count == 100) {
+            t.scanThrough(emptyKey);
+        }
     }
 
     // Check Tree Structure
@@ -253,18 +260,23 @@ void runTestMixed(vector<vector<uint8_t>> &keys) {
 }
 
 void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
+    std::cout << "PerformanceTestStandard START" << std::endl;
+    
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformanceBinarySearch t_binarySearch{};
-    TesterPerformanceTempl t_templ{};
     TesterPerformanceMap t_map;
+    TesterPerformanceTempl t_templ{};
+    TesterPerformanceBinarySearch t_binarySearch{};
+    TesterPerformanceBinarySearchHints t_binarySearchHints{};
+    TesterPerformanceLinearSearch t_linearSearch{};
+    TesterPerformanceInterpolationSearch t_interpolationSearch{};
 
     uint64_t count = keys.size();
 
     {
-        PerfEventBlock peb(perf,count,{"insert BinarySearch"});
+        PerfEventBlock peb(perf,count,{"insert stdMap"});
         for (uint64_t i = 0; i < count; ++i) {
-            t_binarySearch.insert(keys[i], keys[i]);
+            t_map.insert(keys[i], keys[i]);
         }
     }
     {
@@ -273,16 +285,36 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.insert(keys[i], keys[i]);
         }
     }
-    /*{
-        PerfEventBlock peb(perf,count,{"insert stdMap"});
-        for (uint64_t i = 0; i < count; ++i) {
-            t_map.insert(keys[i], keys[i]);
-        }
-    }*/
     {
-        PerfEventBlock peb(perf,count,{"lookup BinarySearch"});
+        PerfEventBlock peb(perf,count,{"insert BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t_binarySearch.lookup(keys[i]);
+            t_binarySearch.insert(keys[i], keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"insert BinarySearch with Hints"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchHints.insert(keys[i], keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"insert LinearSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.insert(keys[i], keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"insert InterpolationSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.insert(keys[i], keys[i]);
+        }
+    }
+
+
+    {
+        PerfEventBlock peb(perf,count,{"lookup stdMap"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_map.lookup(keys[i]);
         }
     }
     {
@@ -291,16 +323,36 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.lookup(keys[i]);
         }
     }
-    /*{
-        PerfEventBlock peb(perf,count,{"lookup stdMap"});
-        for (uint64_t i = 0; i < count; ++i) {
-            t_map.lookup(keys[i]);
-        }
-    }*/
     {
-        PerfEventBlock peb(perf,count,{"remove BinarySearch"});
+        PerfEventBlock peb(perf,count,{"lookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t_binarySearch.remove(keys[i]);
+            t_binarySearch.lookup(keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"lookup BinarySearch with Hints"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchHints.lookup(keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"lookup LinearSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.lookup(keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"lookup InterpolationSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.lookup(keys[i]);
+        }
+    }
+
+
+    {
+        PerfEventBlock peb(perf,count,{"remove stdMap"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templ.remove(keys[i]);
         }
     }
     {
@@ -309,19 +361,43 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.remove(keys[i]);
         }
     }
-    /*{
-        PerfEventBlock peb(perf,count,{"remove stdMap"});
+    {
+        PerfEventBlock peb(perf,count,{"remove BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
-            t_templ.remove(keys[i]);
+            t_binarySearch.remove(keys[i]);
         }
-    }*/
+    }
+    {
+        PerfEventBlock peb(perf,count,{"remove BinarySearch with Hints"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchHints.remove(keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"remove LinearSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearch.remove(keys[i]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"remove InterpolationSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.remove(keys[i]);
+        }
+    }
+    std::cout << "PerformanceTestStandard END" << std::endl;
 }
 
 void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
+    std::cout << "PerformanceTestMixed START" << std::endl;
+    
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceTempl t_templ{};
+    TesterPerformanceBinarySearch t_binarySearch{};
+    TesterPerformanceBinarySearchHints t_binarySearchHints{};
+    TesterPerformanceLinearSearch t_linearSearch{};
+    TesterPerformanceInterpolationSearch t_interpolationSearch{};
 
     uint64_t count = keys.size();
 
@@ -344,17 +420,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     std::random_shuffle(index4.begin(), index4.end());
 
     {
-        PerfEventBlock peb(perf,count,{"PerformanceTestMixed BinarySearch"});
-        for (uint64_t i = 0; i < count; ++i) {
-            t_binarySearch.insert(keys[i], keys[i]);
-        }
-        for (uint64_t i = 0; i < count; ++i) {
-            t_binarySearch.lookup(keys[index2[i]]);
-            t_binarySearch.remove(keys[index3[i]]);
-            t_binarySearch.insert(keys[index3[i]], keys[index4[i]]);
-        }
-    }
-    {
         PerfEventBlock peb(perf,count,{"PerformanceTestMixed Template"});
         for (uint64_t i = 0; i < count; ++i) {
             t_templ.insert(keys[i], keys[i]);
@@ -364,14 +429,64 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.remove(keys[index3[i]]);
             t_templ.insert(keys[index3[i]], keys[index4[i]]);
         }
-    }    
+    }  
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestMixed BinarySearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearch.insert(keys[i], keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearch.lookup(keys[index2[i]]);
+            t_binarySearch.remove(keys[index3[i]]);
+            t_binarySearch.insert(keys[index3[i]], keys[index4[i]]);
+        }
+    }  
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestMixed BinarySearch with Hints"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchHints.insert(keys[i], keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchHints.lookup(keys[index2[i]]);
+            t_binarySearchHints.remove(keys[index3[i]]);
+            t_binarySearchHints.insert(keys[index3[i]], keys[index4[i]]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestMixed LinearSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.insert(keys[i], keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.lookup(keys[index2[i]]);
+            t_linearSearch.remove(keys[index3[i]]);
+            t_linearSearch.insert(keys[index3[i]], keys[index4[i]]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestMixed InterpolationSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.insert(keys[i], keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.lookup(keys[index2[i]]);
+            t_interpolationSearch.remove(keys[index3[i]]);
+            t_interpolationSearch.insert(keys[index3[i]], keys[index4[i]]);
+        }
+    }
+    std::cout << "PerformanceTestMixed END" << std::endl;
 }
 
 void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
+    std::cout << "PerformanceTestLookup START" << std::endl;
+    
     std::random_shuffle(keys.begin(), keys.end());
     
-    TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceTempl t_templ{};
+    TesterPerformanceBinarySearch t_binarySearch{};
+    TesterPerformanceBinarySearchHints t_binarySearchHints{};
+    TesterPerformanceLinearSearch t_linearSearch{};
+    TesterPerformanceInterpolationSearch t_interpolationSearch{};
 
     uint64_t count = keys.size();
 
@@ -392,7 +507,18 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_binarySearch.insert(keys[i], keys[i]);
             t_templ.insert(keys[i], keys[i]);
         }
-    
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup Template"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templ.lookup(keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templ.lookup(keys[iteration2[i]]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templ.lookup(keys[iteration3[i]]);
+        }
+    }
     {
         PerfEventBlock peb(perf,count,{"PerformanceTestLookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -406,16 +532,74 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
         }
     }
     {
-        PerfEventBlock peb(perf,count,{"PerformanceTestLookup BinarySearch"});
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup BinarySearch with Hints"});
         for (uint64_t i = 0; i < count; ++i) {
-            t_templ.lookup(keys[i]);
+            t_binarySearchHints.lookup(keys[i]);
         }
         for (uint64_t i = 0; i < count; ++i) {
-            t_templ.lookup(keys[iteration2[i]]);
+            t_binarySearchHints.lookup(keys[iteration2[i]]);
         }
         for (uint64_t i = 0; i < count; ++i) {
-            t_templ.lookup(keys[iteration3[i]]);
+            t_binarySearchHints.lookup(keys[iteration3[i]]);
         }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup LinearSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.lookup(keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.lookup(keys[iteration2[i]]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_linearSearch.lookup(keys[iteration3[i]]);
+        }
+    }
+    {
+        PerfEventBlock peb(perf,count,{"PerformanceTestLookup InterpolationSearch"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.lookup(keys[i]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.lookup(keys[iteration2[i]]);
+        }
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearch.lookup(keys[iteration3[i]]);
+        }
+    }
+    std::cout << "PerformanceTestLookup END" << std::endl;
+}
+
+void verifyBTreeNodeSizes() {
+    Tester t{};
+
+    try {
+        if (t.btree->root->CONTENT_SIZE != t.btreeTemplate->root->CONTENT_SIZE) {
+            std::cout << "Varying Node Sizes in Tester. Template Content Size: " << t.btreeTemplate->root->CONTENT_SIZE << ", Tested BTree Content Size: " << t.btreeTemplate->root->CONTENT_SIZE << std::endl;
+        }
+    } catch(...) {
+        // If btree_plain is being selected as the tested Btree calling root->CONTENT_SIZE will not work
+        std::cout << "btree_plain being tested" << std::endl;
+    }
+
+    TesterPerformanceTempl t_templ{};
+    TesterPerformanceBinarySearch t_binarySearch{};
+    TesterPerformanceBinarySearchHints t_binarySearchHints{};
+    TesterPerformanceLinearSearch t_linearSearch{};
+    TesterPerformanceInterpolationSearch t_interpolationSearch{};
+
+    uint32_t template_ContentSize = t_templ.btreeTemplate->root->CONTENT_SIZE;
+    uint32_t binarySearch_ContentSize = t_binarySearch.btreeBinarySearch->root->CONTENT_SIZE;
+    uint32_t binarySearchHints_ContentSize = t_binarySearchHints.btreeBinarySearchHints->root->CONTENT_SIZE;
+    uint32_t linearSearch_ContentSize = t_linearSearch.btreeLinearSearch->root->CONTENT_SIZE;
+    uint32_t interpolationSearch_ContentSize = t_interpolationSearch.btreeInterpolationSearch->root->CONTENT_SIZE;
+
+    if (binarySearch_ContentSize != binarySearchHints_ContentSize || binarySearch_ContentSize != linearSearch_ContentSize || binarySearch_ContentSize != interpolationSearch_ContentSize) {
+        std::cout << "BTree Node Size Inconsistency. Content Sizes:   Template=" << template_ContentSize << ", BinarySearch=" << binarySearch_ContentSize << ", BinarySearchHints=" << binarySearchHints_ContentSize << ", LinearSearch=" << linearSearch_ContentSize << ", InterpolationSearch=" << interpolationSearch_ContentSize << std::endl;
+    } else if (binarySearch_ContentSize != template_ContentSize) {
+        std::cout << "BTreeTemplate has a different Node Size. BTreeTemplate Content Size: " << template_ContentSize << ", other Btree Content Sizes: " << binarySearch_ContentSize << std::endl;
+    } else {
+        std::cout << "BTrees CONTENT_SIZE = " << template_ContentSize << std::endl;
     }
 }
 
@@ -426,6 +610,9 @@ std::vector<uint8_t> stringToVector(const std::string &str) {
 int main() {
     srand(42);
     PerfEvent perf;
+
+    verifyBTreeNodeSizes();
+
     if (getenv("INT")) {
         vector<vector<uint8_t>> data;
         vector<uint64_t> v;
@@ -518,6 +705,9 @@ int main() {
             }
             data.push_back(key);
         }
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
         runTest(data);
         runTestReverse(data);
         runTestZickZack(data);

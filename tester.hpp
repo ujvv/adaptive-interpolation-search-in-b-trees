@@ -33,7 +33,7 @@ struct Tester {
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_interpolationSearch()), btreeTemplate(btree_create_template()), stdMap()  {std::cout << "BTreeTemplate Nodes CONTENT_SIZE: " << btreeTemplate->root->CONTENT_SIZE << ", Tested BTree Nodes CONTENT_SIZE: " << btree->root->CONTENT_SIZE << std::endl;}
+    Tester() : btree(btree_create_interpolationSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
 
     ~Tester() { btree_destroy_interpolationSearch(btree); btree_destroy_template(btreeTemplate); }
 
@@ -181,7 +181,7 @@ struct TesterPerformanceTempl {
 
     BTreeTemplate *btreeTemplate;
 
-    TesterPerformanceTempl() : btreeTemplate(btree_create_template())  {std::cout << "BTreeTemplate Nodes CONTENT_SIZE: " << btreeTemplate->root->CONTENT_SIZE << std::endl;}
+    TesterPerformanceTempl() : btreeTemplate(btree_create_template())  {}
 
     ~TesterPerformanceTempl() { btree_destroy_template(btreeTemplate); }
 
@@ -203,7 +203,7 @@ struct TesterPerformanceBinarySearch {
 
     BTreeBinarySearch *btreeBinarySearch;
 
-    TesterPerformanceBinarySearch() : btreeBinarySearch(btree_create_binarySearch())  {std::cout << "BTree with BinarySearch Nodes CONTENT_SIZE: " << btreeBinarySearch->root->CONTENT_SIZE << std::endl;}
+    TesterPerformanceBinarySearch() : btreeBinarySearch(btree_create_binarySearch())  {}
 
     ~TesterPerformanceBinarySearch() { btree_destroy_binarySearch(btreeBinarySearch); }
 
@@ -225,7 +225,7 @@ struct TesterPerformanceBinarySearchHints {
 
     BTreeBinarySearchHints *btreeBinarySearchHints;
 
-    TesterPerformanceBinarySearchHints() : btreeBinarySearchHints(btree_create_binarySearchHints())  {std::cout << "BTree with BinarySearch and Hints Nodes CONTENT_SIZE: " << btreeBinarySearchHints->root->CONTENT_SIZE << std::endl;}
+    TesterPerformanceBinarySearchHints() : btreeBinarySearchHints(btree_create_binarySearchHints())  {}
 
     ~TesterPerformanceBinarySearchHints() { btree_destroy_binarySearchHints(btreeBinarySearchHints); }
 
@@ -247,7 +247,7 @@ struct TesterPerformanceLinearSearch {
 
     BTreeLinearSearch *btreeLinearSearch;
 
-    TesterPerformanceLinearSearch() : btreeLinearSearch(btree_create_linearSearch())  {std::cout << "BTree with LinearSearch Nodes CONTENT_SIZE: " << btreeLinearSearch->root->CONTENT_SIZE << std::endl;}
+    TesterPerformanceLinearSearch() : btreeLinearSearch(btree_create_linearSearch())  {}
 
     ~TesterPerformanceLinearSearch() { btree_destroy_linearSearch(btreeLinearSearch); }
 
@@ -269,7 +269,7 @@ struct TesterPerformanceInterpolationSearch {
 
     BTreeInterpolationSearch *btreeInterpolationSearch;
 
-    TesterPerformanceInterpolationSearch() : btreeInterpolationSearch(btree_create_interpolationSearch())  {std::cout << "BTree with InterpolationSearch Nodes CONTENT_SIZE: " << btreeInterpolationSearch->root->CONTENT_SIZE << std::endl;}
+    TesterPerformanceInterpolationSearch() : btreeInterpolationSearch(btree_create_interpolationSearch())  {}
 
     ~TesterPerformanceInterpolationSearch() { btree_destroy_interpolationSearch(btreeInterpolationSearch); }
 

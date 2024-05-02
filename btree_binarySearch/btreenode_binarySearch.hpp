@@ -9,7 +9,8 @@
 #include <string>
 
 
-constexpr uint32_t NODE_SIZE_BINARYSEARCH = 4096;
+// constexpr uint32_t NODE_SIZE_BINARYSEARCH = 4096;
+constexpr uint32_t NODE_SIZE_BINARYSEARCH = 8192;
 
 // Forward declarations
 class BTreeNodeBinarySearch;

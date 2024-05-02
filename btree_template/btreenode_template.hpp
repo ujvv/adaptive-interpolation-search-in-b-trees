@@ -9,7 +9,9 @@
 #include <string>
 
 
-constexpr uint32_t NODE_SIZE_TEMPLATE = 4096;
+// constexpr uint32_t NODE_SIZE_TEMPLATE = 4096;
+constexpr uint32_t NODE_SIZE_TEMPLATE = 8192;
+
 
 // Forward declarations
 class BTreeNodeTemplate;
