@@ -9,7 +9,7 @@
 #include <string>
 
 
-// constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCH = 4096;
+//constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCH = 4096;
 constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCH = 8192;
 
 

@@ -1,4 +1,4 @@
-all: btree-optimized_interpolationSearch.a
+all: btree_interpolationSearch.a
 
 btree_interpolationSearch.a: btree_interpolationSearch.o btreenode_interpolationSearch.o utils_interpolationSearch.o
 	rm -f btree_interpolationSearch.a
@@ -21,7 +21,7 @@ btreenode-optimized_interpolationSearch.o: btreenode_interpolationSearch.cpp btr
 	clang++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o $@ -O3 -DNDEBUG
 
 utils_interpolationSearch.o: utils.hpp
-	clang++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
+	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 clean:
 	rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o

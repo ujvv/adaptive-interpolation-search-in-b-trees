@@ -144,104 +144,21 @@ uint16_t BTreeNodeInterpolationSearch::getEntryIndexByKey(std::span<uint8_t> key
     // next = (key - getKey(left)) / (getKey(right) - getKey(left)) * (right - left) + left
     
     // Dividend Calculation
-    std::vector<int> dividendVector;
-    dividendVector.reserve(6); // Extracting Max 6 bytes out of key for Interpolation Calculation
-    int dividendLeadingZeros = 0; // Sum of the leading zeros of the byte sequence after Subtraction
-    for (int i = 0; dividendVector.size() < 6 && i < std::min(getShortenedKey(left).size(), keyWithoutPrefix.size()); i++) {
-        int value = static_cast<int>(keyWithoutPrefix[i]) - static_cast<int>(getShortenedKey(left)[i]);
-        if (dividendVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (dividendVector.size() == 0) {
-          if (value < 0) { // if leftKey > key
-            return left; // means correct index was found in previous iteration
-          }
-          dividendLeadingZeros = i;
-        }
-        dividendVector.push_back(value);
-    }
-    if (getShortenedKey(left).size() < keyWithoutPrefix.size()) {
-      for (int i = std::min(getShortenedKey(left).size(), keyWithoutPrefix.size()); dividendVector.size() < 6 && i < keyWithoutPrefix.size(); i++) {
-        int value = static_cast<int>(keyWithoutPrefix[i]);
-        if (dividendVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (dividendVector.size() == 0) {
-          if (value < 0) { // if leftKey > key
-            return left;
-          }
-          dividendLeadingZeros = i;
-        }
-        dividendVector.push_back(value);
-      }
-    } else if(getShortenedKey(left).size() > keyWithoutPrefix.size()) {
-      for (int i = std::min(getShortenedKey(left).size(), keyWithoutPrefix.size()); dividendVector.size() < 6 && i < getShortenedKey(left).size(); i++) {
-        int value = 0 - static_cast<int>(getShortenedKey(left)[i]);
-        if (dividendVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (dividendVector.size() == 0) {
-          if (value < 0) { // if leftKey > key
-            return left;
-          }
-          dividendLeadingZeros = i;
-        }
-        dividendVector.push_back(value);
-      }
-    }
-    uint64_t dividendDecimal = 0;
-    for (int i = 0; i < dividendVector.size(); i++) {
-      dividendDecimal += dividendVector.at(i) * std::pow(256, 6 - i);
+    double dividendDecimal = static_cast<double>(keyHead) - static_cast<double>(getKeyHead(getShortenedKey(left)));
+
+    if (dividendDecimal < 0) { // if leftKey > key
+      return left; // means correct index was found in previous iteration
     }
 
     // Divisor Calculation
-    std::vector<uint8_t> divisorVector;
-    divisorVector.reserve(6); // Extracting Max 6 bytes out of key for Interpolation Calculation
-    int divisorLeadingZeros = 0; // Sum of the leading zeros of the byte sequence after Subtraction
-    for (int i = 0; divisorVector.size() < 6 && i < std::min(getShortenedKey(left).size(), getShortenedKey(right).size()); i++) {
-        int value = static_cast<int>(getShortenedKey(right)[i]) - static_cast<int>(getShortenedKey(left)[i]);
-        if (divisorVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (divisorVector.size() == 0) {
-          divisorLeadingZeros = i;
-        }
-        divisorVector.push_back(value);
-    }
-    if (getShortenedKey(left).size() < getShortenedKey(right).size()) {
-      for (int i = std::min(getShortenedKey(left).size(), getShortenedKey(right).size()); divisorVector.size() < 6 && i < getShortenedKey(right).size(); i++) {
-        int value = static_cast<int>(getShortenedKey(right)[i]);
-        if (divisorVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (divisorVector.size() == 0) {
-          divisorLeadingZeros = i;
-        }
-        divisorVector.push_back(value);
-      }
-    } else if(getShortenedKey(left).size() > getShortenedKey(right).size()) {
-      for (int i = std::min(getShortenedKey(left).size(), getShortenedKey(right).size()); divisorVector.size() < 6 && i < getShortenedKey(left).size(); i++) {
-        int value = 0 - static_cast<int>(getShortenedKey(left)[i]);
-        if (divisorVector.size() == 0 && value == 0) {
-          continue; // Skip the bytes at the beginning that are zero
-        }
-        if (divisorVector.size() == 0) {
-          divisorLeadingZeros = i;
-        }
-        divisorVector.push_back(value);
-      }
-    }
-    uint64_t divisorDecimal = 0;
-    for (int i = 0; i < divisorVector.size(); i++) {
-      divisorDecimal += divisorVector.at(i) * std::pow(256, 6 - i);
-    }
+    double divisorDecimal = static_cast<double>(getKeyHead(getShortenedKey(right))) - static_cast<double>(getKeyHead(getShortenedKey(left)));
+
     if (divisorDecimal == 0) {
       return childIndex; // Edge Case: When getShortenedKey(1) is 0
     }
 
     // Final Interpolation Calculations
-    double quotient = static_cast<double>(dividendDecimal) / static_cast<double>(divisorDecimal);
-    quotient = quotient / std::pow(256, dividendLeadingZeros - divisorLeadingZeros); // Adjust for possible byte shift between divisor and dividend vector (caused by leading zeros from subtraction)
+    double quotient = dividendDecimal / divisorDecimal;
     if (quotient > 1) {
       return childIndex;
     }

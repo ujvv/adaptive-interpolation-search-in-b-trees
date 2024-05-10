@@ -12,15 +12,15 @@
             "environment": [
                 {
                     "name": "INT",
-                    "value": "100000"
+                    "value": "0"
                 },
                 {
                     "name": "BYTE",
-                    "value": "500"
+                    "value": "468"
                 },
                 {
                     "name": "VARIABLEBYTE",
-                    "value": "100"
+                    "value": "123000"
                 },
                 {
                     "name": "LONG1",
@@ -30,10 +30,10 @@
                     "name": "LONG2",
                     "value": "512"
                 },
-                {
+                /*{
                     "name": "FILE",
                     "value": "data/urls"
-                }
+                }*/
             ],
             "externalConsole": false,
             "MIMode": "gdb",

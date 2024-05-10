@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATE_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATE_HPP
+#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_BTREENODE_INTERPOLATIONSEARCH_HPP
+#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_BTREENODE_INTERPOLATIONSEARCH_HPP
 
 #include <cstdint>
 #include <cstring>
@@ -9,66 +9,66 @@
 #include <string>
 
 
-constexpr uint32_t NODE_SIZE_TEMPLATE = 4096;
-// constexpr uint32_t NODE_SIZE_TEMPLATE = 8192;
+// constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCH = 4096;
+constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCH = 8192;
 
 
 // Forward declarations
-class BTreeNodeTemplate;
-class BTreeLeafNodeTemplate;
+class BTreeNodeInterpolationSearch;
+class BTreeLeafNodeInterpolationSearch;
 
-struct PageSlotTemplate {
+struct PageSlotInterpolationSearch {
   uint16_t offset;      // Offset on the heap to the key-value entry
   uint16_t keyLength;   // Length of the key on the heap
   uint16_t valueLength; // Length of the value on the heap
   uint32_t keyHead;     // First 4 bytes of the key
 } __attribute__((packed));
 
-struct FenceKeySlotTemplate {
+struct FenceKeySlotInterpolationSearch {
   uint16_t offset; // Offset of the key on the heap
   uint16_t len;    // Length of the key on the heap
 };
 
-struct BTreeNodeHeaderTemplate {
+struct BTreeNodeHeaderInterpolationSearch {
   union {
-    BTreeNodeTemplate *rightMostChildTemplate;   // Pointer to the rightmost child if it's a inner node
-    BTreeLeafNodeTemplate *nextLeafNodeTemplate; // Pointer to the next leaf node if it's a leaf node
+    BTreeNodeInterpolationSearch *rightMostChildInterpolationSearch;   // Pointer to the rightmost child if it's a inner node
+    BTreeLeafNodeInterpolationSearch *nextLeafNodeInterpolationSearch; // Pointer to the next leaf node if it's a leaf node
   };
   bool isLeaf;
   uint16_t numKeys = 0;
   uint16_t spaceUsed = 0;
-  uint16_t freeOffset = NODE_SIZE_TEMPLATE - sizeof(BTreeNodeHeaderTemplate);
+  uint16_t freeOffset = NODE_SIZE_INTERPOLATIONSEARCH - sizeof(BTreeNodeHeaderInterpolationSearch);
   uint16_t prefixLen = 0;
   uint16_t prefixOffset = 0;
-  FenceKeySlotTemplate lowerFence = {0, 0};
-  FenceKeySlotTemplate upperFence = {0, 0};
+  FenceKeySlotInterpolationSearch lowerFence = {0, 0};
+  FenceKeySlotInterpolationSearch upperFence = {0, 0};
   std::array<uint32_t, 16> hints = {0};
 };
 
-class alignas(NODE_SIZE_TEMPLATE) BTreeNodeTemplate : public BTreeNodeHeaderTemplate {
+class alignas(NODE_SIZE_INTERPOLATIONSEARCH) BTreeNodeInterpolationSearch : public BTreeNodeHeaderInterpolationSearch {
 public:
-  friend class BTreeTemplate;
+  friend class BTreeInterpolationSearch;
   friend class Tester;
-  static constexpr uint32_t CONTENT_SIZE = NODE_SIZE_TEMPLATE - sizeof(BTreeNodeHeaderTemplate);
+  static constexpr uint32_t CONTENT_SIZE = NODE_SIZE_INTERPOLATIONSEARCH - sizeof(BTreeNodeHeaderInterpolationSearch);
   uint8_t content[CONTENT_SIZE];
 
-  BTreeNodeTemplate() = default;
+  BTreeNodeInterpolationSearch() = default;
 
-  BTreeNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey);
+  BTreeNodeInterpolationSearch(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey);
 
   // Returns the key without the prefix at a given positon
   std::span<uint8_t> getShortenedKey(uint16_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
+    auto slot = reinterpret_cast<PageSlotInterpolationSearch *>(content + position * sizeof(PageSlotInterpolationSearch));
     return std::span<uint8_t>(content + slot->offset, slot->keyLength);
   }
 
   // Returns the full key at a given position
   std::vector<uint8_t> getFullKey(uint16_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
+    auto slot = reinterpret_cast<PageSlotInterpolationSearch *>(content + position * sizeof(PageSlotInterpolationSearch));
     std::vector<uint8_t> key(slot->keyLength + prefixLen);
 
     if (prefixLen > 0) {
-      std::memcpy(key.data(), content + lowerFence.offset, prefixLen);
+      std::memcpy(key.data(), content + prefixOffset, prefixLen);
     }
     if (slot->keyLength > 0) {
       std::memcpy(key.data() + prefixLen, content + slot->offset, slot->keyLength);
@@ -93,7 +93,7 @@ private:
 
   // Inserts the given key and value into the subtree of this node
   // If the return value is not empty, it contains the new child and the splitkey which needs to be inserted in the caller
-  std::optional<std::pair<BTreeNodeTemplate *, std::vector<uint8_t>>> insert(std::span<uint8_t> key, std::span<uint8_t> value);
+  std::optional<std::pair<BTreeNodeInterpolationSearch *, std::vector<uint8_t>>> insert(std::span<uint8_t> key, std::span<uint8_t> value);
 
   // Removes the given key from the subtree of this node, returns true if the key was found and removed
   bool remove(std::span<uint8_t> key);
@@ -112,7 +112,7 @@ private:
   void insertEntry(uint16_t position, std::span<uint8_t> key, std::span<uint8_t> value);
 
   // Inserts the given key and childPointer at the given position
-  void insertEntry(uint16_t position, std::span<uint8_t> key, BTreeNodeTemplate *childPointer);
+  void insertEntry(uint16_t position, std::span<uint8_t> key, BTreeNodeInterpolationSearch *childPointer);
 
   // Erases the entry at the given position
   void eraseEntry(uint16_t position);
@@ -120,22 +120,16 @@ private:
   // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
   bool keySmallerEqualThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key);
 
+  // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
+  bool keySmallerThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key);
+
   // Checks if the given key is greater that the key at the given position, the given key should not contain the prefix
   bool keyLargerThanAtPosition(uint16_t position, uint32_t keyHead, std::span<uint8_t> key) { return !keySmallerEqualThanAtPosition(position, keyHead, key); }
 
-  // Recalculates the hints array
-  void updateHints();
-
   // Splits the node at the given position and returns the new node
-  BTreeNodeTemplate *splitNode(uint16_t splitIndex, std::span<uint8_t> splitKey);
+  BTreeNodeInterpolationSearch *splitNode(uint16_t splitIndex, std::span<uint8_t> splitKey);
 
-  // Returns the range of possible positions where the key with the given keyHead is located
-  std::pair<int, int> getHintRange(uint32_t keyHead);
-
-  std::vector<uint8_t> getFenceKey(FenceKeySlotTemplate &fenceKey) {
-    if (prefixLen == 0 || fenceKey.len == 0) {
-      return {};
-    }
+  std::vector<uint8_t> getFenceKey(FenceKeySlotInterpolationSearch &fenceKey) {
     std::vector<uint8_t> key(prefixLen + fenceKey.len);
     if (prefixLen > 0) {
       std::memcpy(key.data(), content + prefixOffset, prefixLen);
@@ -147,42 +141,42 @@ private:
   }
 };
 
-class BTreeInnerNodeTemplate : public BTreeNodeTemplate {
+class BTreeInnerNodeInterpolationSearch : public BTreeNodeInterpolationSearch {
 public:
-  BTreeInnerNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeTemplate(lowerFenceKey, upperFenceKey) { isLeaf = false; }
+  BTreeInnerNodeInterpolationSearch(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeInterpolationSearch(lowerFenceKey, upperFenceKey) { isLeaf = false; }
 
-  BTreeInnerNodeTemplate() { isLeaf = false; }
+  BTreeInnerNodeInterpolationSearch() { isLeaf = false; }
 
   // Returns the child pointer at the given position
-  BTreeNodeTemplate *getChild(uint16_t position) {
+  BTreeNodeInterpolationSearch *getChild(uint16_t position) {
     // the rightmost child is accessed
     if (position == numKeys) {
-      return rightMostChildTemplate;
+      return rightMostChildInterpolationSearch;
     }
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
-    BTreeNodeTemplate *pointer = nullptr;
-    std::memcpy(&pointer, content + slot->offset + slot->keyLength, sizeof(BTreeNodeTemplate *));
+    auto slot = reinterpret_cast<PageSlotInterpolationSearch *>(content + position * sizeof(PageSlotInterpolationSearch));
+    BTreeNodeInterpolationSearch *pointer = nullptr;
+    std::memcpy(&pointer, content + slot->offset + slot->keyLength, sizeof(BTreeNodeInterpolationSearch *));
     return pointer;
   }
 
   // Overwrites the child pointer with a new pointer at a given position, the key won't be changed
-  void overwriteChild(uint16_t position, BTreeNodeTemplate *newChild);
+  void overwriteChild(uint16_t position, BTreeNodeInterpolationSearch *newChild);
 };
 
-class BTreeLeafNodeTemplate : public BTreeNodeTemplate {
+class BTreeLeafNodeInterpolationSearch : public BTreeNodeInterpolationSearch {
 public:
-  BTreeLeafNodeTemplate(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeTemplate(lowerFenceKey, upperFenceKey) { isLeaf = true; }
+  BTreeLeafNodeInterpolationSearch(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeInterpolationSearch(lowerFenceKey, upperFenceKey) { isLeaf = true; }
 
-  BTreeLeafNodeTemplate() {
+  BTreeLeafNodeInterpolationSearch() {
     isLeaf = true;
-    nextLeafNodeTemplate = nullptr;
+    nextLeafNodeInterpolationSearch = nullptr;
   }
 
   // Returns the value at the given position
   std::span<uint8_t> getValue(uint16_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplate *>(content + position * sizeof(PageSlotTemplate));
+    auto slot = reinterpret_cast<PageSlotInterpolationSearch *>(content + position * sizeof(PageSlotInterpolationSearch));
     return std::span<uint8_t>(content + slot->offset + slot->keyLength, slot->valueLength);
   }
 };
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATE_HPP
+#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_BTREENODE_INTERPOLATIONSEARCH_HPP

@@ -1,4 +1,4 @@
-all:main
+all:main-optimized
 
 btree_template/btree_template.a: .FORCE
 	cd btree_template;make btree_template.a

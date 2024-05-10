@@ -1,4 +1,4 @@
-all: btree_finished.a
+all: btree-optimized_finished.a
 
 btree_finished.a: btree_finished.o
 	rm -f btree_finished.a

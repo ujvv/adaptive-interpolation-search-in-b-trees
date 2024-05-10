@@ -1,4 +1,4 @@
-all: btree_binarySearch.a
+all: btree-optimized_binarySearch.a
 
 btree_binarySearch.a: btree_binarySearch.o btreenode_binarySearch.o utils_binarySearch.o
 	rm -f btree_binarySearch.a
@@ -21,7 +21,7 @@ btreenode-optimized_binarySearch.o: btreenode_binarySearch.cpp btreenode_binaryS
 	clang++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o $@ -O3 -DNDEBUG
 
 utils_binarySearch.o: utils.hpp
-	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
+	clang++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 clean:
 	rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o
