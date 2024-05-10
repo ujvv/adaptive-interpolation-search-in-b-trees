@@ -16,6 +16,8 @@
 
 #include "btree_interpolationSearch/btree_interpolationSearch.hpp"
 #include "btree_interpolationSearch/btreenode_interpolationSearch.hpp"
+#include "btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.hpp"
+#include "btree_interpolationSearch_withKeyHeads/btreenode_interpolationSearchKeyHeads.hpp"
 
 #include "btree_plain_finished/btree.hpp"
 
@@ -27,20 +29,20 @@
 #include <iostream>
 
 struct Tester {
-    BTreeInterpolationSearch *btree;
+    BTreeInterpolationSearchKeyHeads *btree;
 
     BTreeTemplate *btreeTemplate;
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_interpolationSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
+    Tester() : btree(btree_create_interpolationSearchKeyHeads()), btreeTemplate(btree_create_template()), stdMap()  {}
 
-    ~Tester() { btree_destroy_interpolationSearch(btree); btree_destroy_template(btreeTemplate); }
+    ~Tester() { btree_destroy_interpolationSearchKeyHeads(btree); btree_destroy_template(btreeTemplate); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         stdMap[key] = value;
         
-        btree_insert_interpolationSearch(btree, key.data(), key.size(), value.data(), value.size());
+        btree_insert_interpolationSearchKeyHeads(btree, key.data(), key.size(), value.data(), value.size());
         btree_insert_template(btreeTemplate, key.data(), key.size(), value.data(), value.size());
     }
 
@@ -49,7 +51,7 @@ struct Tester {
         
         uint16_t lenOut = 0;
         uint16_t lenOutTemplate = 0;
-        uint8_t *value = btree_lookup_interpolationSearch(btree, key.data(), key.size(), lenOut);
+        uint8_t *value = btree_lookup_interpolationSearchKeyHeads(btree, key.data(), key.size(), lenOut);
         uint8_t *valueTemplate = btree_lookup_template(btreeTemplate, key.data(), key.size(), lenOutTemplate);
         std::span<uint8_t> spanTemplate = {valueTemplate, lenOutTemplate};
 
@@ -74,7 +76,7 @@ struct Tester {
             }
 
         bool wasPresentBtreeTemplate = btree_remove_template(btreeTemplate, key.data(), key.size());
-        bool wasPresentBtree = btree_remove_interpolationSearch(btree, key.data(), key.size());
+        bool wasPresentBtree = btree_remove_interpolationSearchKeyHeads(btree, key.data(), key.size());
         assert(wasPresentBtreeTemplate == wasPresentBtree);
 
         (void)wasPresentBtree;
@@ -92,7 +94,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_interpolationSearch(
+        btree_scan_interpolationSearchKeyHeads(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
  
@@ -129,7 +131,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_interpolationSearch(
+        btree_scan_interpolationSearchKeyHeads(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
                     assert(shouldContinue);
@@ -284,6 +286,28 @@ struct TesterPerformanceInterpolationSearch {
 
     void remove(std::vector<uint8_t> &key) {
             btree_remove_interpolationSearch(btreeInterpolationSearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceInterpolationSearchKeyHeads {
+
+    BTreeInterpolationSearchKeyHeads *btreeInterpolationSearchKeyHeads;
+
+    TesterPerformanceInterpolationSearchKeyHeads() : btreeInterpolationSearchKeyHeads(btree_create_interpolationSearchKeyHeads())  {}
+
+    ~TesterPerformanceInterpolationSearchKeyHeads() { btree_destroy_interpolationSearchKeyHeads(btreeInterpolationSearchKeyHeads); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSearchKeyHeads(btreeInterpolationSearchKeyHeads, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSearchKeyHeads = 0;
+        btree_lookup_interpolationSearchKeyHeads(btreeInterpolationSearchKeyHeads, key.data(), key.size(), lenOutInterpolationSearchKeyHeads);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSearchKeyHeads(btreeInterpolationSearchKeyHeads, key.data(), key.size());
     }
 };
 

@@ -1,22 +1,22 @@
-#include "btree_interpolationSearch.hpp"
-#include "btreenode_interpolationSearch.hpp"
+#include "btree_interpolationSearchKeyHeads.hpp"
+#include "btreenode_interpolationSearchKeyHeads.hpp"
 
 inline std::vector<uint8_t> toByteVector(uint8_t *b, unsigned l) { return std::vector<uint8_t>(b, b + l); }
 
-BTreeLeafNodeInterpolationSearch *BTreeInterpolationSearch::traverseToLeaf_interpolationSearch(std::span<uint8_t> key) {
-  BTreeNodeInterpolationSearch *currentNode = root;
+BTreeLeafNodeInterpolationSearchKeyHeads *BTreeInterpolationSearchKeyHeads::traverseToLeaf_interpolationSearchKeyHeads(std::span<uint8_t> key) {
+  BTreeNodeInterpolationSearchKeyHeads *currentNode = root;
   while (!currentNode->isLeaf) {
     uint16_t childIndex = currentNode->getEntryIndexByKey(key);
-    currentNode = reinterpret_cast<BTreeInnerNodeInterpolationSearch *>(currentNode)->getChild(childIndex);
+    currentNode = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeads *>(currentNode)->getChild(childIndex);
   }
-  return reinterpret_cast<BTreeLeafNodeInterpolationSearch *>(currentNode);
+  return reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeads *>(currentNode);
 }
 
-std::optional<std::span<uint8_t>> BTreeInterpolationSearch::lookup(std::span<uint8_t> key) {
+std::optional<std::span<uint8_t>> BTreeInterpolationSearchKeyHeads::lookup(std::span<uint8_t> key) {
   if (root == nullptr) {
     return std::nullopt;
   }
-  BTreeLeafNodeInterpolationSearch *leaf = traverseToLeaf_interpolationSearch(key);
+  BTreeLeafNodeInterpolationSearchKeyHeads *leaf = traverseToLeaf_interpolationSearchKeyHeads(key);
   uint16_t entryIndex = leaf->getEntryIndexByKey(key);
   if (entryIndex < leaf->numKeys) {
     auto existingKey = leaf->getFullKey(entryIndex);
@@ -28,9 +28,9 @@ std::optional<std::span<uint8_t>> BTreeInterpolationSearch::lookup(std::span<uin
   return std::nullopt;
 }
 
-void BTreeInterpolationSearch::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
+void BTreeInterpolationSearchKeyHeads::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   if (root == nullptr) {
-    root = new BTreeLeafNodeInterpolationSearch();
+    root = new BTreeLeafNodeInterpolationSearchKeyHeads();
   }
   auto toInsert = root->insert(key, value);
   if (!toInsert.has_value()) {
@@ -38,27 +38,27 @@ void BTreeInterpolationSearch::insert(std::span<uint8_t> key, std::span<uint8_t>
   }
 
   // We need to split the root
-  BTreeNodeInterpolationSearch *nodeToInsert = toInsert->first;
+  BTreeNodeInterpolationSearchKeyHeads *nodeToInsert = toInsert->first;
   std::vector<uint8_t> splitKey = std::move(toInsert->second);
-  BTreeInnerNodeInterpolationSearch *newRoot = new BTreeInnerNodeInterpolationSearch();
+  BTreeInnerNodeInterpolationSearchKeyHeads *newRoot = new BTreeInnerNodeInterpolationSearchKeyHeads();
   newRoot->insertEntry(0, splitKey, root);
-  newRoot->rightMostChildInterpolationSearch = nodeToInsert;
+  newRoot->rightMostChildInterpolationSearchKeyHeads = nodeToInsert;
   root = newRoot;
 }
 
-void BTreeInterpolationSearch::destroy() {
+void BTreeInterpolationSearchKeyHeads::destroy() {
   if (root != nullptr) {
     root->destroy();
   }
 }
 
-void BTreeInterpolationSearch::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
+void BTreeInterpolationSearchKeyHeads::scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) {
   if (root == nullptr) {
     return;
   }
 
   // Find the node that should contain the key
-  BTreeLeafNodeInterpolationSearch *currentNode = traverseToLeaf_interpolationSearch(key);
+  BTreeLeafNodeInterpolationSearchKeyHeads *currentNode = traverseToLeaf_interpolationSearchKeyHeads(key);
   std::vector<uint8_t> keyVector(key.begin(), key.end());
   bool currentKeyValid = false;
   bool continueIteration = true;
@@ -82,11 +82,11 @@ void BTreeInterpolationSearch::scan(std::span<uint8_t> key, uint8_t *keyOut, con
         continueIteration &= found_callback(keys[i].size(), valueSpan.data(), valueSpan.size());
       }
     }
-    currentNode = currentNode->nextLeafNodeInterpolationSearch;
+    currentNode = currentNode->nextLeafNodeInterpolationSearchKeyHeads;
   }
 }
 
-bool BTreeInterpolationSearch::remove(std::span<uint8_t> key) {
+bool BTreeInterpolationSearchKeyHeads::remove(std::span<uint8_t> key) {
   if (root == nullptr) {
     return false;
   }
@@ -94,22 +94,22 @@ bool BTreeInterpolationSearch::remove(std::span<uint8_t> key) {
 }
 
 // create a new tree and return a pointer to it
-BTreeInterpolationSearch *btree_create_interpolationSearch() { return new BTreeInterpolationSearch(); };
+BTreeInterpolationSearchKeyHeads *btree_create_interpolationSearchKeyHeads() { return new BTreeInterpolationSearchKeyHeads(); };
 
-// destroy a tree created by btree_create_interpolationSearch
-void btree_destroy_interpolationSearch(BTreeInterpolationSearch *t) {
+// destroy a tree created by btree_create_interpolationSearchKeyHeads
+void btree_destroy_interpolationSearchKeyHeads(BTreeInterpolationSearchKeyHeads *t) {
   t->destroy();
   delete t;
 }
 
 // return true iff the key was present
-bool btree_remove_interpolationSearch(BTreeInterpolationSearch *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
+bool btree_remove_interpolationSearchKeyHeads(BTreeInterpolationSearchKeyHeads *tree, uint8_t *key, uint16_t keyLength) { return tree->remove(std::span<uint8_t>(key, keyLength)); }
 
 // replaces exising record if any
-void btree_insert_interpolationSearch(BTreeInterpolationSearch *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
+void btree_insert_interpolationSearchKeyHeads(BTreeInterpolationSearchKeyHeads *tree, uint8_t *key, uint16_t keyLength, uint8_t *value, uint16_t valueLength) { tree->insert(std::span<uint8_t>(key, keyLength), std::span<uint8_t>(value, valueLength)); }
 
 // returns a pointer to the associated value if present, nullptr otherwise
-uint8_t *btree_lookup_interpolationSearch(BTreeInterpolationSearch *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
+uint8_t *btree_lookup_interpolationSearchKeyHeads(BTreeInterpolationSearchKeyHeads *tree, uint8_t *key, uint16_t keyLength, uint16_t &payloadLengthOut) {
   auto value = tree->lookup(std::span<uint8_t>(key, keyLength));
   if (!value.has_value()) {
     return nullptr;
@@ -123,4 +123,4 @@ uint8_t *btree_lookup_interpolationSearch(BTreeInterpolationSearch *tree, uint8_
 // the callback should be invoked with keyLength, value pointer, and value
 // length iteration stops if there are no more keys or the callback returns
 // false.
-void btree_scan_interpolationSearch(BTreeInterpolationSearch *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }
+void btree_scan_interpolationSearchKeyHeads(BTreeInterpolationSearchKeyHeads *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }

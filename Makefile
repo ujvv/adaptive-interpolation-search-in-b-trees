@@ -1,4 +1,4 @@
-all:main-optimized
+all:main
 
 btree_template/btree_template.a: .FORCE
 	cd btree_template;make btree_template.a
@@ -36,17 +36,23 @@ btree_interpolationSearch/btree_interpolationSearch.a: .FORCE
 btree_interpolationSearch/btree-optimized_interpolationSearch.a: .FORCE
 	cd btree_interpolationSearch;make btree-optimized_interpolationSearch.a
 
+btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.a: .FORCE
+	cd btree_interpolationSearch_withKeyHeads;make btree_interpolationSearchKeyHeads.a
+
+btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a: .FORCE
+	cd btree_interpolationSearch_withKeyHeads;make btree-optimized_interpolationSearchKeyHeads.a
+
 btree_plain_finished/btree_finished.a: .FORCE
 	cd btree_plain_finished;make btree_finished.a
 
 btree_plain_finished/btree-optimized_finished.a: .FORCE
 	cd btree_plain_finished;make btree-optimized_finished.a
 
-main: test_main.cpp btree_template/btree_template.a btree_plain_finished/btree_finished.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_interpolationSearch/btree_interpolationSearch.a tester.hpp PerfEvent.hpp
-	g++ -o $@ -std=c++20 -Wall -Wextra -g $< btree_template/btree_template.a btree_plain_finished/btree_finished.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_interpolationSearch/btree_interpolationSearch.a
+main: test_main.cpp btree_template/btree_template.a btree_plain_finished/btree_finished.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_interpolationSearch/btree_interpolationSearch.a btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.a tester.hpp PerfEvent.hpp
+	g++ -o $@ -std=c++20 -Wall -Wextra -g $< btree_template/btree_template.a btree_plain_finished/btree_finished.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_interpolationSearch/btree_interpolationSearch.a btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.a
 
-main-optimized: test_main.cpp btree_template/btree-optimized_template.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_interpolationSearch/btree-optimized_interpolationSearch.a tester.hpp PerfEvent.hpp
-	clang++ -o $@ -std=c++20 -Wall -Wextra -g $< btree_template/btree-optimized_template.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_interpolationSearch/btree-optimized_interpolationSearch.a
+main-optimized: test_main.cpp btree_template/btree-optimized_template.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_interpolationSearch/btree-optimized_interpolationSearch.a btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a tester.hpp PerfEvent.hpp
+	clang++ -o $@ -std=c++20 -Wall -Wextra -g $< btree_template/btree-optimized_template.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_interpolationSearch/btree-optimized_interpolationSearch.a btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a
 
 
 format:
@@ -62,6 +68,7 @@ clean:
 	cd btree_binarySearch_withHints; make clean
 	cd btree_linearSearch; make clean
 	cd btree_interpolationSearch; make clean
+	cd btree_interpolationSearch_withKeyHeads; make clean
 
 .PHONY: .FORCE format
 .FORCE:
