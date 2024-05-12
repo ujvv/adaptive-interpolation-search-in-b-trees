@@ -12,7 +12,11 @@
             "environment": [
                 {
                     "name": "INT",
-                    "value": "5584"
+                    "value": "10000"
+                },
+                {
+                    "name": "INTUNIFORM",
+                    "value": "10000"
                 },
                 {
                     "name": "BYTE",

@@ -271,7 +271,7 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     TesterPerformanceBinarySearch t_binarySearch{};
     //TesterPerformanceBinarySearchHints t_binarySearchHints{};
     //TesterPerformanceLinearSearch t_linearSearch{};
-    TesterPerformanceInterpolationSearch t_interpolationSearch{};
+    //TesterPerformanceInterpolationSearch t_interpolationSearch{};
     TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};
 
     uint64_t count = keys.size();
@@ -306,12 +306,12 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_linearSearch.insert(keys[i], keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"insert InterpolationSearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearch.insert(keys[i], keys[i]);
         }
-    }
+    }*/
     {
         PerfEventBlock peb(perf,count,{"insert InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -350,12 +350,12 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_linearSearch.lookup(keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"lookup InterpolationSearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearch.lookup(keys[i]);
         }
-    }
+    }*/
     {
         PerfEventBlock peb(perf,count,{"lookup InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -394,12 +394,12 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_binarySearch.remove(keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"remove InterpolationSearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearch.remove(keys[i]);
         }
-    }
+    }*/
     {
         PerfEventBlock peb(perf,count,{"remove InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -676,8 +676,42 @@ int main() {
             data.emplace_back(u.bytes, u.bytes + 4);
         }
         runPerformanceTestStandard(data, perf);
-        runPerformanceTestMixed(data, perf);
+        // runPerformanceTestMixed(data, perf);
         runPerformanceTestLookup(data, perf);
+        /*runTest(data);
+        runTestReverse(data);
+        runTestZickZack(data);
+        runTestMixed(data);*/
+    }
+
+    if (getenv("INTUNIFORM")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INTUNIFORM"));
+        uint8_t byte1 = 0;
+        uint8_t byte2 = 0;
+        uint8_t byte3 = 0;
+        uint8_t byte4 = 0;
+        for (uint64_t i = 0; i < n; i++) {
+            uint8_t bytes[4];
+            bytes[0] = byte4;
+            bytes[1] = byte3;
+            bytes[2] = byte2;
+            bytes[3] = byte1;
+            data.emplace_back(bytes, bytes + 4);
+            if (byte1 == 255) {
+                if (byte2 == 255) {
+                    if (byte3 == 255) {
+                        byte4++;
+                    }
+                    byte3++;
+                }
+                byte2++;
+            }
+            byte1++;
+        }
+        runPerformanceTestStandard(data, perf);
+        // runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
         /*runTest(data);
         runTestReverse(data);
         runTestZickZack(data);
