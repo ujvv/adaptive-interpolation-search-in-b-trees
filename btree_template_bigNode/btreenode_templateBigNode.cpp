@@ -386,9 +386,7 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
         newRightSibling->rightMostChildTemplateBigNode = nodeToInsert;
-      }
-
-      else {
+      } else {
         newRightSibling->overwriteChild(insertIndex, nodeToInsert);
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
       }

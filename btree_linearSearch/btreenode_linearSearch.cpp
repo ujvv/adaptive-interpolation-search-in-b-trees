@@ -345,9 +345,7 @@ std::optional<std::pair<BTreeNodeLinearSearch *, std::vector<uint8_t>>> BTreeNod
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
         newRightSibling->rightMostChildLinearSearch = nodeToInsert;
-      }
-
-      else {
+      } else {
         newRightSibling->overwriteChild(insertIndex, nodeToInsert);
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
       }

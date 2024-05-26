@@ -353,9 +353,7 @@ std::optional<std::pair<BTreeNodeBinarySearchNoPrefix *, std::vector<uint8_t>>> 
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
         newRightSibling->rightMostChildBinarySearchNoPrefix = nodeToInsert;
-      }
-
-      else {
+      } else {
         newRightSibling->overwriteChild(insertIndex, nodeToInsert);
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
       }

@@ -395,9 +395,7 @@ std::optional<std::pair<BTreeNodeBinarySearchHints *, std::vector<uint8_t>>> BTr
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
         newRightSibling->rightMostChildBinarySearchHints = nodeToInsert;
-      }
-
-      else {
+      } else {
         newRightSibling->overwriteChild(insertIndex, nodeToInsert);
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
       }

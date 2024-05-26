@@ -396,9 +396,7 @@ std::optional<std::pair<BTreeNodeInterpolationSearchKeyHeadsBigNode *, std::vect
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
         newRightSibling->rightMostChildInterpolationSearchKeyHeadsBigNode = nodeToInsert;
-      }
-
-      else {
+      } else {
         newRightSibling->overwriteChild(insertIndex, nodeToInsert);
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
       }
