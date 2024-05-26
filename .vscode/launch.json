@@ -10,13 +10,29 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [
-                {
+                /*{
                     "name": "INT",
-                    "value": "133002"
+                    "value": "0"
                 },
                 {
                     "name": "INTUNIFORM",
-                    "value": "100000"
+                    "value": "0"
+                },*/
+                {
+                    "name": "INTFAL",
+                    "value": "10000"
+                },
+                {
+                    "name": "FALSHAPE",
+                    "value": "20"
+                },
+                {
+                    "name": "INTCFAL",
+                    "value": "10000"
+                },
+                {
+                    "name": "CFALSHAPE",
+                    "value": "105"
                 },
                 {
                     "name": "BYTE",

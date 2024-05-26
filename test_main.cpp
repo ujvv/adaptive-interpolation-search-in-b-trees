@@ -737,7 +737,13 @@ std::vector<uint8_t> stringToVector(const std::string &str) {
 }
 
 std::vector<uint64_t> fal(double shape, uint64_t size) {
-        
+        std::vector<uint64_t> v(size);
+        for (uint64_t i = 0; i < v.size() - 1; i++) {
+            // scale up to ensure elements are distinct for as long as possible
+             v[i] = pow((double)(size - i), - shape) * std::numeric_limits<uint64_t>::max();
+        }
+        v.back() = std::numeric_limits<uint64_t>::max(); // Make last element max value
+        return v;
 }
 
 int main() {
@@ -806,14 +812,9 @@ int main() {
     if (getenv("INTFAL")) {
         vector<vector<uint8_t>> data;
         uint64_t n = atof(getenv("INTFAL"));
-        std::vector<uint64_t> v(n);
-        double shape = 0.5;
-        auto n = v.size();
-        for (auto i = 0; i < v.size() - 1; i++) {
-            // scale up to ensure elements are distinct for as long as possible
-             v[i] = pow((double)(n - i), - shape) * std::numeric_limits<uint64_t>::max();
-        }
-        v.back() = std::numeric_limits<uint64_t>::max();
+        double shape = atof(getenv("FALSHAPE")) / 100.0;
+        std::vector<uint64_t> v = fal(shape, n);
+        n++;
         //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
         //runPerformanceTestLookup(data, perf); 
@@ -826,10 +827,8 @@ int main() {
     if (getenv("INTCFAL")) {
         vector<vector<uint8_t>> data;
         uint64_t n = atof(getenv("INTCFAL"));
-        std::vector<uint64_t> v(n);
-        double shape = 0.5;
-        auto n = v.size();
-        auto v = fal(shape, n);
+        double shape = atof(getenv("CFALSHAPE")) / 100.0;
+        std::vector<uint64_t> v = fal(shape, n);
         auto max_sum = std::accumulate(v.begin(), v.end(), 0.0L);
         auto scale = std::numeric_limits<uint64_t>::max() / max_sum;
         std::transform(v.begin(), v.end(), v.begin(),
