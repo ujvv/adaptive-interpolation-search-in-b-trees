@@ -6,18 +6,33 @@
 #include "btree_template_bigNode/btree_templateBigNode.hpp"
 #include "btree_template_bigNode/btreenode_templateBigNode.hpp"
 
+
+#include "btree_binarySearch_noPrefix/btree_binarySearchNoPrefix.hpp"
+#include "btree_binarySearch_noPrefix/btreenode_binarySearchNoPrefix.hpp"
+
 #include "btree_binarySearch/btree_binarySearch.hpp"
 #include "btree_binarySearch/btreenode_binarySearch.hpp"
+#include "btree_binarySearch_bigNode/btree_binarySearchBigNode.hpp"
+#include "btree_binarySearch_bigNode/btreenode_binarySearchBigNode.hpp"
+
 #include "btree_binarySearch_withHints/btree_binarySearchHints.hpp"
 #include "btree_binarySearch_withHints/btreenode_binarySearchHints.hpp"
 
+
 #include "btree_linearSearch/btree_linearSearch.hpp"
 #include "btree_linearSearch/btreenode_linearSearch.hpp"
+#include "btree_linearSearch_bigNode/btree_linearSearchBigNode.hpp"
+#include "btree_linearSearch_bigNode/btreenode_linearSearchBigNode.hpp"
 
 #include "btree_interpolationSearch/btree_interpolationSearch.hpp"
 #include "btree_interpolationSearch/btreenode_interpolationSearch.hpp"
+#include "btree_interpolationSearch_bigNode/btree_interpolationSearchBigNode.hpp"
+#include "btree_interpolationSearch_bigNode/btreenode_interpolationSearchBigNode.hpp"
+
 #include "btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.hpp"
 #include "btree_interpolationSearch_withKeyHeads/btreenode_interpolationSearchKeyHeads.hpp"
+#include "btree_interpolationSearch_withKeyHeads_bigNode/btree_interpolationSearchKeyHeadsBigNode.hpp"
+#include "btree_interpolationSearch_withKeyHeads_bigNode/btreenode_interpolationSearchKeyHeadsBigNode.hpp"
 
 #include "btree_plain_finished/btree.hpp"
 
@@ -29,20 +44,20 @@
 #include <iostream>
 
 struct Tester {
-    BTreeInterpolationSearchKeyHeads *btree;
+    BTreeBinarySearchNoPrefix *btree;
 
     BTreeTemplate *btreeTemplate;
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_interpolationSearchKeyHeads()), btreeTemplate(btree_create_template()), stdMap()  {}
+    Tester() : btree(btree_create_binarySearchNoPrefix()), btreeTemplate(btree_create_template()), stdMap()  {}
 
-    ~Tester() { btree_destroy_interpolationSearchKeyHeads(btree); btree_destroy_template(btreeTemplate); }
+    ~Tester() { btree_destroy_binarySearchNoPrefix(btree); btree_destroy_template(btreeTemplate); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         stdMap[key] = value;
         
-        btree_insert_interpolationSearchKeyHeads(btree, key.data(), key.size(), value.data(), value.size());
+        btree_insert_binarySearchNoPrefix(btree, key.data(), key.size(), value.data(), value.size());
         btree_insert_template(btreeTemplate, key.data(), key.size(), value.data(), value.size());
     }
 
@@ -51,7 +66,7 @@ struct Tester {
         
         uint16_t lenOut = 0;
         uint16_t lenOutTemplate = 0;
-        uint8_t *value = btree_lookup_interpolationSearchKeyHeads(btree, key.data(), key.size(), lenOut);
+        uint8_t *value = btree_lookup_binarySearchNoPrefix(btree, key.data(), key.size(), lenOut);
         uint8_t *valueTemplate = btree_lookup_template(btreeTemplate, key.data(), key.size(), lenOutTemplate);
         std::span<uint8_t> spanTemplate = {valueTemplate, lenOutTemplate};
 
@@ -76,7 +91,7 @@ struct Tester {
             }
 
         bool wasPresentBtreeTemplate = btree_remove_template(btreeTemplate, key.data(), key.size());
-        bool wasPresentBtree = btree_remove_interpolationSearchKeyHeads(btree, key.data(), key.size());
+        bool wasPresentBtree = btree_remove_binarySearchNoPrefix(btree, key.data(), key.size());
         assert(wasPresentBtreeTemplate == wasPresentBtree);
 
         (void)wasPresentBtree;
@@ -94,7 +109,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_interpolationSearchKeyHeads(
+        btree_scan_binarySearchNoPrefix(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
  
@@ -131,7 +146,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_interpolationSearchKeyHeads(
+        btree_scan_binarySearchNoPrefix(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
                     assert(shouldContinue);
@@ -201,6 +216,51 @@ struct TesterPerformanceTempl {
     }
 };
 
+struct TesterPerformanceTemplBigNode {
+
+    BTreeTemplateBigNode *btreeTemplateBigNode;
+
+    TesterPerformanceTemplBigNode() : btreeTemplateBigNode(btree_create_templateBigNode())  {}
+
+    ~TesterPerformanceTemplBigNode() { btree_destroy_templateBigNode(btreeTemplateBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_templateBigNode(btreeTemplateBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutTemplateBigNode = 0;
+        btree_lookup_templateBigNode(btreeTemplateBigNode, key.data(), key.size(), lenOutTemplateBigNode);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_templateBigNode(btreeTemplateBigNode, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceBinarySearchNoPrefix {
+
+    BTreeBinarySearchNoPrefix *btreeBinarySearchNoPrefix;
+
+    TesterPerformanceBinarySearchNoPrefix() : btreeBinarySearchNoPrefix(btree_create_binarySearchNoPrefix())  {}
+
+    ~TesterPerformanceBinarySearchNoPrefix() { btree_destroy_binarySearchNoPrefix(btreeBinarySearchNoPrefix); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_binarySearchNoPrefix(btreeBinarySearchNoPrefix, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutBinarySearch = 0;
+        btree_lookup_binarySearchNoPrefix(btreeBinarySearchNoPrefix, key.data(), key.size(), lenOutBinarySearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_binarySearchNoPrefix(btreeBinarySearchNoPrefix, key.data(), key.size());
+    }
+};
+
+
 struct TesterPerformanceBinarySearch {
 
     BTreeBinarySearch *btreeBinarySearch;
@@ -220,6 +280,28 @@ struct TesterPerformanceBinarySearch {
 
     void remove(std::vector<uint8_t> &key) {
             btree_remove_binarySearch(btreeBinarySearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceBinarySearchBigNode {
+
+    BTreeBinarySearchBigNode *btreeBinarySearchBigNode;
+
+    TesterPerformanceBinarySearchBigNode() : btreeBinarySearchBigNode(btree_create_binarySearchBigNode())  {}
+
+    ~TesterPerformanceBinarySearchBigNode() { btree_destroy_binarySearchBigNode(btreeBinarySearchBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_binarySearchBigNode(btreeBinarySearchBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutBinarySearch = 0;
+        btree_lookup_binarySearchBigNode(btreeBinarySearchBigNode, key.data(), key.size(), lenOutBinarySearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_binarySearchBigNode(btreeBinarySearchBigNode, key.data(), key.size());
     }
 };
 
@@ -267,6 +349,28 @@ struct TesterPerformanceLinearSearch {
     }
 };
 
+struct TesterPerformanceLinearSearchBigNode {
+
+    BTreeLinearSearchBigNode *btreeLinearSearchBigNode;
+
+    TesterPerformanceLinearSearchBigNode() : btreeLinearSearchBigNode(btree_create_linearSearchBigNode())  {}
+
+    ~TesterPerformanceLinearSearchBigNode() { btree_destroy_linearSearchBigNode(btreeLinearSearchBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_linearSearchBigNode(btreeLinearSearchBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutLinearSearchBigNode = 0;
+        btree_lookup_linearSearchBigNode(btreeLinearSearchBigNode, key.data(), key.size(), lenOutLinearSearchBigNode);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_linearSearchBigNode(btreeLinearSearchBigNode, key.data(), key.size());
+    }
+};
+
 struct TesterPerformanceInterpolationSearch {
 
     BTreeInterpolationSearch *btreeInterpolationSearch;
@@ -289,6 +393,28 @@ struct TesterPerformanceInterpolationSearch {
     }
 };
 
+struct TesterPerformanceInterpolationSearchBigNode {
+
+    BTreeInterpolationSearchBigNode *btreeInterpolationSearchBigNode;
+
+    TesterPerformanceInterpolationSearchBigNode() : btreeInterpolationSearchBigNode(btree_create_interpolationSearchBigNode())  {}
+
+    ~TesterPerformanceInterpolationSearchBigNode() { btree_destroy_interpolationSearchBigNode(btreeInterpolationSearchBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSearchBigNode(btreeInterpolationSearchBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSearchBigNode = 0;
+        btree_lookup_interpolationSearchBigNode(btreeInterpolationSearchBigNode, key.data(), key.size(), lenOutInterpolationSearchBigNode);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSearchBigNode(btreeInterpolationSearchBigNode, key.data(), key.size());
+    }
+};
+
 struct TesterPerformanceInterpolationSearchKeyHeads {
 
     BTreeInterpolationSearchKeyHeads *btreeInterpolationSearchKeyHeads;
@@ -308,6 +434,28 @@ struct TesterPerformanceInterpolationSearchKeyHeads {
 
     void remove(std::vector<uint8_t> &key) {
             btree_remove_interpolationSearchKeyHeads(btreeInterpolationSearchKeyHeads, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceInterpolationSearchKeyHeadsBigNode {
+
+    BTreeInterpolationSearchKeyHeadsBigNode *btreeInterpolationSearchKeyHeadsBigNode;
+
+    TesterPerformanceInterpolationSearchKeyHeadsBigNode() : btreeInterpolationSearchKeyHeadsBigNode(btree_create_interpolationSearchKeyHeadsBigNode())  {}
+
+    ~TesterPerformanceInterpolationSearchKeyHeadsBigNode() { btree_destroy_interpolationSearchKeyHeadsBigNode(btreeInterpolationSearchKeyHeadsBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSearchKeyHeadsBigNode(btreeInterpolationSearchKeyHeadsBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSearchKeyHeadsBigNode = 0;
+        btree_lookup_interpolationSearchKeyHeadsBigNode(btreeInterpolationSearchKeyHeadsBigNode, key.data(), key.size(), lenOutInterpolationSearchKeyHeadsBigNode);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSearchKeyHeadsBigNode(btreeInterpolationSearchKeyHeadsBigNode, key.data(), key.size());
     }
 };
 

@@ -1,0 +1,181 @@
+#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_WITHKEYHEADS_BIGNODE_BTREENODE_INTERPOLATIONSEARCHKEYHEADSBIGNODE_HPP
+#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_WITHKEYHEADS_BIGNODE_BTREENODE_INTERPOLATIONSEARCHKEYHEADSBIGNODE_HPP
+
+#include <cstdint>
+#include <cstring>
+#include <functional>
+#include <optional>
+#include <span>
+#include <string>
+
+
+// constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 4096;
+constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADSBIGNODE = 65536; // 16x
+
+// Forward declarations
+class BTreeNodeInterpolationSearchKeyHeadsBigNode;
+class BTreeLeafNodeInterpolationSearchKeyHeadsBigNode;
+
+struct PageSlotInterpolationSearchKeyHeadsBigNode {
+  uint32_t offset;      // Offset on the heap to the key-value entry
+  uint16_t keyLength;   // Length of the key on the heap
+  uint16_t valueLength; // Length of the value on the heap
+  uint32_t keyHead;     // First 4 bytes of the key
+} __attribute__((packed));
+
+struct FenceKeySlotInterpolationSearchKeyHeadsBigNode {
+  uint32_t offset; // Offset of the key on the heap
+  uint16_t len;    // Length of the key on the heap
+};
+
+struct BTreeNodeHeaderInterpolationSearchKeyHeadsBigNode {
+  union {
+    BTreeNodeInterpolationSearchKeyHeadsBigNode *rightMostChildInterpolationSearchKeyHeadsBigNode;   // Pointer to the rightmost child if it's a inner node
+    BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *nextLeafNodeInterpolationSearchKeyHeadsBigNode; // Pointer to the next leaf node if it's a leaf node
+  };
+  bool isLeaf;
+  uint32_t numKeys = 0;
+  uint32_t spaceUsed = 0;
+  uint32_t freeOffset = NODE_SIZE_INTERPOLATIONSEARCHKEYHEADSBIGNODE - sizeof(BTreeNodeHeaderInterpolationSearchKeyHeadsBigNode);
+  uint16_t prefixLen = 0;
+  uint32_t prefixOffset = 0;
+  FenceKeySlotInterpolationSearchKeyHeadsBigNode lowerFence = {0, 0};
+  FenceKeySlotInterpolationSearchKeyHeadsBigNode upperFence = {0, 0};
+  std::array<uint32_t, 16> hints = {0};
+};
+
+class alignas(NODE_SIZE_INTERPOLATIONSEARCHKEYHEADSBIGNODE) BTreeNodeInterpolationSearchKeyHeadsBigNode : public BTreeNodeHeaderInterpolationSearchKeyHeadsBigNode {
+public:
+  friend class BTreeInterpolationSearchKeyHeadsBigNode;
+  friend class Tester;
+  static constexpr uint32_t CONTENT_SIZE = NODE_SIZE_INTERPOLATIONSEARCHKEYHEADSBIGNODE - sizeof(BTreeNodeHeaderInterpolationSearchKeyHeadsBigNode);
+  uint8_t content[CONTENT_SIZE];
+
+  BTreeNodeInterpolationSearchKeyHeadsBigNode() = default;
+
+  BTreeNodeInterpolationSearchKeyHeadsBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey);
+
+  // Returns the key without the prefix at a given positon
+  std::span<uint8_t> getShortenedKey(uint32_t position) {
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+    return std::span<uint8_t>(content + slot->offset, slot->keyLength);
+  }
+
+  // Returns the full key at a given position
+  std::vector<uint8_t> getFullKey(uint32_t position) {
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+    std::vector<uint8_t> key(slot->keyLength + prefixLen);
+
+    if (prefixLen > 0) {
+      std::memcpy(key.data(), content + prefixOffset, prefixLen);
+    }
+    if (slot->keyLength > 0) {
+      std::memcpy(key.data() + prefixLen, content + slot->offset, slot->keyLength);
+    }
+    return key;
+  }
+
+  std::vector<uint8_t> getLowerFenceKey() { return getFenceKey(lowerFence); }
+
+  std::vector<uint8_t> getUpperFenceKey() { return getFenceKey(upperFence); }
+
+  // Utility functions to retrieve the keys of the node in different represantations
+
+  std::vector<std::vector<uint8_t>> getKeys();
+  std::vector<std::string> getKeysAsString();
+  std::vector<std::string> getShortenedKeysAsString();
+
+private:
+  // Returns the index where this key is located or should be inserted. In a leaf, this is directly the index
+  // Where the key should be located / inserted, otherwise it returns the index of the child where the key should be located / inserted
+  uint32_t getEntryIndexByKey(std::span<uint8_t> key);
+
+  // Inserts the given key and value into the subtree of this node
+  // If the return value is not empty, it contains the new child and the splitkey which needs to be inserted in the caller
+  std::optional<std::pair<BTreeNodeInterpolationSearchKeyHeadsBigNode *, std::vector<uint8_t>>> insert(std::span<uint8_t> key, std::span<uint8_t> value);
+
+  // Removes the given key from the subtree of this node, returns true if the key was found and removed
+  bool remove(std::span<uint8_t> key);
+
+  // Destroys the subtree of this node
+  void destroy();
+
+  // Returns the index where the node should be split such that both the resulting nodes have an equal amount of free space
+  // The splitIndex should remain in the current node
+  uint32_t getSplitIndex();
+
+  // Reorders the entries on the heap such that new elements can be inserted
+  void compact();
+
+  // Inserts the given key and value at the given position
+  void insertEntry(uint32_t position, std::span<uint8_t> key, std::span<uint8_t> value);
+
+  // Inserts the given key and childPointer at the given position
+  void insertEntry(uint32_t position, std::span<uint8_t> key, BTreeNodeInterpolationSearchKeyHeadsBigNode *childPointer);
+
+  // Erases the entry at the given position
+  void eraseEntry(uint32_t position);
+
+  // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
+  bool keySmallerEqualThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key);
+
+  // Checks if the given key is smaller or equal that the key at the given position, the given key should not contain the prefix
+  bool keySmallerThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key);
+
+  // Checks if the given key is greater that the key at the given position, the given key should not contain the prefix
+  bool keyLargerThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key) { return !keySmallerEqualThanAtPosition(position, keyHead, key); }
+
+  // Splits the node at the given position and returns the new node
+  BTreeNodeInterpolationSearchKeyHeadsBigNode *splitNode(uint32_t splitIndex, std::span<uint8_t> splitKey);
+
+  std::vector<uint8_t> getFenceKey(FenceKeySlotInterpolationSearchKeyHeadsBigNode &fenceKey) {
+    std::vector<uint8_t> key(prefixLen + fenceKey.len);
+    if (prefixLen > 0) {
+      std::memcpy(key.data(), content + prefixOffset, prefixLen);
+    }
+    if (fenceKey.len > 0) {
+      std::memcpy(key.data() + prefixLen, content + fenceKey.offset, fenceKey.len);
+    }
+    return key;
+  }
+};
+
+class BTreeInnerNodeInterpolationSearchKeyHeadsBigNode : public BTreeNodeInterpolationSearchKeyHeadsBigNode {
+public:
+  BTreeInnerNodeInterpolationSearchKeyHeadsBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeInterpolationSearchKeyHeadsBigNode(lowerFenceKey, upperFenceKey) { isLeaf = false; }
+
+  BTreeInnerNodeInterpolationSearchKeyHeadsBigNode() { isLeaf = false; }
+
+  // Returns the child pointer at the given position
+  BTreeNodeInterpolationSearchKeyHeadsBigNode *getChild(uint32_t position) {
+    // the rightmost child is accessed
+    if (position == numKeys) {
+      return rightMostChildInterpolationSearchKeyHeadsBigNode;
+    }
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+    BTreeNodeInterpolationSearchKeyHeadsBigNode *pointer = nullptr;
+    std::memcpy(&pointer, content + slot->offset + slot->keyLength, sizeof(BTreeNodeInterpolationSearchKeyHeadsBigNode *));
+    return pointer;
+  }
+
+  // Overwrites the child pointer with a new pointer at a given position, the key won't be changed
+  void overwriteChild(uint32_t position, BTreeNodeInterpolationSearchKeyHeadsBigNode *newChild);
+};
+
+class BTreeLeafNodeInterpolationSearchKeyHeadsBigNode : public BTreeNodeInterpolationSearchKeyHeadsBigNode {
+public:
+  BTreeLeafNodeInterpolationSearchKeyHeadsBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeInterpolationSearchKeyHeadsBigNode(lowerFenceKey, upperFenceKey) { isLeaf = true; }
+
+  BTreeLeafNodeInterpolationSearchKeyHeadsBigNode() {
+    isLeaf = true;
+    nextLeafNodeInterpolationSearchKeyHeadsBigNode = nullptr;
+  }
+
+  // Returns the value at the given position
+  std::span<uint8_t> getValue(uint32_t position) {
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+    return std::span<uint8_t>(content + slot->offset + slot->keyLength, slot->valueLength);
+  }
+};
+
+#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_INTERPOLATIONSEARCH_WITHKEYHEADS_BIGNODE_BTREENODE_INTERPOLATIONSEARCHKEYHEADSBIGNODE_HPP

@@ -12,19 +12,19 @@
             "environment": [
                 {
                     "name": "INT",
-                    "value": "10000"
+                    "value": "133002"
                 },
                 {
                     "name": "INTUNIFORM",
-                    "value": "10000"
+                    "value": "100000"
                 },
                 {
                     "name": "BYTE",
-                    "value": "468"
+                    "value": "35"
                 },
                 {
                     "name": "VARIABLEBYTE",
-                    "value": "123000"
+                    "value": "12000"
                 },
                 {
                     "name": "LONG1",

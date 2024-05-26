@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATEBIGNODE_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATEBIGNODE_HPP
+#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BIGNODE_BTREENODE_BINARYSEARCHBIGNODE_HPP
+#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BIGNODE_BTREENODE_BINARYSEARCHBIGNODE_HPP
 
 #include <cstdint>
 #include <cstring>
@@ -9,65 +9,65 @@
 #include <string>
 
 
-//constexpr uint32_t NODE_SIZE_TEMPLATE = 4096;
-constexpr uint32_t NODE_SIZE_TEMPLATEBIGNODE = 65536; // 16x
+// constexpr uint32_t NODE_SIZE_BINARYSEARCH = 4096;
+constexpr uint32_t NODE_SIZE_BINARYSEARCHBIGNODE = 131072; // 32x
 
 // Forward declarations
-class BTreeNodeTemplateBigNode;
-class BTreeLeafNodeTemplateBigNode;
+class BTreeNodeBinarySearchBigNode;
+class BTreeLeafNodeBinarySearchBigNode;
 
-struct PageSlotTemplateBigNode {
+struct PageSlotBinarySearchBigNode {
   uint32_t offset;      // Offset on the heap to the key-value entry
   uint16_t keyLength;   // Length of the key on the heap
   uint16_t valueLength; // Length of the value on the heap
   uint32_t keyHead;     // First 4 bytes of the key
 } __attribute__((packed));
 
-struct FenceKeySlotTemplateBigNode {
+struct FenceKeySlotBinarySearchBigNode {
   uint32_t offset; // Offset of the key on the heap
   uint16_t len;    // Length of the key on the heap
 };
 
-struct BTreeNodeHeaderTemplateBigNode {
+struct BTreeNodeHeaderBinarySearchBigNode {
   union {
-    BTreeNodeTemplateBigNode *rightMostChildTemplateBigNode;   // Pointer to the rightmost child if it's a inner node
-    BTreeLeafNodeTemplateBigNode *nextLeafNodeTemplateBigNode; // Pointer to the next leaf node if it's a leaf node
+    BTreeNodeBinarySearchBigNode *rightMostChildBinarySearchBigNode;   // Pointer to the rightmost child if it's a inner node
+    BTreeLeafNodeBinarySearchBigNode *nextLeafNodeBinarySearchBigNode; // Pointer to the next leaf node if it's a leaf node
   };
   bool isLeaf;
   uint32_t numKeys = 0;
   uint32_t spaceUsed = 0;
-  uint32_t freeOffset = NODE_SIZE_TEMPLATEBIGNODE - sizeof(BTreeNodeHeaderTemplateBigNode);
+  uint32_t freeOffset = NODE_SIZE_BINARYSEARCHBIGNODE - sizeof(BTreeNodeHeaderBinarySearchBigNode);
   uint16_t prefixLen = 0;
   uint32_t prefixOffset = 0;
-  FenceKeySlotTemplateBigNode lowerFence = {0, 0};
-  FenceKeySlotTemplateBigNode upperFence = {0, 0};
+  FenceKeySlotBinarySearchBigNode lowerFence = {0, 0};
+  FenceKeySlotBinarySearchBigNode upperFence = {0, 0};
   std::array<uint32_t, 16> hints = {0};
 };
 
-class alignas(NODE_SIZE_TEMPLATEBIGNODE) BTreeNodeTemplateBigNode : public BTreeNodeHeaderTemplateBigNode {
+class alignas(NODE_SIZE_BINARYSEARCHBIGNODE) BTreeNodeBinarySearchBigNode : public BTreeNodeHeaderBinarySearchBigNode {
 public:
-  friend class BTreeTemplateBigNode;
+  friend class BTreeBinarySearchBigNode;
   friend class Tester;
-  static constexpr uint32_t CONTENT_SIZE = NODE_SIZE_TEMPLATEBIGNODE - sizeof(BTreeNodeHeaderTemplateBigNode);
+  static constexpr uint32_t CONTENT_SIZE = NODE_SIZE_BINARYSEARCHBIGNODE - sizeof(BTreeNodeHeaderBinarySearchBigNode);
   uint8_t content[CONTENT_SIZE];
 
-  BTreeNodeTemplateBigNode() = default;
+  BTreeNodeBinarySearchBigNode() = default;
 
-  BTreeNodeTemplateBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey);
+  BTreeNodeBinarySearchBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey);
 
   // Returns the key without the prefix at a given positon
   std::span<uint8_t> getShortenedKey(uint32_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
+    auto slot = reinterpret_cast<PageSlotBinarySearchBigNode *>(content + position * sizeof(PageSlotBinarySearchBigNode));
     return std::span<uint8_t>(content + slot->offset, slot->keyLength);
   }
 
   // Returns the full key at a given position
   std::vector<uint8_t> getFullKey(uint32_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
+    auto slot = reinterpret_cast<PageSlotBinarySearchBigNode *>(content + position * sizeof(PageSlotBinarySearchBigNode));
     std::vector<uint8_t> key(slot->keyLength + prefixLen);
 
     if (prefixLen > 0) {
-      std::memcpy(key.data(), content + lowerFence.offset, prefixLen);
+      std::memcpy(key.data(), content + prefixOffset, prefixLen);
     }
     if (slot->keyLength > 0) {
       std::memcpy(key.data() + prefixLen, content + slot->offset, slot->keyLength);
@@ -92,7 +92,7 @@ private:
 
   // Inserts the given key and value into the subtree of this node
   // If the return value is not empty, it contains the new child and the splitkey which needs to be inserted in the caller
-  std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> insert(std::span<uint8_t> key, std::span<uint8_t> value);
+  std::optional<std::pair<BTreeNodeBinarySearchBigNode *, std::vector<uint8_t>>> insert(std::span<uint8_t> key, std::span<uint8_t> value);
 
   // Removes the given key from the subtree of this node, returns true if the key was found and removed
   bool remove(std::span<uint8_t> key);
@@ -111,7 +111,7 @@ private:
   void insertEntry(uint32_t position, std::span<uint8_t> key, std::span<uint8_t> value);
 
   // Inserts the given key and childPointer at the given position
-  void insertEntry(uint32_t position, std::span<uint8_t> key, BTreeNodeTemplateBigNode *childPointer);
+  void insertEntry(uint32_t position, std::span<uint8_t> key, BTreeNodeBinarySearchBigNode *childPointer);
 
   // Erases the entry at the given position
   void eraseEntry(uint32_t position);
@@ -122,19 +122,10 @@ private:
   // Checks if the given key is greater that the key at the given position, the given key should not contain the prefix
   bool keyLargerThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key) { return !keySmallerEqualThanAtPosition(position, keyHead, key); }
 
-  // Recalculates the hints array
-  void updateHints();
-
   // Splits the node at the given position and returns the new node
-  BTreeNodeTemplateBigNode *splitNode(uint32_t splitIndex, std::span<uint8_t> splitKey);
+  BTreeNodeBinarySearchBigNode *splitNode(uint32_t splitIndex, std::span<uint8_t> splitKey);
 
-  // Returns the range of possible positions where the key with the given keyHead is located
-  std::pair<int, int> getHintRange(uint32_t keyHead);
-
-  std::vector<uint8_t> getFenceKey(FenceKeySlotTemplateBigNode &fenceKey) {
-    if (prefixLen == 0 || fenceKey.len == 0) {
-      return {};
-    }
+  std::vector<uint8_t> getFenceKey(FenceKeySlotBinarySearchBigNode &fenceKey) {
     std::vector<uint8_t> key(prefixLen + fenceKey.len);
     if (prefixLen > 0) {
       std::memcpy(key.data(), content + prefixOffset, prefixLen);
@@ -146,42 +137,42 @@ private:
   }
 };
 
-class BTreeInnerNodeTemplateBigNode : public BTreeNodeTemplateBigNode {
+class BTreeInnerNodeBinarySearchBigNode : public BTreeNodeBinarySearchBigNode {
 public:
-  BTreeInnerNodeTemplateBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeTemplateBigNode(lowerFenceKey, upperFenceKey) { isLeaf = false; }
+  BTreeInnerNodeBinarySearchBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeBinarySearchBigNode(lowerFenceKey, upperFenceKey) { isLeaf = false; }
 
-  BTreeInnerNodeTemplateBigNode() { isLeaf = false; }
+  BTreeInnerNodeBinarySearchBigNode() { isLeaf = false; }
 
   // Returns the child pointer at the given position
-  BTreeNodeTemplateBigNode *getChild(uint32_t position) {
+  BTreeNodeBinarySearchBigNode *getChild(uint32_t position) {
     // the rightmost child is accessed
     if (position == numKeys) {
-      return rightMostChildTemplateBigNode;
+      return rightMostChildBinarySearchBigNode;
     }
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
-    BTreeNodeTemplateBigNode *pointer = nullptr;
-    std::memcpy(&pointer, content + slot->offset + slot->keyLength, sizeof(BTreeNodeTemplateBigNode *));
+    auto slot = reinterpret_cast<PageSlotBinarySearchBigNode *>(content + position * sizeof(PageSlotBinarySearchBigNode));
+    BTreeNodeBinarySearchBigNode *pointer = nullptr;
+    std::memcpy(&pointer, content + slot->offset + slot->keyLength, sizeof(BTreeNodeBinarySearchBigNode *));
     return pointer;
   }
 
   // Overwrites the child pointer with a new pointer at a given position, the key won't be changed
-  void overwriteChild(uint32_t position, BTreeNodeTemplateBigNode *newChild);
+  void overwriteChild(uint32_t position, BTreeNodeBinarySearchBigNode *newChild);
 };
 
-class BTreeLeafNodeTemplateBigNode : public BTreeNodeTemplateBigNode {
+class BTreeLeafNodeBinarySearchBigNode : public BTreeNodeBinarySearchBigNode {
 public:
-  BTreeLeafNodeTemplateBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeTemplateBigNode(lowerFenceKey, upperFenceKey) { isLeaf = true; }
+  BTreeLeafNodeBinarySearchBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) : BTreeNodeBinarySearchBigNode(lowerFenceKey, upperFenceKey) { isLeaf = true; }
 
-  BTreeLeafNodeTemplateBigNode() {
+  BTreeLeafNodeBinarySearchBigNode() {
     isLeaf = true;
-    nextLeafNodeTemplateBigNode = nullptr;
+    nextLeafNodeBinarySearchBigNode = nullptr;
   }
 
   // Returns the value at the given position
   std::span<uint8_t> getValue(uint32_t position) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
+    auto slot = reinterpret_cast<PageSlotBinarySearchBigNode *>(content + position * sizeof(PageSlotBinarySearchBigNode));
     return std::span<uint8_t>(content + slot->offset + slot->keyLength, slot->valueLength);
   }
 };
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREENODE_TEMPLATEBIGNODE_HPP
+#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BIGNODE_BTREENODE_BINARYSEARCHBIGNODE_HPP

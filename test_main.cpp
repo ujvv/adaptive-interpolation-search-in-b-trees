@@ -5,6 +5,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cmath>
+#include <numeric>
 
 using namespace std;
 
@@ -46,6 +48,7 @@ void runTest(vector<vector<uint8_t>> &keys) {
             t.remove(keys[i]);
         }
     }
+    std::cout << "runTestStandard PASSED" << std::endl;
 }
 
 void runTestReverse(vector<vector<uint8_t>> &keys) {
@@ -146,9 +149,9 @@ void runTestMixed(vector<vector<uint8_t>> &keys) {
     // Insert half of the keys
     for (uint64_t i = 0; i < (count*0.5); ++i) {
         t.insert(keys[i], keys[i]);
-        if (i >= 19300) {
+        /*if (i >= 19300) {
             t.scanThrough(emptyKey);
-        }
+        }*/
     }
 
     // Check Tree Structure
@@ -268,11 +271,15 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
     
     //TesterPerformanceMap t_map;
     //TesterPerformanceTempl t_templ{};
+    //TesterPerformanceTemplBigNode t_templBigNode{};
+    TesterPerformanceBinarySearchNoPrefix t_binarySearchNoPrefix{};
     TesterPerformanceBinarySearch t_binarySearch{};
+    //TesterPerformanceBinarySearchBigNode t_binarySearchBigNode{};
     //TesterPerformanceBinarySearchHints t_binarySearchHints{};
     //TesterPerformanceLinearSearch t_linearSearch{};
     //TesterPerformanceInterpolationSearch t_interpolationSearch{};
-    TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};
+    //TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};
+    //TesterPerformanceInterpolationSearchKeyHeadsBigNode t_interpolationSearchKeyHeadsBigNode{};
 
     uint64_t count = keys.size();
 
@@ -288,12 +295,30 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.insert(keys[i], keys[i]);
         }
     }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"insert TemplateBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templBigNode.insert(keys[i], keys[i]);
+        }
+    }*/
+    {
+        PerfEventBlock peb(perf,count,{"insert BinarySearchNoPrefix"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchNoPrefix.insert(keys[i], keys[i]);
+        }
+    }
     {
         PerfEventBlock peb(perf,count,{"insert BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_binarySearch.insert(keys[i], keys[i]);
         }
     }
+    /*{
+        PerfEventBlock peb(perf,count,{"insert BinarySearchBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchBigNode.insert(keys[i], keys[i]);
+        }
+    }*/
     /*{
         PerfEventBlock peb(perf,count,{"insert BinarySearch with Hints"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -312,12 +337,18 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_interpolationSearch.insert(keys[i], keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"insert InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearchKeyHeads.insert(keys[i], keys[i]);
         }
-    }
+    }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"insert InterpolationSearchKeyHeadsBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearchKeyHeadsBigNode.insert(keys[i], keys[i]);
+        }
+    }*/
 
 
     /*{
@@ -332,12 +363,30 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.lookup(keys[i]);
         }
     }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"lookup TemplateBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templBigNode.lookup(keys[i]);
+        }
+    }*/
+    {
+        PerfEventBlock peb(perf,count,{"lookup BinarySearchNoPrefix"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchNoPrefix.lookup(keys[i]);
+        }
+    }
     {
         PerfEventBlock peb(perf,count,{"lookup BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_binarySearch.lookup(keys[i]);
         }
     }
+    /*{
+        PerfEventBlock peb(perf,count,{"lookup BinarySearchBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchBigNode.lookup(keys[i]);
+        }
+    }*/
     /*{
         PerfEventBlock peb(perf,count,{"lookup BinarySearch with Hints"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -356,13 +405,18 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_interpolationSearch.lookup(keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"lookup InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearchKeyHeads.lookup(keys[i]);
         }
-    }
-
+    }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"lookup InterpolationSearchKeyHeadsBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearchKeyHeadsBigNode.lookup(keys[i]);
+        }
+    }*/
 
     /*{
         PerfEventBlock peb(perf,count,{"remove stdMap"});
@@ -376,12 +430,30 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_templ.remove(keys[i]);
         }
     }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"remove TemplateBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_templBigNode.remove(keys[i]);
+        }
+    }*/
+    {
+        PerfEventBlock peb(perf,count,{"remove BinarySearchNoPrefix"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchNoPrefix.remove(keys[i]);
+        }
+    }
     {
         PerfEventBlock peb(perf,count,{"remove BinarySearch"});
         for (uint64_t i = 0; i < count; ++i) {
             t_binarySearch.remove(keys[i]);
         }
     }
+    /*{
+        PerfEventBlock peb(perf,count,{"remove BinarySearchBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_binarySearchBigNode.remove(keys[i]);
+        }
+    }*/
     /*{
         PerfEventBlock peb(perf,count,{"remove BinarySearch with Hints"});
         for (uint64_t i = 0; i < count; ++i) {
@@ -400,12 +472,19 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys,PerfEvent& perf) {
             t_interpolationSearch.remove(keys[i]);
         }
     }*/
-    {
+    /*{
         PerfEventBlock peb(perf,count,{"remove InterpolationSearchKeyHeads"});
         for (uint64_t i = 0; i < count; ++i) {
             t_interpolationSearchKeyHeads.remove(keys[i]);
         }
-    }
+    }*/
+    /*{
+        PerfEventBlock peb(perf,count,{"remove InterpolationSearchKeyHeadsBigNode"});
+        for (uint64_t i = 0; i < count; ++i) {
+            t_interpolationSearchKeyHeadsBigNode.remove(keys[i]);
+        }
+    }*/
+
     std::cout << "PerformanceTestStandard END" << std::endl;
 }
 
@@ -629,6 +708,7 @@ void verifyBTreeNodeSizes() {
     }
 
     TesterPerformanceTempl t_templ{};
+    TesterPerformanceBinarySearchNoPrefix t_binarySearchNoPrefix{};
     TesterPerformanceBinarySearch t_binarySearch{};
     TesterPerformanceBinarySearchHints t_binarySearchHints{};
     TesterPerformanceLinearSearch t_linearSearch{};
@@ -636,14 +716,15 @@ void verifyBTreeNodeSizes() {
     TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};
 
     uint32_t template_ContentSize = t_templ.btreeTemplate->root->CONTENT_SIZE;
+    uint32_t binarySearchNoPrefix_ContentSize = t_binarySearchNoPrefix.btreeBinarySearchNoPrefix->root->CONTENT_SIZE;
     uint32_t binarySearch_ContentSize = t_binarySearch.btreeBinarySearch->root->CONTENT_SIZE;
     uint32_t binarySearchHints_ContentSize = t_binarySearchHints.btreeBinarySearchHints->root->CONTENT_SIZE;
     uint32_t linearSearch_ContentSize = t_linearSearch.btreeLinearSearch->root->CONTENT_SIZE;
     uint32_t interpolationSearch_ContentSize = t_interpolationSearch.btreeInterpolationSearch->root->CONTENT_SIZE;
     uint32_t interpolationSearchKeyHeads_ContentSize = t_interpolationSearchKeyHeads.btreeInterpolationSearchKeyHeads->root->CONTENT_SIZE;
 
-    if (binarySearch_ContentSize != binarySearchHints_ContentSize || binarySearch_ContentSize != linearSearch_ContentSize || binarySearch_ContentSize != interpolationSearch_ContentSize || binarySearch_ContentSize != interpolationSearchKeyHeads_ContentSize) {
-        std::cout << "BTree Node Size Inconsistency. Content Sizes:   Template=" << template_ContentSize << ", BinarySearch=" << binarySearch_ContentSize << ", BinarySearchHints=" << binarySearchHints_ContentSize << ", LinearSearch=" << linearSearch_ContentSize << ", InterpolationSearch=" << interpolationSearch_ContentSize << ", InterpolationSearchKeyHeads=" << interpolationSearchKeyHeads_ContentSize << std::endl;
+    if (binarySearch_ContentSize != binarySearchNoPrefix_ContentSize || binarySearch_ContentSize != binarySearchHints_ContentSize || binarySearch_ContentSize != linearSearch_ContentSize || binarySearch_ContentSize != interpolationSearch_ContentSize || binarySearch_ContentSize != interpolationSearchKeyHeads_ContentSize) {
+        std::cout << "BTree Node Size Inconsistency. Content Sizes:   Template=" << template_ContentSize << ", BinarySearch=" << binarySearch_ContentSize << ", BinarySearchNoPrefix=" << binarySearchNoPrefix_ContentSize << ", BinarySearchHints=" << binarySearchHints_ContentSize << ", LinearSearch=" << linearSearch_ContentSize << ", InterpolationSearch=" << interpolationSearch_ContentSize << ", InterpolationSearchKeyHeads=" << interpolationSearchKeyHeads_ContentSize << std::endl;
     } else if (binarySearch_ContentSize != template_ContentSize) {
         std::cout << "BTreeTemplate has a different Node Size. BTreeTemplate Content Size: " << template_ContentSize << ", other Btree Content Sizes: " << binarySearch_ContentSize << std::endl;
     } else {
@@ -653,6 +734,10 @@ void verifyBTreeNodeSizes() {
 
 std::vector<uint8_t> stringToVector(const std::string &str) {
     return std::vector<uint8_t>(str.begin(), str.end());
+}
+
+std::vector<uint64_t> fal(double shape, uint64_t size) {
+        
 }
 
 int main() {
@@ -676,12 +761,12 @@ int main() {
             data.emplace_back(u.bytes, u.bytes + 4);
         }
         runPerformanceTestStandard(data, perf);
-        // runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        /*runTest(data);
-        runTestReverse(data);
-        runTestZickZack(data);
-        runTestMixed(data);*/
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
+        //runTest(data);
+        //runTestReverse(data);
+        //runTestZickZack(data);
+        //runTestMixed(data);
     }
 
     if (getenv("INTUNIFORM")) {
@@ -709,13 +794,74 @@ int main() {
             }
             byte1++;
         }
-        runPerformanceTestStandard(data, perf);
-        // runPerformanceTestMixed(data, perf);
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
         //runPerformanceTestLookup(data, perf);
-        /*runTest(data);
-        runTestReverse(data);
-        runTestZickZack(data);
-        runTestMixed(data);*/
+        runTest(data);
+        //runTestReverse(data);
+        //runTestZickZack(data);
+        //runTestMixed(data);
+    }
+
+    if (getenv("INTFAL")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INTFAL"));
+        std::vector<uint64_t> v(n);
+        double shape = 0.5;
+        auto n = v.size();
+        for (auto i = 0; i < v.size() - 1; i++) {
+            // scale up to ensure elements are distinct for as long as possible
+             v[i] = pow((double)(n - i), - shape) * std::numeric_limits<uint64_t>::max();
+        }
+        v.back() = std::numeric_limits<uint64_t>::max();
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf); 
+        //runTest(data);
+        //runTestReverse(data);
+        //runTestZickZack(data);
+        //runTestMixed(data);
+    }
+
+    if (getenv("INTCFAL")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INTCFAL"));
+        std::vector<uint64_t> v(n);
+        double shape = 0.5;
+        auto n = v.size();
+        auto v = fal(shape, n);
+        auto max_sum = std::accumulate(v.begin(), v.end(), 0.0L);
+        auto scale = std::numeric_limits<uint64_t>::max() / max_sum;
+        std::transform(v.begin(), v.end(), v.begin(),
+                   [scale](auto x) { return x * scale; });
+        std::partial_sum(v.begin(), v.end(), v.begin());
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
+        //runTest(data);
+        //runTestReverse(data);
+        //runTestZickZack(data);
+        //runTestMixed(data);
+    }
+
+    if (getenv("INTRANDOM")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INTRANDOM"));
+        for (uint64_t i = 0; i < n; i++) {
+            uint8_t bytes[4];
+            bytes[0] = rand() % 255;
+            bytes[1] = rand() % 255;
+            bytes[2] = rand() % 255;
+            bytes[3] = rand() % 255;
+            data.emplace_back(bytes, bytes + 4);
+        }
+        //runPerformanceTestStandard(data, perf);
+        //runPerformanceTestMixed(data, perf);
+        //runPerformanceTestLookup(data, perf);
+        //runTest(data);
+        //runTestReverse(data);
+        //runTestZickZack(data);
+        //runTestMixed(data);
     }
 
     if (getenv("BYTE")) {
@@ -742,13 +888,13 @@ int main() {
             }
             data.push_back(key);
         }
-        runPerformanceTestStandard(data, perf);
+        //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        /*runTest(data);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
         runTestReverse(data);
         runTestZickZack(data);
-        runTestMixed(data);*/
+        runTestMixed(data);
     }
 
     if (getenv("VARIABLEBYTE")) {
@@ -787,13 +933,13 @@ int main() {
             }
             data.push_back(key);
         }
-        runPerformanceTestStandard(data, perf);
+        //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        //runTest(data);
-        //runTestReverse(data);
-        //runTestZickZack(data);
-        //runTestMixed(data);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
+        runTestReverse(data);
+        runTestZickZack(data);
+        runTestMixed(data);
     }
 
     if (getenv("LONG1")) {
@@ -805,13 +951,13 @@ int main() {
                 s.push_back('A');
             data.push_back(stringToVector(s));;
         }
-        runPerformanceTestStandard(data, perf);
+        //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        /*runTest(data);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
         runTestReverse(data);
         runTestZickZack(data);
-        runTestMixed(data);*/
+        runTestMixed(data);
     }
 
     if (getenv("LONG2")) {
@@ -823,11 +969,11 @@ int main() {
                 s.push_back('A' + random() % 60);
             data.push_back(stringToVector(s));
         }
-        runPerformanceTestStandard(data, perf);
+        //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        //runTest(data);
-        //runTestMixed(data);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
+        runTestMixed(data);
     }
 
     if (getenv("FILE")) {
@@ -837,11 +983,11 @@ int main() {
         while (getline(in, line))
             data.push_back(stringToVector(line));;
         
-        runPerformanceTestStandard(data, perf);
+        //runPerformanceTestStandard(data, perf);
         //runPerformanceTestMixed(data, perf);
-        runPerformanceTestLookup(data, perf);
-        //runTest(data);
-        //runTestMixed(data);
+        //runPerformanceTestLookup(data, perf);
+        runTest(data);
+        runTestMixed(data);
     }
     return 0;
 }

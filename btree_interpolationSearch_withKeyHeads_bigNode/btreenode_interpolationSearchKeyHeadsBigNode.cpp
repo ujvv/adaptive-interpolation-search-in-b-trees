@@ -1,8 +1,12 @@
-#include "btreenode_templateBigNode.hpp"
+#include "btreenode_interpolationSearchKeyHeadsBigNode.hpp"
 #include "utils.hpp"
 
-BTreeNodeTemplateBigNode::BTreeNodeTemplateBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
-  uint16_t minLength = std::min(lowerFence.len, upperFence.len);
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+BTreeNodeInterpolationSearchKeyHeadsBigNode::BTreeNodeInterpolationSearchKeyHeadsBigNode(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
+  uint16_t minLength = std::min(lowerFenceKey.size(), upperFenceKey.size());
   prefixLen = minLength;
   for (uint16_t i = 0; i < minLength; i++) {
     if (lowerFenceKey[i] != upperFenceKey[i]) {
@@ -20,7 +24,7 @@ BTreeNodeTemplateBigNode::BTreeNodeTemplateBigNode(std::span<uint8_t> lowerFence
   }
 
   // Insert lowerFenceKey
-  uint16_t lowerFenceKeySize = lowerFence.len - prefixLen;
+  uint16_t lowerFenceKeySize = lowerFenceKey.size() - prefixLen;
   if (lowerFenceKeySize > 0) {
     freeOffset -= lowerFenceKeySize;
     lowerFence.len = lowerFenceKeySize;
@@ -33,7 +37,7 @@ BTreeNodeTemplateBigNode::BTreeNodeTemplateBigNode(std::span<uint8_t> lowerFence
   }
 
   // Insert upperFenceKey
-  uint16_t upperFenceKeySize = upperFence.len - prefixLen;
+  uint16_t upperFenceKeySize = upperFenceKey.size() - prefixLen;
   if (upperFenceKeySize > 0) {
     freeOffset -= upperFenceKeySize;
     upperFence.len = upperFenceKeySize;
@@ -46,12 +50,12 @@ BTreeNodeTemplateBigNode::BTreeNodeTemplateBigNode(std::span<uint8_t> lowerFence
   }
 }
 
-uint32_t BTreeNodeTemplateBigNode::getSplitIndex() {
+uint32_t BTreeNodeInterpolationSearchKeyHeadsBigNode::getSplitIndex() {
   uint32_t splitIndex = 0;
   uint32_t spaceUsedSoFar = 0;
   for (uint32_t i = 0; i < numKeys; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + i * sizeof(PageSlotTemplateBigNode));
-    uint32_t requiredSpace = slot->keyLength + slot->valueLength + sizeof(PageSlotTemplateBigNode);
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + i * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+    uint32_t requiredSpace = slot->keyLength + slot->valueLength + sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
     spaceUsedSoFar += requiredSpace;
     if (spaceUsedSoFar <= CONTENT_SIZE / 2) {
       splitIndex = i;
@@ -62,7 +66,7 @@ uint32_t BTreeNodeTemplateBigNode::getSplitIndex() {
   return std::max((uint32_t) 1, splitIndex);
 }
 
-std::vector<std::vector<uint8_t>> BTreeNodeTemplateBigNode::getKeys() {
+std::vector<std::vector<uint8_t>> BTreeNodeInterpolationSearchKeyHeadsBigNode::getKeys() {
   std::vector<std::vector<uint8_t>> keys(numKeys);
   for (uint32_t i = 0; i < numKeys; i++) {
     std::vector<uint8_t> key = getFullKey(i);
@@ -71,7 +75,7 @@ std::vector<std::vector<uint8_t>> BTreeNodeTemplateBigNode::getKeys() {
   return keys;
 }
 
-std::vector<std::string> BTreeNodeTemplateBigNode::getKeysAsString() {
+std::vector<std::string> BTreeNodeInterpolationSearchKeyHeadsBigNode::getKeysAsString() {
   std::vector<std::string> keys(numKeys);
   for (uint32_t i = 0; i < numKeys; i++) {
     std::vector<uint8_t> key = getFullKey(i);
@@ -80,7 +84,7 @@ std::vector<std::string> BTreeNodeTemplateBigNode::getKeysAsString() {
   return keys;
 }
 
-std::vector<std::string> BTreeNodeTemplateBigNode::getShortenedKeysAsString() {
+std::vector<std::string> BTreeNodeInterpolationSearchKeyHeadsBigNode::getShortenedKeysAsString() {
   std::vector<std::string> keys(numKeys);
   for (uint32_t i = 0; i < numKeys; i++) {
     auto key = getShortenedKey(i);
@@ -89,8 +93,8 @@ std::vector<std::string> BTreeNodeTemplateBigNode::getShortenedKeysAsString() {
   return keys;
 }
 
-bool BTreeNodeTemplateBigNode::keySmallerEqualThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key) {
-  auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
+bool BTreeNodeInterpolationSearchKeyHeadsBigNode::keySmallerEqualThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key) {
+  auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
   if (keyHead < slot->keyHead) {
     return true;
   }
@@ -102,50 +106,21 @@ bool BTreeNodeTemplateBigNode::keySmallerEqualThanAtPosition(uint32_t position, 
   return key <= getShortenedKey(position);
 }
 
-void BTreeNodeTemplateBigNode::updateHints() {
-  if (numKeys <= 16) {
-    return;
+bool BTreeNodeInterpolationSearchKeyHeadsBigNode::keySmallerThanAtPosition(uint32_t position, uint32_t keyHead, std::span<uint8_t> key) {
+  auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+  if (keyHead < slot->keyHead) {
+    return true;
+  }
+  if (keyHead > slot->keyHead) {
+    return false;
   }
 
-  uint32_t spacing = numKeys / 16;
-  for (uint32_t i = 0; i < 16; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + i * spacing * sizeof(PageSlotTemplateBigNode));
-    hints[i] = slot->keyHead;
-  }
+  // The key heads are equal, so we need to compare the full keys
+  return key < getShortenedKey(position);
 }
 
-std::pair<int, int> BTreeNodeTemplateBigNode::getHintRange(uint32_t keyHead) {
-  if (numKeys <= 16) {
-    return std::make_pair(0, numKeys - 1);
-  }
-  uint32_t spacing = numKeys / 16;
-  if (keyHead < hints[0]) {
-    return std::make_pair(0, spacing - 1);
-  }
-  if (keyHead > hints[15]) {
-    return std::make_pair(15 * spacing, numKeys - 1);
-  }
-
-  // Linear search on the hints to find the left and right boundary
-  uint16_t left = 0;
-  while (left + 1 < 16 && keyHead > hints[left + 1]) {
-    left++;
-  }
-  uint16_t right = 15;
-  while (right - 1 >= 0 && keyHead < hints[right - 1]) {
-    right--;
-  }
-
-  // If right was not moved, it should point to the last entry instead of right*spacing to account for
-  // the fact that the last partition of the keys will have more keys if numKeys%16 != 0
-  if (right == 15) {
-    return std::make_pair(left * spacing, numKeys - 1);
-  }
-  return std::make_pair(left * spacing, right * spacing);
-}
-
-uint32_t BTreeNodeTemplateBigNode::getEntryIndexByKey(std::span<uint8_t> key) {
-  // Do a binary search to find the index of the entry where the key is / should contained
+uint32_t BTreeNodeInterpolationSearchKeyHeadsBigNode::getEntryIndexByKey(std::span<uint8_t> key) {
+  // Do a interpolation search to find the index of the entry where the key is / should contained
   // This function assumes that the key shares the same prefix as all the keys in the node
 
   std::span<uint8_t> keyWithoutPrefix = key.subspan(prefixLen);
@@ -158,28 +133,64 @@ uint32_t BTreeNodeTemplateBigNode::getEntryIndexByKey(std::span<uint8_t> key) {
     return numKeys;
   }
 
-  auto [left, right] = getHintRange(keyHead);
+
+  uint32_t left = 0;
+  uint32_t right = numKeys - 1;
   uint32_t childIndex = right;
+  uint32_t next; // Interpolation "guessed" key-index
 
-  while (left <= right) {
-    uint32_t middle = (left + right) / 2;
-    if (keySmallerEqualThanAtPosition(middle, keyHead, keyWithoutPrefix)) {
-      childIndex = middle;
-      right = middle - 1;
-    } else {
-      left = middle + 1;
+  while (left < right) {
+    // Interpolation Search Calculation:
+    // next = (key - getKey(left)) / (getKey(right) - getKey(left)) * (right - left) + left
+    
+    // Dividend Calculation
+    double dividendDecimal = static_cast<double>(keyHead) - static_cast<double>(getKeyHead(getShortenedKey(left)));
+
+    if (dividendDecimal < 0) { // if leftKey > key
+      return left; // means correct index was found in previous iteration
     }
-  }
 
+    // Divisor Calculation
+    double divisorDecimal = static_cast<double>(getKeyHead(getShortenedKey(right))) - static_cast<double>(getKeyHead(getShortenedKey(left)));
+
+    if (divisorDecimal == 0) {
+      return childIndex; // Edge Case: When getShortenedKey(1) is 0
+    }
+
+    // Final Interpolation Calculations
+    double quotient = dividendDecimal / divisorDecimal;
+    if (quotient > 1) {
+      return childIndex;
+    }
+    next = quotient * (right - left) + left;
+
+    // Compare new interpolation next-index with key
+    if (keySmallerEqualThanAtPosition(next, keyHead, keyWithoutPrefix)) {
+      childIndex = next;
+      right = next - 1;
+    } else {
+      left = next + 1;
+    }
+  } // end while
+  if (left == right && keySmallerEqualThanAtPosition(left, keyHead, keyWithoutPrefix)) {
+    return left;
+  }
   return childIndex;
 }
 
-void BTreeNodeTemplateBigNode::compact() {
+void BTreeNodeInterpolationSearchKeyHeadsBigNode::compact() {
   // Only the heap needs to be restructured, so compute where the heap starts
-  const uint32_t heapStart = numKeys * sizeof(PageSlotTemplateBigNode);
+  const uint32_t heapStart = numKeys * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
   const uint32_t compactableSize = CONTENT_SIZE - heapStart;
   uint8_t *buffer = reinterpret_cast<uint8_t *>(alloca(compactableSize));
   uint32_t insertionOffset = compactableSize;
+
+  // Copy Prefix
+  insertionOffset -= prefixLen;
+  if (prefixLen > 0) {
+    std::memcpy(buffer + insertionOffset, content + prefixOffset, prefixLen);
+  }
+  prefixOffset = heapStart + insertionOffset;
 
   // Copy the fence keys
   insertionOffset -= lowerFence.len;
@@ -196,7 +207,7 @@ void BTreeNodeTemplateBigNode::compact() {
 
   // Copy all entries to the buffer, but not the slots
   for (uint32_t i = 0; i < numKeys; i++) {
-    auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + i * sizeof(PageSlotTemplateBigNode));
+    auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + i * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
     uint32_t requiredSize = slot->keyLength + slot->valueLength;
     insertionOffset -= requiredSize;
     std::memcpy(buffer + insertionOffset, content + slot->offset, requiredSize);
@@ -208,21 +219,21 @@ void BTreeNodeTemplateBigNode::compact() {
   freeOffset = heapStart + insertionOffset;
 }
 
-void BTreeNodeTemplateBigNode::insertEntry(uint32_t position, std::span<uint8_t> key, std::span<uint8_t> value) {
+void BTreeNodeInterpolationSearchKeyHeadsBigNode::insertEntry(uint32_t position, std::span<uint8_t> key, std::span<uint8_t> value) {
   // First trim the key to get rid of the prefix
   std::span<uint8_t> keyWithoutPrefix = key.subspan(prefixLen);
-  uint32_t requiredSpace = sizeof(PageSlotTemplateBigNode) + keyWithoutPrefix.size() + value.size();
+  uint32_t requiredSpace = sizeof(PageSlotInterpolationSearchKeyHeadsBigNode) + keyWithoutPrefix.size() + value.size();
 
   // Compact the node if there is enough space in the node, but not enough contiguous space in the heap
-  bool overflows = freeOffset < requiredSpace || freeOffset - requiredSpace < static_cast<uint32_t>(numKeys * sizeof(PageSlotTemplateBigNode));
+  bool overflows = freeOffset < requiredSpace || freeOffset - requiredSpace < static_cast<uint32_t>(numKeys * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
   if (overflows) {
     compact();
   }
 
   // Move all slots after the insertion position one slot to the right
-  uint32_t moveFromOffset = position * sizeof(PageSlotTemplateBigNode);
-  uint32_t moveToOffset = (position + 1) * sizeof(PageSlotTemplateBigNode);
-  uint32_t moveSize = (numKeys - position) * sizeof(PageSlotTemplateBigNode);
+  uint32_t moveFromOffset = position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
+  uint32_t moveToOffset = (position + 1) * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
+  uint32_t moveSize = (numKeys - position) * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
   if (moveSize > 0) {
     std::memmove(content + moveToOffset, content + moveFromOffset, moveSize);
   }
@@ -237,7 +248,7 @@ void BTreeNodeTemplateBigNode::insertEntry(uint32_t position, std::span<uint8_t>
   }
 
   // Store the size and offset information in the new slot
-  auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
+  auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
   slot->offset = freeOffset;
   slot->keyLength = keyWithoutPrefix.size();
   slot->valueLength = value.size();
@@ -247,39 +258,39 @@ void BTreeNodeTemplateBigNode::insertEntry(uint32_t position, std::span<uint8_t>
   numKeys++;
   spaceUsed += requiredSpace;
 }
-void BTreeNodeTemplateBigNode::insertEntry(uint32_t position, std::span<uint8_t> key, BTreeNodeTemplateBigNode *childPointer) { insertEntry(position, key, std::span<uint8_t>(reinterpret_cast<uint8_t *>(&childPointer), sizeof(BTreeNodeTemplateBigNode *))); }
+void BTreeNodeInterpolationSearchKeyHeadsBigNode::insertEntry(uint32_t position, std::span<uint8_t> key, BTreeNodeInterpolationSearchKeyHeadsBigNode *childPointer) { insertEntry(position, key, std::span<uint8_t>(reinterpret_cast<uint8_t *>(&childPointer), sizeof(BTreeNodeInterpolationSearchKeyHeadsBigNode *))); }
 
-void BTreeNodeTemplateBigNode::eraseEntry(uint32_t position) {
+void BTreeNodeInterpolationSearchKeyHeadsBigNode::eraseEntry(uint32_t position) {
   // If the rightmost child gets deleted, set the rightmost child to the child before it
   if (position == numKeys && !isLeaf) {
-    rightMostChildTemplateBigNode = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(position - 1);
+    rightMostChildInterpolationSearchKeyHeadsBigNode = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(position - 1);
     eraseEntry(position - 1);
     return;
   }
 
   // Update the node state
-  auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
-  spaceUsed -= (sizeof(PageSlotTemplateBigNode) + slot->keyLength + slot->valueLength);
+  auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+  spaceUsed -= (sizeof(PageSlotInterpolationSearchKeyHeadsBigNode) + slot->keyLength + slot->valueLength);
 
   // Move the slots after the deleted slot one slot to the left
-  uint32_t moveFromOffset = (position + 1) * sizeof(PageSlotTemplateBigNode);
-  uint32_t moveToOffset = position * sizeof(PageSlotTemplateBigNode);
-  uint32_t moveSize = (numKeys - position - 1) * sizeof(PageSlotTemplateBigNode);
+  uint32_t moveFromOffset = (position + 1) * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
+  uint32_t moveToOffset = position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
+  uint32_t moveSize = (numKeys - position - 1) * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode);
   std::memmove(content + moveToOffset, content + moveFromOffset, moveSize);
 
   numKeys--;
 }
 
-void BTreeInnerNodeTemplateBigNode::overwriteChild(uint32_t position, BTreeNodeTemplateBigNode *newChild) {
-  auto slot = reinterpret_cast<PageSlotTemplateBigNode *>(content + position * sizeof(PageSlotTemplateBigNode));
-  std::memcpy(content + slot->offset + slot->keyLength, &newChild, sizeof(BTreeNodeTemplateBigNode *));
+void BTreeInnerNodeInterpolationSearchKeyHeadsBigNode::overwriteChild(uint32_t position, BTreeNodeInterpolationSearchKeyHeadsBigNode *newChild) {
+  auto slot = reinterpret_cast<PageSlotInterpolationSearchKeyHeadsBigNode *>(content + position * sizeof(PageSlotInterpolationSearchKeyHeadsBigNode));
+  std::memcpy(content + slot->offset + slot->keyLength, &newChild, sizeof(BTreeNodeInterpolationSearchKeyHeadsBigNode *));
 }
 
-void BTreeNodeTemplateBigNode::destroy() {
+void BTreeNodeInterpolationSearchKeyHeadsBigNode::destroy() {
   if (isLeaf) {
-    delete reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(this);
+    delete reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(this);
   } else {
-    BTreeInnerNodeTemplateBigNode *innerNode = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this);
+    BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *innerNode = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this);
     for (uint32_t i = 0; i <= numKeys; ++i) {
       innerNode->getChild(i)->destroy();
     }
@@ -287,14 +298,14 @@ void BTreeNodeTemplateBigNode::destroy() {
   }
 }
 
-BTreeNodeTemplateBigNode *BTreeNodeTemplateBigNode::splitNode(uint32_t splitIndex, std::span<uint8_t> splitKey) {
+BTreeNodeInterpolationSearchKeyHeadsBigNode *BTreeNodeInterpolationSearchKeyHeadsBigNode::splitNode(uint32_t splitIndex, std::span<uint8_t> splitKey) {
   // Create the new node
-  BTreeNodeTemplateBigNode *newNode = nullptr;
+  BTreeNodeInterpolationSearchKeyHeadsBigNode *newNode = nullptr;
   auto upperFenceKey = getUpperFenceKey();
   if (isLeaf) {
-    newNode = new BTreeLeafNodeTemplateBigNode(splitKey, upperFenceKey);
+    newNode = new BTreeLeafNodeInterpolationSearchKeyHeadsBigNode(splitKey, upperFenceKey);
   } else {
-    newNode = new BTreeInnerNodeTemplateBigNode(splitKey, upperFenceKey);
+    newNode = new BTreeInnerNodeInterpolationSearchKeyHeadsBigNode(splitKey, upperFenceKey);
   }
 
   // Copy the entries starting from splitIndex+1 to the new node
@@ -304,10 +315,10 @@ BTreeNodeTemplateBigNode *BTreeNodeTemplateBigNode::splitNode(uint32_t splitInde
   for (uint32_t i = splitIndex; i < initialEntryCount; ++i) {
     auto key = getFullKey(i);
     if (isLeaf) {
-      auto value = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(this)->getValue(i);
+      auto value = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(this)->getValue(i);
       newNode->insertEntry(insertIndex, key, value);
     } else {
-      auto child = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(i);
+      auto child = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(i);
       newNode->insertEntry(insertIndex, key, child);
     }
     ++insertIndex;
@@ -315,38 +326,37 @@ BTreeNodeTemplateBigNode *BTreeNodeTemplateBigNode::splitNode(uint32_t splitInde
 
   // If it's a leaf, update the linkedlist
   if (isLeaf) {
-    newNode->nextLeafNodeTemplateBigNode = nextLeafNodeTemplateBigNode;
-    nextLeafNodeTemplateBigNode = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(newNode);
+    newNode->nextLeafNodeInterpolationSearchKeyHeadsBigNode = nextLeafNodeInterpolationSearchKeyHeadsBigNode;
+    nextLeafNodeInterpolationSearchKeyHeadsBigNode = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(newNode);
   }
 
   return newNode;
 }
 
-std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTreeNodeTemplateBigNode::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
+std::optional<std::pair<BTreeNodeInterpolationSearchKeyHeadsBigNode *, std::vector<uint8_t>>> BTreeNodeInterpolationSearchKeyHeadsBigNode::insert(std::span<uint8_t> key, std::span<uint8_t> value) {
   if (!isLeaf) {
     uint32_t childIndex = getEntryIndexByKey(key);
-    auto toInsert = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(childIndex)->insert(key, value);
+    auto toInsert = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(childIndex)->insert(key, value);
     if (!toInsert.has_value()) {
       return std::nullopt;
     }
 
     // Insert the new node
-    BTreeNodeTemplateBigNode *nodeToInsert = toInsert->first;
+    BTreeNodeInterpolationSearchKeyHeadsBigNode *nodeToInsert = toInsert->first;
     std::vector<uint8_t> keyToInsert = toInsert->second;
-    uint32_t requiredSpace = sizeof(PageSlotTemplateBigNode) + keyToInsert.size() + sizeof(BTreeNodeTemplateBigNode *);
+    uint32_t requiredSpace = sizeof(PageSlotInterpolationSearchKeyHeadsBigNode) + keyToInsert.size() + sizeof(BTreeNodeInterpolationSearchKeyHeadsBigNode *);
     bool canFit = spaceUsed + requiredSpace <= CONTENT_SIZE;
-    BTreeNodeTemplateBigNode* currentChild = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(childIndex);
+    BTreeNodeInterpolationSearchKeyHeadsBigNode* currentChild = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(childIndex);
 
     // If the entry can fit, insert it and then the insertion process is finished
     if (canFit) {
       if (childIndex == numKeys) {
         insertEntry(childIndex, keyToInsert, currentChild);
-        reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->rightMostChildTemplateBigNode = nodeToInsert;
+        reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->rightMostChildInterpolationSearchKeyHeadsBigNode = nodeToInsert;
       } else {
-        reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->overwriteChild(childIndex, nodeToInsert);
+        reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->overwriteChild(childIndex, nodeToInsert);
         insertEntry(childIndex, keyToInsert, currentChild);
       }
-      updateHints();
       return std::nullopt;
     }
 
@@ -359,17 +369,17 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
     std::vector<uint8_t> splitKey = getFullKey(splitIndex);
 
     // Create the new right sibling, the new node with the entries [splitIndex+1, numKeys]
-    BTreeInnerNodeTemplateBigNode *newRightSibling = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(splitNode(splitIndex + 1, splitKey));
-    newRightSibling->rightMostChildTemplateBigNode = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->rightMostChildTemplateBigNode;
+    BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *newRightSibling = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(splitNode(splitIndex + 1, splitKey));
+    newRightSibling->rightMostChildInterpolationSearchKeyHeadsBigNode = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->rightMostChildInterpolationSearchKeyHeadsBigNode;
 
     // Create a new node that will replace the current node because the prefixLen could change so all keys need to be reinserted
     auto lowerFenceKey = getLowerFenceKey();
-    BTreeInnerNodeTemplateBigNode *newThisChild = new BTreeInnerNodeTemplateBigNode(lowerFenceKey, splitKey);
+    BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *newThisChild = new BTreeInnerNodeInterpolationSearchKeyHeadsBigNode(lowerFenceKey, splitKey);
 
     // Insert all the entreis remaining in the current node into the new node
     for (uint32_t i = 0; i <= splitIndex; ++i) {
       auto key = getFullKey(i);
-      auto child = reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(i);
+      auto child = reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(i);
       newThisChild->insertEntry(i, key, child);
     }
 
@@ -385,7 +395,7 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
       // The new child will be the rightmost
       if (insertIndex == newRightSibling->numKeys) {
         newRightSibling->insertEntry(insertIndex, keyToInsert, currentChild);
-        newRightSibling->rightMostChildTemplateBigNode = nodeToInsert;
+        newRightSibling->rightMostChildInterpolationSearchKeyHeadsBigNode = nodeToInsert;
       }
 
       else {
@@ -394,12 +404,9 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
       }
     }
 
-    newThisChild->updateHints();
-    newRightSibling->updateHints();
-
     // Swap the new node with the current one, delete the current one and return the new node to insert into the parent
     // with the corresponding split key
-    std::swap(*reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this), *newThisChild);
+    std::swap(*reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this), *newThisChild);
     delete newThisChild;
     return std::make_pair(newRightSibling, splitKey);
 
@@ -412,47 +419,46 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
       eraseEntry(insertIndex);
     }
 
-    uint32_t requiredSpace = sizeof(PageSlotTemplateBigNode) + keyWithoutPrefix.size() + value.size();
+    uint32_t requiredSpace = sizeof(PageSlotInterpolationSearchKeyHeadsBigNode) + keyWithoutPrefix.size() + value.size();
     bool canFit = spaceUsed + requiredSpace <= CONTENT_SIZE;
 
     // If the key + value can fit in the current node, insert the entry
     if (canFit) {
       insertEntry(insertIndex, key, value);
-      updateHints();
       return std::nullopt;
     }
 
     // Otherwise we need to split the node
     uint32_t splitIndex = getSplitIndex();
     std::vector<uint8_t> splitKey;
-    BTreeLeafNodeTemplateBigNode *newRightSibling = nullptr;
+    BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *newRightSibling = nullptr;
     uint32_t lastEntryIndex;
 
     // Determine the correct splitKey and the new right sibling as well as the index of the last key that should remain
     // In the current node
     if (insertIndex < splitIndex) {
       splitKey = getFullKey(splitIndex - 1);
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(splitNode(splitIndex, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(splitNode(splitIndex, splitKey));
       lastEntryIndex = splitIndex - 1;
     } else if (insertIndex > splitIndex) {
       splitKey = getFullKey(splitIndex);
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(splitNode(splitIndex + 1, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(splitNode(splitIndex + 1, splitKey));
       lastEntryIndex = splitIndex;
     } else {
       splitKey = std::vector<uint8_t>(key.begin(), key.end());
-      newRightSibling = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(splitNode(splitIndex, splitKey));
+      newRightSibling = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(splitNode(splitIndex, splitKey));
       lastEntryIndex = splitIndex - 1;
     }
 
     // Create a new node that will replace the current node because the prefixLen could change so all keys need to be reinserted
     auto lowerFenceKey = getLowerFenceKey();
-    BTreeLeafNodeTemplateBigNode *newThisChild = new BTreeLeafNodeTemplateBigNode(lowerFenceKey, splitKey);
-    newThisChild->nextLeafNodeTemplateBigNode = newRightSibling;
+    BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *newThisChild = new BTreeLeafNodeInterpolationSearchKeyHeadsBigNode(lowerFenceKey, splitKey);
+    newThisChild->nextLeafNodeInterpolationSearchKeyHeadsBigNode = newRightSibling;
 
     // Insert all the entreis remaining in the current node into the new node
     for (uint32_t i = 0; i <= lastEntryIndex; ++i) {
       auto key = getFullKey(i);
-      auto value = reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(this)->getValue(i);
+      auto value = reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(this)->getValue(i);
       newThisChild->insertEntry(i, key, value);
     }
 
@@ -464,17 +470,14 @@ std::optional<std::pair<BTreeNodeTemplateBigNode *, std::vector<uint8_t>>> BTree
       newRightSibling->insertEntry(insertIndex, key, value);
     }
 
-    newRightSibling->updateHints();
-    newThisChild->updateHints();
-
     // Swap the new node with the current one, delete the current one and return the new node to insert into the parent
-    std::swap(*reinterpret_cast<BTreeLeafNodeTemplateBigNode *>(this), *newThisChild);
+    std::swap(*reinterpret_cast<BTreeLeafNodeInterpolationSearchKeyHeadsBigNode *>(this), *newThisChild);
     delete newThisChild;
     return std::make_pair(newRightSibling, splitKey);
   }
 }
 
-bool BTreeNodeTemplateBigNode::remove(std::span<uint8_t> key) {
+bool BTreeNodeInterpolationSearchKeyHeadsBigNode::remove(std::span<uint8_t> key) {
   if (isLeaf) {
     uint32_t entryIndex = getEntryIndexByKey(key);
     if (entryIndex < numKeys) {
@@ -482,13 +485,12 @@ bool BTreeNodeTemplateBigNode::remove(std::span<uint8_t> key) {
       bool keysEqual = key.size() == existingKey.size() && std::equal(key.begin(), key.end(), existingKey.begin());
       if (keysEqual) {
         eraseEntry(entryIndex);
-        updateHints();
         return true;
       }
     }
     return false;
   } else {
     uint32_t childIndex = getEntryIndexByKey(key);
-    return reinterpret_cast<BTreeInnerNodeTemplateBigNode *>(this)->getChild(childIndex)->remove(key);
+    return reinterpret_cast<BTreeInnerNodeInterpolationSearchKeyHeadsBigNode *>(this)->getChild(childIndex)->remove(key);
   }
 }
