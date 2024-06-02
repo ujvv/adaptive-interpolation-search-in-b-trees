@@ -80,10 +80,15 @@ public:
   std::vector<uint8_t> getUpperFenceKey() { return getFenceKey(upperFence); }
 
   // Utility functions to retrieve the keys of the node in different represantations
-
   std::vector<std::vector<uint8_t>> getKeys();
   std::vector<std::string> getKeysAsString();
   std::vector<std::string> getShortenedKeysAsString();
+
+  std::vector<uint32_t> calculateKeyDifferences();
+  void analyzeInnerNodes(std::vector<double> coefficientOfVariation);
+  void analyzeLeafs(std::vector<double> coefficientOfVariation);
+  double mean(std::vector<uint32_t> keyDifferences);
+  double standardDeviation(std::vector<uint32_t> keyDifferences, double mean);
 
 private:
   // Returns the index where this key is located or should be inserted. In a leaf, this is directly the index

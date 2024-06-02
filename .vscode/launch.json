@@ -10,6 +10,9 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [
+                {
+                    "name": "TEST",
+                },
                 /*{
                     "name": "INT",
                     "value": "0"

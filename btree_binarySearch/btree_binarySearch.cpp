@@ -86,6 +86,32 @@ void BTreeBinarySearch::scan(std::span<uint8_t> key, uint8_t *keyOut, const std:
   }
 }
 
+std::vector<double> BTreeBinarySearch::analyzeLeafs() {
+  std::vector<double> coefficientOfVariation;
+  if (root != nullptr) {
+    BTreeNodeBinarySearch *currentNode = root;
+    while (!currentNode->isLeaf) {
+      currentNode = reinterpret_cast<BTreeInnerNodeBinarySearch *>(currentNode)->getChild(0);
+    }
+    while (currentNode != nullptr) {
+      std::vector<uint32_t> keyDifferences = currentNode->calculateKeyDifferences();
+      double mean = currentNode->mean(keyDifferences);
+      double standardDeviation = currentNode->standardDeviation(keyDifferences, mean);
+      double coefficient = standardDeviation / mean;
+      keyDifferences.push_back(coefficient);
+    }
+  }
+  return coefficientOfVariation;
+}
+
+std::vector<double> BTreeBinarySearch::analyzeInnerNodes() {
+  std::vector<double> coefficientOfVariation;
+  if (root != nullptr) {
+    root->analyzeInnerNodes(coefficientOfVariation);
+  }
+  return coefficientOfVariation;
+}
+
 bool BTreeBinarySearch::remove(std::span<uint8_t> key) {
   if (root == nullptr) {
     return false;
@@ -124,3 +150,7 @@ uint8_t *btree_lookup_binarySearch(BTreeBinarySearch *tree, uint8_t *key, uint16
 // length iteration stops if there are no more keys or the callback returns
 // false.
 void btree_scan_binarySearch(BTreeBinarySearch *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback) { return tree->scan(std::span<uint8_t>(key, keyLength), keyOut, found_callback); }
+
+std::vector<double> btree_analyzeLeafs(BTreeBinarySearch *tree) {return tree->analyzeLeafs();}
+
+std::vector<double> btree_analyzeInnerNodes(BTreeBinarySearch *tree) {return tree->analyzeInnerNodes();}

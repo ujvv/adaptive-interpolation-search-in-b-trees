@@ -24,6 +24,10 @@ public:
   // Scan the tree for all keys greater than or equal to the given key as long as the callback returns true
   void scan(std::span<uint8_t> key, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback);
 
+  std::vector<double> analyzeLeafs();
+
+  std::vector<double> analyzeInnerNodes();
+
   // Destroy the tree
   void destroy();
 
@@ -53,5 +57,9 @@ uint8_t *btree_lookup_binarySearch(BTreeBinarySearch *tree, uint8_t *key, uint16
 // length iteration stops if there are no more keys or the callback returns
 // false.
 void btree_scan_binarySearch(BTreeBinarySearch *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback);
+
+std::vector<double> btree_analyzeLeafs(BTreeBinarySearch *tree);
+
+std::vector<double> btree_analyzeInnerNodes(BTreeBinarySearch *tree);
 
 #endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP

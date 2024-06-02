@@ -173,6 +173,27 @@ struct Tester {
     }
 };
 
+struct BtreeAnalysis {
+    BTreeBinarySearch *btree;
+
+    BtreeAnalysis() : btree(btree_create_binarySearch()) {}
+
+    ~BtreeAnalysis() { btree_destroy_binarySearch(btree); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_binarySearch(btree, key.data(), key.size(), value.data(), value.size());
+    }
+    
+    std::vector<double> analyzeLeafs() {
+        return btree_analyzeLeafs(btree);
+    }
+
+    std::vector<double> analyzeInnerNodes() {
+        return btree_analyzeInnerNodes(btree);
+    }
+
+};
+
 struct TesterPerformance {
     BTree *btree;
 

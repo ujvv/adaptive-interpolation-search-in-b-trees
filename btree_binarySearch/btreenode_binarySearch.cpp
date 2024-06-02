@@ -104,6 +104,70 @@ bool BTreeNodeBinarySearch::keySmallerEqualThanAtPosition(uint16_t position, uin
   return key <= getShortenedKey(position);
 }
 
+std::vector<uint32_t> BTreeNodeBinarySearch::calculateKeyDifferences() {
+  std::vector<uint32_t> keyDifferences;
+  if (numKeys > 1) {
+    for (uint64_t i = 1; i < numKeys; i++) {
+      uint32_t first = getKeyHead(getShortenedKey(i-1));
+      std::span<uint8_t> key {getFullKey(i-1).begin(), getFullKey(i-1).end()};
+      uint32_t Fullfirst = getKeyHead(key);
+      uint32_t second = getKeyHead(getShortenedKey(i));
+      keyDifferences.push_back(getKeyHead(getShortenedKey(i)) - getKeyHead(getShortenedKey(i-1)));
+    }
+  } else {
+    keyDifferences.push_back(0);
+  }
+  return keyDifferences;
+}
+
+void BTreeNodeBinarySearch::analyzeInnerNodes(std::vector<double> coefficientOfVariation) {
+  if (!isLeaf) {
+    BTreeInnerNodeBinarySearch *innerNode = reinterpret_cast<BTreeInnerNodeBinarySearch *>(this);
+    for (uint16_t i = 0; i <= numKeys; ++i) {
+      innerNode->getChild(i)->analyzeInnerNodes(coefficientOfVariation);
+    }
+    std::vector<uint32_t> keyDifferences = calculateKeyDifferences();
+    double mean = this->mean(keyDifferences);
+    double standardDeviation = this->standardDeviation(keyDifferences, mean);
+    double coefficient = standardDeviation / mean;
+    keyDifferences.push_back(coefficient);
+  }
+}
+
+void BTreeNodeBinarySearch::analyzeLeafs(std::vector<double> coefficientOfVariation) {
+  if (!isLeaf) {
+    reinterpret_cast<BTreeInnerNodeBinarySearch *>(this)->getChild(0)->analyzeLeafs(coefficientOfVariation);
+  } else {
+    std::vector<uint32_t> keyDifferences = calculateKeyDifferences();
+    double mean = this->mean(keyDifferences);
+    double standardDeviation = this->standardDeviation(keyDifferences, mean);
+    double coefficient = standardDeviation / mean;
+    keyDifferences.push_back(coefficient);
+    if(nextLeafNodeBinarySearch != nullptr) {
+      nextLeafNodeBinarySearch->analyzeLeafs(coefficientOfVariation);
+    }
+  }
+  }
+
+double BTreeNodeBinarySearch::mean(std::vector<uint32_t> keyDifferences) {
+  if (keyDifferences.size() > 0) {
+    double total = 0.0;
+    double direkt = 0.0;
+    for (u_int64_t i = 0; i < keyDifferences.size(); i++) {
+      total += keyDifferences.at(i);
+      direkt += static_cast<double>(keyDifferences.at(i)) / static_cast<double>(keyDifferences.size());
+    }
+    double mean = total / static_cast<double>(keyDifferences.size());
+    double mean2 = direkt;
+    return mean;
+  }
+  return 0.0;
+}
+
+double BTreeNodeBinarySearch::standardDeviation(std::vector<uint32_t> keyDifferences, double mean) {
+  return 0.0;
+}
+
 uint16_t BTreeNodeBinarySearch::getEntryIndexByKey(std::span<uint8_t> key) {
   // Do a binary search to find the index of the entry where the key is / should contained
   // This function assumes that the key shares the same prefix as all the keys in the node
