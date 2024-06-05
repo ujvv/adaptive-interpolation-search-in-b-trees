@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_PLAIN_FINISHED_BTREE_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_PLAIN_FINISHED_BTREE_HPP
+#ifndef ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_PLAIN_FINISHED_BTREE_HPP
+#define ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_PLAIN_FINISHED_BTREE_HPP
 
 #include <cstdint>
 #include <functional>
@@ -41,4 +41,4 @@ void btree_scan(BTree *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut,
                 const std::function<bool(unsigned int, uint8_t *, unsigned int)>
                     &found_callback);
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_PLAIN_FINISHED_BTREE_HPP
+#endif // ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_PLAIN_FINISHED_BTREE_HPP

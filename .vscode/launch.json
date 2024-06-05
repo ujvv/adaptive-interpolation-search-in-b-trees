@@ -11,19 +11,20 @@
             "cwd": "${workspaceFolder}",
             "environment": [
                 {
-                    "name": "TEST",
+                    //"name": "TEST"
+                    "name": "ANALYSIS"
                 },
                 /*{
-                    "name": "INT",
-                    "value": "0"
+                    "name": "INTUNIFORM",
+                    "value": "2000000"
                 },
                 {
-                    "name": "INTUNIFORM",
-                    "value": "0"
-                },*/
+                    "name": "INTLITTLEENDIAN",
+                    "value": "2000000"
+                },
                 {
                     "name": "INTFAL",
-                    "value": "10000"
+                    "value": "2000000"
                 },
                 {
                     "name": "FALSHAPE",
@@ -31,11 +32,23 @@
                 },
                 {
                     "name": "INTCFAL",
-                    "value": "10000"
+                    "value": "2000000"
                 },
                 {
                     "name": "CFALSHAPE",
                     "value": "105"
+                },*/
+                {
+                    "name": "INTRANDOM",
+                    "value": "2000000"
+                },
+                /*{
+                    "name": "INTRANDOMSEED",
+                    "value": "5323"
+                },*/
+                {
+                    "name": "INTRANDOMBYTES",
+                    "value": "2000000"
                 },
                 {
                     "name": "BYTE",
@@ -52,7 +65,7 @@
                 {
                     "name": "LONG2",
                     "value": "512"
-                },
+                }
                 /*{
                     "name": "FILE",
                     "value": "data/urls"

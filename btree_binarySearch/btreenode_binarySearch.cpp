@@ -2,6 +2,7 @@
 #include "utils.hpp"
 
 #include <iostream>
+#include <cmath>
 
 BTreeNodeBinarySearch::BTreeNodeBinarySearch(std::span<uint8_t> lowerFenceKey, std::span<uint8_t> upperFenceKey) {
   uint16_t minLength = std::min(lowerFenceKey.size(), upperFenceKey.size());
@@ -108,10 +109,6 @@ std::vector<uint32_t> BTreeNodeBinarySearch::calculateKeyDifferences() {
   std::vector<uint32_t> keyDifferences;
   if (numKeys > 1) {
     for (uint64_t i = 1; i < numKeys; i++) {
-      uint32_t first = getKeyHead(getShortenedKey(i-1));
-      std::span<uint8_t> key {getFullKey(i-1).begin(), getFullKey(i-1).end()};
-      uint32_t Fullfirst = getKeyHead(key);
-      uint32_t second = getKeyHead(getShortenedKey(i));
       keyDifferences.push_back(getKeyHead(getShortenedKey(i)) - getKeyHead(getShortenedKey(i-1)));
     }
   } else {
@@ -120,7 +117,7 @@ std::vector<uint32_t> BTreeNodeBinarySearch::calculateKeyDifferences() {
   return keyDifferences;
 }
 
-void BTreeNodeBinarySearch::analyzeInnerNodes(std::vector<double> coefficientOfVariation) {
+void BTreeNodeBinarySearch::analyzeInnerNodes(std::vector<double> &coefficientOfVariation) {
   if (!isLeaf) {
     BTreeInnerNodeBinarySearch *innerNode = reinterpret_cast<BTreeInnerNodeBinarySearch *>(this);
     for (uint16_t i = 0; i <= numKeys; ++i) {
@@ -130,11 +127,22 @@ void BTreeNodeBinarySearch::analyzeInnerNodes(std::vector<double> coefficientOfV
     double mean = this->mean(keyDifferences);
     double standardDeviation = this->standardDeviation(keyDifferences, mean);
     double coefficient = standardDeviation / mean;
-    keyDifferences.push_back(coefficient);
+    coefficientOfVariation.push_back(coefficient);
   }
 }
 
-void BTreeNodeBinarySearch::analyzeLeafs(std::vector<double> coefficientOfVariation) {
+void BTreeNodeBinarySearch::numKeysInnerNodes(std::vector<uint32_t> &numKeysInInnerNodes) {
+  if (!isLeaf) {
+    BTreeInnerNodeBinarySearch *innerNode = reinterpret_cast<BTreeInnerNodeBinarySearch *>(this);
+    for (uint16_t i = 0; i <= numKeys; ++i) {
+      innerNode->getChild(i)->numKeysInnerNodes(numKeysInInnerNodes);
+    }
+    uint32_t numKeysInCurrentInnerNode = this->numKeys;
+    numKeysInInnerNodes.push_back(numKeysInCurrentInnerNode);
+  }
+}
+
+void BTreeNodeBinarySearch::analyzeLeafs(std::vector<double> &coefficientOfVariation) {
   if (!isLeaf) {
     reinterpret_cast<BTreeInnerNodeBinarySearch *>(this)->getChild(0)->analyzeLeafs(coefficientOfVariation);
   } else {
@@ -147,7 +155,7 @@ void BTreeNodeBinarySearch::analyzeLeafs(std::vector<double> coefficientOfVariat
       nextLeafNodeBinarySearch->analyzeLeafs(coefficientOfVariation);
     }
   }
-  }
+}
 
 double BTreeNodeBinarySearch::mean(std::vector<uint32_t> keyDifferences) {
   if (keyDifferences.size() > 0) {
@@ -159,13 +167,22 @@ double BTreeNodeBinarySearch::mean(std::vector<uint32_t> keyDifferences) {
     }
     double mean = total / static_cast<double>(keyDifferences.size());
     double mean2 = direkt;
+    if (mean - mean2 > 1 || mean2 - mean > 1) {
+      total++;
+    }
     return mean;
   }
   return 0.0;
 }
 
 double BTreeNodeBinarySearch::standardDeviation(std::vector<uint32_t> keyDifferences, double mean) {
-  return 0.0;
+  double tempResult = 0.0;
+  for (uint32_t diff : keyDifferences) {
+    tempResult += std::pow(diff - mean, 2);
+  }
+  double variance = tempResult / keyDifferences.size();
+  double standardDeviation = std::sqrt(variance);
+  return standardDeviation;
 }
 
 uint16_t BTreeNodeBinarySearch::getEntryIndexByKey(std::span<uint8_t> key) {

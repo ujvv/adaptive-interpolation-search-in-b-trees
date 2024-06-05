@@ -87,7 +87,7 @@ void BTreeBinarySearch::scan(std::span<uint8_t> key, uint8_t *keyOut, const std:
 }
 
 std::vector<double> BTreeBinarySearch::analyzeLeafs() {
-  std::vector<double> coefficientOfVariation;
+  std::vector<double> coefficientsOfVariation;
   if (root != nullptr) {
     BTreeNodeBinarySearch *currentNode = root;
     while (!currentNode->isLeaf) {
@@ -98,18 +98,43 @@ std::vector<double> BTreeBinarySearch::analyzeLeafs() {
       double mean = currentNode->mean(keyDifferences);
       double standardDeviation = currentNode->standardDeviation(keyDifferences, mean);
       double coefficient = standardDeviation / mean;
-      keyDifferences.push_back(coefficient);
+      coefficientsOfVariation.push_back(coefficient);
+      currentNode = currentNode->nextLeafNodeBinarySearch;
     }
   }
-  return coefficientOfVariation;
+  return coefficientsOfVariation;
+}
+
+std::vector<uint32_t> BTreeBinarySearch::numKeysLeafs() {
+  std::vector<uint32_t> numKeysInLeafs;
+  if (root != nullptr) {
+    BTreeNodeBinarySearch *currentNode = root;
+    while (!currentNode->isLeaf) {
+      currentNode = reinterpret_cast<BTreeInnerNodeBinarySearch *>(currentNode)->getChild(0);
+    }
+    while (currentNode != nullptr) {
+      uint32_t numKeysInCurrentLeaf = currentNode->numKeys;
+      numKeysInLeafs.push_back(numKeysInCurrentLeaf);
+      currentNode = currentNode->nextLeafNodeBinarySearch;
+    }
+  }
+  return numKeysInLeafs;
 }
 
 std::vector<double> BTreeBinarySearch::analyzeInnerNodes() {
-  std::vector<double> coefficientOfVariation;
+  std::vector<double> coefficientsOfVariation;
   if (root != nullptr) {
-    root->analyzeInnerNodes(coefficientOfVariation);
+    root->analyzeInnerNodes(coefficientsOfVariation);
   }
-  return coefficientOfVariation;
+  return coefficientsOfVariation;
+}
+
+std::vector<uint32_t> BTreeBinarySearch::numKeysInnerNodes() {
+  std::vector<uint32_t> numKeysInInnerNodes;
+  if (root != nullptr) {
+    root->numKeysInnerNodes(numKeysInInnerNodes);
+  }
+  return numKeysInInnerNodes;
 }
 
 bool BTreeBinarySearch::remove(std::span<uint8_t> key) {
@@ -154,3 +179,7 @@ void btree_scan_binarySearch(BTreeBinarySearch *tree, uint8_t *key, unsigned key
 std::vector<double> btree_analyzeLeafs(BTreeBinarySearch *tree) {return tree->analyzeLeafs();}
 
 std::vector<double> btree_analyzeInnerNodes(BTreeBinarySearch *tree) {return tree->analyzeInnerNodes();}
+
+std::vector<uint32_t> btree_numKeysLeafs(BTreeBinarySearch *tree) {return tree->numKeysLeafs();}
+
+std::vector<uint32_t> btree_numKeysInnerNodes(BTreeBinarySearch *tree) {return tree->numKeysInnerNodes();}

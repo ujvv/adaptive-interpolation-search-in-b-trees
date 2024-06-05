@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP
+#ifndef ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP
+#define ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP
 
 
 #include "btreenode_template.hpp"
@@ -54,4 +54,4 @@ uint8_t *btree_lookup_template(BTreeTemplate *tree, uint8_t *key, uint16_t keyLe
 // false.
 void btree_scan_template(BTreeTemplate *tree, uint8_t *key, unsigned keyLength, uint8_t *keyOut, const std::function<bool(unsigned int, uint8_t *, unsigned int)> &found_callback);
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP
+#endif // ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_TEMPLATE_BTREE_TEMPLATE_HPP

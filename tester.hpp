@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_TESTER_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_TESTER_HPP
+#ifndef ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_TESTER_HPP
+#define ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_TESTER_HPP
 
 #include "btree_template/btree_template.hpp"
 #include "btree_template/btreenode_template.hpp"
@@ -42,6 +42,7 @@
 #include <vector>
 #include <cstdlib>
 #include <iostream>
+#include <cmath>
 
 struct Tester {
     BTreeBinarySearchNoPrefix *btree;
@@ -183,13 +184,101 @@ struct BtreeAnalysis {
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         btree_insert_binarySearch(btree, key.data(), key.size(), value.data(), value.size());
     }
-    
+
     std::vector<double> analyzeLeafs() {
         return btree_analyzeLeafs(btree);
     }
 
     std::vector<double> analyzeInnerNodes() {
         return btree_analyzeInnerNodes(btree);
+    }
+
+    std::vector<uint32_t> numKeysLeafs(){
+        return btree_numKeysLeafs(btree);
+    }
+
+    std::vector<uint32_t> numKeysInnerNodes(){
+        return btree_numKeysInnerNodes(btree);
+    }
+
+    double mean(std::vector<double> coefficientsOfVariation) {
+        if (coefficientsOfVariation.size() > 0) {
+            double total = 0.0;
+            double direct = 0.0;
+            for (u_int64_t i = 0; i < coefficientsOfVariation.size(); i++) {
+                total += coefficientsOfVariation.at(i);
+                direct += coefficientsOfVariation.at(i) / static_cast<double>(coefficientsOfVariation.size());
+            }
+            double mean = total / static_cast<double>(coefficientsOfVariation.size());
+            double mean2 = direct;
+            return mean;
+        }
+        return 0.0;
+    }
+
+    double mean(std::vector<uint32_t> keys) {
+        if (keys.size() > 0) {
+            double total = 0.0;
+            double direct = 0.0;
+            for (u_int64_t i = 0; i < keys.size(); i++) {
+                total += keys.at(i);
+                direct += static_cast<double>(keys.at(i)) / static_cast<double>(keys.size());
+            }
+            double mean = total / static_cast<double>(keys.size());
+            double mean2 = direct;
+            return mean;
+        }
+        return 0.0;
+    }
+
+    double standardDeviationOfCoeffecients(std::vector<double> coefficientsOfVariation, double mean) {
+        double tempResult = 0.0;
+        for (uint32_t coefficient : coefficientsOfVariation) {
+            tempResult += std::pow(coefficient - mean, 2);
+        }
+        double variance = tempResult / coefficientsOfVariation.size();
+        double standardDeviation = std::sqrt(variance);
+        return standardDeviation;
+    }
+
+    double standardDeviation(std::vector<uint32_t> keyDifferences, double mean) {
+        double tempResult = 0.0;
+        for (uint32_t coefficient : keyDifferences) {
+            tempResult += std::pow(static_cast<double>((coefficient) - mean), 2);
+        }
+        double variance = tempResult / keyDifferences.size();
+        double standardDeviation = std::sqrt(variance);
+        return standardDeviation;
+    }
+
+    double median(std::vector<double> coefficientsOfVariation) {
+        uint64_t middle = coefficientsOfVariation.size() / 2;
+        if (coefficientsOfVariation.size() % 2 == 0) {
+            return (coefficientsOfVariation[middle - 1] + coefficientsOfVariation[middle]) / 2.0;
+        } else {
+            return coefficientsOfVariation[middle];
+        }
+    }
+
+    double median(std::vector<uint32_t> keys) {
+        uint64_t middle = keys.size() / 2;
+        if (keys.size() % 2 == 0) {
+            return (keys[middle - 1] + keys[middle]) / 2.0;
+        } else {
+            return keys[middle];
+        }
+    }
+
+    std::vector<uint32_t> calculateKeyDifferences(std::vector<uint32_t> keys, uint64_t numKeys) {
+        std::vector<uint32_t> keyDifferences;
+        if (numKeys > 1) {
+            for (uint64_t i = 1; i < numKeys; i++) {
+                keyDifferences.push_back(keys[i] - keys[i-1]);
+            }
+        } else {
+            keyDifferences.push_back(0);
+        }
+        return keyDifferences;
     }
 
 };
@@ -503,4 +592,4 @@ struct TesterPerformanceMap {
     }
 };
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_TESTER_HPP
+#endif // ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_TESTER_HPP

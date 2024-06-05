@@ -1,5 +1,7 @@
+#include "test_main.hpp"
 #include "tester.hpp"
 #include "PerfEvent.hpp"
+
 #include <algorithm>
 #include <csignal>
 #include <fstream>
@@ -7,14 +9,40 @@
 #include <vector>
 #include <cmath>
 #include <numeric>
+#include <random>
 
 using namespace std;
 
-enum Btrees { ANALYSIS, TEST, BINARYSEARCH, BINARYSEARCHBIGNODE, BINARYSEARCHNOPREFIX, BINARYSEARCHWITHHINTS, INTERPOLATIONSEARCH, INTERPOLATIONSEARCHBIGNODE, INTERPOLATIONSEARCHWITHKEYHEADS, INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE, LINEARSEARCH, LINEARSEARCHBIGNODE, PLAIN, TEMPLATE, TEMPLATEBIGNODE, MAP};
+
+void runSingleNodeDistributionByteKeys(vector<vector<uint8_t>> &keys, uint64_t count, bool sort) {
+    vector<uint32_t> keysInts;
+    for (uint64_t i = 0; i < count; i++) {
+        uint32_t keyHead = 0;
+        vector<uint8_t> key = keys.at(i);
+        if (key.size() > 0) {
+            std::memcpy(&keyHead, key.data(), std::min(key.size(), sizeof(uint32_t)));
+            if constexpr (std::endian::native == std::endian::little) {
+                keyHead = ((keyHead & 0xFF000000) >> 24) | ((keyHead & 0x00FF0000) >> 8) | ((keyHead & 0x0000FF00) << 8) | ((keyHead & 0x000000FF) << 24);
+            }
+        }
+        keysInts.push_back(keyHead);
+    }
+    runSingleNodeDistribution(keysInts, count, sort);
+}
+
+void runSingleNodeDistribution(vector<uint32_t> &keys, uint64_t count, bool sort) {
+    BtreeAnalysis t{};
+    if (sort) {
+        std::sort(keys.begin(), keys.end());
+    }
+    std::vector<uint32_t> keyDifferences = t.calculateKeyDifferences(keys, count);
+    double mean = t.mean(keyDifferences);
+    double standardDeviation = t.standardDeviation(keyDifferences, mean);
+    double coefficientOfVariance = standardDeviation / mean;
+    std::cout << "Coefficient of Variance: " << coefficientOfVariance << std::endl;
+}
 
 void runAnalysis(vector<vector<uint8_t>> &keys) {
-    std::random_shuffle(keys.begin(), keys.end());
-    
     uint64_t count = keys.size();
 
     BtreeAnalysis t{};
@@ -22,9 +50,77 @@ void runAnalysis(vector<vector<uint8_t>> &keys) {
     for (uint64_t i = 0; i < count; i++) {
         t.insert(keys[i], keys[i]);
     }
+    std::vector<double> coefficientsOfVariationLeafs = t.analyzeLeafs();
+    std::sort(coefficientsOfVariationLeafs.begin(), coefficientsOfVariationLeafs.end());
+    uint64_t coefficientAmountLeafs = coefficientsOfVariationLeafs.size();
+    std::cout << "Leaf Analysis with " << coefficientAmountLeafs << " Leafs in total" << std::endl;
+    std::vector<uint32_t> numKeysInLeafs = t.numKeysLeafs();
+    double meanNumKeysInLeafs = t.mean(numKeysInLeafs);
+    std::sort(numKeysInLeafs.begin(), numKeysInLeafs.end());
+    double medianNumKeysInLeafs = t.median(numKeysInLeafs);
+    std::cout << "Average amount of Keys in a Leaf: " << meanNumKeysInLeafs << " Median numKeys in Leafs: " << medianNumKeysInLeafs << std::endl;
+    std::cout << "The 5 lowest numKeys in a Leaf: ";
+    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
+        std::cout << numKeysInLeafs[i] <<" ";
+    }
+    std::cout << ".  And the 5 highest numKeys in a Leaf: ";
+    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
+        std::cout << numKeysInLeafs[numKeysInLeafs.size() -1 -i] <<" ";
+    }
 
-    std::vector<double> d = t.analyzeInnerNodes();
-    std::vector<double> dds = t.analyzeLeafs();
+    double meanCoefficientLeafs = t.mean(coefficientsOfVariationLeafs);
+    double medianCoefficientLeafs = t.median(coefficientsOfVariationLeafs);
+    double standardDeviationOfCoefficientsLeafs = t.standardDeviationOfCoeffecients(coefficientsOfVariationLeafs, meanCoefficientLeafs);
+    std::cout << "Mean of Coefficients: " << meanCoefficientLeafs << " Median of Coefficients: " << medianCoefficientLeafs << " StandardDeviation of Coefficients: " << standardDeviationOfCoefficientsLeafs<< std::endl;
+    double lowestCoefficientLeafs = coefficientsOfVariationLeafs[0];
+    double highestCoefficientLeafs = coefficientsOfVariationLeafs[coefficientsOfVariationLeafs.size() -1];
+    std::cout << "The 5 lowest Coefficients: ";
+    for (int i = 0; i < coefficientAmountLeafs && i < 5; i++) {
+        std::cout << coefficientsOfVariationLeafs[i] <<" ";
+    }
+    std::cout << std::endl;
+    std::cout << "The 5 highest Coefficients: ";
+    for (int i = 0; i < coefficientAmountLeafs && i < 5; i++) {
+        std::cout << coefficientsOfVariationLeafs[coefficientsOfVariationLeafs.size() -1 -i] <<" ";
+    }
+    std::cout << std::endl;
+    
+
+    
+    std::vector<double> coefficientsOfVariationInnerNodes = t.analyzeInnerNodes();
+    std::sort(coefficientsOfVariationInnerNodes.begin(), coefficientsOfVariationInnerNodes.end());
+    uint64_t coefficientAmountInnerNodes = coefficientsOfVariationInnerNodes.size();
+    std::cout << "InnerNode Analysis with " << coefficientAmountInnerNodes << " InnerNodes in total" << std::endl;
+    std::vector<uint32_t> numKeysInInnerNodes = t.numKeysInnerNodes();
+    double meanNumKeysInInnerNodes = t.mean(numKeysInInnerNodes);
+    std::sort(numKeysInInnerNodes.begin(), numKeysInInnerNodes.end());
+    double medianNumKeysInInnerNodes = t.median(numKeysInInnerNodes);
+    std::cout << "Average amount of Keys in a InnerNode: " << meanNumKeysInInnerNodes << " Median numKeys in InnerNodes: " << medianNumKeysInInnerNodes << std::endl;
+    std::cout << "The 5 lowest numKeys in a InnerNode: ";
+    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
+        std::cout << numKeysInLeafs[i] <<" ";
+    }
+    std::cout << ".  And the 5 highest numKeys in a InnerNode: ";
+    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
+        std::cout << numKeysInLeafs[numKeysInLeafs.size() -1 -i] <<" ";
+    }
+
+    double meanCoefficientInnerNodes = t.mean(coefficientsOfVariationInnerNodes);
+    double medianCoefficientInnerNodes = t.median(coefficientsOfVariationInnerNodes);
+    double standardDeviationOfCoefficientsInnerNodes = t.standardDeviationOfCoeffecients(coefficientsOfVariationInnerNodes, meanCoefficientInnerNodes);
+    std::cout << "Mean of Coefficients: " << meanCoefficientInnerNodes << " Median of Coefficients: " << medianCoefficientInnerNodes << " StandardDeviation of Coefficients: " << standardDeviationOfCoefficientsInnerNodes<< std::endl;
+    double lowestCoefficientInnerNodes = coefficientsOfVariationInnerNodes[0];
+    double highestCoefficientInnerNodes = coefficientsOfVariationInnerNodes[coefficientsOfVariationInnerNodes.size() -1];
+    std::cout << "The 5 lowest Coefficients: ";
+    for (int i = 0; i < coefficientAmountInnerNodes && i < 5; i++) {
+        std::cout << coefficientsOfVariationInnerNodes[i] <<" ";
+    }
+    std::cout << std::endl;
+    std::cout << "The 5 highest Coefficients: ";
+    for (int i = 0; i < coefficientAmountInnerNodes && i < 5; i++) {
+        std::cout << coefficientsOfVariationInnerNodes[coefficientsOfVariationInnerNodes.size() -1 -i] <<" ";
+    }
+    std::cout << std::endl;
 }
 
 void runTest(vector<vector<uint8_t>> &keys) {
@@ -1054,6 +1150,8 @@ void verifyBTreeNodeSizes() {
     } else {
         std::cout << "BTrees CONTENT_SIZE = " << template_ContentSize << std::endl;
     }
+    std::cout << std::endl;
+    std::cout << std::endl;
 }
 
 std::vector<uint8_t> stringToVector(const std::string &str) {
@@ -1082,6 +1180,13 @@ vector<vector<uint8_t>> intToBigEndianByteVector(std::vector<uint32_t> v) {
     return data;
 }
 
+bool keyIntLimited(Btrees type) {
+    if (type == INTERPOLATIONSEARCHWITHKEYHEADS || type == INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE) {
+        return true;
+    }
+    return false;
+}
+
 int main() {
     srand(42);
     PerfEvent perf;
@@ -1090,7 +1195,6 @@ int main() {
 
     verifyBTreeNodeSizes();
 
-    
     if (getenv("ANALYSIS")) {
         type = ANALYSIS;
     } else if (getenv("TEST")) {
@@ -1139,33 +1243,12 @@ int main() {
         type = TEMPLATE;
     }
 
-    if (getenv("INT")) {
-        vector<vector<uint8_t>> data;
-        vector<uint64_t> v;
-        uint64_t n = atof(getenv("INT"));
-        for (uint64_t i = 0; i < n; i++)      
-            v.push_back(i);
-        for (auto x: v) {
-            union {
-                uint32_t x;
-                uint8_t bytes[4];
-            } u;
-            u.x = x;
-            data.emplace_back(u.bytes, u.bytes + 4);
-        }
-        if (type == ANALYSIS) {
-            runAnalysis(data);
-        } else if (type == TEST) {
-            runTest(data);
-            runTestReverse(data);
-            runTestZickZack(data);
-            runTestMixed(data);
-        } else {
-            runPerformanceTestStandard(data, perf, type);
-            //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
-        }
-    }
+    // For Analysis:
+    BtreeAnalysis t{};
+    uint32_t btreeContentSize = t.btree->root->CONTENT_SIZE;
+    uint64_t numKeysFullInnerNode = btreeContentSize / 4; // Assuming all keys are 4 Byte (Ints)
+    uint64_t numKeysFullLeafAverage = btreeContentSize / 8; // Assuming most value entries are also 4 byte (Int)
+
 
     if (getenv("INTUNIFORM")) {
         vector<vector<uint8_t>> data;
@@ -1193,7 +1276,19 @@ int main() {
             byte1++;
         }
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTUNIFORM with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistributionByteKeys(data, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1204,6 +1299,52 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+    if (getenv("INTLITTLEENDIAN")) { // Fills up most significant Byte first
+        vector<vector<uint8_t>> data;
+        vector<uint64_t> v;
+        uint64_t n = atof(getenv("INTLITTLEENDIAN"));
+        for (uint64_t i = 0; i < n; i++)      
+            v.push_back(i);
+        for (auto x: v) {
+            union {
+                uint32_t x;
+                uint8_t bytes[4];
+            } u;
+            u.x = x;
+            data.emplace_back(u.bytes, u.bytes + 4);
+        }
+        if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTLITTLEENDIAN with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+            runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, true);
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistributionByteKeys(data, n, false);
+        } else if (type == TEST) {
+            runTest(data);
+            runTestReverse(data);
+            runTestZickZack(data);
+            runTestMixed(data);
+        } else {
+            runPerformanceTestStandard(data, perf, type);
+            //runPerformanceTestMixed(data, perf, type);
+            runPerformanceTestLookup(data, perf, type);
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("INTFAL")) {
@@ -1212,7 +1353,22 @@ int main() {
         std::vector<uint32_t> v = fal(shape, n);
         vector<vector<uint8_t>> data = intToBigEndianByteVector(v);
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTFAL with shape: " << shape << " and with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTFAL with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            std::vector<uint32_t> keysLeafNodeReplication = fal(shape, numKeysFullInnerNode);
+            runSingleNodeDistribution(keysLeafNodeReplication, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTFAL with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            std::vector<uint32_t> keysInnerNodeReplication = fal(shape, numKeysFullInnerNode);
+            runSingleNodeDistribution(keysInnerNodeReplication, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTFAL with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistribution(v, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1223,6 +1379,8 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("INTCFAL")) {
@@ -1236,7 +1394,32 @@ int main() {
         std::partial_sum(v.begin(), v.end(), v.begin());
         vector<vector<uint8_t>> data = intToBigEndianByteVector(v);
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTCFAL with shape: " << shape << " and with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTCFAL with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            std::vector<uint32_t> keysLeafNodeReplication = fal(shape, numKeysFullLeafAverage);
+            max_sum = std::accumulate(keysLeafNodeReplication.begin(), keysLeafNodeReplication.end(), 0.0L);
+            scale = std::numeric_limits<uint32_t>::max() / max_sum;
+            std::transform(keysLeafNodeReplication.begin(), keysLeafNodeReplication.end(), keysLeafNodeReplication.begin(),
+                   [scale](auto x) { return x * scale; });
+            std::partial_sum(keysLeafNodeReplication.begin(), keysLeafNodeReplication.end(), keysLeafNodeReplication.begin());
+            runSingleNodeDistribution(keysLeafNodeReplication, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            std::vector<uint32_t> keysInnerNodeReplication = fal(shape, numKeysFullInnerNode);
+            max_sum = std::accumulate(keysInnerNodeReplication.begin(), keysInnerNodeReplication.end(), 0.0L);
+            scale = std::numeric_limits<uint32_t>::max() / max_sum;
+            std::transform(keysInnerNodeReplication.begin(), keysInnerNodeReplication.end(), keysInnerNodeReplication.begin(),
+                   [scale](auto x) { return x * scale; });
+            std::partial_sum(keysInnerNodeReplication.begin(), keysInnerNodeReplication.end(), keysInnerNodeReplication.begin());
+            runSingleNodeDistribution(keysInnerNodeReplication, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTCFAL with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistribution(v, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1247,11 +1430,67 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("INTRANDOM")) {
-        vector<vector<uint8_t>> data;
+        vector<uint32_t> randomNumbers;
         uint64_t n = atof(getenv("INTRANDOM"));
+
+        std::random_device rd;
+        // Create a random number generator seeded with the random device
+        std::mt19937 gen(rd());
+
+        if (getenv("INTRANDOMSEED")) {
+            auto seed = atof(getenv("INTRANDOMSEED"));
+            gen.seed(seed);
+        }
+        // Create a distribution that generates uint32_t numbers
+        std::uniform_int_distribution<uint32_t> dis(0, UINT32_MAX);
+    
+        for(uint64_t i = 0; i < n; i++) {
+            // Generate a random number
+            uint32_t randomNumber = dis(gen);
+            randomNumbers.push_back(randomNumber);
+        }
+
+        vector<vector<uint8_t>> data = intToBigEndianByteVector(randomNumbers);
+
+        if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTRANDOM with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+            runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistribution(randomNumbers, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistribution(randomNumbers, numKeysFullLeafAverage, true);
+            std::cout << std::endl;
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistribution(randomNumbers, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTRANDOM with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistribution(randomNumbers, n, false);
+        } else if (type == TEST) {
+            runTest(data);
+            runTestReverse(data);
+            runTestZickZack(data);
+            runTestMixed(data);
+        } else {
+            runPerformanceTestStandard(data, perf, type);
+            //runPerformanceTestMixed(data, perf, type);
+            runPerformanceTestLookup(data, perf, type);
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+    }
+
+    if (getenv("INTRANDOMBYTES")) {
+        vector<vector<uint8_t>> data;
+        uint64_t n = atof(getenv("INTRANDOMBYTES"));
         for (uint64_t i = 0; i < n; i++) {
             uint8_t bytes[4];
             bytes[0] = rand() % 255;
@@ -1262,7 +1501,22 @@ int main() {
         }
         
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: INTRANDOMBYTES with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTRANDOMBYTES with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: INTRANDOMBYTES (SORTED for Comparison) with " << numKeysFullInnerNode << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, true);
+            std::cout << std::endl;
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMBYTES with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: INTRANDOMBYTES with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistributionByteKeys(data, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1273,6 +1527,8 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("BYTE")) {
@@ -1280,6 +1536,13 @@ int main() {
         uint64_t n = atof(getenv("INT")); // Use number of entries from INT
         uint16_t byteSize = atof(getenv("BYTE"));
         
+        if (byteSize > 4) {
+            if (keyIntLimited(type)) {
+                std::cout << "Selected Key Byte Size is too big for selected Btree (" << byteSize << ")! Key Byte Size reduced to 4 Byte." << std::endl;
+                byteSize = 4;
+            }
+        }
+
         vector<uint8_t> singleBytes;
         for (uint8_t i = 0; singleBytes.size() <= n + 1001; i++) {
             singleBytes.push_back(i);
@@ -1301,7 +1564,19 @@ int main() {
         }
         
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: BYTE with byteSize: " << byteSize << " and with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: BYTE with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: BYTE with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: BYTE with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistributionByteKeys(data, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1312,21 +1587,31 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("VARIABLEBYTE")) {
         vector<vector<uint8_t>> data;
         uint64_t n = atof(getenv("VARIABLEBYTE"));
-        uint16_t keyMaxByteSize = 1000;
-        uint16_t bigKeyByteSizeIterations = 0; // Number of iterations for keys over 500 Byte to focus mostly on keys under 500 byte
+        uint16_t keyMaxByteSize = 500;
+        uint16_t bigkeyMaxByteSize = 1000;
+        uint16_t bigKeyByteSizeIterations = 0; // Number of iterations for keys over keyMaxByteSize (= 500Byte) to focus mostly on keys under 500 byte
         vector<uint16_t> keyByteSizes;
+        
+        if (keyIntLimited(type)) {
+            bigKeyByteSizeIterations = 0;
+            keyMaxByteSize = 4;
+            std::cout << "KeyMaxByteSize for VARIABLEBYTE reduced to 4 Byte." << std::endl;
+        }
+
         for (int j = 0; j < bigKeyByteSizeIterations; j++) {
-            for (uint16_t i = 0; i <= keyMaxByteSize && i < n; i++) {
+            for (uint16_t i = 0; i <= bigkeyMaxByteSize && i < n; i++) {
                 keyByteSizes.push_back(i);
             }
         }
         while(keyByteSizes.size() < n) {
-            for (uint16_t i = 0; i <= 500 && keyByteSizes.size() < n; i++) {
+            for (uint16_t i = 0; i <= keyMaxByteSize && keyByteSizes.size() < n; i++) {
                 keyByteSizes.push_back(i);
             }
         }
@@ -1351,7 +1636,19 @@ int main() {
         }
         
         if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: VARIABLEBYTE with keyMaxByteSize: " << keyMaxByteSize << " and with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
             runAnalysis(data);
+            std::cout << std::endl;
+            
+            std::cout << "Single Leaf Replication Distribution Analysis for datatype: VARIABLEBYTE with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+            std::cout << std::endl;
+            std::cout << "Single InnerNode Replication Distribution Analysis for datatype: VARIABLEBYTE with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+            runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+            std::cout << std::endl;
+
+            std::cout << "Single Node Replication Distribution Analysis for datatype: VARIABLEBYTE with all " << n << " keys in 1 'Node'" << std::endl;
+            runSingleNodeDistributionByteKeys(data, n, false);
         } else if (type == TEST) {
             runTest(data);
             runTestReverse(data);
@@ -1362,71 +1659,127 @@ int main() {
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("LONG1")) {
-        vector<vector<uint8_t>> data;
-        uint64_t n = atof(getenv("LONG1"));
-        for (unsigned i = 0; i < n; i++) {
-            string s;
-            for (unsigned j = 0; j < i; j++)
-                s.push_back('A');
-            data.push_back(stringToVector(s));;
-        }
-        
-        if (type == ANALYSIS) {
-            runAnalysis(data);
-        } else if (type == TEST) {
-            runTest(data);
-            runTestReverse(data);
-            runTestZickZack(data);
-            runTestMixed(data);
+        if (keyIntLimited(type)) {
+            std::cout << "Btree restricted to Int Keys. LONG1 test canceled." << std::endl;
         } else {
-            runPerformanceTestStandard(data, perf, type);
-            //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            vector<vector<uint8_t>> data;
+            uint64_t n = atof(getenv("LONG1"));
+            for (unsigned i = 0; i < n; i++) {
+                string s;
+                for (unsigned j = 0; j < i; j++)
+                    s.push_back('A');
+                data.push_back(stringToVector(s));;
+            }
+        
+            if (type == ANALYSIS) {
+            std::cout << "BTree Distribution Analysis for datatype: LONG1 with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+                runAnalysis(data);
+                std::cout << std::endl;
+            
+                std::cout << "Single Leaf Replication Distribution Analysis for datatype: LONG1 with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+                std::cout << std::endl;
+                std::cout << "Single InnerNode Replication Distribution Analysis for datatype: LONG1 with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+                std::cout << std::endl;
+
+                std::cout << "Single Node Replication Distribution Analysis for datatype: LONG1 with all " << n << " keys in 1 'Node'" << std::endl;
+                runSingleNodeDistributionByteKeys(data, n, false);
+            } else if (type == TEST) {
+                runTest(data);
+                runTestReverse(data);
+                runTestZickZack(data);
+                runTestMixed(data);
+            } else {
+                runPerformanceTestStandard(data, perf, type);
+                //runPerformanceTestMixed(data, perf, type);
+                runPerformanceTestLookup(data, perf, type);
+            }
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("LONG2")) {
-        vector<vector<uint8_t>> data;
-        uint64_t n = atof(getenv("LONG2"));
-        for (unsigned i = 0; i < n; i++) {
-            string s;
-            for (unsigned j = 0; j < i; j++)
-                s.push_back('A' + random() % 60);
-            data.push_back(stringToVector(s));
-        }
-        
-        if (type == ANALYSIS) {
-            runAnalysis(data);
-        } else if (type == TEST) {
-            runTest(data);
-            runTestMixed(data);
+        if (keyIntLimited(type)) {
+            std::cout << "Btree restricted to Int Keys. LONG2 test canceled." << std::endl;
         } else {
-            runPerformanceTestStandard(data, perf, type);
-            //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            vector<vector<uint8_t>> data;
+            uint64_t n = atof(getenv("LONG2"));
+            for (unsigned i = 0; i < n; i++) {
+                string s;
+                for (unsigned j = 0; j < i; j++)
+                    s.push_back('A' + random() % 60);
+                data.push_back(stringToVector(s));
+            }
+        
+            if (type == ANALYSIS) {
+                std::cout << "BTree Distribution Analysis for datatype: LONG2 with " << n << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+                runAnalysis(data);
+                std::cout << std::endl;
+            
+                std::cout << "Single Leaf Replication Distribution Analysis for datatype: LONG2 with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+                std::cout << std::endl;
+                std::cout << "Single InnerNode Replication Distribution Analysis for datatype: LONG2 with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+                std::cout << std::endl;
+
+                std::cout << "Single Node Replication Distribution Analysis for datatype: LONG2 with all " << n << " keys in 1 'Node'" << std::endl;
+                runSingleNodeDistributionByteKeys(data, n, false);
+            } else if (type == TEST) {
+                runTest(data);
+                runTestMixed(data);
+            } else {
+                runPerformanceTestStandard(data, perf, type);
+                //runPerformanceTestMixed(data, perf, type);
+                runPerformanceTestLookup(data, perf, type);
+            }
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     if (getenv("FILE")) {
-        vector<vector<uint8_t>> data;
-        ifstream in(getenv("FILE"));
-        string line;
-        while (getline(in, line))
-            data.push_back(stringToVector(line));;
-        
-        if (type == ANALYSIS) {
-            runAnalysis(data);
-        } else if (type == TEST) {
-            runTest(data);
-            runTestMixed(data);
+        if (keyIntLimited(type)) {
+            std::cout << "Btree restricted to Int Keys. FILE test canceled." << std::endl;
         } else {
-            runPerformanceTestStandard(data, perf, type);
-            //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            vector<vector<uint8_t>> data;
+            ifstream in(getenv("FILE"));
+            string line;
+            while (getline(in, line))
+                data.push_back(stringToVector(line));;
+        
+            if (type == ANALYSIS) {
+                std::cout << "BTree Distribution Analysis for datatype: FILE with " << data.size() << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+                runAnalysis(data);
+                std::cout << std::endl;
+            
+                std::cout << "Single Leaf Replication Distribution Analysis for datatype: FILE with " << numKeysFullLeafAverage << " keys in Leaf" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullLeafAverage, false);
+                std::cout << std::endl;
+                std::cout << "Single InnerNode Replication Distribution Analysis for datatype: FILE with " << numKeysFullInnerNode << " keys in InnerNode" << std::endl;
+                runSingleNodeDistributionByteKeys(data, numKeysFullInnerNode, false);
+                std::cout << std::endl;
+
+                std::cout << "Single Node Replication Distribution Analysis for datatype: FILE with all " << data.size() << " keys in 1 'Node'" << std::endl;
+                runSingleNodeDistributionByteKeys(data, data.size(), false);
+            } else if (type == TEST) {
+                runTest(data);
+                runTestMixed(data);
+            } else {
+                runPerformanceTestStandard(data, perf, type);
+                //runPerformanceTestMixed(data, perf, type);
+                runPerformanceTestLookup(data, perf, type);
+            }
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
     return 0;
 }

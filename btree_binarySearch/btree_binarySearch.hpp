@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP
+#ifndef ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP
+#define ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP
 
 
 #include "btreenode_binarySearch.hpp"
@@ -27,6 +27,10 @@ public:
   std::vector<double> analyzeLeafs();
 
   std::vector<double> analyzeInnerNodes();
+
+  std::vector<uint32_t> numKeysLeafs();
+
+  std::vector<uint32_t> numKeysInnerNodes();
 
   // Destroy the tree
   void destroy();
@@ -62,4 +66,8 @@ std::vector<double> btree_analyzeLeafs(BTreeBinarySearch *tree);
 
 std::vector<double> btree_analyzeInnerNodes(BTreeBinarySearch *tree);
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP
+std::vector<uint32_t> btree_numKeysLeafs(BTreeBinarySearch *tree);
+
+std::vector<uint32_t> btree_numKeysInnerNodes(BTreeBinarySearch *tree);
+
+#endif // ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREE_BINARYSEARCH_HPP

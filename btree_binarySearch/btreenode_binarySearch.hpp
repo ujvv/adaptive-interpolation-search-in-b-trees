@@ -1,5 +1,5 @@
-#ifndef EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
-#define EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
+#ifndef ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
+#define ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
 
 #include <cstdint>
 #include <cstring>
@@ -85,8 +85,9 @@ public:
   std::vector<std::string> getShortenedKeysAsString();
 
   std::vector<uint32_t> calculateKeyDifferences();
-  void analyzeInnerNodes(std::vector<double> coefficientOfVariation);
-  void analyzeLeafs(std::vector<double> coefficientOfVariation);
+  void analyzeInnerNodes(std::vector<double> &coefficientOfVariation);
+  void analyzeLeafs(std::vector<double> &coefficientOfVariation);
+  void numKeysInnerNodes(std::vector<uint32_t> &numKeysInInnerNodes);
   double mean(std::vector<uint32_t> keyDifferences);
   double standardDeviation(std::vector<uint32_t> keyDifferences, double mean);
 
@@ -180,4 +181,4 @@ public:
   }
 };
 
-#endif // EYTZINGER_LAYOUT_FOR_B_TREE_NODES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
+#endif // ADAPTIVE_INTERPOLATION_SEARCH_IN_B_TREES_BTREE_BINARYSEARCH_BTREENODE_BINARYSEARCH_HPP
