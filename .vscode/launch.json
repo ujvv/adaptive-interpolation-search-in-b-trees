@@ -52,6 +52,10 @@
                 },
                 {
                     "name": "BYTE",
+                    "value": "2000000"
+                },
+                {
+                    "name": "BYTESIZE",
                     "value": "35"
                 },
                 {

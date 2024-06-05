@@ -1193,43 +1193,64 @@ int main() {
 
     Btrees type;
 
-    verifyBTreeNodeSizes();
-
     if (getenv("ANALYSIS")) {
+        BtreeAnalysis t{};
+        std::cout << "ANALYSIS on BTree with CONTENT_SIZE = " << t.btree->root->CONTENT_SIZE << std::endl;
         type = ANALYSIS;
     } else if (getenv("TEST")) {
+        Tester t{};
+        std::cout << "TESTS running on BTree with CONTENT_SIZE = " << t.btree->root->CONTENT_SIZE << " (Compared with BtreeTemplate Content_Size = " << t.btreeTemplate->root->CONTENT_SIZE << ")" << std::endl;
         type = TEST;
     } else if (getenv("BINARY")) {
         if (getenv("BIGNODE")) {
+            TesterPerformanceBinarySearchBigNode t{};
+            std::cout << "PERFORMANCETESTS on BinaryBigNode Btree with CONTENT_SIZE = " << t.btreeBinarySearchBigNode->root->CONTENT_SIZE << std::endl;
             type = BINARYSEARCHBIGNODE;
         } else if (getenv("NOPREFIX")) {
+            TesterPerformanceBinarySearchNoPrefix t{};
+            std::cout << "PERFORMANCETESTS on BinarySearchNoPrefix Btree with CONTENT_SIZE = " << t.btreeBinarySearchNoPrefix->root->CONTENT_SIZE << std::endl;
             type = BINARYSEARCHNOPREFIX;
         } else if (getenv("HINTS")) {
+            TesterPerformanceBinarySearchHints t{};
+            std::cout << "PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = " << t.btreeBinarySearchHints->root->CONTENT_SIZE << std::endl;
             type = BINARYSEARCHWITHHINTS;
         } else {
+            TesterPerformanceBinarySearch t{};
+            std::cout << "PERFORMANCETESTS on BinarySearch Btree with CONTENT_SIZE = " << t.btreeBinarySearch->root->CONTENT_SIZE << std::endl;
             type = BINARYSEARCH;
         }
     } else if (getenv("INTERPOLATION")) {
-        if (getenv("BIGNODE")) {
-            type = INTERPOLATIONSEARCHBIGNODE;
-        } else if (getenv("KEYHEADS")) {
+        if (getenv("KEYHEADS")) {
             if (getenv("BIGNODE")) {
+                TesterPerformanceInterpolationSearchKeyHeadsBigNode t{};
+                std::cout << "PERFORMANCETESTS on InterpolationSearchKeyHeadsBigNode Btree with CONTENT_SIZE = " << t.btreeInterpolationSearchKeyHeadsBigNode->root->CONTENT_SIZE << std::endl;
                 type = INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE;
             } else {
+                TesterPerformanceInterpolationSearchKeyHeads t{};
+                std::cout << "PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = " << t.btreeInterpolationSearchKeyHeads->root->CONTENT_SIZE << std::endl;
                 type = INTERPOLATIONSEARCHWITHKEYHEADS;
             }
         } else if (getenv("BIGNODE")) {
+            TesterPerformanceInterpolationSearchBigNode t{};
+            std::cout << "PERFORMANCETESTS on InterpolationSearchBigNode Btree with CONTENT_SIZE = " << t.btreeInterpolationSearchBigNode->root->CONTENT_SIZE << std::endl;
             type = INTERPOLATIONSEARCHBIGNODE;
         } else {
+            TesterPerformanceInterpolationSearch t{};
+            std::cout << "PERFORMANCETESTS on InterpolationSearch Btree with CONTENT_SIZE = " << t.btreeInterpolationSearch->root->CONTENT_SIZE << std::endl;
             type = INTERPOLATIONSEARCH;
         }
     } else if (getenv("LINEAR")) {
         if (getenv("BIGNODE")) {
+            TesterPerformanceLinearSearchBigNode t{};
+            std::cout << "PERFORMANCETESTS on LinearSearchBigNode Btree with CONTENT_SIZE = " << t.btreeLinearSearchBigNode->root->CONTENT_SIZE << std::endl;
             type = LINEARSEARCHBIGNODE;
         } else {
+            TesterPerformanceLinearSearch t{};
+            std::cout << "PERFORMANCETESTS on LinearSearch Btree with CONTENT_SIZE = " << t.btreeLinearSearch->root->CONTENT_SIZE << std::endl;
             type = LINEARSEARCH;
         }
     } else if (getenv("MAP")) {
+        std::cout << "PERFORMANCETESTS on STD::MAP" << std::endl;
         type = MAP;
     } else if (getenv("AS")) {
 
@@ -1240,12 +1261,92 @@ int main() {
     } else if (getenv("TIP")) {
     
     } else {
-        type = TEMPLATE;
+        TesterPerformanceTempl t{};
+        std::cout << "No BTree type detected for PERFORMANCETESTS! BTreeTemplate will be used with CONTENT_SIZE = " << t.btreeTemplate->root->CONTENT_SIZE << std::endl;
+        type = TEMPLATE; 
     }
 
+    if (type != TEST && type != ANALYSIS) {
+        std::cout << "DATATYPES for Performancetests (in chronological order):";
+        if (getenv("INTUNIFORM")) {
+            uint64_t n = atof(getenv("INTUNIFORM"));
+            std::cout << " INTUNIFORM (" << n << "),";
+        }
+        if (getenv("INTLITTLEENDIAN")) {
+            uint64_t n = atof(getenv("INTLITTLEENDIAN"));
+            std::cout << " INTLITTLEENDIAN (" << n << "),";
+        }
+        if (getenv("INTFAL")) {
+            uint64_t n = atof(getenv("INTFAL"));
+            std::cout << " INTFAL (" << n << "),";
+            if (getenv("FALSHAPE")) {
+                uint64_t shape = atof(getenv("FALSHAPE"));
+                std::cout << " with Shape " << shape << "/100,"; 
+            } else {
+                std::cout << " with DefaultShape 0.2,"; 
+            }
+        }
+        if (getenv("INTCFAL")) {
+            uint64_t n = atof(getenv("INTCFAL"));
+            std::cout << " INTCFAL (" << n << "),";
+            if (getenv("CFALSHAPE")) {
+                uint64_t shape = atof(getenv("CFALSHAPE"));
+                std::cout << " with Shape " << shape << "/100,"; 
+            } else {
+                std::cout << " with DefaultShape 1.05,"; 
+            }
+        }
+        if (getenv("INTRANDOM")) {
+            uint64_t n = atof(getenv("INTRANDOM"));
+            std::cout << " INTRANDOM (" << n;
+            if (getenv("INTRANDOMSEED")) {
+                uint64_t seed = atof(getenv("INTRANDOMSEED"));
+                std::cout << " Seed=" << seed << "),"; 
+            } else {
+                std::cout << " NoSeed(Random),"; 
+            }
+
+        }
+        if (getenv("INTRANDOMBYTES")) {
+            uint64_t n = atof(getenv("INTRANDOMBYTES"));
+            std::cout << " INTRANDOMBYTES (" << n << "),";
+        }
+        if (getenv("BYTE")) {
+            uint64_t n = atof(getenv("BYTE"));
+            std::cout << " BYTE (" << n;
+            uint16_t byteSize = 4; // Default ByteSize
+            if (getenv("BYTESIZE")) {
+                byteSize = atof(getenv("BYTESIZE"));
+            }
+            std::cout << " byteSize=" << byteSize << "),";
+        }
+        if (getenv("VARIABLEBYTE")) {
+            uint64_t n = atof(getenv("VARIABLEBYTE"));
+            std::cout << " VARIABLEBYTE (" << n << "),";
+        }
+        if (getenv("LONG1")) {
+            uint64_t n = atof(getenv("LONG1"));
+            std::cout << " LONG1 (" << n << "),";
+        }
+        if (getenv("LONG2")) {
+            uint64_t n = atof(getenv("LONG2"));
+            std::cout << " LONG2 (" << n << "),";
+        }
+        if (getenv("FILE")) {
+            uint64_t n = atof(getenv("FILE"));
+            std::cout << " FILE (" << n << ")";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
     // For Analysis:
-    BtreeAnalysis t{};
-    uint32_t btreeContentSize = t.btree->root->CONTENT_SIZE;
+    uint32_t btreeContentSize = 0;
+    if (type == ANALYSIS) {
+        BtreeAnalysis t{};
+        btreeContentSize = t.btree->root->CONTENT_SIZE;
+    }
     uint64_t numKeysFullInnerNode = btreeContentSize / 4; // Assuming all keys are 4 Byte (Ints)
     uint64_t numKeysFullLeafAverage = btreeContentSize / 8; // Assuming most value entries are also 4 byte (Int)
 
@@ -1533,8 +1634,11 @@ int main() {
 
     if (getenv("BYTE")) {
         vector<vector<uint8_t>> data;
-        uint64_t n = atof(getenv("INT")); // Use number of entries from INT
-        uint16_t byteSize = atof(getenv("BYTE"));
+        uint64_t n = atof(getenv("BYTE"));
+        uint16_t byteSize = 4; // Default ByteSize
+        if (getenv("BYTESIZE")) {
+            byteSize = atof(getenv("BYTESIZE"));
+        }
         
         if (byteSize > 4) {
             if (keyIntLimited(type)) {
