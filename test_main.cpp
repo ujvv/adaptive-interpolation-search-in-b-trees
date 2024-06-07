@@ -404,7 +404,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_map.remove(keys[i]);
             }
         }
-        return;
     } else if (type == TEMPLATE) {
         TesterPerformanceTempl t_templ{};
         {
@@ -425,7 +424,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_templ.remove(keys[i]);
             }
         }
-        return;
     } else if (type == TEMPLATEBIGNODE) {
         TesterPerformanceTemplBigNode t_templBigNode{};
         {
@@ -446,7 +444,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_templBigNode.remove(keys[i]);
             }
         }
-        return;
     } else if (type == BINARYSEARCH) {
         TesterPerformanceBinarySearch t_binarySearch{};
         {
@@ -467,7 +464,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_binarySearch.remove(keys[i]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHBIGNODE) {
         TesterPerformanceBinarySearchBigNode t_binarySearchBigNode{};        
         {
@@ -488,7 +484,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_binarySearchBigNode.remove(keys[i]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHWITHHINTS) {
         TesterPerformanceBinarySearchHints t_binarySearchHints{};      
         {
@@ -509,7 +504,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_binarySearchHints.remove(keys[i]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHNOPREFIX) {
         TesterPerformanceBinarySearchNoPrefix t_binarySearchNoPrefix{};       
         {
@@ -530,7 +524,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_binarySearchNoPrefix.remove(keys[i]);
             }
         }
-        return;
     } else if (type == LINEARSEARCH) {
         TesterPerformanceLinearSearch t_linearSearch{};     
         {
@@ -551,7 +544,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_linearSearch.remove(keys[i]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCH) {
         TesterPerformanceInterpolationSearch t_interpolationSearch{};    
         {
@@ -572,7 +564,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_interpolationSearch.remove(keys[i]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHBIGNODE) {
         TesterPerformanceInterpolationSearchBigNode t_interpolationSearchBigNode{};    
         {
@@ -593,7 +584,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_interpolationSearchBigNode.remove(keys[i]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADS) {
         TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};  
         {
@@ -614,7 +604,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_interpolationSearchKeyHeads.remove(keys[i]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE) {
         TesterPerformanceInterpolationSearchKeyHeadsBigNode t_interpolationSearchKeyHeadsBigNode{};
         {
@@ -635,7 +624,6 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_interpolationSearchKeyHeadsBigNode.remove(keys[i]);
             }
         }
-        return;
     } else {
         std::cout << "MISSING" << std::endl;
     }
@@ -681,7 +669,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_map.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == TEMPLATE) {
         TesterPerformanceTempl t_templ{};
         {
@@ -695,7 +682,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_templ.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == TEMPLATEBIGNODE) {
         TesterPerformanceTemplBigNode t_templBigNode{};
         {
@@ -709,7 +695,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_templBigNode.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == BINARYSEARCH) {
         TesterPerformanceBinarySearch t_binarySearch{};
         {
@@ -723,7 +708,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_binarySearch.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == BINARYSEARCHBIGNODE) {
         TesterPerformanceBinarySearchBigNode t_binarySearchBigNode{};        
         {
@@ -737,7 +721,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_binarySearchBigNode.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == BINARYSEARCHWITHHINTS) {
         TesterPerformanceBinarySearchHints t_binarySearchHints{};      
         {
@@ -751,7 +734,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_binarySearchHints.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == BINARYSEARCHNOPREFIX) {
         TesterPerformanceBinarySearchNoPrefix t_binarySearchNoPrefix{};       
         {
@@ -765,7 +747,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_binarySearchNoPrefix.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == LINEARSEARCH) {
         TesterPerformanceLinearSearch t_linearSearch{};     
         {
@@ -779,7 +760,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_linearSearch.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == INTERPOLATIONSEARCH) {
         TesterPerformanceInterpolationSearch t_interpolationSearch{};    
         {
@@ -793,7 +773,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_interpolationSearch.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == INTERPOLATIONSEARCHBIGNODE) {
         TesterPerformanceInterpolationSearchBigNode t_interpolationSearchBigNode{};    
         {
@@ -807,7 +786,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_interpolationSearchBigNode.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADS) {
         TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};  
         {
@@ -821,7 +799,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_interpolationSearchKeyHeads.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE) {
         TesterPerformanceInterpolationSearchKeyHeadsBigNode t_interpolationSearchKeyHeadsBigNode{};
         {
@@ -835,7 +812,6 @@ void runPerformanceTestMixed(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btre
                 t_interpolationSearchKeyHeadsBigNode.insert(keys[index3[i]], keys[index4[i]]);
             }
         } 
-        return;
     } else {
         std::cout << "MISSING" << std::endl;
     }
@@ -847,13 +823,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
     std::cout << "PerformanceTestLookup START" << std::endl;
     
     std::random_shuffle(keys.begin(), keys.end());
-    
-    //TesterPerformanceTempl t_templ{};
-    TesterPerformanceBinarySearch t_binarySearch{};
-    //TesterPerformanceBinarySearchHints t_binarySearchHints{};
-    //TesterPerformanceLinearSearch t_linearSearch{};
-    TesterPerformanceInterpolationSearch t_interpolationSearch{};
-    TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};
 
     uint64_t count = keys.size();
 
@@ -888,7 +857,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_map.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == TEMPLATE) {
         TesterPerformanceTempl t_templ{};
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -908,7 +876,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_templ.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == TEMPLATEBIGNODE) {
         TesterPerformanceTemplBigNode t_templBigNode{};
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -928,7 +895,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_templBigNode.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == BINARYSEARCH) {
         TesterPerformanceBinarySearch t_binarySearch{};
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -948,7 +914,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_binarySearch.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHBIGNODE) {
         TesterPerformanceBinarySearchBigNode t_binarySearchBigNode{};        
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -968,7 +933,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_binarySearchBigNode.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHWITHHINTS) {
         TesterPerformanceBinarySearchHints t_binarySearchHints{};      
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -988,7 +952,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_binarySearchHints.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == BINARYSEARCHNOPREFIX) {
         TesterPerformanceBinarySearchNoPrefix t_binarySearchNoPrefix{};       
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1008,7 +971,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_binarySearchNoPrefix.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == LINEARSEARCH) {
         TesterPerformanceLinearSearch t_linearSearch{};     
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1028,7 +990,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_linearSearch.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCH) {
         TesterPerformanceInterpolationSearch t_interpolationSearch{};    
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1048,7 +1009,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_interpolationSearch.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHBIGNODE) {
         TesterPerformanceInterpolationSearchBigNode t_interpolationSearchBigNode{};    
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1068,7 +1028,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_interpolationSearchBigNode.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADS) {
         TesterPerformanceInterpolationSearchKeyHeads t_interpolationSearchKeyHeads{};  
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1088,7 +1047,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_interpolationSearchKeyHeads.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else if (type == INTERPOLATIONSEARCHWITHKEYHEADSBIGNODE) {
         TesterPerformanceInterpolationSearchKeyHeadsBigNode t_interpolationSearchKeyHeadsBigNode{};
         // Pre-Insert all keys in Btree for Lookup Performance Test
@@ -1108,7 +1066,6 @@ void runPerformanceTestLookup(vector<vector<uint8_t>> &keys,PerfEvent& perf, Btr
                 t_interpolationSearchKeyHeadsBigNode.lookup(keys[iteration3[i]]);
             }
         }
-        return;
     } else {
         std::cout << "MISSING" << std::endl;
     }
@@ -1266,81 +1223,6 @@ int main() {
         type = TEMPLATE; 
     }
 
-    if (type != TEST && type != ANALYSIS) {
-        std::cout << "DATATYPES for Performancetests (in chronological order):";
-        if (getenv("INTUNIFORM")) {
-            uint64_t n = atof(getenv("INTUNIFORM"));
-            std::cout << " INTUNIFORM (" << n << "),";
-        }
-        if (getenv("INTLITTLEENDIAN")) {
-            uint64_t n = atof(getenv("INTLITTLEENDIAN"));
-            std::cout << " INTLITTLEENDIAN (" << n << "),";
-        }
-        if (getenv("INTFAL")) {
-            uint64_t n = atof(getenv("INTFAL"));
-            std::cout << " INTFAL (" << n << "),";
-            if (getenv("FALSHAPE")) {
-                uint64_t shape = atof(getenv("FALSHAPE"));
-                std::cout << " with Shape " << shape << "/100,"; 
-            } else {
-                std::cout << " with DefaultShape 0.2,"; 
-            }
-        }
-        if (getenv("INTCFAL")) {
-            uint64_t n = atof(getenv("INTCFAL"));
-            std::cout << " INTCFAL (" << n << "),";
-            if (getenv("CFALSHAPE")) {
-                uint64_t shape = atof(getenv("CFALSHAPE"));
-                std::cout << " with Shape " << shape << "/100,"; 
-            } else {
-                std::cout << " with DefaultShape 1.05,"; 
-            }
-        }
-        if (getenv("INTRANDOM")) {
-            uint64_t n = atof(getenv("INTRANDOM"));
-            std::cout << " INTRANDOM (" << n;
-            if (getenv("INTRANDOMSEED")) {
-                uint64_t seed = atof(getenv("INTRANDOMSEED"));
-                std::cout << " Seed=" << seed << "),"; 
-            } else {
-                std::cout << " NoSeed(Random),"; 
-            }
-
-        }
-        if (getenv("INTRANDOMBYTES")) {
-            uint64_t n = atof(getenv("INTRANDOMBYTES"));
-            std::cout << " INTRANDOMBYTES (" << n << "),";
-        }
-        if (getenv("BYTE")) {
-            uint64_t n = atof(getenv("BYTE"));
-            std::cout << " BYTE (" << n;
-            uint16_t byteSize = 4; // Default ByteSize
-            if (getenv("BYTESIZE")) {
-                byteSize = atof(getenv("BYTESIZE"));
-            }
-            std::cout << " byteSize=" << byteSize << "),";
-        }
-        if (getenv("VARIABLEBYTE")) {
-            uint64_t n = atof(getenv("VARIABLEBYTE"));
-            std::cout << " VARIABLEBYTE (" << n << "),";
-        }
-        if (getenv("LONG1")) {
-            uint64_t n = atof(getenv("LONG1"));
-            std::cout << " LONG1 (" << n << "),";
-        }
-        if (getenv("LONG2")) {
-            uint64_t n = atof(getenv("LONG2"));
-            std::cout << " LONG2 (" << n << "),";
-        }
-        if (getenv("FILE")) {
-            uint64_t n = atof(getenv("FILE"));
-            std::cout << " FILE (" << n << ")";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-
     // For Analysis:
     uint32_t btreeContentSize = 0;
     if (type == ANALYSIS) {
@@ -1396,6 +1278,7 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: INTUNIFORM=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1440,6 +1323,7 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: INTLITTLEENDIAN=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1476,6 +1360,8 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            uint64_t s = atof(getenv("FALSHAPE"));
+            std::cout << "DATATYPE: INTFAL=" << n << " FALSHAPE=" << s << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1527,6 +1413,8 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            uint64_t s = atof(getenv("CFALSHAPE"));
+            std::cout << "DATATYPE: INTCFAL=" << n << " CFALSHAPE=" << s << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1540,18 +1428,15 @@ int main() {
         uint64_t n = atof(getenv("INTRANDOM"));
 
         std::random_device rd;
-        // Create a random number generator seeded with the random device
         std::mt19937 gen(rd());
 
         if (getenv("INTRANDOMSEED")) {
             auto seed = atof(getenv("INTRANDOMSEED"));
             gen.seed(seed);
         }
-        // Create a distribution that generates uint32_t numbers
         std::uniform_int_distribution<uint32_t> dis(0, UINT32_MAX);
     
         for(uint64_t i = 0; i < n; i++) {
-            // Generate a random number
             uint32_t randomNumber = dis(gen);
             randomNumbers.push_back(randomNumber);
         }
@@ -1581,6 +1466,13 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: INTRANDOM=" << n << " INTRANDOMSEED=";
+            if (getenv("INTRANDOMSEED")) {
+                uint64_t seed = atof(getenv("INTRANDOMSEED"));
+                std::cout << seed << std::endl;
+            } else {
+                std::cout << "RANDOM" << std::endl;
+            }
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1624,6 +1516,7 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: INTRANDOMBYTES=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1687,6 +1580,7 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: BYTE=" << n << "BYTESIZE=" << byteSize << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1698,7 +1592,7 @@ int main() {
     if (getenv("VARIABLEBYTE")) {
         vector<vector<uint8_t>> data;
         uint64_t n = atof(getenv("VARIABLEBYTE"));
-        uint16_t keyMaxByteSize = 500;
+        uint16_t keyMaxByteSize = 250;
         uint16_t bigkeyMaxByteSize = 1000;
         uint16_t bigKeyByteSizeIterations = 0; // Number of iterations for keys over keyMaxByteSize (= 500Byte) to focus mostly on keys under 500 byte
         vector<uint16_t> keyByteSizes;
@@ -1759,6 +1653,7 @@ int main() {
             runTestZickZack(data);
             runTestMixed(data);
         } else {
+            std::cout << "DATATYPE: VARIABLEBYTE=" << n << "keyMaxByteSize=" << keyMaxByteSize << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
             runPerformanceTestLookup(data, perf, type);
@@ -1800,6 +1695,7 @@ int main() {
                 runTestZickZack(data);
                 runTestMixed(data);
             } else {
+                std::cout << "DATATYPE: LONG1=" << n << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
                 runPerformanceTestLookup(data, perf, type);
@@ -1840,6 +1736,7 @@ int main() {
                 runTest(data);
                 runTestMixed(data);
             } else {
+                std::cout << "DATATYPE: LONG2=" << n << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
                 runPerformanceTestLookup(data, perf, type);
@@ -1861,6 +1758,17 @@ int main() {
         
             if (type == ANALYSIS) {
                 std::cout << "BTree Distribution Analysis for datatype: FILE with " << data.size() << " keys (Node ContentSize = " << btreeContentSize << ")" << std::endl;
+                std::vector<uint32_t> urlsSizes;
+                for (uint64_t i = 0; i < data.size(); i++) {
+                    urlsSizes.push_back(static_cast<uint8_t>(data.at(i).size()));
+                }
+                BtreeAnalysis t{};
+                double urlsSizesMean = t.mean(urlsSizes);
+                std::sort(urlsSizes.begin(), urlsSizes.end());
+                double urlsSizesMedian = t.median(urlsSizes);
+                uint32_t lowesturlSize = urlsSizes.at(0);
+                uint32_t highesturlSize = urlsSizes.at(urlsSizes.size()-1);
+                std::cout << "Urls Mean Byte-Size: " << urlsSizesMean << ", Median: " << urlsSizesMedian << ", lowestSize: " << lowesturlSize << ", highestSize: " << highesturlSize << std::endl;
                 runAnalysis(data);
                 std::cout << std::endl;
             
@@ -1877,6 +1785,7 @@ int main() {
                 runTest(data);
                 runTestMixed(data);
             } else {
+                std::cout << "DATATYPE: FILE=" << data.size() << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
                 runPerformanceTestLookup(data, perf, type);

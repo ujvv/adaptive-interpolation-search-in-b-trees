@@ -16,51 +16,51 @@
                 },
                 /*{
                     "name": "INTUNIFORM",
-                    "value": "2000000"
-                },
+                    "value": "2e6"
+                },*/
                 {
                     "name": "INTLITTLEENDIAN",
-                    "value": "2000000"
+                    "value": "1e6"
                 },
                 {
                     "name": "INTFAL",
-                    "value": "2000000"
+                    "value": "1e5"
                 },
                 {
                     "name": "FALSHAPE",
-                    "value": "20"
+                    "value": "50"
                 },
                 {
                     "name": "INTCFAL",
-                    "value": "2000000"
+                    "value": "1e5"
                 },
                 {
                     "name": "CFALSHAPE",
-                    "value": "105"
-                },*/
+                    "value": "50"
+                },
                 {
                     "name": "INTRANDOM",
-                    "value": "2000000"
+                    "value": "1e5"
+                },
+                {
+                    "name": "INTRANDOMSEED",
+                    "value": "30"
                 },
                 /*{
-                    "name": "INTRANDOMSEED",
-                    "value": "5323"
-                },*/
-                {
                     "name": "INTRANDOMBYTES",
                     "value": "2000000"
-                },
-                {
+                },*/
+                /*{
                     "name": "BYTE",
-                    "value": "2000000"
+                    "value": "150000"
                 },
                 {
                     "name": "BYTESIZE",
-                    "value": "35"
+                    "value": "50"
                 },
                 {
                     "name": "VARIABLEBYTE",
-                    "value": "12000"
+                    "value": "360000"
                 },
                 {
                     "name": "LONG1",
@@ -69,11 +69,11 @@
                 {
                     "name": "LONG2",
                     "value": "512"
-                }
-                /*{
+                },*/
+                {
                     "name": "FILE",
                     "value": "data/urls"
-                }*/
+                }
             ],
             "externalConsole": false,
             "MIMode": "gdb",

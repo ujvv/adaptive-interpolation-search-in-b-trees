@@ -9,8 +9,8 @@
 #include <string>
 
 
-// constexpr uint32_t NODE_SIZE_BINARYSEARCHNOPREFIX = 4096;
-constexpr uint32_t NODE_SIZE_BINARYSEARCHNOPREFIX = 8192;
+constexpr uint32_t NODE_SIZE_BINARYSEARCHNOPREFIX = 4096;
+// constexpr uint32_t NODE_SIZE_BINARYSEARCHNOPREFIX = 8192;
 
 // Forward declarations
 class BTreeNodeBinarySearchNoPrefix;
