@@ -1281,7 +1281,7 @@ int main() {
             std::cout << "DATATYPE: INTUNIFORM=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1326,7 +1326,7 @@ int main() {
             std::cout << "DATATYPE: INTLITTLEENDIAN=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1364,7 +1364,7 @@ int main() {
             std::cout << "DATATYPE: INTFAL=" << n << " FALSHAPE=" << s << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1417,7 +1417,7 @@ int main() {
             std::cout << "DATATYPE: INTCFAL=" << n << " CFALSHAPE=" << s << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1475,7 +1475,7 @@ int main() {
             }
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1519,7 +1519,7 @@ int main() {
             std::cout << "DATATYPE: INTRANDOMBYTES=" << n << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1583,7 +1583,7 @@ int main() {
             std::cout << "DATATYPE: BYTE=" << n << "BYTESIZE=" << byteSize << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1656,7 +1656,7 @@ int main() {
             std::cout << "DATATYPE: VARIABLEBYTE=" << n << "keyMaxByteSize=" << keyMaxByteSize << std::endl;
             runPerformanceTestStandard(data, perf, type);
             //runPerformanceTestMixed(data, perf, type);
-            runPerformanceTestLookup(data, perf, type);
+            //runPerformanceTestLookup(data, perf, type);
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -1698,7 +1698,7 @@ int main() {
                 std::cout << "DATATYPE: LONG1=" << n << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
-                runPerformanceTestLookup(data, perf, type);
+                //runPerformanceTestLookup(data, perf, type);
             }
         }
         std::cout << std::endl;
@@ -1739,7 +1739,7 @@ int main() {
                 std::cout << "DATATYPE: LONG2=" << n << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
-                runPerformanceTestLookup(data, perf, type);
+                //runPerformanceTestLookup(data, perf, type);
             }
         }
         std::cout << std::endl;
@@ -1788,7 +1788,7 @@ int main() {
                 std::cout << "DATATYPE: FILE=" << data.size() << std::endl;
                 runPerformanceTestStandard(data, perf, type);
                 //runPerformanceTestMixed(data, perf, type);
-                runPerformanceTestLookup(data, perf, type);
+                //runPerformanceTestLookup(data, perf, type);
             }
         }
         std::cout << std::endl;

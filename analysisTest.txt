@@ -1,0 +1,2703 @@
+rm -f main
+rm -f main-optimized
+cd btree_template; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template'
+rm -f btree_template.o btree_template.a btree-optimized_template.o btree-optimized_template.a btreenode_template.o btreenode-optimized_template.o utils_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+rm -f btree_finished.o btree_finished.a btree-optimized_finished.o btree-optimized_finished.a
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+rm -f btree_binarySearchNoPrefix.o btree_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btree-optimized_binarySearchNoPrefix.a btreenode_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+rm -f btree_binarySearchBig.o btree_binarySearchBig.a btree-optimized_binarySearchBig.o btree-optimized_binarySearchBig.a btreenode_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+rm -f btree_binarySearchHints.o btree_binarySearchHints.a btree-optimized_binarySearchHints.o btree-optimized_binarySearchHints.a btreenode_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+rm -f btree_linearSearchBig.o btree_linearSearchBig.a btree-optimized_linearSearchBig.o btree-optimized_linearSearchBig.a btreenode_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+rm -f btree_interpolationSearchBig.o btree_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btree-optimized_interpolationSearchBig.a btreenode_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+rm -f btree_interpolationSearchKeyHeads.o btree_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btree-optimized_interpolationSearchKeyHeads.a btreenode_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode; make clean
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+rm -f btree_interpolationSearchKeyHeadsBig.o btree_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btree-optimized_interpolationSearchKeyHeadsBig.a btreenode_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_template;make btree_template.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template'
+g++ -std=c++20 -Wall -Wextra -g -c btree_template.cpp -o btree_template.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_template.cpp -o btreenode_template.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_template.o
+rm -f btree_template.a
+ar rcs btree_template.a btree_template.o btreenode_template.o utils_template.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode;make btree_templateBig.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o btree_templateBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o btreenode_templateBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_templateBig.o
+rm -f btree_templateBig.a
+ar rcs btree_templateBig.a btree_templateBig.o btreenode_templateBig.o utils_templateBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished;make btree_finished.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+g++ -Wall -Wextra -g -std=c++20 -c btree.cpp -o btree_finished.o
+rm -f btree_finished.a
+ar rcs btree_finished.a btree_finished.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix;make btree_binarySearchNoPrefix.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchNoPrefix.cpp -o btree_binarySearchNoPrefix.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchNoPrefix.cpp -o btreenode_binarySearchNoPrefix.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchNoPrefix.o
+rm -f btree_binarySearchNoPrefix.a
+ar rcs btree_binarySearchNoPrefix.a btree_binarySearchNoPrefix.o btreenode_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch;make btree_binarySearch.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearch.cpp -o btree_binarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o btreenode_binarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearch.o
+rm -f btree_binarySearch.a
+ar rcs btree_binarySearch.a btree_binarySearch.o btreenode_binarySearch.o utils_binarySearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode;make btree_binarySearchBig.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchBigNode.cpp -o btree_binarySearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchBigNode.cpp -o btreenode_binarySearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchBig.o
+rm -f btree_binarySearchBig.a
+ar rcs btree_binarySearchBig.a btree_binarySearchBig.o btreenode_binarySearchBig.o utils_binarySearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints;make btree_binarySearchHints.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchHints.cpp -o btree_binarySearchHints.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchHints.cpp -o btreenode_binarySearchHints.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchHints.o
+rm -f btree_binarySearchHints.a
+ar rcs btree_binarySearchHints.a btree_binarySearchHints.o btreenode_binarySearchHints.o utils_binarySearchHints.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch;make btree_linearSearch.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o btree_linearSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o btreenode_linearSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_linearSearch.o
+rm -f btree_linearSearch.a
+ar rcs btree_linearSearch.a btree_linearSearch.o btreenode_linearSearch.o utils_linearSearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode;make btree_linearSearchBig.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearchBigNode.cpp -o btree_linearSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearchBigNode.cpp -o btreenode_linearSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_linearSearchBig.o
+rm -f btree_linearSearchBig.a
+ar rcs btree_linearSearchBig.a btree_linearSearchBig.o btreenode_linearSearchBig.o utils_linearSearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch;make btree_interpolationSearch.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearch.cpp -o btree_interpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o btreenode_interpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearch.o
+rm -f btree_interpolationSearch.a
+ar rcs btree_interpolationSearch.a btree_interpolationSearch.o btreenode_interpolationSearch.o utils_interpolationSearch.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode;make btree_interpolationSearchBig.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchBigNode.cpp -o btree_interpolationSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchBigNode.cpp -o btreenode_interpolationSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchBig.o
+rm -f btree_interpolationSearchBig.a
+ar rcs btree_interpolationSearchBig.a btree_interpolationSearchBig.o btreenode_interpolationSearchBig.o utils_interpolationSearchBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads;make btree_interpolationSearchKeyHeads.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeads.cpp -o btree_interpolationSearchKeyHeads.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeads.cpp -o btreenode_interpolationSearchKeyHeads.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchKeyHeads.o
+rm -f btree_interpolationSearchKeyHeads.a
+ar rcs btree_interpolationSearchKeyHeads.a btree_interpolationSearchKeyHeads.o btreenode_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode;make btree_interpolationSearchKeyHeadsBig.a
+make[1]: Entering directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeadsBigNode.cpp -o btree_interpolationSearchKeyHeadsBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeadsBigNode.cpp -o btreenode_interpolationSearchKeyHeadsBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchKeyHeadsBig.o
+rm -f btree_interpolationSearchKeyHeadsBig.a
+ar rcs btree_interpolationSearchKeyHeadsBig.a btree_interpolationSearchKeyHeadsBig.o btreenode_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/aaron/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -o main -std=c++20 -Wall -Wextra -g test_main.cpp btree_template/btree_template.a btree_template_bigNode/btree_templateBig.a btree_plain_finished/btree_finished.a btree_binarySearch_noPrefix/btree_binarySearchNoPrefix.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_bigNode/btree_binarySearchBig.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_linearSearch_bigNode/btree_linearSearchBig.a btree_interpolationSearch/btree_interpolationSearch.a btree_interpolationSearch_bigNode/btree_interpolationSearchBig.a btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.a btree_interpolationSearch_withKeyHeads_bigNode/btree_interpolationSearchKeyHeadsBig.a
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTUNIFORM with 1000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 8 Median numKeys in InnerNodes: 8
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 
+The 5 highest Coefficients: 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
+Coefficient of Variance: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
+Coefficient of Variance: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 1000 keys in 1 'Node'
+Coefficient of Variance: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTUNIFORM with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 
+The 5 highest Coefficients: 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
+Coefficient of Variance: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
+Coefficient of Variance: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTUNIFORM with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
+Coefficient of Variance: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
+Coefficient of Variance: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 100000 keys in 1 'Node'
+Coefficient of Variance: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTUNIFORM with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
+Coefficient of Variance: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
+Coefficient of Variance: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTUNIFORM with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90090 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+InnerNode Analysis with 1012 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0208 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0 Median of Coefficients: 0 StandardDeviation of Coefficients: 0
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0 0 0 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
+Coefficient of Variance: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
+Coefficient of Variance: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 5439 Leafs in total
+Average amount of Keys in a Leaf: 183.857 Median numKeys in Leafs: 190
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 3.54595 Median of Coefficients: 3.52242 StandardDeviation of Coefficients: 0.545954
+The 5 lowest Coefficients: 3.34127 3.35469 3.35469 3.37202 3.37202 
+The 5 highest Coefficients: 3.8073 3.79309 3.79309 3.79309 3.79309 
+InnerNode Analysis with 37 InnerNodes in total
+Average amount of Keys in a InnerNode: 146.973 Median numKeys in InnerNodes: 163
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.213858 Median of Coefficients: 0.211775 StandardDeviation of Coefficients: 0.213858
+The 5 lowest Coefficients: 0.196381 0.198825 0.204246 0.204639 0.205596 
+The 5 highest Coefficients: 0.232882 0.230196 0.229156 0.228995 0.228846 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.00386548
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 65492 Leafs in total
+Average amount of Keys in a Leaf: 152.69 Median numKeys in Leafs: 150
+The 5 lowest numKeys in a Leaf: 117 117 117 117 117 .  And the 5 highest numKeys in a Leaf: 230 230 230 230 230 Mean of Coefficients: 4.93349 Median of Coefficients: 4.98106 StandardDeviation of Coefficients: 0.856405
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 5.07166 5.07166 5.07166 5.07166 5.07166 
+InnerNode Analysis with 517 InnerNodes in total
+Average amount of Keys in a InnerNode: 126.675 Median numKeys in InnerNodes: 126
+The 5 lowest numKeys in a InnerNode: 117 117 117 117 117 .  And the 5 highest numKeys in a InnerNode: 230 230 230 230 230 Mean of Coefficients: 0.101097 Median of Coefficients: 0.101539 StandardDeviation of Coefficients: 0.101097
+The 5 lowest Coefficients: 0.0206184 0.0587797 0.0589372 0.0592875 0.0677027 
+The 5 highest Coefficients: 0.134388 0.131031 0.126364 0.125824 0.124628 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0.00389107
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 131423 Leafs in total
+Average amount of Keys in a Leaf: 152.18 Median numKeys in Leafs: 148
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.391448 Median of Coefficients: 0.441135 StandardDeviation of Coefficients: 0.391448
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.884631 0.884631 0.884631 0.884631 0.884631 
+InnerNode Analysis with 1033 InnerNodes in total
+Average amount of Keys in a InnerNode: 127.224 Median numKeys in InnerNodes: 127
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.142287 Median of Coefficients: 0.141602 StandardDeviation of Coefficients: 0.142287
+The 5 lowest Coefficients: 0.0804051 0.0846761 0.0902052 0.0994603 0.100186 
+The 5 highest Coefficients: 0.171009 0.170579 0.170139 0.168998 0.168873 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 0.00389749
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 146506 Leafs in total
+Average amount of Keys in a Leaf: 204.77 Median numKeys in Leafs: 222
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.872147 Median of Coefficients: 0.913655 StandardDeviation of Coefficients: 0.872147
+The 5 lowest Coefficients: 0.574347 0.587516 0.587516 0.590953 0.590953 
+The 5 highest Coefficients: 0.992188 0.992188 0.992188 0.992188 0.992188 
+InnerNode Analysis with 1033 InnerNodes in total
+Average amount of Keys in a InnerNode: 141.825 Median numKeys in InnerNodes: 143
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.166166 Median of Coefficients: 0.160868 StandardDeviation of Coefficients: 0.166166
+The 5 lowest Coefficients: 0.0804051 0.0846761 0.0902052 0.0994603 0.100186 
+The 5 highest Coefficients: 0.236298 0.235271 0.23489 0.233335 0.232952 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 0.00389535
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 261035 Leafs in total
+Average amount of Keys in a Leaf: 153.236 Median numKeys in Leafs: 162
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 1.16558 Median of Coefficients: 1.14418 StandardDeviation of Coefficients: 0.658056
+The 5 lowest Coefficients: 0.983663 0.983808 0.983808 0.983808 0.983808 
+The 5 highest Coefficients: 1.406 1.406 1.406 1.406 1.406 
+InnerNode Analysis with 2064 InnerNodes in total
+Average amount of Keys in a InnerNode: 126.47 Median numKeys in InnerNodes: 126
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.197445 Median of Coefficients: 0.194323 StandardDeviation of Coefficients: 0.197445
+The 5 lowest Coefficients: 0.0818668 0.0837501 0.0860363 0.0879181 0.088857 
+The 5 highest Coefficients: 0.275136 0.271305 0.269589 0.264046 0.261533 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 0.00389749
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 286108 Leafs in total
+Average amount of Keys in a Leaf: 174.759 Median numKeys in Leafs: 175
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 240 240 240 240 240 Mean of Coefficients: 1.38565 Median of Coefficients: 1.38879 StandardDeviation of Coefficients: 0.385649
+The 5 lowest Coefficients: 1.32697 1.32697 1.32697 1.32697 1.32697 
+The 5 highest Coefficients: 1.406 1.406 1.406 1.406 1.406 
+InnerNode Analysis with 2064 InnerNodes in total
+Average amount of Keys in a InnerNode: 138.618 Median numKeys in InnerNodes: 137
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 240 240 240 240 240 Mean of Coefficients: 0.147246 Median of Coefficients: 0.147868 StandardDeviation of Coefficients: 0.147246
+The 5 lowest Coefficients: 0.0818668 0.0837501 0.0860363 0.0879181 0.088857 
+The 5 highest Coefficients: 0.196329 0.194863 0.194863 0.194802 0.194638 
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
+Coefficient of Variance: 0.000174691
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970717
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
+Coefficient of Variance: 0.000213737
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 0.0038962
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 64 Leafs in total
+Average amount of Keys in a Leaf: 156.25 Median numKeys in Leafs: 154.5
+The 5 lowest numKeys in a Leaf: 113 114 114 115 115 .  And the 5 highest numKeys in a Leaf: 220 220 218 214 213 Mean of Coefficients: 0.984543 Median of Coefficients: 0.988806 StandardDeviation of Coefficients: 0.717681
+The 5 lowest Coefficients: 0.835441 0.859859 0.861746 0.864167 0.864212 
+The 5 highest Coefficients: 1.16951 1.14214 1.13947 1.1182 1.11329 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 63 Median numKeys in InnerNodes: 63
+The 5 lowest numKeys in a InnerNode: 113 114 114 115 115 .  And the 5 highest numKeys in a InnerNode: 220 220 218 214 213 Mean of Coefficients: 0.21464 Median of Coefficients: 0.21464 StandardDeviation of Coefficients: 0.21464
+The 5 lowest Coefficients: 0.21464 
+The 5 highest Coefficients: 0.21464 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.973815
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.970763
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0.995214
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 635 Leafs in total
+Average amount of Keys in a Leaf: 157.48 Median numKeys in Leafs: 151
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 233 231 231 Mean of Coefficients: 0.989558 Median of Coefficients: 0.989085 StandardDeviation of Coefficients: 0.744081
+The 5 lowest Coefficients: 0.785624 0.79635 0.799351 0.799658 0.80656 
+The 5 highest Coefficients: 1.31932 1.23895 1.22818 1.21467 1.19798 
+InnerNode Analysis with 5 InnerNodes in total
+Average amount of Keys in a InnerNode: 126.8 Median numKeys in InnerNodes: 158
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 233 231 231 Mean of Coefficients: 0.187093 Median of Coefficients: 0.211978 StandardDeviation of Coefficients: 0.187093
+The 5 lowest Coefficients: 0.0246873 0.187487 0.211978 0.251847 0.259464 
+The 5 highest Coefficients: 0.259464 0.251847 0.211978 0.187487 0.0246873 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.986594
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.972999
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 100000 keys in 1 'Node'
+Coefficient of Variance: 1.00032
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 6251 Leafs in total
+Average amount of Keys in a Leaf: 159.956 Median numKeys in Leafs: 152
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.989968 Median of Coefficients: 0.985176 StandardDeviation of Coefficients: 0.749421
+The 5 lowest Coefficients: 0.75122 0.776094 0.781172 0.782853 0.78479 
+The 5 highest Coefficients: 1.38262 1.35214 1.31737 1.30215 1.29103 
+InnerNode Analysis with 60 InnerNodes in total
+Average amount of Keys in a InnerNode: 104.167 Median numKeys in InnerNodes: 98
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.206097 Median of Coefficients: 0.202277 StandardDeviation of Coefficients: 0.206097
+The 5 lowest Coefficients: 0.130872 0.152432 0.155912 0.15688 0.157166 
+The 5 highest Coefficients: 0.269309 0.26683 0.259569 0.252231 0.251308 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.975899
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.972673
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.999838
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 61414 Leafs in total
+Average amount of Keys in a Leaf: 162.635 Median numKeys in Leafs: 157
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.989424 Median of Coefficients: 0.984386 StandardDeviation of Coefficients: 0.755211
+The 5 lowest Coefficients: 0.702101 0.711601 0.717862 0.732712 0.736867 
+The 5 highest Coefficients: 1.63414 1.46227 1.43886 1.42223 1.41524 
+InnerNode Analysis with 514 InnerNodes in total
+Average amount of Keys in a InnerNode: 119.481 Median numKeys in InnerNodes: 114
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.199397 Median of Coefficients: 0.197682 StandardDeviation of Coefficients: 0.199397
+The 5 lowest Coefficients: 0.000648222 0.0914378 0.0923949 0.115702 0.122168 
+The 5 highest Coefficients: 0.276892 0.274192 0.272524 0.272477 0.270837 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.968174
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.98306
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0.999955
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 121318 Leafs in total
+Average amount of Keys in a Leaf: 164.472 Median numKeys in Leafs: 159
+The 5 lowest numKeys in a Leaf: 111 111 111 113 113 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.988449 Median of Coefficients: 0.98331 StandardDeviation of Coefficients: 0.759041
+The 5 lowest Coefficients: 0.699364 0.703116 0.715293 0.722169 0.733038 
+The 5 highest Coefficients: 1.91066 1.6443 1.63013 1.52927 1.51451 
+InnerNode Analysis with 1009 InnerNodes in total
+Average amount of Keys in a InnerNode: 120.235 Median numKeys in InnerNodes: 116
+The 5 lowest numKeys in a InnerNode: 111 111 111 113 113 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.201427 Median of Coefficients: 0.199551 StandardDeviation of Coefficients: 0.201427
+The 5 lowest Coefficients: 0.0771355 0.0804883 0.101164 0.111545 0.122848 
+The 5 highest Coefficients: 0.281383 0.278847 0.278078 0.278069 0.274366 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 1.00363
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.976628
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1.0001
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 179301 Leafs in total
+Average amount of Keys in a Leaf: 166.734 Median numKeys in Leafs: 160
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.987473 Median of Coefficients: 0.982379 StandardDeviation of Coefficients: 0.761684
+The 5 lowest Coefficients: 0.718988 0.720226 0.724053 0.725094 0.730082 
+The 5 highest Coefficients: 1.58714 1.58332 1.53727 1.45546 1.45258 
+InnerNode Analysis with 1222 InnerNodes in total
+Average amount of Keys in a InnerNode: 146.727 Median numKeys in InnerNodes: 162
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.210953 Median of Coefficients: 0.212189 StandardDeviation of Coefficients: 0.210953
+The 5 lowest Coefficients: 0.0804883 0.0842853 0.111064 0.114176 0.115406 
+The 5 highest Coefficients: 0.290512 0.289154 0.288956 0.286195 0.282787 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.965228
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 1.02104
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 1.00016
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 236377 Leafs in total
+Average amount of Keys in a Leaf: 168.437 Median numKeys in Leafs: 162
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.986442 Median of Coefficients: 0.981289 StandardDeviation of Coefficients: 0.764153
+The 5 lowest Coefficients: 0.732168 0.737102 0.73795 0.738359 0.739416 
+The 5 highest Coefficients: 1.54776 1.52078 1.51112 1.50049 1.49756 
+InnerNode Analysis with 1983 InnerNodes in total
+Average amount of Keys in a InnerNode: 119.201 Median numKeys in InnerNodes: 113
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.203151 Median of Coefficients: 0.20193 StandardDeviation of Coefficients: 0.203151
+The 5 lowest Coefficients: 0.0599287 0.0838866 0.0867652 0.0945116 0.10157 
+The 5 highest Coefficients: 0.290213 0.28794 0.286086 0.285579 0.284087 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.984769
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 1.0387
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 1.00019
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 292535 Leafs in total
+Average amount of Keys in a Leaf: 169.93 Median numKeys in Leafs: 164
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.985309 Median of Coefficients: 0.9803 StandardDeviation of Coefficients: 0.767103
+The 5 lowest Coefficients: 0.704077 0.705228 0.711862 0.720534 0.723328 
+The 5 highest Coefficients: 1.75426 1.59441 1.57921 1.56788 1.53423 
+InnerNode Analysis with 2075 InnerNodes in total
+Average amount of Keys in a InnerNode: 140.98 Median numKeys in InnerNodes: 141
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.208351 Median of Coefficients: 0.209472 StandardDeviation of Coefficients: 0.208351
+The 5 lowest Coefficients: 0.0863743 0.0867652 0.087303 0.0945116 0.0955554 
+The 5 highest Coefficients: 0.299366 0.292789 0.289505 0.287788 0.28723 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.552195
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 1.0403
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 1.03469
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 1.00018
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 66 Leafs in total
+Average amount of Keys in a Leaf: 151.515 Median numKeys in Leafs: 140.5
+The 5 lowest numKeys in a Leaf: 111 112 113 113 115 .  And the 5 highest numKeys in a Leaf: 217 213 212 209 206 Mean of Coefficients: 0.982628 Median of Coefficients: 0.977312 StandardDeviation of Coefficients: 0.765052
+The 5 lowest Coefficients: 0.835237 0.856678 0.858832 0.882349 0.886115 
+The 5 highest Coefficients: 1.09283 1.08467 1.08003 1.07836 1.07703 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 65 Median numKeys in InnerNodes: 65
+The 5 lowest numKeys in a InnerNode: 111 112 113 113 115 .  And the 5 highest numKeys in a InnerNode: 217 213 212 209 206 Mean of Coefficients: 0.222681 Median of Coefficients: 0.222681 StandardDeviation of Coefficients: 0.222681
+The 5 lowest Coefficients: 0.222681 
+The 5 highest Coefficients: 0.222681 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.956477
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.96012
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0.995645
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 636 Leafs in total
+Average amount of Keys in a Leaf: 157.231 Median numKeys in Leafs: 152
+The 5 lowest numKeys in a Leaf: 111 111 111 111 112 .  And the 5 highest numKeys in a Leaf: 234 233 231 230 230 Mean of Coefficients: 0.994055 Median of Coefficients: 0.990981 StandardDeviation of Coefficients: 0.739536
+The 5 lowest Coefficients: 0.799189 0.815239 0.81679 0.828854 0.829605 
+The 5 highest Coefficients: 1.28895 1.23473 1.21074 1.19515 1.19411 
+InnerNode Analysis with 5 InnerNodes in total
+Average amount of Keys in a InnerNode: 127 Median numKeys in InnerNodes: 156
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 112 .  And the 5 highest numKeys in a InnerNode: 234 233 231 230 230 Mean of Coefficients: 0.191209 Median of Coefficients: 0.188146 StandardDeviation of Coefficients: 0.191209
+The 5 lowest Coefficients: 0.105316 0.165258 0.188146 0.242873 0.254452 
+The 5 highest Coefficients: 0.254452 0.242873 0.188146 0.165258 0.105316 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 1.06603
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 1.06416
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 100000 keys in 1 'Node'
+Coefficient of Variance: 1.00211
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 6159 Leafs in total
+Average amount of Keys in a Leaf: 162.344 Median numKeys in Leafs: 156
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.989663 Median of Coefficients: 0.984036 StandardDeviation of Coefficients: 0.755503
+The 5 lowest Coefficients: 0.76743 0.770708 0.776702 0.780316 0.791877 
+The 5 highest Coefficients: 1.37685 1.35529 1.334 1.325 1.30275 
+InnerNode Analysis with 54 InnerNodes in total
+Average amount of Keys in a InnerNode: 114.037 Median numKeys in InnerNodes: 101
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.210311 Median of Coefficients: 0.209882 StandardDeviation of Coefficients: 0.210311
+The 5 lowest Coefficients: 0.127904 0.145072 0.14689 0.150469 0.153629 
+The 5 highest Coefficients: 0.27174 0.270717 0.269294 0.26057 0.259699 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.891981
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.947029
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.999016
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 61720 Leafs in total
+Average amount of Keys in a Leaf: 161.832 Median numKeys in Leafs: 155
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 234 234 234 234 234 Mean of Coefficients: 0.989812 Median of Coefficients: 0.984435 StandardDeviation of Coefficients: 0.754798
+The 5 lowest Coefficients: 0.711349 0.721104 0.736063 0.740133 0.741929 
+The 5 highest Coefficients: 1.56977 1.50422 1.45188 1.42709 1.42357 
+InnerNode Analysis with 510 InnerNodes in total
+Average amount of Keys in a InnerNode: 121.018 Median numKeys in InnerNodes: 118
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 234 234 234 234 234 Mean of Coefficients: 0.203212 Median of Coefficients: 0.202561 StandardDeviation of Coefficients: 0.203212
+The 5 lowest Coefficients: 0.0803347 0.0816084 0.127531 0.131107 0.135168 
+The 5 highest Coefficients: 0.289689 0.27888 0.275884 0.274048 0.273914 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.970399
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.962223
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1.0004
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 121714 Leafs in total
+Average amount of Keys in a Leaf: 163.936 Median numKeys in Leafs: 157
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.988562 Median of Coefficients: 0.983369 StandardDeviation of Coefficients: 0.757802
+The 5 lowest Coefficients: 0.68295 0.720281 0.730802 0.731994 0.733788 
+The 5 highest Coefficients: 1.58912 1.52568 1.49615 1.49168 1.46223 
+InnerNode Analysis with 992 InnerNodes in total
+Average amount of Keys in a InnerNode: 122.695 Median numKeys in InnerNodes: 118
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.204285 Median of Coefficients: 0.204996 StandardDeviation of Coefficients: 0.204285
+The 5 lowest Coefficients: 0.0847002 0.0853585 0.0867128 0.0908043 0.108403 
+The 5 highest Coefficients: 0.279276 0.27898 0.277984 0.27614 0.275781 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.936398
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.965497
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1.00023
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 178548 Leafs in total
+Average amount of Keys in a Leaf: 167.436 Median numKeys in Leafs: 161
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.987565 Median of Coefficients: 0.98252 StandardDeviation of Coefficients: 0.761478
+The 5 lowest Coefficients: 0.708581 0.715244 0.715657 0.723226 0.728008 
+The 5 highest Coefficients: 1.63834 1.56074 1.54116 1.52266 1.52239 
+InnerNode Analysis with 1265 InnerNodes in total
+Average amount of Keys in a InnerNode: 141.144 Median numKeys in InnerNodes: 153
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.210178 Median of Coefficients: 0.209857 StandardDeviation of Coefficients: 0.210178
+The 5 lowest Coefficients: 0.0905157 0.114358 0.122443 0.125355 0.129811 
+The 5 highest Coefficients: 0.305009 0.302024 0.296512 0.296409 0.292194 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.930111
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.976575
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 1.0002
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 236930 Leafs in total
+Average amount of Keys in a Leaf: 168.041 Median numKeys in Leafs: 161
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.986473 Median of Coefficients: 0.981508 StandardDeviation of Coefficients: 0.763613
+The 5 lowest Coefficients: 0.683268 0.72171 0.722978 0.725195 0.726627 
+The 5 highest Coefficients: 1.75792 1.66882 1.55742 1.5497 1.54317 
+InnerNode Analysis with 1941 InnerNodes in total
+Average amount of Keys in a InnerNode: 122.065 Median numKeys in InnerNodes: 116
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.205585 Median of Coefficients: 0.204446 StandardDeviation of Coefficients: 0.205585
+The 5 lowest Coefficients: 0.0757497 0.0762148 0.086098 0.0892534 0.0929733 
+The 5 highest Coefficients: 0.297478 0.295256 0.292024 0.291871 0.288677 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.953777
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.980001
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 1.00023
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTRANDOM with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 293354 Leafs in total
+Average amount of Keys in a Leaf: 169.454 Median numKeys in Leafs: 163
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 249 249 249 249 249 Mean of Coefficients: 0.985195 Median of Coefficients: 0.980239 StandardDeviation of Coefficients: 0.766955
+The 5 lowest Coefficients: 0.710649 0.72145 0.722526 0.729881 0.7302 
+The 5 highest Coefficients: 1.57699 1.54194 1.5398 1.53351 1.51907 
+InnerNode Analysis with 2069 InnerNodes in total
+Average amount of Keys in a InnerNode: 141.785 Median numKeys in InnerNodes: 143
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 249 249 249 249 249 Mean of Coefficients: 0.206569 Median of Coefficients: 0.204529 StandardDeviation of Coefficients: 0.206569
+The 5 lowest Coefficients: 0.0757497 0.086098 0.0886201 0.0917654 0.0929733 
+The 5 highest Coefficients: 0.296139 0.29593 0.29233 0.291054 0.290235 
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
+Coefficient of Variance: 0.602889
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
+Coefficient of Variance: 0.916313
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
+Coefficient of Variance: 0.946375
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 0.999989
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.0653824 Median of Coefficients: 0.00951768 StandardDeviation of Coefficients: 0.316095
+The 5 lowest Coefficients: 0.0047936 0.00484432 0.00490246 0.00496021 0.00501224 
+The 5 highest Coefficients: 3.98702 0.281904 0.168219 0.120426 0.093893 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 3.30312 Median of Coefficients: 3.30312 StandardDeviation of Coefficients: 0.303118
+The 5 lowest Coefficients: 3.30312 
+The 5 highest Coefficients: 3.30312 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 34.442
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.097682 Median of Coefficients: 0.0145857 StandardDeviation of Coefficients: 0.629696
+The 5 lowest Coefficients: 0.0115116 0.0115227 0.0115381 0.0115519 0.0115788 
+The 5 highest Coefficients: 6.02596 0.387033 0.230283 0.164724 0.128388 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 4.95663 Median of Coefficients: 4.95663 StandardDeviation of Coefficients: 0.956632
+The 5 lowest Coefficients: 4.95663 
+The 5 highest Coefficients: 4.95663 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 55.3906
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.122634 Median of Coefficients: 0.0332481 StandardDeviation of Coefficients: 0.631417
+The 5 lowest Coefficients: 0.0199148 0.0199885 0.0200725 0.0200893 0.0202948 
+The 5 highest Coefficients: 6.63304 0.425271 0.252855 0.180832 0.140929 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 5.46257 Median of Coefficients: 5.46257 StandardDeviation of Coefficients: 0.462566
+The 5 lowest Coefficients: 5.46257 
+The 5 highest Coefficients: 5.46257 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 61.0721
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 87 Leafs in total
+Average amount of Keys in a Leaf: 111.31 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 138 111 111 111 111 Mean of Coefficients: 0.208954 Median of Coefficients: 0.0819036 StandardDeviation of Coefficients: 0.757136
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.79753 0.427562 0.353343 0.352767 0.349927 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 86 Median numKeys in InnerNodes: 86
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 138 111 111 111 111 Mean of Coefficients: 5.62823 Median of Coefficients: 5.62823 StandardDeviation of Coefficients: 0.62823
+The 5 lowest Coefficients: 5.62823 
+The 5 highest Coefficients: 5.62823 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 67.1122
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0.0105385 Median of Coefficients: 0.00294189 StandardDeviation of Coefficients: 0.166649
+The 5 lowest Coefficients: 0.0017825 0.00179041 0.00179175 0.0017971 0.00179873 
+The 5 highest Coefficients: 5.21393 0.181966 0.127245 0.0979715 0.0796899 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0.497942 Median of Coefficients: 0.0857455 StandardDeviation of Coefficients: 0.92151
+The 5 lowest Coefficients: 0.0445726 0.0498229 0.0564832 0.0651996 0.0771121 
+The 5 highest Coefficients: 3.62555 0.672923 0.171678 0.1217 0.0943789 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 108.214
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 683 Leafs in total
+Average amount of Keys in a Leaf: 111.019 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 124 111 111 111 111 Mean of Coefficients: 0.0967569 Median of Coefficients: 0.0302722 StandardDeviation of Coefficients: 0.245704
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.10182 0.379907 0.353545 0.353545 0.353424 
+InnerNode Analysis with 8 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 124 111 111 111 111 Mean of Coefficients: 0.966063 Median of Coefficients: 0.166115 StandardDeviation of Coefficients: 1.99604
+The 5 lowest Coefficients: 0 0 0.073729 0.142546 0.189684 
+The 5 highest Coefficients: 6.23512 0.802681 0.284748 0.189684 0.142546 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 175.184
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 320 Leafs in total
+Average amount of Keys in a Leaf: 111.169 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 165 111 111 111 111 Mean of Coefficients: 0.100575 Median of Coefficients: 0.0262405 StandardDeviation of Coefficients: 0.398548
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.77159 0.353424 0.353343 0.353163 0.352506 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 79.75 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 165 111 111 111 111 Mean of Coefficients: 1.57214 Median of Coefficients: 0.115292 StandardDeviation of Coefficients: 2.59908
+The 5 lowest Coefficients: 0 0 0.230584 6.05799 
+The 5 highest Coefficients: 6.05799 0.230584 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 193.157
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 124 Leafs in total
+Average amount of Keys in a Leaf: 111.637 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 190 111 111 111 111 Mean of Coefficients: 0.156543 Median of Coefficients: 0.0450868 StandardDeviation of Coefficients: 0.809325
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.17708 0.353545 0.351831 0.350817 0.345542 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 123 Median numKeys in InnerNodes: 123
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 190 111 111 111 111 Mean of Coefficients: 5.93842 Median of Coefficients: 5.93842 StandardDeviation of Coefficients: 0.938423
+The 5 lowest Coefficients: 5.93842 
+The 5 highest Coefficients: 5.93842 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 212.258
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0.0765109 Median of Coefficients: 0.0588501 StandardDeviation of Coefficients: 0.082474
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.84093 0.298618 0.204124 0.204124 0.204124 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0.0888212 Median of Coefficients: 0.00853703 StandardDeviation of Coefficients: 0.418992
+The 5 lowest Coefficients: 0.00457929 0.00459454 0.00463868 0.00466254 0.00466804 
+The 5 highest Coefficients: 3.57411 3.47623 0.276712 0.165526 0.118601 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 341.477
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 881 Leafs in total
+Average amount of Keys in a Leaf: 111.04 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 146 111 111 111 111 Mean of Coefficients: 0.0755266 Median of Coefficients: 0.0122109 StandardDeviation of Coefficients: 0.213397
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.63175 0.353545 0.35352 0.35352 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 88 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 146 111 111 111 111 Mean of Coefficients: 0.760175 Median of Coefficients: 0.0875308 StandardDeviation of Coefficients: 1.80711
+The 5 lowest Coefficients: 0 0 0 0 0.0393489 
+The 5 highest Coefficients: 6.19247 0.798179 0.258353 0.177686 0.135713 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 553.989
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 341 Leafs in total
+Average amount of Keys in a Leaf: 111.009 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 114 111 111 111 111 Mean of Coefficients: 0.0911619 Median of Coefficients: 0.0228598 StandardDeviation of Coefficients: 0.332677
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.43341 0.444841 0.35352 0.353163 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 114 111 111 111 111 Mean of Coefficients: 1.91477 Median of Coefficients: 0.0546276 StandardDeviation of Coefficients: 3.03556
+The 5 lowest Coefficients: 0 0 0.109255 7.54984 
+The 5 highest Coefficients: 7.54984 0.109255 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 610.827
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.792 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 210 111 111 111 111 Mean of Coefficients: 0.15835 Median of Coefficients: 0.044467 StandardDeviation of Coefficients: 0.806395
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.6554 0.35352 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 210 111 111 111 111 Mean of Coefficients: 5.70845 Median of Coefficients: 5.70845 StandardDeviation of Coefficients: 0.708451
+The 5 lowest Coefficients: 5.70845 
+The 5 highest Coefficients: 5.70845 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 671.229
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 32750 Leafs in total
+Average amount of Keys in a Leaf: 111.003 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 205 111 111 111 111 Mean of Coefficients: 0.0695038 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.074652
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 5.14186 0.353545 0.353545 0.353545 0.353545 
+InnerNode Analysis with 368 InnerNodes in total
+Average amount of Keys in a InnerNode: 88.9918 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 205 111 111 111 111 Mean of Coefficients: 0.0234551 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.18772
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.57313 2.63894 0.275251 0.179984 0.174095 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1079.11
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 898 Leafs in total
+Average amount of Keys in a Leaf: 111.121 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 220 111 111 111 111 Mean of Coefficients: 0.0755347 Median of Coefficients: 0.0117122 StandardDeviation of Coefficients: 0.275008
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 8.16585 0.353545 0.353545 0.35352 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.7 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 220 111 111 111 111 Mean of Coefficients: 0.66911 Median of Coefficients: 0.0699076 StandardDeviation of Coefficients: 1.5095
+The 5 lowest Coefficients: 0 0 0 0 0.0101468 
+The 5 highest Coefficients: 5.43443 0.712251 0.237091 0.167512 0.129668 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1751.87
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 342 Leafs in total
+Average amount of Keys in a Leaf: 111.058 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 131 111 111 111 111 Mean of Coefficients: 0.0919588 Median of Coefficients: 0.022256 StandardDeviation of Coefficients: 0.332405
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.90826 0.400247 0.35352 0.353424 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 131 111 111 111 111 Mean of Coefficients: 1.82059 Median of Coefficients: 0.0514161 StandardDeviation of Coefficients: 3.03191
+The 5 lowest Coefficients: 0 0 0.102832 7.17953 
+The 5 highest Coefficients: 7.17953 0.102832 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1931.61
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.824 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 214 111 111 111 111 Mean of Coefficients: 0.159002 Median of Coefficients: 0.0444714 StandardDeviation of Coefficients: 0.806465
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.74825 0.353545 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 214 111 111 111 111 Mean of Coefficients: 5.66092 Median of Coefficients: 5.66092 StandardDeviation of Coefficients: 0.660921
+The 5 lowest Coefficients: 5.66092 
+The 5 highest Coefficients: 5.66092 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 2122.61
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 36334 Leafs in total
+Average amount of Keys in a Leaf: 111.002 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 185 111 111 111 111 Mean of Coefficients: 0.0626432 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0659601
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.8934 0.353545 0.353545 0.353545 0.353545 
+InnerNode Analysis with 408 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0515 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 185 111 111 111 111 Mean of Coefficients: 0.0220468 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.209655
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.567 3.28514 0.195224 0.132949 0.10098 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1525.95
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 899 Leafs in total
+Average amount of Keys in a Leaf: 111.108 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 208 111 111 111 111 Mean of Coefficients: 0.0752623 Median of Coefficients: 0.011725 StandardDeviation of Coefficients: 0.242894
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.93723 0.353545 0.353545 0.35352 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.8 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 208 111 111 111 111 Mean of Coefficients: 0.684187 Median of Coefficients: 0.0691454 StandardDeviation of Coefficients: 1.51127
+The 5 lowest Coefficients: 0 0 0 0 0.00891839 
+The 5 highest Coefficients: 5.59235 0.708064 0.236137 0.167027 0.129372 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 2477.52
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 342 Leafs in total
+Average amount of Keys in a Leaf: 111.07 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 135 111 111 111 111 Mean of Coefficients: 0.0923487 Median of Coefficients: 0.0226002 StandardDeviation of Coefficients: 0.384737
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.01533 0.391077 0.35352 0.353424 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 135 111 111 111 111 Mean of Coefficients: 1.79921 Median of Coefficients: 0.0512444 StandardDeviation of Coefficients: 3.03149
+The 5 lowest Coefficients: 0 0 0.102489 7.09436 
+The 5 highest Coefficients: 7.09436 0.102489 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 2731.7
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.824 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 214 111 111 111 111 Mean of Coefficients: 0.159002 Median of Coefficients: 0.0444714 StandardDeviation of Coefficients: 0.806465
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.74825 0.353545 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 214 111 111 111 111 Mean of Coefficients: 5.66092 Median of Coefficients: 5.66092 StandardDeviation of Coefficients: 0.660921
+The 5 lowest Coefficients: 5.66092 
+The 5 highest Coefficients: 5.66092 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 3001.83
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 37922 Leafs in total
+Average amount of Keys in a Leaf: 111.001 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 150 111 111 111 111 Mean of Coefficients: 0.0600069 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0633253
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.42258 0.353545 0.353545 0.353545 0.353545 
+InnerNode Analysis with 426 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0164 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 150 111 111 111 111 Mean of Coefficients: 0.0223469 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.20524
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.87661 3.49485 0.235261 0.150077 0.110508 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 1868.82
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.02 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 129 111 111 111 111 Mean of Coefficients: 0.073552 Median of Coefficients: 0.0117294 StandardDeviation of Coefficients: 0.210782
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.22622 0.368623 0.353545 0.35352 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 129 111 111 111 111 Mean of Coefficients: 0.81503 Median of Coefficients: 0.0690317 StandardDeviation of Coefficients: 1.8128
+The 5 lowest Coefficients: 0 0 0 0 0.00879512 
+The 5 highest Coefficients: 6.90287 0.706718 0.235804 0.166838 0.129268 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 3034.33
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 342 Leafs in total
+Average amount of Keys in a Leaf: 111.076 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 137 111 111 111 111 Mean of Coefficients: 0.0924371 Median of Coefficients: 0.0225907 StandardDeviation of Coefficients: 0.384754
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.06826 0.386654 0.353545 0.35352 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 137 111 111 111 111 Mean of Coefficients: 1.78878 Median of Coefficients: 0.0511763 StandardDeviation of Coefficients: 3.03134
+The 5 lowest Coefficients: 0 0 0.102353 7.05277 
+The 5 highest Coefficients: 7.05277 0.102353 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 3345.64
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.824 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 214 111 111 111 111 Mean of Coefficients: 0.159002 Median of Coefficients: 0.0444714 StandardDeviation of Coefficients: 0.806465
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.74825 0.353545 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 214 111 111 111 111 Mean of Coefficients: 5.66092 Median of Coefficients: 5.66092 StandardDeviation of Coefficients: 0.660921
+The 5 lowest Coefficients: 5.66092 
+The 5 highest Coefficients: 5.66092 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 3676.48
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 38868 Leafs in total
+Average amount of Keys in a Leaf: 111.002 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 201 111 111 111 111 Mean of Coefficients: 0.0585608 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0636986
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 5.0932 0.353545 0.353545 0.353545 0.353545 
+InnerNode Analysis with 436 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1445 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 201 111 111 111 111 Mean of Coefficients: 0.0207079 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.202838
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.58444 3.46371 0.181767 0.126635 0.0973104 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 2157.88
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.038 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 145 111 111 111 111 Mean of Coefficients: 0.073887 Median of Coefficients: 0.0115845 StandardDeviation of Coefficients: 0.210889
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.60858 0.353545 0.35352 0.353424 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 145 111 111 111 111 Mean of Coefficients: 0.782158 Median of Coefficients: 0.0688572 StandardDeviation of Coefficients: 1.80919
+The 5 lowest Coefficients: 0 0 0 0 0.0084545 
+The 5 highest Coefficients: 6.57535 0.706047 0.235683 0.166793 0.12926 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 3503.74
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 342 Leafs in total
+Average amount of Keys in a Leaf: 111.076 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 137 111 111 111 111 Mean of Coefficients: 0.0924371 Median of Coefficients: 0.0225907 StandardDeviation of Coefficients: 0.384754
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.06826 0.386654 0.353545 0.35352 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 137 111 111 111 111 Mean of Coefficients: 1.78878 Median of Coefficients: 0.0511763 StandardDeviation of Coefficients: 3.03134
+The 5 lowest Coefficients: 0 0 0.102353 7.05277 
+The 5 highest Coefficients: 7.05277 0.102353 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 3863.21
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.824 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 214 111 111 111 111 Mean of Coefficients: 0.159002 Median of Coefficients: 0.0444714 StandardDeviation of Coefficients: 0.806465
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.74825 0.353545 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 214 111 111 111 111 Mean of Coefficients: 5.66092 Median of Coefficients: 5.66092 StandardDeviation of Coefficients: 0.660921
+The 5 lowest Coefficients: 5.66092 
+The 5 highest Coefficients: 5.66092 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 4245.23
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 39514 Leafs in total
+Average amount of Keys in a Leaf: 111.002 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 188 111 111 111 111 Mean of Coefficients: 0.0576044 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0609223
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.93152 0.353545 0.353545 0.353545 0.353545 
+InnerNode Analysis with 444 InnerNodes in total
+Average amount of Keys in a InnerNode: 88.9932 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 188 111 111 111 111 Mean of Coefficients: 0.02158 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.211961
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.57197 2.78641 0.286107 0.168743 0.12023 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.303775
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 11.0894
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 2412.54
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.048 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 154 111 111 111 111 Mean of Coefficients: 0.0741058 Median of Coefficients: 0.011663 StandardDeviation of Coefficients: 0.210959
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.81425 0.353545 0.353545 0.35352 0.353424 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 154 111 111 111 111 Mean of Coefficients: 0.76546 Median of Coefficients: 0.0688731 StandardDeviation of Coefficients: 1.80759
+The 5 lowest Coefficients: 0 0 0 0 0.0084545 
+The 5 highest Coefficients: 6.40886 0.705665 0.235603 0.166725 0.129292 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.417356
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 17.4938
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 3917.3
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 342 Leafs in total
+Average amount of Keys in a Leaf: 111.076 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 137 111 111 111 111 Mean of Coefficients: 0.0924371 Median of Coefficients: 0.0225907 StandardDeviation of Coefficients: 0.384754
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 7.06826 0.386654 0.353545 0.35352 0.353007 
+InnerNode Analysis with 4 InnerNodes in total
+Average amount of Keys in a InnerNode: 85.25 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 137 111 111 111 111 Mean of Coefficients: 1.78878 Median of Coefficients: 0.0511763 StandardDeviation of Coefficients: 3.03134
+The 5 lowest Coefficients: 0 0 0.102353 7.05277 
+The 5 highest Coefficients: 7.05277 0.102353 0 0 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.45867
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 19.2839
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 4319.2
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 125 Leafs in total
+Average amount of Keys in a Leaf: 111.824 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 214 111 111 111 111 Mean of Coefficients: 0.159002 Median of Coefficients: 0.0444714 StandardDeviation of Coefficients: 0.806465
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.74825 0.353545 0.351589 0.350974 0.34527 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 124 Median numKeys in InnerNodes: 124
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 214 111 111 111 111 Mean of Coefficients: 5.66092 Median of Coefficients: 5.66092 StandardDeviation of Coefficients: 0.660921
+The 5 lowest Coefficients: 5.66092 
+The 5 highest Coefficients: 5.66092 
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
+Coefficient of Variance: 0.510223
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
+Coefficient of Variance: 21.1926
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 4746.31
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.0151325 Median of Coefficients: 0.00317265 StandardDeviation of Coefficients: 0.0151325
+The 5 lowest Coefficients: 0.00159676 0.00161433 0.00163302 0.00165189 0.00167101 
+The 5 highest Coefficients: 0.730701 0.0929644 0.0558937 0.04009 0.0312797 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0.609553 Median of Coefficients: 0.609553 StandardDeviation of Coefficients: 0.609553
+The 5 lowest Coefficients: 0.609553 
+The 5 highest Coefficients: 0.609553 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 1.21774
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.0440734 Median of Coefficients: 0.00666288 StandardDeviation of Coefficients: 0.21078
+The 5 lowest Coefficients: 0.00335291 0.00339137 0.00342964 0.00346944 0.00350983 
+The 5 highest Coefficients: 2.63871 0.196886 0.117737 0.0843215 0.0657503 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 1.88227 Median of Coefficients: 1.88227 StandardDeviation of Coefficients: 0.882266
+The 5 lowest Coefficients: 1.88227 
+The 5 highest Coefficients: 1.88227 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 15.6559
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.0576676 Median of Coefficients: 0.00793103 StandardDeviation of Coefficients: 0.315406
+The 5 lowest Coefficients: 0.00399141 0.00403484 0.00408238 0.00413018 0.00417905 
+The 5 highest Coefficients: 3.6084 0.234989 0.140292 0.100431 0.0782969 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 2.49715 Median of Coefficients: 2.49715 StandardDeviation of Coefficients: 0.497155
+The 5 lowest Coefficients: 2.49715 
+The 5 highest Coefficients: 2.49715 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 27.5895
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 0.0748802 Median of Coefficients: 0.00952603 StandardDeviation of Coefficients: 0.420391
+The 5 lowest Coefficients: 0.00479897 0.00485072 0.00489973 0.00497625 0.00500993 
+The 5 highest Coefficients: 4.83983 0.282779 0.168522 0.12058 0.0939863 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 89 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 3.30894 Median of Coefficients: 3.30894 StandardDeviation of Coefficients: 0.30894
+The 5 lowest Coefficients: 3.30894 
+The 5 highest Coefficients: 3.30894 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
+Coefficient of Variance: 42.2788
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0.00186744 Median of Coefficients: 0.000317645 StandardDeviation of Coefficients: 0.00186744
+The 5 lowest Coefficients: 0.000160155 0.000160157 0.000160208 0.000160246 0.000160316 
+The 5 highest Coefficients: 0.799359 0.0604197 0.0423507 0.0326354 0.0265556 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0.106816 Median of Coefficients: 0.0285444 StandardDeviation of Coefficients: 0.106816
+The 5 lowest Coefficients: 0.0148522 0.016601 0.0188173 0.0217177 0.0256778 
+The 5 highest Coefficients: 0.630035 0.211659 0.0569319 0.0404616 0.031411 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 1.42709
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0.00570584 Median of Coefficients: 0.000667091 StandardDeviation of Coefficients: 0.0999726
+The 5 lowest Coefficients: 0.000321598 0.00032674 0.000337345 0.000338286 0.00034314 
+The 5 highest Coefficients: 3.27986 0.127336 0.0890927 0.0686057 0.0558055 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0.295186 Median of Coefficients: 0.0599981 StandardDeviation of Coefficients: 0.607503
+The 5 lowest Coefficients: 0.0312041 0.0348765 0.0395342 0.0456334 0.0539641 
+The 5 highest Coefficients: 2.01375 0.461821 0.119941 0.0851103 0.0660322 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 42.3064
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0.00764822 Median of Coefficients: 0.000846889 StandardDeviation of Coefficients: 0.133298
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.62747 0.151754 0.106119 0.0816991 0.066449 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0.382677 Median of Coefficients: 0.0714688 StandardDeviation of Coefficients: 0.627193
+The 5 lowest Coefficients: 0.0371855 0.0415548 0.0470984 0.0543605 0.0642805 
+The 5 highest Coefficients: 2.7037 0.555595 0.142945 0.101395 0.0786571 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 83.8045
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 900 Leafs in total
+Average amount of Keys in a Leaf: 111.111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 211 111 111 111 111 Mean of Coefficients: 0.0101988 Median of Coefficients: 0.00166232 StandardDeviation of Coefficients: 0.19992
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.34228 0.182322 0.127417 0.0980735 0.0797574 
+InnerNode Analysis with 10 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.9 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 211 111 111 111 111 Mean of Coefficients: 0.498955 Median of Coefficients: 0.086152 StandardDeviation of Coefficients: 0.921728
+The 5 lowest Coefficients: 0.0452817 0.050123 0.057168 0.0654523 0.0775536 
+The 5 highest Coefficients: 3.62968 0.67556 0.171955 0.122032 0.0947505 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
+Coefficient of Variance: 133.037
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0.000234506 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.000234506
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.72097 0.0983346 0.0577467 0.0410287 0.0318473 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0.0187208 Median of Coefficients: 0.00284449 StandardDeviation of Coefficients: 0.0187208
+The 5 lowest Coefficients: 0.00142179 0.00143167 0.0014438 0.00146378 0.0014852 
+The 5 highest Coefficients: 0.631571 0.62279 0.0910278 0.0549129 0.0394379 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 1.61371
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0.000613317 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0210738
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.55995 0.208469 0.121665 0.0863018 0.0669443 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0.0526338 Median of Coefficients: 0.00606379 StandardDeviation of Coefficients: 0.221695
+The 5 lowest Coefficients: 0.00290079 0.00319032 0.00333923 0.00337543 0.00338802 
+The 5 highest Coefficients: 2.01005 1.96012 0.192718 0.115661 0.0829483 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 118.328
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0.000788623 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0316085
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.48589 0.24889 0.144982 0.102791 0.0797196 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0.0690137 Median of Coefficients: 0.00972201 StandardDeviation of Coefficients: 0.280186
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.68727 2.61858 0.230008 0.137835 0.0988163 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 259.226
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 9009 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 112 111 111 111 111 Mean of Coefficients: 0.00101187 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0421441
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.6612 0.299606 0.288704 0.174167 0.125205 
+InnerNode Analysis with 101 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.1881 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 112 111 111 111 111 Mean of Coefficients: 0.0911618 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.419162
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.58083 3.56667 0.276943 0.165815 0.142563 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 420.079
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90090 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 2.89719e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 2.89719e-05
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.730704 0.0929648 0.0558946 0.0400903 0.0312807 
+InnerNode Analysis with 1012 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0208 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0.00282204 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00282204
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.698764 0.547294 0.308786 0.0897828 0.0571479 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1.78414
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90090 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 7.29443e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00666349
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.63871 0.196886 0.117736 0.0843216 0.0657504 
+InnerNode Analysis with 1012 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0208 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0.0074356 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0703698
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.47156 1.56714 0.71133 0.190687 0.120389 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 339.562
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90090 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 121 111 111 111 111 Mean of Coefficients: 9.29953e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00999513
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.6084 0.234989 0.173677 0.140292 0.109418 
+InnerNode Analysis with 1012 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0208 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 121 111 111 111 111 Mean of Coefficients: 0.0100152 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.113345
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.40017 2.04577 0.962979 0.233545 0.201999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 810.863
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 11443 Leafs in total
+Average amount of Keys in a Leaf: 111.008 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 198 111 111 111 111 Mean of Coefficients: 0.000926955 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0560885
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.14918 0.353424 0.192083 0.186194 0.132057 
+InnerNode Analysis with 128 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.3906 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 198 111 111 111 111 Mean of Coefficients: 0.0694658 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.317744
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 1328.33
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 180180 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 131 111 111 111 111 Mean of Coefficients: 1.51917e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 1.51917e-05
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.740655 0.0876672 0.0539714 0.0390968 0.0306749 
+InnerNode Analysis with 2024 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0212 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 131 111 111 111 111 Mean of Coefficients: 0.00157326 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00157326
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.689131 0.561132 0.400881 0.0831648 0.0571277 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1.83418
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 180180 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 131 111 111 111 111 Mean of Coefficients: 3.80654e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00471175
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.72206 0.18549 0.113663 0.082226 0.0664934 
+InnerNode Analysis with 2024 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0212 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 131 111 111 111 111 Mean of Coefficients: 0.00412645 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0497509
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.40162 1.63403 0.999099 0.176468 0.120339 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 468.588
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 126435 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 163 111 111 111 111 Mean of Coefficients: 7.05859e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0112493
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.12245 0.293972 0.199242 0.186848 0.121935 
+InnerNode Analysis with 1420 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.038 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 163 111 111 111 111 Mean of Coefficients: 0.00713357 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0796158
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.89733 2.49668 1.032 0.352981 0.188135 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1145.64
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 11443 Leafs in total
+Average amount of Keys in a Leaf: 111.008 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 198 111 111 111 111 Mean of Coefficients: 0.000926955 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0560885
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.14918 0.353424 0.192083 0.186194 0.132057 
+InnerNode Analysis with 128 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.3906 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 198 111 111 111 111 Mean of Coefficients: 0.0694658 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.317744
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 1878.54
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 270270 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 141 111 111 111 111 Mean of Coefficients: 1.05796e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 1.05796e-05
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.749829 0.0829541 0.0521794 0.0381509 0.0300896 
+InnerNode Analysis with 3036 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0214 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 141 111 111 111 111 Mean of Coefficients: 0.00111173 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00111173
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.680151 0.5736 0.447343 0.0774878 0.0571061 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 1.86385
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 270270 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 141 111 111 111 111 Mean of Coefficients: 2.66438e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00384712
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.80156 0.175381 0.110579 0.109866 0.0802328 
+InnerNode Analysis with 3036 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0214 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 141 111 111 111 111 Mean of Coefficients: 0.00297964 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.044467
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.33817 1.69661 1.17148 0.164259 0.120289 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 566.332
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 126435 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 163 111 111 111 111 Mean of Coefficients: 7.05223e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0112493
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.12245 0.293972 0.199242 0.186848 0.121935 
+InnerNode Analysis with 1420 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.038 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 163 111 111 111 111 Mean of Coefficients: 0.00713928 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0796161
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.89733 2.49666 1.03107 0.352981 0.188135 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 1403.11
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 30000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 11443 Leafs in total
+Average amount of Keys in a Leaf: 111.008 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 198 111 111 111 111 Mean of Coefficients: 0.000926955 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0560885
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.14918 0.353424 0.192083 0.186194 0.132057 
+InnerNode Analysis with 128 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.3906 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 198 111 111 111 111 Mean of Coefficients: 0.0694658 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.317744
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
+Coefficient of Variance: 2300.73
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 360360 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 151 111 111 111 111 Mean of Coefficients: 8.00703e-06 Median of Coefficients: 0 StandardDeviation of Coefficients: 8.00703e-06
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.758338 0.0787354 0.0505034 0.0372534 0.0295264 
+InnerNode Analysis with 4048 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0215 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 151 111 111 111 111 Mean of Coefficients: 0.000860084 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.000860084
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.671743 0.584944 0.47703 0.0725491 0.0570845 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 1.88535
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 360360 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 151 111 111 111 111 Mean of Coefficients: 2.00172e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00333169
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.87767 0.166349 0.111788 0.106317 0.0879403 
+InnerNode Analysis with 4048 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0215 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 151 111 111 111 111 Mean of Coefficients: 0.00230164 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0385092
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.28025 1.75556 1.29815 0.153684 0.139093 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 648.416
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 126435 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 163 111 111 111 111 Mean of Coefficients: 7.08529e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0112493
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.12245 0.293972 0.199242 0.186848 0.121935 
+InnerNode Analysis with 1420 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.038 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 163 111 111 111 111 Mean of Coefficients: 0.00714781 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0796165
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.89733 2.49669 1.02987 0.352981 0.188135 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 1620.17
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 40000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 11443 Leafs in total
+Average amount of Keys in a Leaf: 111.008 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 198 111 111 111 111 Mean of Coefficients: 0.000926955 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0560885
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.14918 0.353424 0.192083 0.186194 0.132057 
+InnerNode Analysis with 128 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.3906 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 198 111 111 111 111 Mean of Coefficients: 0.0694658 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.317744
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
+Coefficient of Variance: 2656.65
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 450450 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 161 111 111 111 111 Mean of Coefficients: 6.51789e-06 Median of Coefficients: 0 StandardDeviation of Coefficients: 6.51789e-06
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.766267 0.0749334 0.0489315 0.0363908 0.0289894 
+InnerNode Analysis with 5060 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0215 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 161 111 111 111 111 Mean of Coefficients: 0.000716794 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.000716794
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 0.663837 0.595348 0.49817 0.0682136 0.0570624 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 0.90139
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 0.979621
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 1.90233
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 450450 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 161 111 111 111 111 Mean of Coefficients: 1.68e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.00297996
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.95074 0.20013 0.158224 0.109428 0.102993 
+InnerNode Analysis with 5060 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.0215 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 161 111 111 111 111 Mean of Coefficients: 0.00187562 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.034443
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.22708 1.81136 1.3924 0.165634 0.144433 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 4.60291
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 6.06522
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 720.231
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 126435 Leafs in total
+Average amount of Keys in a Leaf: 111 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 163 111 111 111 111 Mean of Coefficients: 7.0793e-05 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0112493
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 4.12245 0.293972 0.199242 0.186848 0.121935 
+InnerNode Analysis with 1420 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.038 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 163 111 111 111 111 Mean of Coefficients: 0.00714815 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0796165
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 2.89733 2.4967 1.02987 0.352981 0.188135 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 6.82826
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 9.37277
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 1811.4
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 50000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 11443 Leafs in total
+Average amount of Keys in a Leaf: 111.008 Median numKeys in Leafs: 111
+The 5 lowest numKeys in a Leaf: 111 111 111 111 111 .  And the 5 highest numKeys in a Leaf: 198 111 111 111 111 Mean of Coefficients: 0.000926955 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.0560885
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 6.14918 0.353424 0.192083 0.186194 0.132057 
+InnerNode Analysis with 128 InnerNodes in total
+Average amount of Keys in a InnerNode: 89.3906 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 111 111 111 111 111 .  And the 5 highest numKeys in a InnerNode: 198 111 111 111 111 Mean of Coefficients: 0.0694658 Median of Coefficients: 0 StandardDeviation of Coefficients: 0.317744
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
+Coefficient of Variance: 9.65602
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
+Coefficient of Variance: 13.5574
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
+Coefficient of Variance: 2970.23
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 1000 keys (Node ContentSize = 4000)
+Leaf Analysis with 8 Leafs in total
+Average amount of Keys in a Leaf: 125 Median numKeys in Leafs: 120
+The 5 lowest numKeys in a Leaf: 112 113 118 118 122 .  And the 5 highest numKeys in a Leaf: 144 142 131 122 118 Mean of Coefficients: 0.885166 Median of Coefficients: 0.873538 StandardDeviation of Coefficients: 0.885166
+The 5 lowest Coefficients: 0.82174 0.834974 0.85732 0.8734 0.873676 
+The 5 highest Coefficients: 0.964373 0.962036 0.893805 0.873676 0.8734 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 7 Median numKeys in InnerNodes: 7
+The 5 lowest numKeys in a InnerNode: 112 113 118 118 122 .  And the 5 highest numKeys in a InnerNode: 144 142 131 122 118 Mean of Coefficients: 0.112434 Median of Coefficients: 0.112434 StandardDeviation of Coefficients: 0.112434
+The 5 lowest Coefficients: 0.112434 
+The 5 highest Coefficients: 0.112434 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.576813
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.576781
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
+Coefficient of Variance: 0.576781
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 1000 keys (Node ContentSize = 4000)
+Leaf Analysis with 26 Leafs in total
+Average amount of Keys in a Leaf: 38.4615 Median numKeys in Leafs: 36.5
+The 5 lowest numKeys in a Leaf: 28 29 29 29 29 .  And the 5 highest numKeys in a Leaf: 53 52 52 50 49 Mean of Coefficients: 0.876963 Median of Coefficients: 0.886716 StandardDeviation of Coefficients: 0.825877
+The 5 lowest Coefficients: 0.707437 0.722145 0.754193 0.755181 0.779374 
+The 5 highest Coefficients: 1.01459 1.00835 1.002 0.993621 0.981267 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 25 Median numKeys in InnerNodes: 25
+The 5 lowest numKeys in a InnerNode: 28 29 29 29 29 .  And the 5 highest numKeys in a InnerNode: 53 52 52 50 49 Mean of Coefficients: 0.249822 Median of Coefficients: 0.249822 StandardDeviation of Coefficients: 0.249822
+The 5 lowest Coefficients: 0.249822 
+The 5 highest Coefficients: 0.249822 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.576813
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.576781
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
+Coefficient of Variance: 0.576781
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 1000 keys (Node ContentSize = 4000)
+Leaf Analysis with 102 Leafs in total
+Average amount of Keys in a Leaf: 9.80392 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 7 7 7 7 7 .  And the 5 highest numKeys in a Leaf: 14 14 14 14 14 Mean of Coefficients: 0.81504 Median of Coefficients: 0.786235 StandardDeviation of Coefficients: 0.751967
+The 5 lowest Coefficients: 0.287455 0.431103 0.487283 0.512962 0.563288 
+The 5 highest Coefficients: 1.44372 1.35471 1.33017 1.22184 1.1988 
+InnerNode Analysis with 7 InnerNodes in total
+Average amount of Keys in a InnerNode: 14.4286 Median numKeys in InnerNodes: 14
+The 5 lowest numKeys in a InnerNode: 7 7 7 7 7 .  And the 5 highest numKeys in a InnerNode: 14 14 14 14 14 Mean of Coefficients: 0.28937 Median of Coefficients: 0.285526 StandardDeviation of Coefficients: 0.28937
+The 5 lowest Coefficients: 0.158665 0.260059 0.277045 0.285526 0.312565 
+The 5 highest Coefficients: 0.369724 0.362003 0.312565 0.285526 0.277045 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.576813
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.576781
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
+Coefficient of Variance: 0.576781
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 95 Leafs in total
+Average amount of Keys in a Leaf: 105.263 Median numKeys in Leafs: 95
+The 5 lowest numKeys in a Leaf: 76 78 79 79 80 .  And the 5 highest numKeys in a Leaf: 151 149 148 146 145 Mean of Coefficients: 0.966555 Median of Coefficients: 0.960617 StandardDeviation of Coefficients: 0.774773
+The 5 lowest Coefficients: 0.735381 0.764612 0.766892 0.797428 0.835671 
+The 5 highest Coefficients: 1.23332 1.21456 1.13494 1.13307 1.12809 
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 94 Median numKeys in InnerNodes: 94
+The 5 lowest numKeys in a InnerNode: 76 78 79 79 80 .  And the 5 highest numKeys in a InnerNode: 151 149 148 146 145 Mean of Coefficients: 0.215426 Median of Coefficients: 0.215426 StandardDeviation of Coefficients: 0.215426
+The 5 lowest Coefficients: 0.215426 
+The 5 highest Coefficients: 0.215426 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.575496
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.577299
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0.57989
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 267 Leafs in total
+Average amount of Keys in a Leaf: 37.4532 Median numKeys in Leafs: 36
+The 5 lowest numKeys in a Leaf: 27 27 27 27 27 .  And the 5 highest numKeys in a Leaf: 53 53 53 53 52 Mean of Coefficients: 0.953876 Median of Coefficients: 0.945664 StandardDeviation of Coefficients: 0.77272
+The 5 lowest Coefficients: 0.637124 0.658362 0.671019 0.68338 0.690596 
+The 5 highest Coefficients: 1.59397 1.45326 1.41678 1.40731 1.29694 
+InnerNode Analysis with 5 InnerNodes in total
+Average amount of Keys in a InnerNode: 53.2 Median numKeys in InnerNodes: 66
+The 5 lowest numKeys in a InnerNode: 27 27 27 27 27 .  And the 5 highest numKeys in a InnerNode: 53 53 53 53 52 Mean of Coefficients: 0.175225 Median of Coefficients: 0.218062 StandardDeviation of Coefficients: 0.175225
+The 5 lowest Coefficients: 0.00729462 0.194673 0.218062 0.221417 0.234678 
+The 5 highest Coefficients: 0.234678 0.221417 0.218062 0.194673 0.00729462 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.575496
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.577299
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0.57989
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 1018 Leafs in total
+Average amount of Keys in a Leaf: 9.82318 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 7 7 7 7 7 .  And the 5 highest numKeys in a Leaf: 14 14 14 14 14 Mean of Coefficients: 0.851521 Median of Coefficients: 0.814783 StandardDeviation of Coefficients: 0.747892
+The 5 lowest Coefficients: 0.300903 0.314397 0.33343 0.336122 0.341709 
+The 5 highest Coefficients: 1.87162 1.72753 1.65017 1.62275 1.60236 
+InnerNode Analysis with 61 InnerNodes in total
+Average amount of Keys in a InnerNode: 16.6721 Median numKeys in InnerNodes: 16
+The 5 lowest numKeys in a InnerNode: 7 7 7 7 7 .  And the 5 highest numKeys in a InnerNode: 14 14 14 14 14 Mean of Coefficients: 0.320539 Median of Coefficients: 0.334276 StandardDeviation of Coefficients: 0.320539
+The 5 lowest Coefficients: 0 0.0787508 0.122229 0.212771 0.213603 
+The 5 highest Coefficients: 0.480652 0.442854 0.435499 0.432085 0.425904 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.575496
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.577299
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
+Coefficient of Variance: 0.57989
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 950 Leafs in total
+Average amount of Keys in a Leaf: 105.263 Median numKeys in Leafs: 101
+The 5 lowest numKeys in a Leaf: 76 76 76 77 77 .  And the 5 highest numKeys in a Leaf: 159 159 159 158 157 Mean of Coefficients: 0.985895 Median of Coefficients: 0.978656 StandardDeviation of Coefficients: 0.755644
+The 5 lowest Coefficients: 0.746732 0.750917 0.754742 0.759662 0.765671 
+The 5 highest Coefficients: 1.42873 1.41952 1.41597 1.36597 1.34566 
+InnerNode Analysis with 9 InnerNodes in total
+Average amount of Keys in a InnerNode: 105.444 Median numKeys in InnerNodes: 116
+The 5 lowest numKeys in a InnerNode: 76 76 76 77 77 .  And the 5 highest numKeys in a InnerNode: 159 159 159 158 157 Mean of Coefficients: 0.187226 Median of Coefficients: 0.210437 StandardDeviation of Coefficients: 0.187226
+The 5 lowest Coefficients: 0.059588 0.149712 0.164186 0.205589 0.210437 
+The 5 highest Coefficients: 0.229303 0.225063 0.222338 0.218817 0.210437 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.578428
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.580559
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
+Coefficient of Variance: 0.576671
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 2716 Leafs in total
+Average amount of Keys in a Leaf: 36.8189 Median numKeys in Leafs: 35
+The 5 lowest numKeys in a Leaf: 27 27 27 27 27 .  And the 5 highest numKeys in a Leaf: 53 53 53 53 53 Mean of Coefficients: 0.961021 Median of Coefficients: 0.944003 StandardDeviation of Coefficients: 0.774836
+The 5 lowest Coefficients: 0.575528 0.593434 0.599765 0.608161 0.610573 
+The 5 highest Coefficients: 1.75551 1.61803 1.60042 1.59329 1.57176 
+InnerNode Analysis with 59 InnerNodes in total
+Average amount of Keys in a InnerNode: 46.0169 Median numKeys in InnerNodes: 42
+The 5 lowest numKeys in a InnerNode: 27 27 27 27 27 .  And the 5 highest numKeys in a InnerNode: 53 53 53 53 53 Mean of Coefficients: 0.24994 Median of Coefficients: 0.249155 StandardDeviation of Coefficients: 0.24994
+The 5 lowest Coefficients: 0.184132 0.18937 0.197696 0.203937 0.207841 
+The 5 highest Coefficients: 0.299993 0.297523 0.297309 0.294678 0.29391 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.578428
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.580559
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
+Coefficient of Variance: 0.576671
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 10150 Leafs in total
+Average amount of Keys in a Leaf: 9.85222 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 7 7 7 7 7 .  And the 5 highest numKeys in a Leaf: 14 14 14 14 14 Mean of Coefficients: 0.854671 Median of Coefficients: 0.829598 StandardDeviation of Coefficients: 0.748657
+The 5 lowest Coefficients: 0.0987354 0.180766 0.194551 0.206655 0.209495 
+The 5 highest Coefficients: 2.12082 1.96416 1.96346 1.94104 1.90762 
+InnerNode Analysis with 579 InnerNodes in total
+Average amount of Keys in a InnerNode: 17.5285 Median numKeys in InnerNodes: 17
+The 5 lowest numKeys in a InnerNode: 7 7 7 7 7 .  And the 5 highest numKeys in a InnerNode: 14 14 14 14 14 Mean of Coefficients: -nan Median of Coefficients: 0.352311 StandardDeviation of Coefficients: -nan
+The 5 lowest Coefficients: 0.0871978 0.104539 0.113624 0.119878 0.131874 
+The 5 highest Coefficients: 0.621013 0.614818 0.589613 0.571044 0.561486 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.578428
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.580559
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
+Coefficient of Variance: 0.576671
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 8982 Leafs in total
+Average amount of Keys in a Leaf: 111.334 Median numKeys in Leafs: 108
+The 5 lowest numKeys in a Leaf: 76 76 76 76 76 .  And the 5 highest numKeys in a Leaf: 159 159 159 159 159 Mean of Coefficients: 0.986515 Median of Coefficients: 0.979071 StandardDeviation of Coefficients: 0.761913
+The 5 lowest Coefficients: 0.704392 0.706299 0.714325 0.731875 0.738771 
+The 5 highest Coefficients: 1.46687 1.44105 1.43416 1.38539 1.37502 
+InnerNode Analysis with 69 InnerNodes in total
+Average amount of Keys in a InnerNode: 130.159 Median numKeys in InnerNodes: 137
+The 5 lowest numKeys in a InnerNode: 76 76 76 76 76 .  And the 5 highest numKeys in a InnerNode: 159 159 159 159 159 Mean of Coefficients: 0.215864 Median of Coefficients: 0.217216 StandardDeviation of Coefficients: 0.215864
+The 5 lowest Coefficients: 0.154505 0.170352 0.170367 0.181139 0.181605 
+The 5 highest Coefficients: 0.254433 0.25068 0.250523 0.24953 0.245133 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.57553
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.571589
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.576841
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 26993 Leafs in total
+Average amount of Keys in a Leaf: 37.0466 Median numKeys in Leafs: 36
+The 5 lowest numKeys in a Leaf: 27 27 27 27 27 .  And the 5 highest numKeys in a Leaf: 53 53 53 53 53 Mean of Coefficients: 0.960995 Median of Coefficients: 0.946563 StandardDeviation of Coefficients: 0.772044
+The 5 lowest Coefficients: 0.520492 0.53054 0.531732 0.532591 0.551114 
+The 5 highest Coefficients: 1.91682 1.91169 1.8355 1.71636 1.70764 
+InnerNode Analysis with 521 InnerNodes in total
+Average amount of Keys in a InnerNode: 51.8081 Median numKeys in InnerNodes: 52
+The 5 lowest numKeys in a InnerNode: 27 27 27 27 27 .  And the 5 highest numKeys in a InnerNode: 53 53 53 53 53 Mean of Coefficients: 0.253743 Median of Coefficients: 0.255808 StandardDeviation of Coefficients: 0.253743
+The 5 lowest Coefficients: 0.0704045 0.0741718 0.0773177 0.0790457 0.0806193 
+The 5 highest Coefficients: 0.339805 0.333874 0.327626 0.323984 0.322641 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.57553
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.571589
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.576841
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 101210 Leafs in total
+Average amount of Keys in a Leaf: 9.88045 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 7 7 7 7 7 .  And the 5 highest numKeys in a Leaf: 14 14 14 14 14 Mean of Coefficients: 0.857271 Median of Coefficients: 0.834246 StandardDeviation of Coefficients: 0.749673
+The 5 lowest Coefficients: 0.130535 0.14372 0.144339 0.149096 0.156172 
+The 5 highest Coefficients: 2.38253 2.27691 2.18193 2.10267 2.09735 
+InnerNode Analysis with 5812 InnerNodes in total
+Average amount of Keys in a InnerNode: 17.4138 Median numKeys in InnerNodes: 17
+The 5 lowest numKeys in a InnerNode: 7 7 7 7 7 .  And the 5 highest numKeys in a InnerNode: 14 14 14 14 14 Mean of Coefficients: 0.356165 Median of Coefficients: 0.35757 StandardDeviation of Coefficients: 0.356165
+The 5 lowest Coefficients: 0.0630216 0.0812115 0.0830623 0.0978276 0.107397 
+The 5 highest Coefficients: 0.660102 0.641393 0.634408 0.625464 0.603188 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.57553
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.571589
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
+Coefficient of Variance: 0.576841
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 90745 Leafs in total
+Average amount of Keys in a Leaf: 110.199 Median numKeys in Leafs: 105
+The 5 lowest numKeys in a Leaf: 76 76 76 76 77 .  And the 5 highest numKeys in a Leaf: 166 166 166 166 166 Mean of Coefficients: 0.986391 Median of Coefficients: 0.979748 StandardDeviation of Coefficients: 0.757679
+The 5 lowest Coefficients: 0.656064 0.670242 0.68558 0.687526 0.694599 
+The 5 highest Coefficients: 1.7579 1.6732 1.61887 1.5825 1.57753 
+InnerNode Analysis with 940 InnerNodes in total
+Average amount of Keys in a InnerNode: 96.5362 Median numKeys in InnerNodes: 89
+The 5 lowest numKeys in a InnerNode: 76 76 76 76 77 .  And the 5 highest numKeys in a InnerNode: 166 166 166 166 166 Mean of Coefficients: 0.217776 Median of Coefficients: 0.218811 StandardDeviation of Coefficients: 0.217776
+The 5 lowest Coefficients: 0.0918336 0.115697 0.136053 0.144415 0.144487 
+The 5 highest Coefficients: 0.312201 0.28362 0.282938 0.281082 0.280977 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.561179
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.594405
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0.577168
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 267714 Leafs in total
+Average amount of Keys in a Leaf: 37.3533 Median numKeys in Leafs: 36
+The 5 lowest numKeys in a Leaf: 27 27 27 27 27 .  And the 5 highest numKeys in a Leaf: 54 54 54 54 54 Mean of Coefficients: 0.960738 Median of Coefficients: 0.946002 StandardDeviation of Coefficients: 0.77291
+The 5 lowest Coefficients: 0.441243 0.482033 0.487326 0.491859 0.493196 
+The 5 highest Coefficients: 2.10656 2.06703 2.04062 2.03323 2.02236 
+InnerNode Analysis with 4372 InnerNodes in total
+Average amount of Keys in a InnerNode: 61.2335 Median numKeys in InnerNodes: 62
+The 5 lowest numKeys in a InnerNode: 27 27 27 27 27 .  And the 5 highest numKeys in a InnerNode: 54 54 54 54 54 Mean of Coefficients: 0.254859 Median of Coefficients: 0.256542 StandardDeviation of Coefficients: 0.254859
+The 5 lowest Coefficients: 0.0638131 0.0657644 0.0660029 0.0721462 0.0728654 
+The 5 highest Coefficients: 0.338719 0.335223 0.334122 0.332351 0.331659 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.561179
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.594405
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0.577168
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 10000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 1011953 Leafs in total
+Average amount of Keys in a Leaf: 9.88188 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 7 7 7 7 7 .  And the 5 highest numKeys in a Leaf: 14 14 14 14 14 Mean of Coefficients: 0.856571 Median of Coefficients: 0.8335 StandardDeviation of Coefficients: 0.749657
+The 5 lowest Coefficients: 0.0742531 0.0785188 0.0888417 0.0917413 0.0958179 
+The 5 highest Coefficients: 2.55691 2.37802 2.37439 2.3659 2.3524 
+InnerNode Analysis with 58760 InnerNodes in total
+Average amount of Keys in a InnerNode: 17.2218 Median numKeys in InnerNodes: 16
+The 5 lowest numKeys in a InnerNode: 7 7 7 7 7 .  And the 5 highest numKeys in a InnerNode: 14 14 14 14 14 Mean of Coefficients: 0.354816 Median of Coefficients: 0.356154 StandardDeviation of Coefficients: 0.354816
+The 5 lowest Coefficients: 0.0464623 0.0528038 0.0559408 0.0656722 0.0671149 
+The 5 highest Coefficients: 0.739001 0.715004 0.701874 0.701584 0.690733 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.561179
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.594405
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
+Coefficient of Variance: 0.577168
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 8 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 177292 Leafs in total
+Average amount of Keys in a Leaf: 112.808 Median numKeys in Leafs: 108
+The 5 lowest numKeys in a Leaf: 76 76 76 76 77 .  And the 5 highest numKeys in a Leaf: 166 166 166 166 166 Mean of Coefficients: 0.986481 Median of Coefficients: 0.979392 StandardDeviation of Coefficients: 0.758286
+The 5 lowest Coefficients: 0.647489 0.655522 0.669573 0.683106 0.683903 
+The 5 highest Coefficients: 1.77526 1.7298 1.62797 1.6157 1.56698 
+InnerNode Analysis with 1848 InnerNodes in total
+Average amount of Keys in a InnerNode: 95.9367 Median numKeys in InnerNodes: 88
+The 5 lowest numKeys in a InnerNode: 76 76 76 76 77 .  And the 5 highest numKeys in a InnerNode: 166 166 166 166 166 Mean of Coefficients: 0.219207 Median of Coefficients: 0.220082 StandardDeviation of Coefficients: 0.219207
+The 5 lowest Coefficients: 0.0790141 0.0860112 0.121693 0.126515 0.126617 
+The 5 highest Coefficients: 0.296498 0.289964 0.289467 0.286401 0.286399 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.567387
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.580606
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 0.577393
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 32 and with 20000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 533538 Leafs in total
+Average amount of Keys in a Leaf: 37.4856 Median numKeys in Leafs: 36
+The 5 lowest numKeys in a Leaf: 27 27 27 27 27 .  And the 5 highest numKeys in a Leaf: 54 54 54 54 54 Mean of Coefficients: 0.960369 Median of Coefficients: 0.946225 StandardDeviation of Coefficients: 0.773087
+The 5 lowest Coefficients: 0.47456 0.484519 0.490414 0.492305 0.494064 
+The 5 highest Coefficients: 2.43113 2.41471 2.29402 2.26017 2.23368 
+InnerNode Analysis with 8651 InnerNodes in total
+Average amount of Keys in a InnerNode: 61.6734 Median numKeys in InnerNodes: 62
+The 5 lowest numKeys in a InnerNode: 27 27 27 27 27 .  And the 5 highest numKeys in a InnerNode: 54 54 54 54 54 Mean of Coefficients: -nan Median of Coefficients: 0.256482 StandardDeviation of Coefficients: -nan
+The 5 lowest Coefficients: 0.0602477 0.0612627 0.0618733 0.0620299 0.0623262 
+The 5 highest Coefficients: 0.350121 0.345386 0.341126 0.340153 0.339443 
+
+Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
+Coefficient of Variance: 0.567387
+
+Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
+Coefficient of Variance: 0.580606
+
+Single Node Replication Distribution Analysis for datatype: BYTE with all 20000000 keys in 1 'Node'
+Coefficient of Variance: 0.577393
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 20000000 keys (Node ContentSize = 4000)

@@ -42,26 +42,22 @@ LINEAR=0 INTUNIFORM=7e7 ./main-optimized
 LINEAR=0 INTUNIFORM=8e7 ./main-optimized
 LINEAR=0 INTUNIFORM=9e7 ./main-optimized
 LINEAR=0 INTUNIFORM=1e8 ./main-optimized
-LINEAR=0 INTUNIFORM=2e8 ./main-optimized
-LINEAR=0 INTUNIFORM=3e8 ./main-optimized
-LINEAR=0 INTUNIFORM=4e8 ./main-optimized
-LINEAR=0 INTUNIFORM=5e8 ./main-optimized
 
-LINEAR=0 BYTE=1e3 BYTESIZE=10 ./main-optimized
-LINEAR=0 BYTE=1e3 BYTESIZE=50 ./main-optimized
-LINEAR=0 BYTE=1e3 BYTESIZE=250 ./main-optimized
-LINEAR=0 BYTE=1e4 BYTESIZE=10 ./main-optimized
-LINEAR=0 BYTE=1e4 BYTESIZE=50 ./main-optimized
-LINEAR=0 BYTE=1e4 BYTESIZE=250 ./main-optimized
-LINEAR=0 BYTE=1e5 BYTESIZE=10 ./main-optimized
-LINEAR=0 BYTE=1e5 BYTESIZE=50 ./main-optimized
-LINEAR=0 BYTE=1e5 BYTESIZE=250 ./main-optimized
-LINEAR=0 BYTE=1e6 BYTESIZE=10 ./main-optimized
-LINEAR=0 BYTE=1e6 BYTESIZE=50 ./main-optimized
-LINEAR=0 BYTE=1e6 BYTESIZE=250 ./main-optimized
-LINEAR=0 BYTE=1e7 BYTESIZE=10 ./main-optimized
-LINEAR=0 BYTE=1e7 BYTESIZE=50 ./main-optimized
-LINEAR=0 BYTE=1e7 BYTESIZE=250 ./main-optimized
+LINEAR=0 BYTE=1e3 BYTESIZE=8 ./main-optimized
+LINEAR=0 BYTE=1e3 BYTESIZE=32 ./main-optimized
+LINEAR=0 BYTE=1e3 BYTESIZE=128 ./main-optimized
+LINEAR=0 BYTE=1e4 BYTESIZE=8 ./main-optimized
+LINEAR=0 BYTE=1e4 BYTESIZE=32 ./main-optimized
+LINEAR=0 BYTE=1e4 BYTESIZE=128 ./main-optimized
+LINEAR=0 BYTE=1e5 BYTESIZE=8 ./main-optimized
+LINEAR=0 BYTE=1e5 BYTESIZE=32 ./main-optimized
+LINEAR=0 BYTE=1e5 BYTESIZE=128 ./main-optimized
+LINEAR=0 BYTE=1e6 BYTESIZE=8 ./main-optimized
+LINEAR=0 BYTE=1e6 BYTESIZE=32 ./main-optimized
+LINEAR=0 BYTE=1e6 BYTESIZE=128 ./main-optimized
+LINEAR=0 BYTE=1e7 BYTESIZE=8 ./main-optimized
+LINEAR=0 BYTE=1e7 BYTESIZE=32 ./main-optimized
+LINEAR=0 BYTE=1e7 BYTESIZE=128 ./main-optimized
 
 LINEAR=0 VARIABLEBYTE=1e3 ./main-optimized
 LINEAR=0 VARIABLEBYTE=1e4 ./main-optimized

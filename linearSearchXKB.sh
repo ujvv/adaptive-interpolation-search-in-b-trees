@@ -42,7 +42,3 @@ LINEAR=0 INTUNIFORM=7e7 ./main-optimized
 LINEAR=0 INTUNIFORM=8e7 ./main-optimized
 LINEAR=0 INTUNIFORM=9e7 ./main-optimized
 LINEAR=0 INTUNIFORM=1e8 ./main-optimized
-LINEAR=0 INTUNIFORM=2e8 ./main-optimized
-LINEAR=0 INTUNIFORM=3e8 ./main-optimized
-LINEAR=0 INTUNIFORM=4e8 ./main-optimized
-LINEAR=0 INTUNIFORM=5e8 ./main-optimized

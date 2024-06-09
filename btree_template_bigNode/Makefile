@@ -15,16 +15,16 @@ btreenode_templateBig.o: btreenode_templateBigNode.cpp btreenode_templateBigNode
 	g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o $@
 
 btree-optimized_templateBig.o: btree_templateBigNode.cpp btree_templateBigNode.hpp 
-	clang++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o $@ -O3 -DNDEBUG
+	g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o $@ -O3 -DNDEBUG
 
 btreenode-optimized_templateBig.o: btreenode_templateBigNode.cpp btreenode_templateBigNode.hpp
-	clang++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o $@ -O3 -DNDEBUG
+	g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o $@ -O3 -DNDEBUG
 
 utils_templateBig.o: utils.hpp
 	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 utils-optimized_templateBig.o: utils.hpp
-	clang++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
+	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 clean:
 	rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o

@@ -15,16 +15,16 @@ btreenode_linearSearch.o: btreenode_linearSearch.cpp btreenode_linearSearch.hpp
 	g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o $@
 
 btree-optimized_linearSearch.o: btree_linearSearch.cpp btree_linearSearch.hpp 
-	clang++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o $@ -O3 -DNDEBUG
+	g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o $@ -O3 -DNDEBUG
 
 btreenode-optimized_linearSearch.o: btreenode_linearSearch.cpp btreenode_linearSearch.hpp
-	clang++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o $@ -O3 -DNDEBUG
+	g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o $@ -O3 -DNDEBUG
 
 utils_linearSearch.o: utils.hpp
 	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 utils-optimized_linearSearch.o: utils.hpp
-	clang++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
+	g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o $@
 
 clean:
 	rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
