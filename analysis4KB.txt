@@ -169,13 +169,13 @@ The 5 lowest Coefficients: 0
 The 5 highest Coefficients: 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 1000 keys in 1 'Node'
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -192,13 +192,13 @@ The 5 lowest Coefficients: 0
 The 5 highest Coefficients: 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -215,13 +215,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0 0 0 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 100000 keys in 1 'Node'
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -238,13 +238,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0 0 0 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -261,13 +261,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0 0 0 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 500 keys in Leaf
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 1000 keys in InnerNode
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0
+Coefficient of Variation: 0
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -284,15 +284,15 @@ The 5 lowest Coefficients: 0.196381 0.198825 0.204246 0.204639 0.205596
 The 5 highest Coefficients: 0.232882 0.230196 0.229156 0.228995 0.228846 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.00386548
+Coefficient of Variation: 0.00386548
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -309,15 +309,15 @@ The 5 lowest Coefficients: 0.0206184 0.0587797 0.0589372 0.0592875 0.0677027
 The 5 highest Coefficients: 0.134388 0.131031 0.126364 0.125824 0.124628 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0.00389107
+Coefficient of Variation: 0.00389107
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -334,15 +334,15 @@ The 5 lowest Coefficients: 0.0804051 0.0846761 0.0902052 0.0994603 0.100186
 The 5 highest Coefficients: 0.171009 0.170579 0.170139 0.168998 0.168873 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 0.00389749
+Coefficient of Variation: 0.00389749
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -359,15 +359,15 @@ The 5 lowest Coefficients: 0.0804051 0.0846761 0.0902052 0.0994603 0.100186
 The 5 highest Coefficients: 0.236298 0.235271 0.23489 0.233335 0.232952 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 0.00389535
+Coefficient of Variation: 0.00389535
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -384,15 +384,15 @@ The 5 lowest Coefficients: 0.0818668 0.0837501 0.0860363 0.0879181 0.088857
 The 5 highest Coefficients: 0.275136 0.271305 0.269589 0.264046 0.261533 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 0.00389749
+Coefficient of Variation: 0.00389749
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -409,15 +409,15 @@ The 5 lowest Coefficients: 0.0818668 0.0837501 0.0860363 0.0879181 0.088857
 The 5 highest Coefficients: 0.196329 0.194863 0.194863 0.194802 0.194638 
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 500 keys in Leaf
-Coefficient of Variance: 0.000174691
+Coefficient of Variation: 0.000174691
 
 Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970717
+Coefficient of Variation: 0.970717
 Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 1000 keys in InnerNode
-Coefficient of Variance: 0.000213737
+Coefficient of Variation: 0.000213737
 
 Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 0.0038962
+Coefficient of Variation: 0.0038962
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -434,16 +434,16 @@ The 5 lowest Coefficients: 0.21464
 The 5 highest Coefficients: 0.21464 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.973815
+Coefficient of Variation: 0.973815
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.970763
+Coefficient of Variation: 0.970763
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0.995214
+Coefficient of Variation: 0.995214
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -460,16 +460,16 @@ The 5 lowest Coefficients: 0.0246873 0.187487 0.211978 0.251847 0.259464
 The 5 highest Coefficients: 0.259464 0.251847 0.211978 0.187487 0.0246873 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.986594
+Coefficient of Variation: 0.986594
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.972999
+Coefficient of Variation: 0.972999
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 100000 keys in 1 'Node'
-Coefficient of Variance: 1.00032
+Coefficient of Variation: 1.00032
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -486,16 +486,16 @@ The 5 lowest Coefficients: 0.130872 0.152432 0.155912 0.15688 0.157166
 The 5 highest Coefficients: 0.269309 0.26683 0.259569 0.252231 0.251308 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.975899
+Coefficient of Variation: 0.975899
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.972673
+Coefficient of Variation: 0.972673
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.999838
+Coefficient of Variation: 0.999838
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -512,16 +512,16 @@ The 5 lowest Coefficients: 0.000648222 0.0914378 0.0923949 0.115702 0.122168
 The 5 highest Coefficients: 0.276892 0.274192 0.272524 0.272477 0.270837 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.968174
+Coefficient of Variation: 0.968174
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.98306
+Coefficient of Variation: 0.98306
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0.999955
+Coefficient of Variation: 0.999955
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -538,16 +538,16 @@ The 5 lowest Coefficients: 0.0771355 0.0804883 0.101164 0.111545 0.122848
 The 5 highest Coefficients: 0.281383 0.278847 0.278078 0.278069 0.274366 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 1.00363
+Coefficient of Variation: 1.00363
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.976628
+Coefficient of Variation: 0.976628
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1.0001
+Coefficient of Variation: 1.0001
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -564,16 +564,16 @@ The 5 lowest Coefficients: 0.0804883 0.0842853 0.111064 0.114176 0.115406
 The 5 highest Coefficients: 0.290512 0.289154 0.288956 0.286195 0.282787 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.965228
+Coefficient of Variation: 0.965228
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 1.02104
+Coefficient of Variation: 1.02104
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 1.00016
+Coefficient of Variation: 1.00016
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -590,16 +590,16 @@ The 5 lowest Coefficients: 0.0599287 0.0838866 0.0867652 0.0945116 0.10157
 The 5 highest Coefficients: 0.290213 0.28794 0.286086 0.285579 0.284087 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.984769
+Coefficient of Variation: 0.984769
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 1.0387
+Coefficient of Variation: 1.0387
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 1.00019
+Coefficient of Variation: 1.00019
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -616,16 +616,16 @@ The 5 lowest Coefficients: 0.0863743 0.0867652 0.087303 0.0945116 0.0955554
 The 5 highest Coefficients: 0.299366 0.292789 0.289505 0.287788 0.28723 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.552195
+Coefficient of Variation: 0.552195
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 1.0403
+Coefficient of Variation: 1.0403
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 1.03469
+Coefficient of Variation: 1.03469
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 1.00018
+Coefficient of Variation: 1.00018
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -642,16 +642,16 @@ The 5 lowest Coefficients: 0.222681
 The 5 highest Coefficients: 0.222681 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.956477
+Coefficient of Variation: 0.956477
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.96012
+Coefficient of Variation: 0.96012
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0.995645
+Coefficient of Variation: 0.995645
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -668,16 +668,16 @@ The 5 lowest Coefficients: 0.105316 0.165258 0.188146 0.242873 0.254452
 The 5 highest Coefficients: 0.254452 0.242873 0.188146 0.165258 0.105316 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 1.06603
+Coefficient of Variation: 1.06603
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 1.06416
+Coefficient of Variation: 1.06416
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 100000 keys in 1 'Node'
-Coefficient of Variance: 1.00211
+Coefficient of Variation: 1.00211
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -694,16 +694,16 @@ The 5 lowest Coefficients: 0.127904 0.145072 0.14689 0.150469 0.153629
 The 5 highest Coefficients: 0.27174 0.270717 0.269294 0.26057 0.259699 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.891981
+Coefficient of Variation: 0.891981
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.947029
+Coefficient of Variation: 0.947029
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.999016
+Coefficient of Variation: 0.999016
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -720,16 +720,16 @@ The 5 lowest Coefficients: 0.0803347 0.0816084 0.127531 0.131107 0.135168
 The 5 highest Coefficients: 0.289689 0.27888 0.275884 0.274048 0.273914 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.970399
+Coefficient of Variation: 0.970399
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.962223
+Coefficient of Variation: 0.962223
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1.0004
+Coefficient of Variation: 1.0004
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -746,16 +746,16 @@ The 5 lowest Coefficients: 0.0847002 0.0853585 0.0867128 0.0908043 0.108403
 The 5 highest Coefficients: 0.279276 0.27898 0.277984 0.27614 0.275781 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.936398
+Coefficient of Variation: 0.936398
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.965497
+Coefficient of Variation: 0.965497
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1.00023
+Coefficient of Variation: 1.00023
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -772,16 +772,16 @@ The 5 lowest Coefficients: 0.0905157 0.114358 0.122443 0.125355 0.129811
 The 5 highest Coefficients: 0.305009 0.302024 0.296512 0.296409 0.292194 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.930111
+Coefficient of Variation: 0.930111
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.976575
+Coefficient of Variation: 0.976575
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 1.0002
+Coefficient of Variation: 1.0002
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -798,16 +798,16 @@ The 5 lowest Coefficients: 0.0757497 0.0762148 0.086098 0.0892534 0.0929733
 The 5 highest Coefficients: 0.297478 0.295256 0.292024 0.291871 0.288677 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.953777
+Coefficient of Variation: 0.953777
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.980001
+Coefficient of Variation: 0.980001
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 1.00023
+Coefficient of Variation: 1.00023
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -824,16 +824,16 @@ The 5 lowest Coefficients: 0.0757497 0.086098 0.0886201 0.0917654 0.0929733
 The 5 highest Coefficients: 0.296139 0.29593 0.29233 0.291054 0.290235 
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 500 keys in Leaf
-Coefficient of Variance: 0.602889
+Coefficient of Variation: 0.602889
 
 Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 500 keys in Leaf
-Coefficient of Variance: 0.916313
+Coefficient of Variation: 0.916313
 
 Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 1000 keys in InnerNode
-Coefficient of Variance: 0.946375
+Coefficient of Variation: 0.946375
 
 Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 0.999989
+Coefficient of Variation: 0.999989
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -850,13 +850,13 @@ The 5 lowest Coefficients: 3.30312
 The 5 highest Coefficients: 3.30312 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 34.442
+Coefficient of Variation: 34.442
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -873,13 +873,13 @@ The 5 lowest Coefficients: 4.95663
 The 5 highest Coefficients: 4.95663 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 55.3906
+Coefficient of Variation: 55.3906
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -896,13 +896,13 @@ The 5 lowest Coefficients: 5.46257
 The 5 highest Coefficients: 5.46257 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 61.0721
+Coefficient of Variation: 61.0721
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -919,13 +919,13 @@ The 5 lowest Coefficients: 5.62823
 The 5 highest Coefficients: 5.62823 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 67.1122
+Coefficient of Variation: 67.1122
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -942,13 +942,13 @@ The 5 lowest Coefficients: 0.0445726 0.0498229 0.0564832 0.0651996 0.0771121
 The 5 highest Coefficients: 3.62555 0.672923 0.171678 0.1217 0.0943789 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 108.214
+Coefficient of Variation: 108.214
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -965,13 +965,13 @@ The 5 lowest Coefficients: 0 0 0.073729 0.142546 0.189684
 The 5 highest Coefficients: 6.23512 0.802681 0.284748 0.189684 0.142546 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 175.184
+Coefficient of Variation: 175.184
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -988,13 +988,13 @@ The 5 lowest Coefficients: 0 0 0.230584 6.05799
 The 5 highest Coefficients: 6.05799 0.230584 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 193.157
+Coefficient of Variation: 193.157
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1011,13 +1011,13 @@ The 5 lowest Coefficients: 5.93842
 The 5 highest Coefficients: 5.93842 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 212.258
+Coefficient of Variation: 212.258
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1034,13 +1034,13 @@ The 5 lowest Coefficients: 0.00457929 0.00459454 0.00463868 0.00466254 0.0046680
 The 5 highest Coefficients: 3.57411 3.47623 0.276712 0.165526 0.118601 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 341.477
+Coefficient of Variation: 341.477
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1057,13 +1057,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.0393489
 The 5 highest Coefficients: 6.19247 0.798179 0.258353 0.177686 0.135713 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 553.989
+Coefficient of Variation: 553.989
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1080,13 +1080,13 @@ The 5 lowest Coefficients: 0 0 0.109255 7.54984
 The 5 highest Coefficients: 7.54984 0.109255 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 610.827
+Coefficient of Variation: 610.827
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1103,13 +1103,13 @@ The 5 lowest Coefficients: 5.70845
 The 5 highest Coefficients: 5.70845 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 671.229
+Coefficient of Variation: 671.229
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1126,13 +1126,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.57313 2.63894 0.275251 0.179984 0.174095 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1079.11
+Coefficient of Variation: 1079.11
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1149,13 +1149,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.0101468
 The 5 highest Coefficients: 5.43443 0.712251 0.237091 0.167512 0.129668 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1751.87
+Coefficient of Variation: 1751.87
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1172,13 +1172,13 @@ The 5 lowest Coefficients: 0 0 0.102832 7.17953
 The 5 highest Coefficients: 7.17953 0.102832 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1931.61
+Coefficient of Variation: 1931.61
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1195,13 +1195,13 @@ The 5 lowest Coefficients: 5.66092
 The 5 highest Coefficients: 5.66092 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 2122.61
+Coefficient of Variation: 2122.61
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1218,13 +1218,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.567 3.28514 0.195224 0.132949 0.10098 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1525.95
+Coefficient of Variation: 1525.95
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1241,13 +1241,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.00891839
 The 5 highest Coefficients: 5.59235 0.708064 0.236137 0.167027 0.129372 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 2477.52
+Coefficient of Variation: 2477.52
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1264,13 +1264,13 @@ The 5 lowest Coefficients: 0 0 0.102489 7.09436
 The 5 highest Coefficients: 7.09436 0.102489 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 2731.7
+Coefficient of Variation: 2731.7
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1287,13 +1287,13 @@ The 5 lowest Coefficients: 5.66092
 The 5 highest Coefficients: 5.66092 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 3001.83
+Coefficient of Variation: 3001.83
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1310,13 +1310,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.87661 3.49485 0.235261 0.150077 0.110508 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 1868.82
+Coefficient of Variation: 1868.82
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1333,13 +1333,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.00879512
 The 5 highest Coefficients: 6.90287 0.706718 0.235804 0.166838 0.129268 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 3034.33
+Coefficient of Variation: 3034.33
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1356,13 +1356,13 @@ The 5 lowest Coefficients: 0 0 0.102353 7.05277
 The 5 highest Coefficients: 7.05277 0.102353 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 3345.64
+Coefficient of Variation: 3345.64
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1379,13 +1379,13 @@ The 5 lowest Coefficients: 5.66092
 The 5 highest Coefficients: 5.66092 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 3676.48
+Coefficient of Variation: 3676.48
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1402,13 +1402,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.58444 3.46371 0.181767 0.126635 0.0973104 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 2157.88
+Coefficient of Variation: 2157.88
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1425,13 +1425,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.0084545
 The 5 highest Coefficients: 6.57535 0.706047 0.235683 0.166793 0.12926 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 3503.74
+Coefficient of Variation: 3503.74
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1448,13 +1448,13 @@ The 5 lowest Coefficients: 0 0 0.102353 7.05277
 The 5 highest Coefficients: 7.05277 0.102353 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 3863.21
+Coefficient of Variation: 3863.21
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1471,13 +1471,13 @@ The 5 lowest Coefficients: 5.66092
 The 5 highest Coefficients: 5.66092 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 4245.23
+Coefficient of Variation: 4245.23
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1494,13 +1494,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 4.57197 2.78641 0.286107 0.168743 0.12023 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.303775
+Coefficient of Variation: 0.303775
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 11.0894
+Coefficient of Variation: 11.0894
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 2412.54
+Coefficient of Variation: 2412.54
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1517,13 +1517,13 @@ The 5 lowest Coefficients: 0 0 0 0 0.0084545
 The 5 highest Coefficients: 6.40886 0.705665 0.235603 0.166725 0.129292 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.417356
+Coefficient of Variation: 0.417356
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 17.4938
+Coefficient of Variation: 17.4938
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 3917.3
+Coefficient of Variation: 3917.3
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1540,13 +1540,13 @@ The 5 lowest Coefficients: 0 0 0.102353 7.05277
 The 5 highest Coefficients: 7.05277 0.102353 0 0 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.45867
+Coefficient of Variation: 0.45867
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 19.2839
+Coefficient of Variation: 19.2839
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 4319.2
+Coefficient of Variation: 4319.2
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1563,13 +1563,13 @@ The 5 lowest Coefficients: 5.66092
 The 5 highest Coefficients: 5.66092 
 
 Single Leaf Replication Distribution Analysis for datatype: INTFAL with 500 keys in Leaf
-Coefficient of Variance: 0.510223
+Coefficient of Variation: 0.510223
 
 Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 1000 keys in InnerNode
-Coefficient of Variance: 21.1926
+Coefficient of Variation: 21.1926
 
 Single Node Replication Distribution Analysis for datatype: INTFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 4746.31
+Coefficient of Variation: 4746.31
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1586,13 +1586,13 @@ The 5 lowest Coefficients: 0.609553
 The 5 highest Coefficients: 0.609553 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 1.21774
+Coefficient of Variation: 1.21774
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1609,13 +1609,13 @@ The 5 lowest Coefficients: 1.88227
 The 5 highest Coefficients: 1.88227 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 15.6559
+Coefficient of Variation: 15.6559
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1632,13 +1632,13 @@ The 5 lowest Coefficients: 2.49715
 The 5 highest Coefficients: 2.49715 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 27.5895
+Coefficient of Variation: 27.5895
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1655,13 +1655,13 @@ The 5 lowest Coefficients: 3.30894
 The 5 highest Coefficients: 3.30894 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000 keys in 1 'Node'
-Coefficient of Variance: 42.2788
+Coefficient of Variation: 42.2788
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1678,13 +1678,13 @@ The 5 lowest Coefficients: 0.0148522 0.016601 0.0188173 0.0217177 0.0256778
 The 5 highest Coefficients: 0.630035 0.211659 0.0569319 0.0404616 0.031411 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 1.42709
+Coefficient of Variation: 1.42709
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1701,13 +1701,13 @@ The 5 lowest Coefficients: 0.0312041 0.0348765 0.0395342 0.0456334 0.0539641
 The 5 highest Coefficients: 2.01375 0.461821 0.119941 0.0851103 0.0660322 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 42.3064
+Coefficient of Variation: 42.3064
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1724,13 +1724,13 @@ The 5 lowest Coefficients: 0.0371855 0.0415548 0.0470984 0.0543605 0.0642805
 The 5 highest Coefficients: 2.7037 0.555595 0.142945 0.101395 0.0786571 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 83.8045
+Coefficient of Variation: 83.8045
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1747,13 +1747,13 @@ The 5 lowest Coefficients: 0.0452817 0.050123 0.057168 0.0654523 0.0775536
 The 5 highest Coefficients: 3.62968 0.67556 0.171955 0.122032 0.0947505 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 100000 keys in 1 'Node'
-Coefficient of Variance: 133.037
+Coefficient of Variation: 133.037
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1770,13 +1770,13 @@ The 5 lowest Coefficients: 0.00142179 0.00143167 0.0014438 0.00146378 0.0014852
 The 5 highest Coefficients: 0.631571 0.62279 0.0910278 0.0549129 0.0394379 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 1.61371
+Coefficient of Variation: 1.61371
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1793,13 +1793,13 @@ The 5 lowest Coefficients: 0.00290079 0.00319032 0.00333923 0.00337543 0.0033880
 The 5 highest Coefficients: 2.01005 1.96012 0.192718 0.115661 0.0829483 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 118.328
+Coefficient of Variation: 118.328
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1816,13 +1816,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.68727 2.61858 0.230008 0.137835 0.0988163 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 259.226
+Coefficient of Variation: 259.226
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1839,13 +1839,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.58083 3.56667 0.276943 0.165815 0.142563 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 420.079
+Coefficient of Variation: 420.079
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1862,13 +1862,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0.698764 0.547294 0.308786 0.0897828 0.0571479 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1.78414
+Coefficient of Variation: 1.78414
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1885,13 +1885,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.47156 1.56714 0.71133 0.190687 0.120389 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 339.562
+Coefficient of Variation: 339.562
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1908,13 +1908,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.40017 2.04577 0.962979 0.233545 0.201999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 810.863
+Coefficient of Variation: 810.863
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1931,13 +1931,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 1328.33
+Coefficient of Variation: 1328.33
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1954,13 +1954,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0.689131 0.561132 0.400881 0.0831648 0.0571277 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1.83418
+Coefficient of Variation: 1.83418
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -1977,13 +1977,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.40162 1.63403 0.999099 0.176468 0.120339 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 468.588
+Coefficient of Variation: 468.588
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2000,13 +2000,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.89733 2.49668 1.032 0.352981 0.188135 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1145.64
+Coefficient of Variation: 1145.64
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2023,13 +2023,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 1878.54
+Coefficient of Variation: 1878.54
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2046,13 +2046,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0.680151 0.5736 0.447343 0.0774878 0.0571061 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 1.86385
+Coefficient of Variation: 1.86385
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2069,13 +2069,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.33817 1.69661 1.17148 0.164259 0.120289 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 566.332
+Coefficient of Variation: 566.332
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2092,13 +2092,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.89733 2.49666 1.03107 0.352981 0.188135 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 1403.11
+Coefficient of Variation: 1403.11
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2115,13 +2115,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 30000000 keys in 1 'Node'
-Coefficient of Variance: 2300.73
+Coefficient of Variation: 2300.73
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2138,13 +2138,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0.671743 0.584944 0.47703 0.0725491 0.0570845 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 1.88535
+Coefficient of Variation: 1.88535
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2161,13 +2161,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.28025 1.75556 1.29815 0.153684 0.139093 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 648.416
+Coefficient of Variation: 648.416
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2184,13 +2184,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.89733 2.49669 1.02987 0.352981 0.188135 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 1620.17
+Coefficient of Variation: 1620.17
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2207,13 +2207,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 40000000 keys in 1 'Node'
-Coefficient of Variance: 2656.65
+Coefficient of Variation: 2656.65
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2230,13 +2230,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 0.663837 0.595348 0.49817 0.0682136 0.0570624 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 0.90139
+Coefficient of Variation: 0.90139
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 0.979621
+Coefficient of Variation: 0.979621
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 1.90233
+Coefficient of Variation: 1.90233
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2253,13 +2253,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.22708 1.81136 1.3924 0.165634 0.144433 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 4.60291
+Coefficient of Variation: 4.60291
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 6.06522
+Coefficient of Variation: 6.06522
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 720.231
+Coefficient of Variation: 720.231
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2276,13 +2276,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 2.89733 2.4967 1.02987 0.352981 0.188135 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 6.82826
+Coefficient of Variation: 6.82826
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 9.37277
+Coefficient of Variation: 9.37277
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 1811.4
+Coefficient of Variation: 1811.4
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2299,13 +2299,13 @@ The 5 lowest Coefficients: 0 0 0 0 0
 The 5 highest Coefficients: 3.94303 2.85007 0.267272 0.162403 0.13999 
 
 Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 500 keys in Leaf
-Coefficient of Variance: 9.65602
+Coefficient of Variation: 9.65602
 
 Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 1000 keys in InnerNode
-Coefficient of Variance: 13.5574
+Coefficient of Variation: 13.5574
 
 Single Node Replication Distribution Analysis for datatype: INTCFAL with all 50000000 keys in 1 'Node'
-Coefficient of Variance: 2970.23
+Coefficient of Variation: 2970.23
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2322,13 +2322,13 @@ The 5 lowest Coefficients: 0.112434
 The 5 highest Coefficients: 0.112434 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.576813
+Coefficient of Variation: 0.576813
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2345,13 +2345,13 @@ The 5 lowest Coefficients: 0.249822
 The 5 highest Coefficients: 0.249822 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.576813
+Coefficient of Variation: 0.576813
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2368,13 +2368,13 @@ The 5 lowest Coefficients: 0.158665 0.260059 0.277045 0.285526 0.312565
 The 5 highest Coefficients: 0.369724 0.362003 0.312565 0.285526 0.277045 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.576813
+Coefficient of Variation: 0.576813
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000 keys in 1 'Node'
-Coefficient of Variance: 0.576781
+Coefficient of Variation: 0.576781
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2391,13 +2391,13 @@ The 5 lowest Coefficients: 0.215426
 The 5 highest Coefficients: 0.215426 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.575496
+Coefficient of Variation: 0.575496
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.577299
+Coefficient of Variation: 0.577299
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0.57989
+Coefficient of Variation: 0.57989
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2414,13 +2414,13 @@ The 5 lowest Coefficients: 0.00729462 0.194673 0.218062 0.221417 0.234678
 The 5 highest Coefficients: 0.234678 0.221417 0.218062 0.194673 0.00729462 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.575496
+Coefficient of Variation: 0.575496
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.577299
+Coefficient of Variation: 0.577299
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0.57989
+Coefficient of Variation: 0.57989
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2437,13 +2437,13 @@ The 5 lowest Coefficients: 0 0.0787508 0.122229 0.212771 0.213603
 The 5 highest Coefficients: 0.480652 0.442854 0.435499 0.432085 0.425904 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.575496
+Coefficient of Variation: 0.575496
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.577299
+Coefficient of Variation: 0.577299
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000 keys in 1 'Node'
-Coefficient of Variance: 0.57989
+Coefficient of Variation: 0.57989
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2460,13 +2460,13 @@ The 5 lowest Coefficients: 0.059588 0.149712 0.164186 0.205589 0.210437
 The 5 highest Coefficients: 0.229303 0.225063 0.222338 0.218817 0.210437 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.578428
+Coefficient of Variation: 0.578428
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.580559
+Coefficient of Variation: 0.580559
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
-Coefficient of Variance: 0.576671
+Coefficient of Variation: 0.576671
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2483,13 +2483,13 @@ The 5 lowest Coefficients: 0.184132 0.18937 0.197696 0.203937 0.207841
 The 5 highest Coefficients: 0.299993 0.297523 0.297309 0.294678 0.29391 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.578428
+Coefficient of Variation: 0.578428
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.580559
+Coefficient of Variation: 0.580559
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
-Coefficient of Variance: 0.576671
+Coefficient of Variation: 0.576671
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2506,13 +2506,13 @@ The 5 lowest Coefficients: 0.0871978 0.104539 0.113624 0.119878 0.131874
 The 5 highest Coefficients: 0.621013 0.614818 0.589613 0.571044 0.561486 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.578428
+Coefficient of Variation: 0.578428
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.580559
+Coefficient of Variation: 0.580559
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 100000 keys in 1 'Node'
-Coefficient of Variance: 0.576671
+Coefficient of Variation: 0.576671
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2529,13 +2529,13 @@ The 5 lowest Coefficients: 0.154505 0.170352 0.170367 0.181139 0.181605
 The 5 highest Coefficients: 0.254433 0.25068 0.250523 0.24953 0.245133 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.57553
+Coefficient of Variation: 0.57553
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.571589
+Coefficient of Variation: 0.571589
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.576841
+Coefficient of Variation: 0.576841
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2552,13 +2552,13 @@ The 5 lowest Coefficients: 0.0704045 0.0741718 0.0773177 0.0790457 0.0806193
 The 5 highest Coefficients: 0.339805 0.333874 0.327626 0.323984 0.322641 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.57553
+Coefficient of Variation: 0.57553
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.571589
+Coefficient of Variation: 0.571589
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.576841
+Coefficient of Variation: 0.576841
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2575,13 +2575,13 @@ The 5 lowest Coefficients: 0.0630216 0.0812115 0.0830623 0.0978276 0.107397
 The 5 highest Coefficients: 0.660102 0.641393 0.634408 0.625464 0.603188 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.57553
+Coefficient of Variation: 0.57553
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.571589
+Coefficient of Variation: 0.571589
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 1000000 keys in 1 'Node'
-Coefficient of Variance: 0.576841
+Coefficient of Variation: 0.576841
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2598,13 +2598,13 @@ The 5 lowest Coefficients: 0.0918336 0.115697 0.136053 0.144415 0.144487
 The 5 highest Coefficients: 0.312201 0.28362 0.282938 0.281082 0.280977 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.561179
+Coefficient of Variation: 0.561179
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.594405
+Coefficient of Variation: 0.594405
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0.577168
+Coefficient of Variation: 0.577168
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2621,13 +2621,13 @@ The 5 lowest Coefficients: 0.0638131 0.0657644 0.0660029 0.0721462 0.0728654
 The 5 highest Coefficients: 0.338719 0.335223 0.334122 0.332351 0.331659 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.561179
+Coefficient of Variation: 0.561179
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.594405
+Coefficient of Variation: 0.594405
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0.577168
+Coefficient of Variation: 0.577168
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2644,13 +2644,13 @@ The 5 lowest Coefficients: 0.0464623 0.0528038 0.0559408 0.0656722 0.0671149
 The 5 highest Coefficients: 0.739001 0.715004 0.701874 0.701584 0.690733 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.561179
+Coefficient of Variation: 0.561179
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.594405
+Coefficient of Variation: 0.594405
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 10000000 keys in 1 'Node'
-Coefficient of Variance: 0.577168
+Coefficient of Variation: 0.577168
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2667,13 +2667,13 @@ The 5 lowest Coefficients: 0.0790141 0.0860112 0.121693 0.126515 0.126617
 The 5 highest Coefficients: 0.296498 0.289964 0.289467 0.286401 0.286399 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.567387
+Coefficient of Variation: 0.567387
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.580606
+Coefficient of Variation: 0.580606
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 0.577393
+Coefficient of Variation: 0.577393
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
@@ -2690,14 +2690,147 @@ The 5 lowest Coefficients: 0.0602477 0.0612627 0.0618733 0.0620299 0.0623262
 The 5 highest Coefficients: 0.350121 0.345386 0.341126 0.340153 0.339443 
 
 Single Leaf Replication Distribution Analysis for datatype: BYTE with 500 keys in Leaf
-Coefficient of Variance: 0.567387
+Coefficient of Variation: 0.567387
 
 Single InnerNode Replication Distribution Analysis for datatype: BYTE with 1000 keys in InnerNode
-Coefficient of Variance: 0.580606
+Coefficient of Variation: 0.580606
 
 Single Node Replication Distribution Analysis for datatype: BYTE with all 20000000 keys in 1 'Node'
-Coefficient of Variance: 0.577393
+Coefficient of Variation: 0.577393
+
+
+SKIPPED:
+ANALYSIS=0 BYTE=2e7 BYTESIZE=128 ./main
+ANALYSIS=0 BYTE=3e7 BYTESIZE=8 ./main
+ANALYSIS=0 BYTE=3e7 BYTESIZE=32 ./main
+ANALYSIS=0 BYTE=3e7 BYTESIZE=128 ./main
+ANALYSIS=0 BYTE=4e7 BYTESIZE=8 ./main
+ANALYSIS=0 BYTE=4e7 BYTESIZE=32 ./main
+ANALYSIS=0 BYTE=4e7 BYTESIZE=128 ./main
+ANALYSIS=0 BYTE=5e7 BYTESIZE=8 ./main
+ANALYSIS=0 BYTE=5e7 BYTESIZE=32 ./main
+ANALYSIS=0 BYTE=5e7 BYTESIZE=128 ./main
++++
+ANALYSIS=0 VARIABLEBYTE=2e7 ./main
+ANALYSIS=0 VARIABLEBYTE=3e7 ./main
+ANALYSIS=0 VARIABLEBYTE=4e7 ./main
+SKIPPED
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: VARIABLEBYTE with keyMaxByteSize: 250 and with 1000 keys (Node ContentSize = 4000)
+Leaf Analysis with 98 Leafs in total
+Average amount of Keys in a Leaf: 10.1735 Median numKeys in Leafs: 10
+The 5 lowest numKeys in a Leaf: 5 6 6 6 6 .  And the 5 highest numKeys in a Leaf: 18 17 17 16 16 Mean of Coefficients: 0.819521 Median of Coefficients: 0.80492 StandardDeviation of Coefficients: 0.748839
+The 5 lowest Coefficients: 0.394634 0.436572 0.442799 0.477538 0.505298 
+The 5 highest Coefficients: 1.49526 1.3038 1.22477 1.15593 1.13377 
+InnerNode Analysis with 5 InnerNodes in total
+Average amount of Keys in a InnerNode: 19.4 Median numKeys in InnerNodes: 21
+The 5 lowest numKeys in a InnerNode: 5 6 6 6 6 .  And the 5 highest numKeys in a InnerNode: 18 17 17 16 16 Mean of Coefficients: 0.320432 Median of Coefficients: 0.329388 StandardDeviation of Coefficients: 0.320432
+The 5 lowest Coefficients: 0.225872 0.317882 0.329388 0.332785 0.396231 
+The 5 highest Coefficients: 0.396231 0.332785 0.329388 0.317882 0.225872 
+
+Single Leaf Replication Distribution Analysis for datatype: VARIABLEBYTE with 500 keys in Leaf
+Coefficient of Variation: 0.576307
+
+Single InnerNode Replication Distribution Analysis for datatype: VARIABLEBYTE with 1000 keys in InnerNode
+Coefficient of Variation: 0.575987
+
+Single Node Replication Distribution Analysis for datatype: VARIABLEBYTE with all 1000 keys in 1 'Node'
+Coefficient of Variation: 0.575987
 
 
 ANALYSIS on BTree with CONTENT_SIZE = 4000
-BTree Distribution Analysis for datatype: BYTE with byteSize: 128 and with 20000000 keys (Node ContentSize = 4000)
+BTree Distribution Analysis for datatype: VARIABLEBYTE with keyMaxByteSize: 250 and with 10000 keys (Node ContentSize = 4000)
+Leaf Analysis with 1031 Leafs in total
+Average amount of Keys in a Leaf: 9.65664 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 4 4 4 4 4 .  And the 5 highest numKeys in a Leaf: 18 18 18 18 18 Mean of Coefficients: 0.846413 Median of Coefficients: 0.829223 StandardDeviation of Coefficients: 0.737824
+The 5 lowest Coefficients: 0.204184 0.215555 0.231912 0.312129 0.324772 
+The 5 highest Coefficients: 1.81501 1.71967 1.69767 1.69603 1.60929 
+InnerNode Analysis with 57 InnerNodes in total
+Average amount of Keys in a InnerNode: 18.0702 Median numKeys in InnerNodes: 17
+The 5 lowest numKeys in a InnerNode: 4 4 4 4 4 .  And the 5 highest numKeys in a InnerNode: 18 18 18 18 18 Mean of Coefficients: -nan Median of Coefficients: 0.385502 StandardDeviation of Coefficients: -nan
+The 5 lowest Coefficients: 0.228795 0.238679 0.298053 0.339412 -nan 
+The 5 highest Coefficients: 0.506675 0.50294 0.487033 0.48155 0.466521 
+
+Single Leaf Replication Distribution Analysis for datatype: VARIABLEBYTE with 500 keys in Leaf
+Coefficient of Variation: 0.576478
+
+Single InnerNode Replication Distribution Analysis for datatype: VARIABLEBYTE with 1000 keys in InnerNode
+Coefficient of Variation: 0.578251
+
+Single Node Replication Distribution Analysis for datatype: VARIABLEBYTE with all 10000 keys in 1 'Node'
+Coefficient of Variation: 0.580278
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: VARIABLEBYTE with keyMaxByteSize: 250 and with 100000 keys (Node ContentSize = 4000)
+Leaf Analysis with 10245 Leafs in total
+Average amount of Keys in a Leaf: 9.70249 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 4 4 4 4 4 .  And the 5 highest numKeys in a Leaf: 22 22 21 21 21 Mean of Coefficients: 0.849485 Median of Coefficients: 0.830806 StandardDeviation of Coefficients: 0.74476
+The 5 lowest Coefficients: 0.094976 0.133787 0.13659 0.154899 0.161996 
+The 5 highest Coefficients: 2.08239 1.99679 1.94104 1.94097 1.93548 
+InnerNode Analysis with 579 InnerNodes in total
+Average amount of Keys in a InnerNode: 17.6926 Median numKeys in InnerNodes: 17
+The 5 lowest numKeys in a InnerNode: 4 4 4 4 4 .  And the 5 highest numKeys in a InnerNode: 22 22 21 21 21 Mean of Coefficients: 0.398003 Median of Coefficients: 0.400174 StandardDeviation of Coefficients: 0.398003
+The 5 lowest Coefficients: 0.174913 0.185133 0.185813 0.188962 0.189445 
+The 5 highest Coefficients: 0.680802 0.674523 0.633821 0.629704 0.628488 
+
+Single Leaf Replication Distribution Analysis for datatype: VARIABLEBYTE with 500 keys in Leaf
+Coefficient of Variation: 0.580997
+
+Single InnerNode Replication Distribution Analysis for datatype: VARIABLEBYTE with 1000 keys in InnerNode
+Coefficient of Variation: 0.581636
+
+Single Node Replication Distribution Analysis for datatype: VARIABLEBYTE with all 100000 keys in 1 'Node'
+Coefficient of Variation: 0.576885
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: VARIABLEBYTE with keyMaxByteSize: 250 and with 1000000 keys (Node ContentSize = 4000)
+Leaf Analysis with 102275 Leafs in total
+Average amount of Keys in a Leaf: 9.70103 Median numKeys in Leafs: 9
+The 5 lowest numKeys in a Leaf: 4 4 4 4 4 .  And the 5 highest numKeys in a Leaf: 23 23 23 22 22 Mean of Coefficients: 0.848392 Median of Coefficients: 0.827893 StandardDeviation of Coefficients: 0.745298
+The 5 lowest Coefficients: 0.0317182 0.0380186 0.0391407 0.0417336 0.0491814 
+The 5 highest Coefficients: 2.27421 2.23611 2.09859 2.07599 2.06906 
+InnerNode Analysis with 5900 InnerNodes in total
+Average amount of Keys in a InnerNode: 17.3346 Median numKeys in InnerNodes: 17
+The 5 lowest numKeys in a InnerNode: 4 4 4 4 4 .  And the 5 highest numKeys in a InnerNode: 23 23 23 22 22 Mean of Coefficients: 0.399211 Median of Coefficients: 0.398737 StandardDeviation of Coefficients: 0.399211
+The 5 lowest Coefficients: 0.120611 0.128823 0.130535 0.137046 0.139097 
+The 5 highest Coefficients: 0.790603 0.786597 0.783699 0.734041 0.728214 
+
+Single Leaf Replication Distribution Analysis for datatype: VARIABLEBYTE with 500 keys in Leaf
+Coefficient of Variation: 0.573478
+
+Single InnerNode Replication Distribution Analysis for datatype: VARIABLEBYTE with 1000 keys in InnerNode
+Coefficient of Variation: 0.567901
+
+Single Node Replication Distribution Analysis for datatype: VARIABLEBYTE with all 1000000 keys in 1 'Node'
+Coefficient of Variation: 0.576898
+
+
+SKIPPED:
+ANALYSIS=0 VARIABLEBYTE=1e7 ./main
+SKIPPED
+
+ANALYSIS on BTree with CONTENT_SIZE = 4000
+BTree Distribution Analysis for datatype: FILE with 6391379 keys (Node ContentSize = 4000)
+Urls Mean Byte-Size: 62.2039, Median: 59, lowestSize: 14, highestSize: 255
+Leaf Analysis with 197057 Leafs in total
+Average amount of Keys in a Leaf: 32.4342 Median numKeys in Leafs: 31
+The 5 lowest numKeys in a Leaf: 4 4 4 4 4 .  And the 5 highest numKeys in a Leaf: 100 95 95 93 93 Mean of Coefficients: -nan Median of Coefficients: 4.47214 StandardDeviation of Coefficients: -nan
+The 5 lowest Coefficients: 0 0 0 0 0 
+The 5 highest Coefficients: 9.55734 9.04781 8.97595 8.75655 8.63886 
+InnerNode Analysis with 2976 InnerNodes in total
+Average amount of Keys in a InnerNode: 66.2151 Median numKeys in InnerNodes: 58
+The 5 lowest numKeys in a InnerNode: 4 4 4 4 4 .  And the 5 highest numKeys in a InnerNode: 100 95 95 93 93 Mean of Coefficients: -nan Median of Coefficients: 6.00507 StandardDeviation of Coefficients: -nan
+The 5 lowest Coefficients: 0.515035 0.677095 0.887933 0.915792 1.01916 
+The 5 highest Coefficients: 11.8553 11.8553 11.7311 11.5758 11.5251 
+
+Single Leaf Replication Distribution Analysis for datatype: FILE with 500 keys in Leaf
+Coefficient of Variation: -nan
+
+Single InnerNode Replication Distribution Analysis for datatype: FILE with 1000 keys in InnerNode
+Coefficient of Variation: -nan
+
+Single Node Replication Distribution Analysis for datatype: FILE with all 6391379 keys in 1 'Node'
+Coefficient of Variation: -nan

@@ -16,6 +16,9 @@ using namespace std;
 
 void runSingleNodeDistributionByteKeys(vector<vector<uint8_t>> &keys, uint64_t count, bool sort) {
     vector<uint32_t> keysInts;
+    if (keys.size() < count) {
+        count = keys.size();
+    }
     for (uint64_t i = 0; i < count; i++) {
         uint32_t keyHead = 0;
         vector<uint8_t> key = keys.at(i);
@@ -35,11 +38,14 @@ void runSingleNodeDistribution(vector<uint32_t> &keys, uint64_t count, bool sort
     if (sort) {
         std::sort(keys.begin(), keys.end());
     }
+    if (keys.size() < count) {
+        count = keys.size();
+    }
     std::vector<uint32_t> keyDifferences = t.calculateKeyDifferences(keys, count);
     double mean = t.mean(keyDifferences);
     double standardDeviation = t.standardDeviation(keyDifferences, mean);
-    double coefficientOfVariance = standardDeviation / mean;
-    std::cout << "Coefficient of Variance: " << coefficientOfVariance << std::endl;
+    double coefficientOfVariation = standardDeviation / mean;
+    std::cout << "Coefficient of Variation: " << coefficientOfVariation << std::endl;
 }
 
 void runAnalysis(vector<vector<uint8_t>> &keys) {

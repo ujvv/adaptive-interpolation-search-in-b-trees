@@ -168,7 +168,6 @@ BINARY=0 VARIABLEBYTE=1e4 ./main-optimized
 BINARY=0 VARIABLEBYTE=1e5 ./main-optimized
 BINARY=0 VARIABLEBYTE=1e6 ./main-optimized
 BINARY=0 VARIABLEBYTE=1e7 ./main-optimized
-BINARY=0 VARIABLEBYTE=1e7 ./main-optimized
 BINARY=0 VARIABLEBYTE=2e7 ./main-optimized
 BINARY=0 VARIABLEBYTE=3e7 ./main-optimized
 BINARY=0 VARIABLEBYTE=4e7 ./main-optimized

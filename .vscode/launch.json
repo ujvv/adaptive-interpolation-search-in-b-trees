@@ -14,10 +14,10 @@
                     //"name": "TEST"
                     "name": "ANALYSIS"
                 },
-                /*{
+                {
                     "name": "INTUNIFORM",
-                    "value": "2e6"
-                },*/
+                    "value": "1e3"
+                },
                 {
                     "name": "INTLITTLEENDIAN",
                     "value": "1e6"
