@@ -11,12 +11,12 @@
             "cwd": "${workspaceFolder}",
             "environment": [
                 {
-                    //"name": "TEST"
-                    "name": "ANALYSIS"
+                    "name": "TEST"
+                    // "name": "ANALYSIS"
                 },
                 {
                     "name": "INTUNIFORM",
-                    "value": "1e3"
+                    "value": "1e6"
                 },
                 {
                     "name": "INTLITTLEENDIAN",
