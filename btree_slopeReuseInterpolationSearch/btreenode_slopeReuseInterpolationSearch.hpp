@@ -10,9 +10,11 @@
 
 
 // constexpr uint32_t NODE_SIZE_SLOPEREUSEINTERPOLATIONSEARCH = 4096;
-constexpr uint32_t NODE_SIZE_SLOPEREUSEINTERPOLATIONSEARCH = 8192;
+// constexpr uint32_t NODE_SIZE_SLOPEREUSEINTERPOLATIONSEARCH = 8192;
+// constexpr uint32_t NODE_SIZE_SLOPEREUSEINTERPOLATIONSEARCH = 16384;
+constexpr uint32_t NODE_SIZE_SLOPEREUSEINTERPOLATIONSEARCH = 32768;
 
-constexpr uint16_t GUARD_SIZE = 8;
+constexpr uint16_t GUARD_SIZESIP = 8;
 
 // Forward declarations
 class BTreeNodeSlopeReuseInterpolationSearch;

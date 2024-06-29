@@ -42,6 +42,14 @@
 
 #include "btree_slopeReuseInterpolationSearch/btree_slopeReuseInterpolationSearch.hpp"
 #include "btree_slopeReuseInterpolationSearch/btreenode_slopeReuseInterpolationSearch.hpp"
+#include "btree_slopeReuseInterpolationSearchBigNode/btree_slopeReuseInterpolationSearchBigNode.hpp"
+#include "btree_slopeReuseInterpolationSearchBigNode/btreenode_slopeReuseInterpolationSearchBigNode.hpp"
+
+#include "btree_threePointInterpolationSearch/btree_threePointInterpolationSearch.hpp"
+#include "btree_threePointInterpolationSearch/btreenode_threePointInterpolationSearch.hpp"
+
+#include "btree_interpolationSequentialSearch/btree_interpolationSequentialSearch.hpp"
+#include "btree_interpolationSequentialSearch/btreenode_interpolationSequentialSearch.hpp"
 
 #include "btree_plain_finished/btree.hpp"
 
@@ -54,20 +62,20 @@
 #include <cmath>
 
 struct Tester {
-    BTreeSlopeReuseInterpolationSearch *btree;
+    BTreeInterpolationSequentialSearch *btree;
 
     BTreeTemplate *btreeTemplate;
 
     std::map<std::vector<uint8_t>, std::vector<uint8_t>> stdMap;
 
-    Tester() : btree(btree_create_slopeReuseInterpolationSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
+    Tester() : btree(btree_create_interpolationSequentialSearch()), btreeTemplate(btree_create_template()), stdMap()  {}
 
-    ~Tester() { btree_destroy_slopeReuseInterpolationSearch(btree); btree_destroy_template(btreeTemplate); }
+    ~Tester() { btree_destroy_interpolationSequentialSearch(btree); btree_destroy_template(btreeTemplate); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
         stdMap[key] = value;
         
-        btree_insert_slopeReuseInterpolationSearch(btree, key.data(), key.size(), value.data(), value.size());
+        btree_insert_interpolationSequentialSearch(btree, key.data(), key.size(), value.data(), value.size());
         btree_insert_template(btreeTemplate, key.data(), key.size(), value.data(), value.size());
     }
 
@@ -76,7 +84,7 @@ struct Tester {
         
         uint16_t lenOut = 0;
         uint16_t lenOutTemplate = 0;
-        uint8_t *value = btree_lookup_slopeReuseInterpolationSearch(btree, key.data(), key.size(), lenOut);
+        uint8_t *value = btree_lookup_interpolationSequentialSearch(btree, key.data(), key.size(), lenOut);
         uint8_t *valueTemplate = btree_lookup_template(btreeTemplate, key.data(), key.size(), lenOutTemplate);
         std::span<uint8_t> spanTemplate = {valueTemplate, lenOutTemplate};
 
@@ -101,7 +109,7 @@ struct Tester {
             }
 
         bool wasPresentBtreeTemplate = btree_remove_template(btreeTemplate, key.data(), key.size());
-        bool wasPresentBtree = btree_remove_slopeReuseInterpolationSearch(btree, key.data(), key.size());
+        bool wasPresentBtree = btree_remove_interpolationSequentialSearch(btree, key.data(), key.size());
         assert(wasPresentBtreeTemplate == wasPresentBtree);
 
         (void)wasPresentBtree;
@@ -119,7 +127,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_slopeReuseInterpolationSearch(
+        btree_scan_interpolationSequentialSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
  
@@ -156,7 +164,7 @@ struct Tester {
 
         auto std_iterator = stdMap.lower_bound(key);
 
-        btree_scan_slopeReuseInterpolationSearch(
+        btree_scan_interpolationSequentialSearch(
                 btree, key.data(), key.size(), keyOut,
                 [&](unsigned keyLen, uint8_t *payload, unsigned payloadLen) {
                     assert(shouldContinue);
@@ -644,25 +652,69 @@ struct TesterPerformanceSlopeReuseInterpolationSearch {
     }
 };
 
-struct TesterPerformanceThreePointInterpolationSearch {
+struct TesterPerformanceSlopeReuseInterpolationSearchBigNode {
 
-    BTreeSlopeReuseInterpolationSearch *btreeThreePointInterpolationSearch;
+    BTreeSlopeReuseInterpolationSearchBigNode *btreeSlopeReuseInterpolationSearchBigNode;
 
-    TesterPerformanceThreePointInterpolationSearch() : btreeThreePointInterpolationSearch(btree_create_slopeReuseInterpolationSearch())  {}
+    TesterPerformanceSlopeReuseInterpolationSearchBigNode() : btreeSlopeReuseInterpolationSearchBigNode(btree_create_slopeReuseInterpolationSearchBigNode())  {}
 
-    ~TesterPerformanceThreePointInterpolationSearch() { btree_destroy_slopeReuseInterpolationSearch(btreeThreePointInterpolationSearch); }
+    ~TesterPerformanceSlopeReuseInterpolationSearchBigNode() { btree_destroy_slopeReuseInterpolationSearchBigNode(btreeSlopeReuseInterpolationSearchBigNode); }
 
     void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
-        btree_insert_slopeReuseInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size(), value.data(), value.size());
+        btree_insert_slopeReuseInterpolationSearchBigNode(btreeSlopeReuseInterpolationSearchBigNode, key.data(), key.size(), value.data(), value.size());
     }
 
     void lookup(std::vector<uint8_t> &key) {
         uint16_t lenOutInterpolatedBinarySearch = 0;
-        btree_lookup_slopeReuseInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size(), lenOutInterpolatedBinarySearch);
+        btree_lookup_slopeReuseInterpolationSearchBigNode(btreeSlopeReuseInterpolationSearchBigNode, key.data(), key.size(), lenOutInterpolatedBinarySearch);
     }
 
     void remove(std::vector<uint8_t> &key) {
-            btree_remove_slopeReuseInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size());
+            btree_remove_slopeReuseInterpolationSearchBigNode(btreeSlopeReuseInterpolationSearchBigNode, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceThreePointInterpolationSearch {
+
+    BTreeThreePointInterpolationSearch *btreeThreePointInterpolationSearch;
+
+    TesterPerformanceThreePointInterpolationSearch() : btreeThreePointInterpolationSearch(btree_create_threePointInterpolationSearch())  {}
+
+    ~TesterPerformanceThreePointInterpolationSearch() { btree_destroy_threePointInterpolationSearch(btreeThreePointInterpolationSearch); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_threePointInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolatedBinarySearch = 0;
+        btree_lookup_threePointInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size(), lenOutInterpolatedBinarySearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_threePointInterpolationSearch(btreeThreePointInterpolationSearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceInterpolationSequentialSearch {
+
+    BTreeInterpolationSequentialSearch *btreeInterpolationSequentialSearch;
+
+    TesterPerformanceInterpolationSequentialSearch() : btreeInterpolationSequentialSearch(btree_create_interpolationSequentialSearch())  {}
+
+    ~TesterPerformanceInterpolationSequentialSearch() { btree_destroy_interpolationSequentialSearch(btreeInterpolationSequentialSearch); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSequentialSearch(btreeInterpolationSequentialSearch, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSequentialSearch = 0;
+        btree_lookup_interpolationSequentialSearch(btreeInterpolationSequentialSearch, key.data(), key.size(), lenOutInterpolationSequentialSearch);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSequentialSearch(btreeInterpolationSequentialSearch, key.data(), key.size());
     }
 };
 

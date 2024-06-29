@@ -64,33 +64,19 @@ void runAnalysis(vector<vector<uint8_t>> &keys) {
     double meanNumKeysInLeafs = t.mean(numKeysInLeafs);
     std::sort(numKeysInLeafs.begin(), numKeysInLeafs.end());
     double medianNumKeysInLeafs = t.median(numKeysInLeafs);
-    std::cout << "Average amount of Keys in a Leaf: " << meanNumKeysInLeafs << " Median numKeys in Leafs: " << medianNumKeysInLeafs << std::endl;
-    std::cout << "The 5 lowest numKeys in a Leaf: ";
-    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
-        std::cout << numKeysInLeafs[i] <<" ";
-    }
-    std::cout << ".  And the 5 highest numKeys in a Leaf: ";
-    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
-        std::cout << numKeysInLeafs[numKeysInLeafs.size() -1 -i] <<" ";
-    }
+    std::cout << "Average amount of Keys in a Leaf: " << meanNumKeysInLeafs << std::endl;
+        
+    std::cout << "lowest numKey in a Leaf: " << numKeysInLeafs[0] << std::endl;
+    std::cout << "highest numKey in a Leaf: " << numKeysInLeafs[numKeysInLeafs.size()-1] << std::endl;
 
     double meanCoefficientLeafs = t.mean(coefficientsOfVariationLeafs);
     double medianCoefficientLeafs = t.median(coefficientsOfVariationLeafs);
     double standardDeviationOfCoefficientsLeafs = t.standardDeviationOfCoeffecients(coefficientsOfVariationLeafs, meanCoefficientLeafs);
-    std::cout << "Mean of Coefficients: " << meanCoefficientLeafs << " Median of Coefficients: " << medianCoefficientLeafs << " StandardDeviation of Coefficients: " << standardDeviationOfCoefficientsLeafs<< std::endl;
+    std::cout << "Mean of Coefficients: " << meanCoefficientLeafs << std::endl;
     double lowestCoefficientLeafs = coefficientsOfVariationLeafs[0];
     double highestCoefficientLeafs = coefficientsOfVariationLeafs[coefficientsOfVariationLeafs.size() -1];
-    std::cout << "The 5 lowest Coefficients: ";
-    for (int i = 0; i < coefficientAmountLeafs && i < 5; i++) {
-        std::cout << coefficientsOfVariationLeafs[i] <<" ";
-    }
-    std::cout << std::endl;
-    std::cout << "The 5 highest Coefficients: ";
-    for (int i = 0; i < coefficientAmountLeafs && i < 5; i++) {
-        std::cout << coefficientsOfVariationLeafs[coefficientsOfVariationLeafs.size() -1 -i] <<" ";
-    }
-    std::cout << std::endl;
-    
+    std::cout << "lowest Coefficients: " << coefficientsOfVariationLeafs[0] << std::endl;
+    std::cout << "highest Coefficients: " << coefficientsOfVariationLeafs[coefficientsOfVariationLeafs.size()-1] << std::endl;
 
     
     std::vector<double> coefficientsOfVariationInnerNodes = t.analyzeInnerNodes();
@@ -101,32 +87,22 @@ void runAnalysis(vector<vector<uint8_t>> &keys) {
     double meanNumKeysInInnerNodes = t.mean(numKeysInInnerNodes);
     std::sort(numKeysInInnerNodes.begin(), numKeysInInnerNodes.end());
     double medianNumKeysInInnerNodes = t.median(numKeysInInnerNodes);
-    std::cout << "Average amount of Keys in a InnerNode: " << meanNumKeysInInnerNodes << " Median numKeys in InnerNodes: " << medianNumKeysInInnerNodes << std::endl;
-    std::cout << "The 5 lowest numKeys in a InnerNode: ";
-    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
-        std::cout << numKeysInLeafs[i] <<" ";
-    }
-    std::cout << ".  And the 5 highest numKeys in a InnerNode: ";
-    for (int i = 0; i < numKeysInLeafs.size() && i < 5; i++) {
-        std::cout << numKeysInLeafs[numKeysInLeafs.size() -1 -i] <<" ";
+    std::cout << "Average amount of Keys in a InnerNode: " << meanNumKeysInInnerNodes << std::endl;
+    if (numKeysInInnerNodes.size() > 0) {
+        std::cout << "lowest numKey in a InnerNode: " << numKeysInInnerNodes[0] << std::endl;
+        std::cout << "highest numKey in a InnerNode: " << numKeysInInnerNodes[numKeysInInnerNodes.size()-1] << std::endl;
     }
 
     double meanCoefficientInnerNodes = t.mean(coefficientsOfVariationInnerNodes);
     double medianCoefficientInnerNodes = t.median(coefficientsOfVariationInnerNodes);
     double standardDeviationOfCoefficientsInnerNodes = t.standardDeviationOfCoeffecients(coefficientsOfVariationInnerNodes, meanCoefficientInnerNodes);
-    std::cout << "Mean of Coefficients: " << meanCoefficientInnerNodes << " Median of Coefficients: " << medianCoefficientInnerNodes << " StandardDeviation of Coefficients: " << standardDeviationOfCoefficientsInnerNodes<< std::endl;
+    std::cout << "Mean of Coefficients: " << meanCoefficientInnerNodes << std::endl;
     double lowestCoefficientInnerNodes = coefficientsOfVariationInnerNodes[0];
     double highestCoefficientInnerNodes = coefficientsOfVariationInnerNodes[coefficientsOfVariationInnerNodes.size() -1];
-    std::cout << "The 5 lowest Coefficients: ";
-    for (int i = 0; i < coefficientAmountInnerNodes && i < 5; i++) {
-        std::cout << coefficientsOfVariationInnerNodes[i] <<" ";
+    if (coefficientsOfVariationInnerNodes.size() > 0) {
+        std::cout << "lowest Coefficients: " << coefficientsOfVariationInnerNodes[0] << std::endl;
+        std::cout << "highest Coefficients: " << coefficientsOfVariationInnerNodes[coefficientsOfVariationInnerNodes.size() -1] << std::endl;
     }
-    std::cout << std::endl;
-    std::cout << "The 5 highest Coefficients: ";
-    for (int i = 0; i < coefficientAmountInnerNodes && i < 5; i++) {
-        std::cout << coefficientsOfVariationInnerNodes[coefficientsOfVariationInnerNodes.size() -1 -i] <<" ";
-    }
-    std::cout << std::endl;
 }
 
 void runTest(vector<vector<uint8_t>> &keys) {
@@ -141,8 +117,8 @@ void runTest(vector<vector<uint8_t>> &keys) {
         t.scanThrough(emptyKey);
         for (uint64_t i = 0, j = 0; i < count; ++i, j++) {
             t.insert(keys[i], keys[i]);
-            //t.scanThrough(emptyKey);
-            /*if (j >= 100000) {
+            // t.scanThrough(emptyKey);
+            /*if (i >= 71900) {
                 t.scanThrough(emptyKey);
                 j = 0;
             }*/
@@ -691,6 +667,26 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_slopeReuseInterpolationSearch.remove(keys[i]);
             }
         }
+    } else if (type == SIPBIGNODE) {
+        TesterPerformanceSlopeReuseInterpolationSearchBigNode t_slopeReuseInterpolationSearchBigNode{};
+        {
+            PerfEventBlock peb(perf,count,{"insert SlopeReuseInterpolationSearch (SIP)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_slopeReuseInterpolationSearchBigNode.insert(keys[i], keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"lookup SlopeReuseInterpolationSearch (SIP)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_slopeReuseInterpolationSearchBigNode.lookup(keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"remove SlopeReuseInterpolationSearch (SIP)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_slopeReuseInterpolationSearchBigNode.remove(keys[i]);
+            }
+        }
     } else if (type == TIP) {
         TesterPerformanceThreePointInterpolationSearch t_threePointInterpolationSearch{};
         {
@@ -709,6 +705,26 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
             PerfEventBlock peb(perf,count,{"remove ThreePointInterpolationSearch (TIP)"});
             for (uint64_t i = 0; i < count; ++i) {
                 t_threePointInterpolationSearch.remove(keys[i]);
+            }
+        }
+    } else if (type = ISS) {
+        TesterPerformanceInterpolationSequentialSearch t_interpolationSequentialSearch{};
+        {
+            PerfEventBlock peb(perf,count,{"insert InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearch.insert(keys[i], keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"lookup InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearch.lookup(keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"remove InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearch.remove(keys[i]);
             }
         }
     } else {
@@ -1365,13 +1381,23 @@ int main() {
         std::cout << "PERFORMANCETESTS on InterpolatedBinarySearch Btree with CONTENT_SIZE = " << t.btreeInterpolatedBinarySearch->root->CONTENT_SIZE << std::endl;
         type = IBS;
     } else if (getenv("SIP")) {
-        TesterPerformanceSlopeReuseInterpolationSearch t{};
-        std::cout << "PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = " << t.btreeSlopeReuseInterpolationSearch->root->CONTENT_SIZE << std::endl;
-        type = SIP;
+        if (getenv("BIGNODE")) {
+            TesterPerformanceSlopeReuseInterpolationSearchBigNode t{};
+            std::cout << "PERFORMANCETESTS on SlopeReuseInterpolationSearchBigNode Btree with CONTENT_SIZE = " << t.btreeSlopeReuseInterpolationSearchBigNode->root->CONTENT_SIZE << std::endl;
+            type = SIPBIGNODE;
+        } else {
+            TesterPerformanceSlopeReuseInterpolationSearch t{};
+            std::cout << "PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = " << t.btreeSlopeReuseInterpolationSearch->root->CONTENT_SIZE << std::endl;
+            type = SIP;
+        }
     } else if (getenv("TIP")) {
         TesterPerformanceThreePointInterpolationSearch t{};
         std::cout << "PERFORMANCETESTS on ThreePointInterpolationSearch Btree with CONTENT_SIZE = " << t.btreeThreePointInterpolationSearch->root->CONTENT_SIZE << std::endl;
         type = TIP;
+    } else if (getenv("ISS")) {
+        TesterPerformanceInterpolationSequentialSearch t{};
+        std::cout << "PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = " << t.btreeInterpolationSequentialSearch->root->CONTENT_SIZE << std::endl;
+        type = ISS;
     } else {
         TesterPerformanceTempl t{};
         std::cout << "No BTree type detected for PERFORMANCETESTS! BTreeTemplate will be used with CONTENT_SIZE = " << t.btreeTemplate->root->CONTENT_SIZE << std::endl;

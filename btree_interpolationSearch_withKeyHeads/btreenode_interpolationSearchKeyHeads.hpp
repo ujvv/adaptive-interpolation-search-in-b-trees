@@ -9,9 +9,10 @@
 #include <string>
 
 
-constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 4096;
+// constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 4096;
 // constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 8192;
-
+// constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 16384;
+constexpr uint32_t NODE_SIZE_INTERPOLATIONSEARCHKEYHEADS = 32768;
 
 // Forward declarations
 class BTreeNodeInterpolationSearchKeyHeads;

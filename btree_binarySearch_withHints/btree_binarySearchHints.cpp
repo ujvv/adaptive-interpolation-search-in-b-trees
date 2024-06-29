@@ -6,7 +6,7 @@ inline std::vector<uint8_t> toByteVector(uint8_t *b, unsigned l) { return std::v
 BTreeLeafNodeBinarySearchHints *BTreeBinarySearchHints::traverseToLeaf_binarySearchHints(std::span<uint8_t> key) {
   BTreeNodeBinarySearchHints *currentNode = root;
   while (!currentNode->isLeaf) {
-    uint16_t childIndex = currentNode->getEntryIndexByKey(key);
+    uint32_t childIndex = currentNode->getEntryIndexByKey(key);
     currentNode = reinterpret_cast<BTreeInnerNodeBinarySearchHints *>(currentNode)->getChild(childIndex);
   }
   return reinterpret_cast<BTreeLeafNodeBinarySearchHints *>(currentNode);
@@ -17,7 +17,7 @@ std::optional<std::span<uint8_t>> BTreeBinarySearchHints::lookup(std::span<uint8
     return std::nullopt;
   }
   BTreeLeafNodeBinarySearchHints *leaf = traverseToLeaf_binarySearchHints(key);
-  uint16_t entryIndex = leaf->getEntryIndexByKey(key);
+  uint32_t entryIndex = leaf->getEntryIndexByKey(key);
   if (entryIndex < leaf->numKeys) {
     auto existingKey = leaf->getFullKey(entryIndex);
     bool keysEqual = key.size() == existingKey.size() && std::equal(key.begin(), key.end(), existingKey.begin());
@@ -66,7 +66,7 @@ void BTreeBinarySearchHints::scan(std::span<uint8_t> key, uint8_t *keyOut, const
   while (currentNode != nullptr && continueIteration) {
     // Get all keys in once, this should be more efficient
     std::vector<std::vector<uint8_t>> keys = currentNode->getKeys();
-    for (uint16_t i = 0; i < keys.size() && continueIteration; i++) {
+    for (uint32_t i = 0; i < keys.size() && continueIteration; i++) {
       // Check if the key is valid
       if (!currentKeyValid && keys[i] >= keyVector) {
         currentKeyValid = true;

@@ -12,39 +12,39 @@
             "environment": [
                 {
                     "name": "TEST"
-                    // "name": "ANALYSIS"
+                    //"name": "ANALYSIS"
                 },
                 {
                     "name": "INTUNIFORM",
                     "value": "1e6"
                 },
-                {
+                /*{
                     "name": "INTLITTLEENDIAN",
-                    "value": "1e6"
-                },
-                {
-                    "name": "INTFAL",
-                    "value": "1e5"
-                },
-                {
-                    "name": "FALSHAPE",
-                    "value": "50"
-                },
-                {
-                    "name": "INTCFAL",
-                    "value": "1e5"
-                },
-                {
-                    "name": "CFALSHAPE",
-                    "value": "50"
+                    "value": "1e7"
                 },
                 {
                     "name": "INTRANDOM",
-                    "value": "1e5"
+                    "value": "1e7"
                 },
                 {
                     "name": "INTRANDOMSEED",
                     "value": "30"
+                },*/
+                /*{
+                    "name": "INTFAL",
+                    "value": "1e7"
+                },
+                {
+                    "name": "FALSHAPE",
+                    "value": "150"
+                },*/
+                {
+                    "name": "INTCFAL",
+                    "value": "2e7"
+                },
+                {
+                    "name": "CFALSHAPE",
+                    "value": "50"
                 },
                 /*{
                     "name": "INTRANDOMBYTES",
@@ -69,11 +69,11 @@
                 {
                     "name": "LONG2",
                     "value": "512"
-                },*/
+                },
                 {
                     "name": "FILE",
                     "value": "data/urls"
-                }
+                }*/
             ],
             "externalConsole": false,
             "MIMode": "gdb",
