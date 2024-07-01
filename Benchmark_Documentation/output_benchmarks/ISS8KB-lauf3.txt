@@ -1,0 +1,119 @@
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),     5.57, 3059.74,   83.79,      2096.27,     58.95,      38.24,          6.80,     556.82, 10000000, 0.69, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),     4.38, 2415.29,    5.74,      1256.23,     20.01,      14.49,          2.77,     437.60, 10000000, 0.52, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),     5.37, 2964.01,    7.13,      1286.53,     38.78,      27.25,          5.17,     537.10, 10000000, 0.43, 1.00, 5.52 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),    13.39, 3697.60,   84.47,      2122.34,     59.97,      40.01,          7.03,     669.43, 20000000, 0.57, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),    10.76, 2981.26,    8.24,      1248.43,     20.82,      15.92,          2.59,     537.89, 20000000, 0.42, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),    12.54, 3474.38,    9.47,      1278.49,     39.43,      28.99,          4.99,     627.04, 20000000, 0.37, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTLITTLEENDIAN=10000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),     5.75, 3174.97,   88.07,      2205.56,     57.56,      37.67,          6.74,     574.64, 10000000, 0.69, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),     5.60, 3100.86,    8.26,      1393.63,     32.24,      23.59,          4.17,     559.59, 10000000, 0.45, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),     5.56, 3081.42,    8.29,      1372.59,     40.06,      27.45,          5.03,     556.20, 10000000, 0.45, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTLITTLEENDIAN=20000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),    13.66, 3779.48,   88.47,      2187.16,     58.33,      39.33,          6.99,     682.88, 20000000, 0.58, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),    12.53, 3472.24,    9.52,      1350.79,     30.45,      23.69,          4.34,     626.59, 20000000, 0.39, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),    12.96, 3591.23,    9.89,      1354.96,     39.86,      28.69,          5.26,     648.13, 20000000, 0.38, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),     5.66, 3125.16,   89.14,      2173.51,     56.85,      37.27,          6.86,     565.82, 10000000, 0.70, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),     5.11, 2829.62,    7.77,      1306.14,     27.23,      19.97,          3.95,     510.72, 10000000, 0.46, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),     5.42, 3020.01,    8.25,      1339.90,     38.70,      26.40,          4.88,     542.06, 10000000, 0.44, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),    13.63, 3768.36,   88.85,      2181.40,     58.35,      39.35,          7.10,     681.62, 20000000, 0.58, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),    11.99, 3321.31,    8.84,      1303.86,     27.55,      21.69,          4.19,     599.54, 20000000, 0.39, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),    12.79, 3543.95,    9.56,      1337.34,     39.17,      28.37,          5.15,     639.67, 20000000, 0.38, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=10000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),     6.39, 3528.16,   88.54,      2223.87,     60.74,      37.83,          8.56,     638.95, 10000000, 0.63, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),     4.26, 2361.14,    6.18,      1393.04,     19.39,      14.22,          2.45,     426.24, 10000000, 0.59, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),     5.45, 3016.45,    8.07,      1456.13,     38.19,      27.15,          4.89,     544.63, 10000000, 0.48, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),    13.57, 3749.39,   88.98,      2308.31,     57.99,      39.66,          7.08,     678.69, 20000000, 0.62, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),    10.73, 2969.22,    7.89,      1543.76,     20.16,      15.57,          2.99,     536.33, 20000000, 0.52, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),    12.95, 3583.19,    9.71,      1606.65,     38.83,      28.86,          5.49,     647.27, 20000000, 0.45, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=10000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),     5.69, 3136.94,   85.23,      2291.81,     57.75,      38.09,          7.35,     569.09, 10000000, 0.73, 1.00, 5.51 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),     4.39, 2432.65,    6.32,      1552.83,     19.16,      14.06,          2.85,     439.34, 10000000, 0.64, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),     5.53, 3057.99,    8.19,      1615.29,     38.02,      27.02,          5.44,     552.61, 10000000, 0.53, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSequentialSearch (ISS),    13.78, 3803.11,   87.48,      2458.79,     59.10,      40.05,          7.52,     688.93, 20000000, 0.65, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSequentialSearch (ISS),    11.15, 3087.32,    8.11,      1929.50,     20.31,      15.47,          2.79,     557.51, 20000000, 0.62, 1.00, 5.54 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSequentialSearch (ISS),    13.13, 3637.74,    9.80,      1988.20,     38.77,      28.67,          5.26,     656.69, 20000000, 0.55, 1.00, 5.54 
+PerformanceTestStandard END
+

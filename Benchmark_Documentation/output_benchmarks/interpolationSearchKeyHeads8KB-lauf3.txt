@@ -1,0 +1,313 @@
+rm -f main
+rm -f main-optimized
+cd btree_template; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+rm -f btree_template.o btree_template.a btree-optimized_template.o btree-optimized_template.a btreenode_template.o btreenode-optimized_template.o utils_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+rm -f btree_finished.o btree_finished.a btree-optimized_finished.o btree-optimized_finished.a
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+rm -f btree_binarySearchNoPrefix.o btree_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btree-optimized_binarySearchNoPrefix.a btreenode_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+rm -f btree_binarySearchBig.o btree_binarySearchBig.a btree-optimized_binarySearchBig.o btree-optimized_binarySearchBig.a btreenode_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+rm -f btree_binarySearchHints.o btree_binarySearchHints.a btree-optimized_binarySearchHints.o btree-optimized_binarySearchHints.a btreenode_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+rm -f btree_linearSearchBig.o btree_linearSearchBig.a btree-optimized_linearSearchBig.o btree-optimized_linearSearchBig.a btreenode_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+rm -f btree_interpolationSearchBig.o btree_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btree-optimized_interpolationSearchBig.a btreenode_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+rm -f btree_interpolationSearchKeyHeads.o btree_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btree-optimized_interpolationSearchKeyHeads.a btreenode_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+rm -f btree_interpolationSearchKeyHeadsBig.o btree_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btree-optimized_interpolationSearchKeyHeadsBig.a btreenode_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+rm -f btree_adaptiveSearch.o btree_adaptiveSearch.a btree-optimized_adaptiveSearch.o btree-optimized_adaptiveSearch.a btreenode_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+rm -f btree_interpolatedBinarySearch.o btree_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btree-optimized_interpolatedBinarySearch.a btreenode_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+rm -f btree_slopeReuseInterpolationSearch.o btree_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btree-optimized_slopeReuseInterpolationSearch.a btreenode_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+cd btree_template;make btree-optimized_template.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+g++ -std=c++20 -Wall -Wextra -g -c btree_template.cpp -o btree-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_template.cpp -o btreenode-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_template.o
+rm -f btree-optimized_template.a
+ar rcs btree-optimized_template.a btree-optimized_template.o btreenode-optimized_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode;make btree-optimized_templateBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o btree-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o btreenode-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_templateBig.o
+rm -f btree-optimized_templateBig.a
+ar rcs btree-optimized_templateBig.a btree-optimized_templateBig.o btreenode-optimized_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished;make btree-optimized_finished.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+g++ -Wall -Wextra -g -std=c++20 -c btree.cpp -o btree-optimized_finished.o -O3 -DNDEBUG
+rm -f btree-optimized_finished.a
+ar rcs btree-optimized_finished.a btree-optimized_finished.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix;make btree-optimized_binarySearchNoPrefix.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchNoPrefix.cpp -o btree-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchNoPrefix.cpp -o btreenode-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchNoPrefix.o
+rm -f btree-optimized_binarySearchNoPrefix.a
+ar rcs btree-optimized_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch;make btree-optimized_binarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearch.cpp -o btree-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o btreenode-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearch.o
+rm -f btree-optimized_binarySearch.a
+ar rcs btree-optimized_binarySearch.a btree-optimized_binarySearch.o btreenode-optimized_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode;make btree-optimized_binarySearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchBigNode.cpp -o btree-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchBigNode.cpp -o btreenode-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchBig.o
+rm -f btree-optimized_binarySearchBig.a
+ar rcs btree-optimized_binarySearchBig.a btree-optimized_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints;make btree-optimized_binarySearchHints.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchHints.cpp -o btree-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchHints.cpp -o btreenode-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchHints.o
+rm -f btree-optimized_binarySearchHints.a
+ar rcs btree-optimized_binarySearchHints.a btree-optimized_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch;make btree-optimized_linearSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o btree-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o btreenode-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearch.o
+rm -f btree-optimized_linearSearch.a
+ar rcs btree-optimized_linearSearch.a btree-optimized_linearSearch.o btreenode-optimized_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode;make btree-optimized_linearSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearchBigNode.cpp -o btree-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearchBigNode.cpp -o btreenode-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearchBig.o
+rm -f btree-optimized_linearSearchBig.a
+ar rcs btree-optimized_linearSearchBig.a btree-optimized_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch;make btree-optimized_interpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearch.cpp -o btree-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o btreenode-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearch.o
+rm -f btree-optimized_interpolationSearch.a
+ar rcs btree-optimized_interpolationSearch.a btree-optimized_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode;make btree-optimized_interpolationSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchBigNode.cpp -o btree-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchBigNode.cpp -o btreenode-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchBig.o
+rm -f btree-optimized_interpolationSearchBig.a
+ar rcs btree-optimized_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads;make btree-optimized_interpolationSearchKeyHeads.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeads.cpp -o btree-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeads.cpp -o btreenode-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeads.o
+rm -f btree-optimized_interpolationSearchKeyHeads.a
+ar rcs btree-optimized_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode;make btree-optimized_interpolationSearchKeyHeadsBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeadsBigNode.cpp -o btree-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeadsBigNode.cpp -o btreenode-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeadsBig.o
+rm -f btree-optimized_interpolationSearchKeyHeadsBig.a
+ar rcs btree-optimized_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch;make btree-optimized_adaptiveSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_adaptiveSearch.cpp -o btree-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_adaptiveSearch.cpp -o btreenode-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_adaptiveSearch.o
+rm -f btree-optimized_adaptiveSearch.a
+ar rcs btree-optimized_adaptiveSearch.a btree-optimized_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch;make btree-optimized_interpolatedBinarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolatedBinarySearch.cpp -o btree-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolatedBinarySearch.cpp -o btreenode-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolatedBinarySearch.o
+rm -f btree-optimized_interpolatedBinarySearch.a
+ar rcs btree-optimized_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch;make btree-optimized_slopeReuseInterpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_slopeReuseInterpolationSearch.cpp -o btree-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_slopeReuseInterpolationSearch.cpp -o btreenode-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_slopeReuseInterpolationSearch.o
+rm -f btree-optimized_slopeReuseInterpolationSearch.a
+ar rcs btree-optimized_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -o main-optimized -std=c++20 -Wall -Wextra -g test_main.cpp btree_template/btree-optimized_template.a btree_template_bigNode/btree-optimized_templateBig.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch_noPrefix/btree-optimized_binarySearchNoPrefix.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_bigNode/btree-optimized_binarySearchBig.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_linearSearch_bigNode/btree-optimized_linearSearchBig.a btree_interpolationSearch/btree-optimized_interpolationSearch.a btree_interpolationSearch_bigNode/btree-optimized_interpolationSearchBig.a btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a btree_interpolationSearch_withKeyHeads_bigNode/btree-optimized_interpolationSearchKeyHeadsBig.a btree_adaptiveSearch/btree-optimized_adaptiveSearch.a btree_interpolatedBinarySearch/btree-optimized_interpolatedBinarySearch.a btree_slopeReuseInterpolationSearch/btree-optimized_slopeReuseInterpolationSearch.a
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSearchKeyHeads,     7.02, 3893.24,   84.25,      2592.43,     57.79,      39.21,          6.32,     701.88, 10000000, 0.67, 1.00, 5.55 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,     5.23, 2902.35,    7.35,      1703.51,     20.69,      14.86,          2.32,     522.59, 10000000, 0.59, 1.00, 5.55 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,     6.91, 3838.84,    9.90,      1861.49,     38.73,      27.62,          4.40,     691.43, 10000000, 0.48, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSearchKeyHeads,    16.66, 4623.18,   87.08,      2636.69,     58.74,      40.70,          6.52,     832.84, 20000000, 0.57, 1.00, 5.55 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    12.34, 3432.04,    8.63,      1714.32,     21.08,      16.03,          2.05,     617.03, 20000000, 0.50, 1.00, 5.56 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    15.79, 4391.74,   11.36,      1871.11,     38.70,      29.18,          4.11,     789.42, 20000000, 0.43, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=50000000
+PerformanceTestStandard START
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolationSearchKeyHeads,    49.61, 5511.19,   80.09,      2691.19,     59.74,      42.96,          6.49,     992.14, 50000000, 0.49, 1.00, 5.55 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    36.45, 4064.31,   10.18,      1837.58,     23.24,      18.59,          2.24,     728.89, 50000000, 0.45, 1.00, 5.58 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    46.79, 5217.45,   13.69,      1999.01,     41.92,      32.52,          4.32,     935.75, 50000000, 0.38, 1.00, 5.58 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTLITTLEENDIAN=20000000
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    18.23, 5057.69,   91.94,      2801.78,     57.41,      40.54,          6.89,     911.43, 20000000, 0.55, 1.00, 5.55 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    16.27, 4542.28,   11.49,      2010.91,     24.62,      19.24,          3.71,     813.29, 20000000, 0.44, 1.00, 5.59 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    17.51, 4882.54,   12.63,      2041.27,     39.45,      29.89,          4.71,     875.58, 20000000, 0.42, 1.00, 5.58 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=RANDOM
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    17.18, 4856.67,   90.40,      2758.16,     57.34,      40.48,          6.73,     858.96, 20000000, 0.57, 1.00, 5.65 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    14.96, 4238.55,   10.87,      1966.71,     24.22,      18.12,          3.93,     748.20, 20000000, 0.46, 1.00, 5.66 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    16.23, 4596.20,   11.83,      1967.15,     39.25,      29.61,          4.75,     811.24, 20000000, 0.43, 1.00, 5.67 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=RANDOM
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    17.52, 4926.67,   89.78,      2828.86,     57.37,      40.50,          6.64,     875.79, 20000000, 0.57, 1.00, 5.63 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    15.37, 4330.49,   10.90,      2085.45,     24.13,      18.33,          3.40,     768.73, 20000000, 0.48, 1.00, 5.63 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    16.71, 4706.85,   12.04,      2085.88,     39.37,      29.83,          4.20,     835.68, 20000000, 0.44, 1.00, 5.63 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    17.66, 4992.11,   90.95,      3149.43,     58.02,      40.24,          6.46,     882.98, 20000000, 0.63, 1.00, 5.65 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    13.63, 3855.57,    9.87,      2336.21,     22.02,      16.16,          2.45,     681.45, 20000000, 0.61, 1.00, 5.66 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    17.42, 4932.47,   12.68,      2500.88,     39.78,      29.42,          4.49,     870.97, 20000000, 0.51, 1.00, 5.66 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    20.39, 5762.89,   90.30,      3980.87,     58.78,      40.51,          7.15,    1019.22, 20000000, 0.69, 1.00, 5.65 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    18.62, 5265.69,   13.25,      3844.26,     21.68,      16.26,          2.62,     930.85, 20000000, 0.73, 1.00, 5.66 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    22.18, 6273.25,   16.02,      4002.13,     39.46,      29.55,          4.76,    1108.79, 20000000, 0.64, 1.00, 5.66 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=125
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,    15.81, 4467.94,   57.65,      3481.44,     45.28,      28.94,          5.11,     790.51, 20000000, 0.78, 1.00, 5.65 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,    14.46, 4089.37,   10.34,      3314.95,     16.28,      11.95,          2.05,     723.10, 20000000, 0.81, 1.00, 5.66 
+                              name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,    16.95, 4788.26,   12.35,      3404.84,     29.72,      21.64,          3.59,     847.41, 20000000, 0.71, 1.00, 5.65 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on InterpolationSearchKeyHeads Btree with CONTENT_SIZE = 8096
+DATATYPE: INTCFAL=20000000 CFALSHAPE=150
+PerformanceTestStandard START
+                                     name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert InterpolatioBigNodenSearchKeyHeads,     4.25, 1184.18,    7.93,      1417.82,      6.25,       4.16,          0.52,     212.47, 20000000, 1.20, 1.00, 5.57 
+                              name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup InterpolationSearchKeyHeads,     2.79, 787.69,    2.01,       807.41,      2.70,       2.60,          0.20,     139.44, 20000000, 1.03, 1.00, 5.65 
+                              name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove InterpolationSearchKeyHeads,     2.80, 790.78,    2.04,       743.52,      3.80,       3.41,          0.34,     139.98, 20000000, 0.94, 1.00, 5.65 
+PerformanceTestStandard END
+
+

@@ -1,0 +1,804 @@
+rm -f main
+rm -f main-optimized
+cd btree_template; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+rm -f btree_template.o btree_template.a btree-optimized_template.o btree-optimized_template.a btreenode_template.o btreenode-optimized_template.o utils_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+rm -f btree_finished.o btree_finished.a btree-optimized_finished.o btree-optimized_finished.a
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+rm -f btree_binarySearchNoPrefix.o btree_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btree-optimized_binarySearchNoPrefix.a btreenode_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+rm -f btree_binarySearchBig.o btree_binarySearchBig.a btree-optimized_binarySearchBig.o btree-optimized_binarySearchBig.a btreenode_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+rm -f btree_binarySearchHints.o btree_binarySearchHints.a btree-optimized_binarySearchHints.o btree-optimized_binarySearchHints.a btreenode_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+rm -f btree_linearSearchBig.o btree_linearSearchBig.a btree-optimized_linearSearchBig.o btree-optimized_linearSearchBig.a btreenode_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+rm -f btree_interpolationSearchBig.o btree_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btree-optimized_interpolationSearchBig.a btreenode_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+rm -f btree_interpolationSearchKeyHeads.o btree_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btree-optimized_interpolationSearchKeyHeads.a btreenode_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+rm -f btree_interpolationSearchKeyHeadsBig.o btree_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btree-optimized_interpolationSearchKeyHeadsBig.a btreenode_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+rm -f btree_adaptiveSearch.o btree_adaptiveSearch.a btree-optimized_adaptiveSearch.o btree-optimized_adaptiveSearch.a btreenode_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+rm -f btree_interpolatedBinarySearch.o btree_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btree-optimized_interpolatedBinarySearch.a btreenode_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+rm -f btree_slopeReuseInterpolationSearch.o btree_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btree-optimized_slopeReuseInterpolationSearch.a btreenode_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+cd btree_template;make btree-optimized_template.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+g++ -std=c++20 -Wall -Wextra -g -c btree_template.cpp -o btree-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_template.cpp -o btreenode-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_template.o
+rm -f btree-optimized_template.a
+ar rcs btree-optimized_template.a btree-optimized_template.o btreenode-optimized_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode;make btree-optimized_templateBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o btree-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o btreenode-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_templateBig.o
+rm -f btree-optimized_templateBig.a
+ar rcs btree-optimized_templateBig.a btree-optimized_templateBig.o btreenode-optimized_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished;make btree-optimized_finished.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+g++ -Wall -Wextra -g -std=c++20 -c btree.cpp -o btree-optimized_finished.o -O3 -DNDEBUG
+rm -f btree-optimized_finished.a
+ar rcs btree-optimized_finished.a btree-optimized_finished.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix;make btree-optimized_binarySearchNoPrefix.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchNoPrefix.cpp -o btree-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchNoPrefix.cpp -o btreenode-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchNoPrefix.o
+rm -f btree-optimized_binarySearchNoPrefix.a
+ar rcs btree-optimized_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch;make btree-optimized_binarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearch.cpp -o btree-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o btreenode-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearch.o
+rm -f btree-optimized_binarySearch.a
+ar rcs btree-optimized_binarySearch.a btree-optimized_binarySearch.o btreenode-optimized_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode;make btree-optimized_binarySearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchBigNode.cpp -o btree-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchBigNode.cpp -o btreenode-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchBig.o
+rm -f btree-optimized_binarySearchBig.a
+ar rcs btree-optimized_binarySearchBig.a btree-optimized_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints;make btree-optimized_binarySearchHints.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchHints.cpp -o btree-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchHints.cpp -o btreenode-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchHints.o
+rm -f btree-optimized_binarySearchHints.a
+ar rcs btree-optimized_binarySearchHints.a btree-optimized_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch;make btree-optimized_linearSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o btree-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o btreenode-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearch.o
+rm -f btree-optimized_linearSearch.a
+ar rcs btree-optimized_linearSearch.a btree-optimized_linearSearch.o btreenode-optimized_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode;make btree-optimized_linearSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearchBigNode.cpp -o btree-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearchBigNode.cpp -o btreenode-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearchBig.o
+rm -f btree-optimized_linearSearchBig.a
+ar rcs btree-optimized_linearSearchBig.a btree-optimized_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch;make btree-optimized_interpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearch.cpp -o btree-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o btreenode-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearch.o
+rm -f btree-optimized_interpolationSearch.a
+ar rcs btree-optimized_interpolationSearch.a btree-optimized_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode;make btree-optimized_interpolationSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchBigNode.cpp -o btree-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchBigNode.cpp -o btreenode-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchBig.o
+rm -f btree-optimized_interpolationSearchBig.a
+ar rcs btree-optimized_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads;make btree-optimized_interpolationSearchKeyHeads.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeads.cpp -o btree-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeads.cpp -o btreenode-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeads.o
+rm -f btree-optimized_interpolationSearchKeyHeads.a
+ar rcs btree-optimized_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode;make btree-optimized_interpolationSearchKeyHeadsBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeadsBigNode.cpp -o btree-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeadsBigNode.cpp -o btreenode-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeadsBig.o
+rm -f btree-optimized_interpolationSearchKeyHeadsBig.a
+ar rcs btree-optimized_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch;make btree-optimized_adaptiveSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_adaptiveSearch.cpp -o btree-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_adaptiveSearch.cpp -o btreenode-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_adaptiveSearch.o
+rm -f btree-optimized_adaptiveSearch.a
+ar rcs btree-optimized_adaptiveSearch.a btree-optimized_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch;make btree-optimized_interpolatedBinarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolatedBinarySearch.cpp -o btree-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolatedBinarySearch.cpp -o btreenode-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolatedBinarySearch.o
+rm -f btree-optimized_interpolatedBinarySearch.a
+ar rcs btree-optimized_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch;make btree-optimized_slopeReuseInterpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_slopeReuseInterpolationSearch.cpp -o btree-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_slopeReuseInterpolationSearch.cpp -o btreenode-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_slopeReuseInterpolationSearch.o
+rm -f btree-optimized_slopeReuseInterpolationSearch.a
+ar rcs btree-optimized_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -o main-optimized -std=c++20 -Wall -Wextra -g test_main.cpp btree_template/btree-optimized_template.a btree_template_bigNode/btree-optimized_templateBig.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch_noPrefix/btree-optimized_binarySearchNoPrefix.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_bigNode/btree-optimized_binarySearchBig.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_linearSearch_bigNode/btree-optimized_linearSearchBig.a btree_interpolationSearch/btree-optimized_interpolationSearch.a btree_interpolationSearch_bigNode/btree-optimized_interpolationSearchBig.a btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a btree_interpolationSearch_withKeyHeads_bigNode/btree-optimized_interpolationSearchKeyHeadsBig.a btree_adaptiveSearch/btree-optimized_adaptiveSearch.a btree_interpolatedBinarySearch/btree-optimized_interpolatedBinarySearch.a btree_slopeReuseInterpolationSearch/btree-optimized_slopeReuseInterpolationSearch.a
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=100000
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 977.43,   70.63,      1960.94,     34.43,       8.03,          5.54,     179.54, 100000, 2.01, 1.00, 5.44 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 664.11,    2.14,      1238.44,     13.06,       3.70,          1.99,     121.78, 100000, 1.86, 1.00, 5.45 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.01, 774.05,    2.58,      1321.69,     25.44,       7.78,          4.18,     142.03, 100000, 1.71, 1.00, 5.45 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=1000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.31, 1721.52,   79.03,      2175.74,     41.49,      24.62,          6.12,     313.25, 1000000, 1.26, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.24, 1344.29,    3.67,      1356.42,     18.75,      10.46,          2.95,     243.15, 1000000, 1.01, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1473.07,    4.25,      1434.75,     29.70,      19.24,          5.17,     266.53, 1000000, 0.97, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     5.95, 3302.61,   86.78,      2324.20,     46.39,      33.60,          7.04,     595.11, 10000000, 0.70, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.17, 2877.38,    7.54,      1557.41,     23.57,      17.22,          3.54,     517.08, 10000000, 0.54, 1.00, 5.56 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.05, 3364.57,    9.08,      1636.77,     34.76,      26.42,          5.83,     605.00, 10000000, 0.49, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    13.47, 3740.02,   89.54,      2421.74,     48.18,      35.96,          7.35,     673.63, 20000000, 0.65, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    12.02, 3352.28,    8.77,      1603.27,     25.21,      19.53,          3.75,     600.88, 20000000, 0.48, 1.00, 5.58 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.14, 3656.21,    9.76,      1681.60,     36.12,      28.26,          6.00,     657.14, 20000000, 0.46, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=50000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    38.54, 4280.00,   85.51,      2486.96,     50.12,      38.67,          7.65,     770.78, 50000000, 0.58, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    33.28, 3713.34,    9.59,      1618.98,     26.76,      21.91,          4.03,     665.61, 50000000, 0.44, 1.00, 5.58 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    37.27, 4155.58,   10.84,      1698.41,     37.70,      30.77,          6.32,     745.37, 50000000, 0.41, 1.00, 5.58 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTLITTLEENDIAN=10000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     6.15, 3413.24,   88.50,      2523.09,     46.06,      32.54,          7.24,     615.10, 10000000, 0.74, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     6.92, 3859.80,    9.81,      1821.93,     31.32,      23.92,          5.50,     692.07, 10000000, 0.47, 1.00, 5.58 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.29, 3498.84,    8.87,      1787.34,     36.03,      26.56,          5.82,     629.03, 10000000, 0.51, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTLITTLEENDIAN=20000000
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    14.00, 3884.76,   91.12,      2550.92,     47.77,      35.05,          7.93,     699.81, 20000000, 0.66, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    13.96, 3878.81,   10.10,      1790.15,     29.89,      23.68,          5.78,     697.74, 20000000, 0.46, 1.00, 5.56 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.79, 3830.37,   10.20,      1792.90,     36.68,      28.34,          6.39,     689.34, 20000000, 0.47, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     5.87, 3252.72,   88.26,      2452.29,     45.78,      32.83,          7.25,     586.50, 10000000, 0.75, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.98, 3321.43,    8.51,      1712.57,     27.77,      20.48,          5.32,     598.16, 10000000, 0.52, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.15, 3415.30,    8.76,      1726.10,     35.40,      26.16,          6.05,     615.00, 10000000, 0.51, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    13.62, 3780.55,   90.35,      2527.14,     47.52,      35.26,          7.83,     681.09, 20000000, 0.67, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    13.21, 3668.16,    9.54,      1769.52,     28.73,      22.69,          5.83,     660.52, 20000000, 0.48, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.60, 3776.09,    9.88,      1784.11,     36.41,      28.28,          6.58,     679.95, 20000000, 0.47, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=66
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     5.87, 3254.75,   89.02,      2451.92,     45.83,      32.90,          7.19,     586.89, 10000000, 0.75, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.98, 3319.41,    8.47,      1705.62,     26.61,      20.45,          5.23,     597.82, 10000000, 0.51, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.14, 3409.61,    8.85,      1719.77,     34.30,      26.23,          5.94,     614.03, 10000000, 0.50, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=66
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    13.63, 3748.87,   89.96,      2511.52,     47.25,      35.22,          7.72,     681.31, 20000000, 0.67, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    13.17, 3640.33,    9.53,      1742.32,     28.00,      22.68,          5.41,     658.41, 20000000, 0.48, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.55, 3745.60,    9.93,      1757.02,     35.87,      28.37,          6.14,     677.63, 20000000, 0.47, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1164.81,   76.18,      2269.52,     35.10,       8.84,          6.15,     215.84, 100000, 1.95, 1.00, 5.40 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 795.97,    2.68,      1552.39,     13.64,       4.06,          2.57,     146.81, 100000, 1.95, 1.00, 5.42 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.02, 873.89,    2.71,      1576.87,     26.68,       8.36,          4.58,     160.99, 100000, 1.80, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1038.34,   50.19,      2160.88,     34.36,       6.83,          5.41,     192.52, 100000, 2.08, 1.00, 5.39 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 695.77,    2.38,      1382.26,     12.20,       3.47,          2.27,     128.72, 100000, 1.99, 1.00, 5.41 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.01, 751.33,    2.18,      1376.15,     21.48,       4.96,          4.10,     138.43, 100000, 1.83, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 861.23,   26.68,      1835.40,     29.86,       2.57,          3.67,     160.33, 100000, 2.13, 1.00, 5.37 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 570.63,    2.18,      1238.06,     10.22,       2.05,          1.30,     105.64, 100000, 2.17, 1.00, 5.40 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.01, 526.71,    1.76,      1004.39,     11.36,       1.77,          2.53,      97.49, 100000, 1.91, 1.00, 5.40 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.01, 692.12,   10.31,      1413.16,     14.21,       1.62,          2.70,     128.80, 100000, 2.04, 1.00, 5.37 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 463.86,    1.54,      1037.22,      5.71,       1.51,          1.22,      85.90, 100000, 2.24, 1.00, 5.40 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.01, 315.29,    1.29,       620.27,      4.54,       1.05,          1.56,      58.37, 100000, 1.97, 1.00, 5.40 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.33, 1795.68,   84.33,      2359.90,     41.93,      24.37,          6.39,     329.10, 1000000, 1.31, 1.00, 5.46 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.25, 1379.90,    3.78,      1558.39,     19.30,      10.85,          2.66,     251.80, 1000000, 1.13, 1.00, 5.48 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1495.94,    4.14,      1605.53,     29.76,      19.34,          4.52,     272.92, 1000000, 1.07, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.19, 1016.28,    9.80,      1609.17,     31.19,       4.45,          2.63,     187.10, 1000000, 1.58, 1.00, 5.43 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.12, 665.13,    1.81,      1143.33,     10.16,       2.66,          0.99,     121.96, 1000000, 1.72, 1.00, 5.45 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.08, 437.66,    1.25,       701.58,      6.00,       2.19,          1.38,      80.56, 1000000, 1.60, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.16, 841.98,    5.48,      1324.30,     13.76,       2.21,          2.29,     155.10, 1000000, 1.57, 1.00, 5.43 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.11, 574.98,    1.63,      1070.74,      6.22,       1.89,          1.02,     105.66, 1000000, 1.86, 1.00, 5.44 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.06, 350.22,    1.03,       561.97,      3.18,       1.43,          1.16,      64.52, 1000000, 1.60, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.14, 748.17,    3.35,      1219.25,      5.29,       1.31,          1.00,     137.84, 1000000, 1.63, 1.00, 5.43 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.08, 428.14,    1.24,       843.88,      2.20,       1.20,          0.40,      78.62, 1000000, 1.97, 1.00, 5.45 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.03, 182.45,    0.57,       322.24,      1.84,       1.14,          0.25,      33.58, 1000000, 1.77, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     4.44, 2437.63,   35.69,      2172.52,     43.56,      31.19,          5.45,     443.75, 10000000, 0.89, 1.00, 5.49 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     3.72, 2045.28,    5.39,      1649.60,     20.16,      13.79,          2.89,     371.67, 10000000, 0.81, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     3.30, 1814.38,    4.87,      1457.93,     21.26,      14.10,          4.32,     329.85, 10000000, 0.80, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     2.04, 1114.40,    3.83,      1392.28,     15.16,       3.04,          2.23,     203.91, 10000000, 1.25, 1.00, 5.47 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     1.61, 884.50,    2.33,      1051.58,      5.87,       2.55,          1.15,     161.36, 10000000, 1.19, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     1.18, 649.24,    1.70,       520.71,      2.42,       1.86,          1.16,     117.98, 10000000, 0.80, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     1.73, 948.93,    2.78,      1185.53,      5.18,       1.96,          0.76,     173.19, 10000000, 1.25, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     1.42, 778.02,    2.01,       940.70,      2.56,       1.81,          0.31,     141.55, 10000000, 1.21, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.99, 545.18,    1.43,       396.35,      1.75,       1.70,          0.21,      98.77, 10000000, 0.73, 1.00, 5.52 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     1.49, 818.92,    2.28,       992.32,      3.66,       1.73,          0.42,     149.48, 10000000, 1.21, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     1.16, 639.64,    1.67,       679.38,      1.64,       1.67,          0.37,     116.40, 10000000, 1.06, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.59, 324.89,    0.88,       286.86,      1.49,       1.61,          0.04,      59.04, 10000000, 0.88, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     8.51, 2337.06,   23.02,      2075.66,     43.15,      31.15,          4.91,     425.70, 20000000, 0.89, 1.00, 5.49 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     7.12, 1958.32,    5.19,      1604.43,     19.61,      13.43,          2.82,     355.88, 20000000, 0.82, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     5.43, 1491.38,    3.99,      1282.21,     16.88,      10.41,          3.71,     271.28, 20000000, 0.86, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     4.14, 1130.50,    3.45,      1523.18,     10.15,       2.61,          1.77,     207.11, 20000000, 1.35, 1.00, 5.46 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     3.08, 845.13,    2.17,       988.89,      4.07,       2.29,          0.64,     153.85, 20000000, 1.17, 1.00, 5.49 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     2.23, 612.40,    1.63,       446.65,      2.03,       1.96,          0.63,     111.27, 20000000, 0.73, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     3.51, 962.20,    2.65,      1169.78,      3.85,       2.05,          0.64,     175.61, 20000000, 1.22, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     2.86, 785.26,    2.02,       902.76,      1.93,       1.95,          0.39,     142.78, 20000000, 1.15, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     2.02, 559.68,    1.45,       382.68,      1.55,       1.86,          0.12,     101.23, 20000000, 0.68, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     2.99, 825.96,    2.26,       989.71,      3.19,       1.90,          0.28,     149.57, 20000000, 1.20, 1.00, 5.52 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     2.26, 624.65,    1.67,       648.63,      1.57,       1.86,          0.19,     112.95, 20000000, 1.04, 1.00, 5.53 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     1.20, 332.93,    0.91,       284.80,      1.46,       1.80,          0.03,      59.95, 20000000, 0.86, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    20.41, 2256.21,   13.64,      1940.26,     42.35,      30.23,          4.31,     408.17, 50000000, 0.86, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    16.21, 1800.41,    4.78,      1429.17,     19.76,      12.63,          2.63,     324.17, 50000000, 0.79, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    10.98, 1214.68,    3.29,       995.04,     14.24,       7.38,          3.14,     219.68, 50000000, 0.82, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     9.86, 1084.54,    3.05,      1398.61,      6.54,       2.50,          1.22,     197.09, 50000000, 1.29, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     7.58, 837.32,    2.17,       966.98,      2.84,       2.28,          0.42,     151.49, 50000000, 1.15, 1.00, 5.53 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     5.47, 607.21,    1.61,       418.59,      1.70,       2.05,          0.38,     109.33, 50000000, 0.69, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     8.75, 958.21,    2.61,      1120.07,      4.42,       2.14,          0.99,     174.88, 50000000, 1.17, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     7.09, 778.69,    2.05,       840.58,      1.77,       2.08,          0.62,     141.70, 50000000, 1.08, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     5.18, 573.02,    1.51,       375.26,      1.49,       2.00,          0.06,     103.63, 50000000, 0.65, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     7.54, 826.12,    2.19,       957.43,      2.85,       2.05,          0.13,     150.79, 50000000, 1.16, 1.00, 5.48 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.71, 627.98,    1.66,       630.19,      1.50,       2.00,          0.09,     114.10, 50000000, 1.00, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     3.07, 338.78,    0.89,       283.04,      1.43,       1.95,          0.02,      61.47, 50000000, 0.84, 1.00, 5.51 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1132.55,   73.94,      2122.34,     34.05,       8.96,          5.99,     209.66, 100000, 1.87, 1.00, 5.40 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 731.58,    2.40,      1422.00,     13.24,       4.06,          2.23,     134.73, 100000, 1.94, 1.00, 5.43 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.01, 808.52,    2.53,      1450.25,     24.64,       8.27,          4.30,     148.96, 100000, 1.79, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1088.22,   69.39,      2216.75,     34.84,       8.69,          6.09,     202.14, 100000, 2.04, 1.00, 5.38 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 764.59,    2.13,      1493.68,     13.41,       4.07,          2.14,     141.26, 100000, 1.95, 1.00, 5.41 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.02, 844.29,    2.73,      1520.91,     25.08,       8.04,          4.16,     155.48, 100000, 1.80, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1099.73,   67.64,      2264.53,     34.80,       8.57,          6.12,     204.19, 100000, 2.06, 1.00, 5.39 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 795.86,    2.37,      1533.80,     13.30,       4.07,          2.34,     146.98, 100000, 1.93, 1.00, 5.41 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.02, 870.97,    2.61,      1557.09,     25.48,       8.04,          4.36,     160.46, 100000, 1.79, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.02, 1092.40,   66.94,      2263.73,     35.20,       8.61,          6.04,     202.92, 100000, 2.07, 1.00, 5.38 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.01, 801.27,    2.43,      1537.15,     13.39,       4.00,          2.53,     148.08, 100000, 1.92, 1.00, 5.41 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.02, 884.95,    3.01,      1557.91,     25.99,       7.92,          4.55,     163.02, 100000, 1.76, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.31, 1710.86,   89.02,      2354.07,     40.46,      24.17,          6.55,     313.88, 1000000, 1.38, 1.00, 5.45 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.26, 1426.67,    3.96,      1584.46,     19.02,      10.92,          2.53,     260.09, 1000000, 1.11, 1.00, 5.49 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1487.04,    4.20,      1608.84,     29.51,      19.11,          4.63,     271.45, 1000000, 1.08, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.32, 1731.87,   83.70,      2389.71,     41.78,      23.99,          6.60,     317.81, 1000000, 1.38, 1.00, 5.45 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.26, 1424.03,    3.93,      1631.70,     18.89,      10.81,          2.77,     259.70, 1000000, 1.15, 1.00, 5.48 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1506.64,    4.18,      1658.94,     29.35,      19.13,          4.93,     274.96, 1000000, 1.10, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.31, 1709.91,   81.54,      2363.53,     41.46,      24.28,          6.74,     313.75, 1000000, 1.38, 1.00, 5.45 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.25, 1383.20,    3.77,      1585.83,     18.79,      10.68,          2.63,     252.31, 1000000, 1.15, 1.00, 5.48 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1486.04,    4.27,      1615.96,     29.31,      19.17,          4.80,     271.18, 1000000, 1.09, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     0.32, 1740.64,   80.24,      2364.77,     42.46,      24.42,          6.47,     319.26, 1000000, 1.36, 1.00, 5.45 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     0.24, 1341.55,    3.59,      1563.82,     18.91,      10.62,          2.45,     244.82, 1000000, 1.17, 1.00, 5.48 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     0.27, 1485.54,    4.20,      1616.90,     29.59,      19.17,          4.62,     271.12, 1000000, 1.09, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     5.90, 3246.10,   88.55,      2520.10,     46.28,      33.28,          7.39,     590.25, 10000000, 0.78, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.51, 3047.10,    8.00,      1747.08,     24.79,      17.67,          3.72,     551.12, 10000000, 0.57, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.05, 3342.24,    8.93,      1775.64,     35.67,      26.51,          5.88,     604.93, 10000000, 0.53, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     6.16, 3388.22,   87.80,      2553.11,     46.65,      33.62,          7.69,     616.05, 10000000, 0.75, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.52, 3053.05,    7.87,      1766.39,     25.07,      17.44,          3.62,     552.21, 10000000, 0.58, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.29, 3475.31,    9.19,      1800.35,     36.80,      26.49,          5.80,     629.01, 10000000, 0.52, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     6.22, 3421.18,   87.50,      2610.53,     47.17,      33.89,          7.60,     622.05, 10000000, 0.76, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     5.53, 3059.99,    8.02,      1771.54,     24.89,      17.72,          4.04,     553.46, 10000000, 0.58, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.36, 3512.56,    9.43,      1826.71,     36.76,      26.65,          6.16,     635.70, 10000000, 0.52, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     1.94, 1062.08,   12.70,      1446.77,      9.53,       5.25,          1.04,     194.37, 10000000, 1.36, 1.00, 5.46 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     1.46, 806.00,    2.17,       824.96,      3.85,       3.22,          0.50,     146.44, 10000000, 1.02, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     1.44, 792.01,    2.14,       764.82,      5.31,       4.32,          0.77,     143.90, 10000000, 0.97, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    13.60, 3742.20,   89.81,      2568.91,     47.81,      35.39,          7.84,     680.18, 20000000, 0.69, 1.00, 5.50 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    12.60, 3483.30,    9.26,      1782.09,     26.05,      19.76,          4.10,     630.00, 20000000, 0.51, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.49, 3727.05,   10.22,      1812.39,     36.75,      28.28,          6.27,     674.39, 20000000, 0.49, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    13.85, 3823.55,   90.34,      2623.58,     54.20,      35.88,          7.84,     692.25, 20000000, 0.69, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    12.34, 3454.01,    9.51,      1814.96,     26.44,      19.69,          3.62,     617.14, 20000000, 0.53, 1.00, 5.60 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.35, 3718.97,   10.50,      1851.96,     37.37,      28.31,          5.74,     667.49, 20000000, 0.50, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    10.50, 2899.66,   61.32,      2223.54,     37.60,      25.45,          5.82,     524.76, 20000000, 0.77, 1.00, 5.53 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     9.19, 2551.52,    6.50,      1441.76,     19.40,      13.88,          3.43,     459.42, 20000000, 0.57, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    10.02, 2780.05,    7.25,      1459.92,     27.76,      20.22,          4.99,     500.88, 20000000, 0.53, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     3.67, 1009.71,    7.89,      1344.52,      5.78,       3.77,          0.56,     183.67, 20000000, 1.33, 1.00, 5.50 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     2.68, 740.46,    1.92,       765.56,      2.69,       2.68,          0.26,     133.93, 20000000, 1.03, 1.00, 5.53 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     2.65, 731.20,    1.90,       694.18,      3.39,       3.22,          0.40,     132.26, 20000000, 0.95, 1.00, 5.53 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=50
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    39.40, 4371.83,   86.87,      2600.13,     50.11,      38.21,          8.10,     788.07, 50000000, 0.59, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    34.89, 3874.51,    9.98,      1819.10,     27.08,      21.91,          4.07,     697.78, 50000000, 0.47, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    38.32, 4255.56,   11.30,      1851.86,     38.02,      30.68,          6.27,     766.38, 50000000, 0.44, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=105
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    39.61, 4397.19,   86.03,      2642.23,     51.04,      38.55,          7.95,     792.10, 50000000, 0.60, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    34.93, 3879.70,   10.05,      1828.89,     27.73,      22.03,          4.21,     698.61, 50000000, 0.47, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    38.30, 4252.66,   11.44,      1871.62,     38.67,      30.73,          6.26,     765.90, 50000000, 0.44, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=125
+PerformanceTestStandard START
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),    16.25, 1794.93,   25.97,      1779.52,     17.63,      11.62,          2.47,     325.05, 50000000, 0.99, 1.00, 5.52 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),    13.37, 1484.97,    3.83,      1064.56,      8.70,       6.92,          1.41,     267.37, 50000000, 0.72, 1.00, 5.55 
+                                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),    13.86, 1538.03,    3.99,      1025.89,     12.11,       9.42,          2.04,     277.11, 50000000, 0.67, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on SlopeReuseInterpolationSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=150
+PerformanceTestStandard START
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert SlopeReuseInterpolationSearch (SIP),     8.56, 934.06,    4.75,      1269.79,      4.27,       2.87,          0.26,     171.12, 50000000, 1.36, 1.00, 5.46 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup SlopeReuseInterpolationSearch (SIP),     6.30, 695.19,    1.96,       730.32,      1.96,       2.39,          0.12,     125.93, 50000000, 1.05, 1.00, 5.52 
+                                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove SlopeReuseInterpolationSearch (SIP),     6.17, 681.88,    1.87,       656.30,      2.26,       2.61,          0.18,     123.34, 50000000, 0.96, 1.00, 5.53 
+PerformanceTestStandard END
+

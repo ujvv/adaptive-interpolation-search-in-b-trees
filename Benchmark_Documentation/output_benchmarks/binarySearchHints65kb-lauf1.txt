@@ -1,0 +1,23 @@
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 65424
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,     9.39, 5214.66,   68.71,      2584.53,    290.81,     104.70,         11.78,     939.17, 10000000, 0.50, 1.00, 5.55 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     4.61, 2563.90,    7.14,      1158.97,     31.36,      22.35,         10.17,     460.94, 10000000, 0.45, 1.00, 5.56 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,     7.69, 4275.28,   11.47,      1255.16,    155.78,      54.75,          9.65,     768.65, 10000000, 0.29, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 65424
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,    23.69, 6584.07,   72.31,      2645.21,    294.18,     103.76,         12.31,    1184.65, 20000000, 0.40, 1.00, 5.56 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     9.90, 2749.25,    7.57,      1189.36,     33.08,      23.39,         10.52,     495.03, 20000000, 0.43, 1.00, 5.55 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,    16.70, 4643.09,   12.22,      1286.04,    157.96,      56.40,         10.11,     835.18, 20000000, 0.28, 1.00, 5.56 
+PerformanceTestStandard END
+

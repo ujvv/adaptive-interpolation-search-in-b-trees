@@ -1,0 +1,83 @@
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,     5.16, 2829.45,   82.36,      2069.45,     67.46,      45.59,         11.30,     515.79, 10000000, 0.73, 1.00, 5.49 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     4.21, 2317.20,    6.23,      1167.19,     25.63,      18.45,          9.41,     421.16, 10000000, 0.50, 1.00, 5.50 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,     4.60, 2527.63,    6.82,      1256.28,     47.12,      31.93,          9.52,     459.50, 10000000, 0.50, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,    12.10, 3325.17,   86.31,      2100.57,     68.42,      47.64,         11.79,     604.94, 20000000, 0.63, 1.00, 5.50 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     9.42, 2592.33,    7.12,      1183.00,     26.29,      20.11,          9.97,     471.02, 20000000, 0.46, 1.00, 5.50 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,    10.64, 2926.44,    8.06,      1272.18,     48.35,      33.77,         10.15,     531.82, 20000000, 0.43, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTUNIFORM=50000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,    35.36, 3891.24,   77.94,      2090.58,     70.19,      50.27,         12.33,     707.21, 50000000, 0.54, 1.00, 5.50 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,    27.83, 3063.07,    8.41,      1278.22,     29.95,      22.92,         10.64,     556.64, 50000000, 0.42, 1.00, 5.50 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,    31.50, 3469.79,    9.62,      1368.08,     52.27,      37.26,         10.78,     630.00, 50000000, 0.39, 1.00, 5.51 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTLITTLEENDIAN=10000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,     5.24, 2894.58,   89.19,      2089.54,     65.00,      44.64,         11.15,     523.80, 10000000, 0.72, 1.00, 5.53 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     4.27, 2367.93,    6.68,      1174.66,     24.73,      18.47,          9.06,     427.34, 10000000, 0.50, 1.00, 5.54 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,     4.69, 2600.06,    7.13,      1263.23,     45.40,      31.44,          9.12,     469.32, 10000000, 0.49, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTLITTLEENDIAN=20000000
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,    11.86, 3331.89,   89.13,      2100.27,     66.39,      46.85,         11.67,     593.17, 20000000, 0.63, 1.00, 5.62 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     9.18, 2595.08,    7.19,      1191.11,     25.73,      20.11,          9.91,     459.17, 20000000, 0.46, 1.00, 5.65 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,    10.35, 2919.49,    8.12,      1279.90,     47.45,      33.45,          9.97,     517.46, 20000000, 0.44, 1.00, 5.64 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,     5.24, 2921.46,   91.28,      2092.90,     65.46,      44.68,         11.25,     523.47, 10000000, 0.72, 1.00, 5.58 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     4.16, 2349.03,    6.59,      1174.30,     24.64,      18.38,          9.26,     415.58, 10000000, 0.50, 1.00, 5.65 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,     4.47, 2526.10,    6.83,      1262.44,     45.34,      31.26,          9.39,     446.93, 10000000, 0.50, 1.00, 5.65 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on BinarySearchHints Btree with CONTENT_SIZE = 8096
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert BinarySearch with Hints,    12.25, 3399.40,   90.25,      2106.15,     66.50,      46.89,         11.69,     612.30, 20000000, 0.62, 1.00, 5.55 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup BinarySearch with Hints,     9.70, 2699.38,    7.78,      1191.41,     25.80,      20.13,          9.80,     485.18, 20000000, 0.44, 1.00, 5.56 
+                          name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove BinarySearch with Hints,    10.91, 3029.22,    8.62,      1279.73,     47.03,      33.35,         10.06,     545.32, 20000000, 0.42, 1.00, 5.55 
+PerformanceTestStandard END
+

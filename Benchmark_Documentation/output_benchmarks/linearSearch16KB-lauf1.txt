@@ -1,0 +1,35 @@
+PERFORMANCETESTS on LinearSearch Btree with CONTENT_SIZE = 16288
+DATATYPE: INTUNIFORM=1000000
+PerformanceTestStandard START
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert LinearSearch,     0.45, 2448.99,   65.54,      6847.96,    153.59,      31.99,          5.50,     445.30, 1000000, 2.80, 1.00, 5.50 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup LinearSearch,     0.43, 2399.81,    6.77,      7463.28,    102.56,      15.18,          2.65,     433.55, 1000000, 3.11, 1.00, 5.54 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove LinearSearch,     0.41, 2288.91,    5.93,      5758.95,     96.63,      19.90,          3.45,     412.39, 1000000, 2.52, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on LinearSearch Btree with CONTENT_SIZE = 16288
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert LinearSearch,     7.86, 4330.98,   78.42,      7514.68,    175.95,      41.49,          5.74,     786.31, 10000000, 1.74, 1.00, 5.51 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup LinearSearch,     7.18, 3988.63,   11.52,      6332.70,    120.84,      18.68,          3.24,     718.47, 10000000, 1.59, 1.00, 5.55 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove LinearSearch,     6.05, 3351.37,    9.15,      4904.95,    116.34,      23.69,          4.05,     604.73, 10000000, 1.46, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on LinearSearch Btree with CONTENT_SIZE = 16288
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert LinearSearch,    17.99, 5086.47,   79.55,      7516.14,    178.69,      42.73,          5.92,     899.64, 20000000, 1.48, 1.00, 5.65 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup LinearSearch,    14.78, 4158.99,   11.33,      6234.27,    120.72,      20.07,          3.30,     738.86, 20000000, 1.50, 1.00, 5.63 
+               name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove LinearSearch,    13.49, 3750.41,   10.68,      4843.63,    115.78,      23.68,          4.09,     674.68, 20000000, 1.29, 1.00, 5.56 
+PerformanceTestStandard END
+

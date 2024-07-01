@@ -1,0 +1,59 @@
+PERFORMANCETESTS on STD::MAP
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert stdMap,    22.99, 12576.80,  292.97,     16380.63,     72.85,      54.54,         26.05,    2298.50, 10000000, 1.30, 1.00, 5.47 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup stdMap,    18.87, 10337.99,   29.38,     12610.01,     61.00,      50.72,         17.46,    1887.32, 10000000, 1.22, 1.00, 5.48 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove stdMap,    20.69, 11348.81,   31.87,     12906.02,     63.00,      58.83,         18.84,    2069.24, 10000000, 1.14, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on STD::MAP
+DATATYPE: BYTE=10000000BYTESIZE=8
+PerformanceTestStandard START
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert stdMap,    23.35, 12766.74,  296.65,     16396.21,     72.89,      54.16,         26.07,    2334.90, 10000000, 1.28, 1.00, 5.47 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup stdMap,    19.19, 10506.55,   30.45,     12644.04,     61.52,      50.77,         17.39,    1918.91, 10000000, 1.20, 1.00, 5.48 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove stdMap,    20.68, 11319.83,   32.00,     12940.57,     63.23,      58.60,         18.81,    2067.58, 10000000, 1.14, 1.00, 5.47 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on STD::MAP
+DATATYPE: BYTE=10000000BYTESIZE=32
+PerformanceTestStandard START
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert stdMap,    22.94, 12512.06,  333.91,     16437.24,     74.40,      54.93,         25.72,    2293.79, 10000000, 1.31, 1.00, 5.45 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup stdMap,    20.11, 11014.77,   31.61,     12645.82,     63.57,      54.12,         17.44,    2010.85, 10000000, 1.15, 1.00, 5.48 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove stdMap,    21.11, 11564.67,   33.06,     12940.85,     62.19,      58.21,         18.88,    2111.12, 10000000, 1.12, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on STD::MAP
+DATATYPE: BYTE=20000000BYTESIZE=8
+PerformanceTestStandard START
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert stdMap,    50.27, 13747.71,  285.17,     16891.84,     75.77,      58.73,         26.59,    2513.44, 20000000, 1.23, 1.00, 5.47 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup stdMap,    42.55, 11653.31,   33.49,     13128.08,     63.94,      55.47,         18.08,    2127.33, 20000000, 1.13, 1.00, 5.48 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove stdMap,    45.94, 12617.44,   36.31,     13424.65,     66.20,      65.35,         19.51,    2296.82, 20000000, 1.06, 1.00, 5.49 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on STD::MAP
+DATATYPE: BYTE=20000000BYTESIZE=32
+PerformanceTestStandard START
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert stdMap,    50.04, 13705.88,  336.41,     16932.95,     76.99,      59.85,         26.91,    2502.13, 20000000, 1.24, 1.00, 5.48 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup stdMap,    44.24, 12161.34,   35.62,     13128.01,     66.42,      58.74,         18.05,    2211.79, 20000000, 1.08, 1.00, 5.50 
+         name, time sec,   cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove stdMap,    46.11, 12675.35,   36.41,     13424.15,     65.72,      64.69,         19.50,    2305.51, 20000000, 1.06, 1.00, 5.50 
+PerformanceTestStandard END
+

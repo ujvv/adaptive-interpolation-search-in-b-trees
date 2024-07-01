@@ -1,0 +1,820 @@
+rm -f main
+rm -f main-optimized
+cd btree_template; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+rm -f btree_template.o btree_template.a btree-optimized_template.o btree-optimized_template.a btreenode_template.o btreenode-optimized_template.o utils_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+rm -f btree_finished.o btree_finished.a btree-optimized_finished.o btree-optimized_finished.a
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+rm -f btree_binarySearchNoPrefix.o btree_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btree-optimized_binarySearchNoPrefix.a btreenode_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+rm -f btree_binarySearchBig.o btree_binarySearchBig.a btree-optimized_binarySearchBig.o btree-optimized_binarySearchBig.a btreenode_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+rm -f btree_binarySearchHints.o btree_binarySearchHints.a btree-optimized_binarySearchHints.o btree-optimized_binarySearchHints.a btreenode_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+rm -f btree_linearSearchBig.o btree_linearSearchBig.a btree-optimized_linearSearchBig.o btree-optimized_linearSearchBig.a btreenode_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+rm -f btree_interpolationSearchBig.o btree_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btree-optimized_interpolationSearchBig.a btreenode_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+rm -f btree_interpolationSearchKeyHeads.o btree_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btree-optimized_interpolationSearchKeyHeads.a btreenode_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+rm -f btree_interpolationSearchKeyHeadsBig.o btree_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btree-optimized_interpolationSearchKeyHeadsBig.a btreenode_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+rm -f btree_adaptiveSearch.o btree_adaptiveSearch.a btree-optimized_adaptiveSearch.o btree-optimized_adaptiveSearch.a btreenode_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+rm -f btree_interpolatedBinarySearch.o btree_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btree-optimized_interpolatedBinarySearch.a btreenode_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+rm -f btree_slopeReuseInterpolationSearch.o btree_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btree-optimized_slopeReuseInterpolationSearch.a btreenode_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+cd btree_slopeReuseInterpolationSearchBigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearchBigNode'
+rm -f btree_slopeReuseInterpolationSearchBigNode.o btree_slopeReuseInterpolationSearchBigNode.a btree-optimized_slopeReuseInterpolationSearchBigNode.o btree-optimized_slopeReuseInterpolationSearchBigNode.a btreenode_slopeReuseInterpolationSearchBigNode.o btreenode-optimized_slopeReuseInterpolationSearchBigNode.o utils_slopeReuseInterpolationSearchBigNode.o utils-optimized_slopeReuseInterpolationSearchBigNode.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearchBigNode'
+cd btree_threePointInterpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_threePointInterpolationSearch'
+rm -f btree_threePointInterpolationSearch.o btree_threePointInterpolationSearch.a btree-optimized_threePointInterpolationSearch.o btree-optimized_threePointInterpolationSearch.a btreenode_threePointInterpolationSearch.o btreenode-optimized_threePointInterpolationSearch.o utils_threePointInterpolationSearch.o utils-optimized_threePointInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_threePointInterpolationSearch'
+cd btree_template;make btree_template.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+g++ -std=c++20 -Wall -Wextra -g -c btree_template.cpp -o btree_template.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_template.cpp -o btreenode_template.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_template.o
+rm -f btree_template.a
+ar rcs btree_template.a btree_template.o btreenode_template.o utils_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode;make btree_templateBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o btree_templateBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o btreenode_templateBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_templateBig.o
+rm -f btree_templateBig.a
+ar rcs btree_templateBig.a btree_templateBig.o btreenode_templateBig.o utils_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished;make btree_finished.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+g++ -Wall -Wextra -g -std=c++20 -c btree.cpp -o btree_finished.o
+rm -f btree_finished.a
+ar rcs btree_finished.a btree_finished.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix;make btree_binarySearchNoPrefix.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchNoPrefix.cpp -o btree_binarySearchNoPrefix.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchNoPrefix.cpp -o btreenode_binarySearchNoPrefix.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchNoPrefix.o
+rm -f btree_binarySearchNoPrefix.a
+ar rcs btree_binarySearchNoPrefix.a btree_binarySearchNoPrefix.o btreenode_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch;make btree_binarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearch.cpp -o btree_binarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o btreenode_binarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearch.o
+rm -f btree_binarySearch.a
+ar rcs btree_binarySearch.a btree_binarySearch.o btreenode_binarySearch.o utils_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode;make btree_binarySearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchBigNode.cpp -o btree_binarySearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchBigNode.cpp -o btreenode_binarySearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchBig.o
+rm -f btree_binarySearchBig.a
+ar rcs btree_binarySearchBig.a btree_binarySearchBig.o btreenode_binarySearchBig.o utils_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints;make btree_binarySearchHints.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchHints.cpp -o btree_binarySearchHints.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchHints.cpp -o btreenode_binarySearchHints.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_binarySearchHints.o
+rm -f btree_binarySearchHints.a
+ar rcs btree_binarySearchHints.a btree_binarySearchHints.o btreenode_binarySearchHints.o utils_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch;make btree_linearSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o btree_linearSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o btreenode_linearSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_linearSearch.o
+rm -f btree_linearSearch.a
+ar rcs btree_linearSearch.a btree_linearSearch.o btreenode_linearSearch.o utils_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode;make btree_linearSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearchBigNode.cpp -o btree_linearSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearchBigNode.cpp -o btreenode_linearSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_linearSearchBig.o
+rm -f btree_linearSearchBig.a
+ar rcs btree_linearSearchBig.a btree_linearSearchBig.o btreenode_linearSearchBig.o utils_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch;make btree_interpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearch.cpp -o btree_interpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o btreenode_interpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearch.o
+rm -f btree_interpolationSearch.a
+ar rcs btree_interpolationSearch.a btree_interpolationSearch.o btreenode_interpolationSearch.o utils_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode;make btree_interpolationSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchBigNode.cpp -o btree_interpolationSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchBigNode.cpp -o btreenode_interpolationSearchBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchBig.o
+rm -f btree_interpolationSearchBig.a
+ar rcs btree_interpolationSearchBig.a btree_interpolationSearchBig.o btreenode_interpolationSearchBig.o utils_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads;make btree_interpolationSearchKeyHeads.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeads.cpp -o btree_interpolationSearchKeyHeads.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeads.cpp -o btreenode_interpolationSearchKeyHeads.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchKeyHeads.o
+rm -f btree_interpolationSearchKeyHeads.a
+ar rcs btree_interpolationSearchKeyHeads.a btree_interpolationSearchKeyHeads.o btreenode_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode;make btree_interpolationSearchKeyHeadsBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeadsBigNode.cpp -o btree_interpolationSearchKeyHeadsBig.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeadsBigNode.cpp -o btreenode_interpolationSearchKeyHeadsBig.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolationSearchKeyHeadsBig.o
+rm -f btree_interpolationSearchKeyHeadsBig.a
+ar rcs btree_interpolationSearchKeyHeadsBig.a btree_interpolationSearchKeyHeadsBig.o btreenode_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch;make btree_adaptiveSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_adaptiveSearch.cpp -o btree_adaptiveSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_adaptiveSearch.cpp -o btreenode_adaptiveSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_adaptiveSearch.o
+rm -f btree_adaptiveSearch.a
+ar rcs btree_adaptiveSearch.a btree_adaptiveSearch.o btreenode_adaptiveSearch.o utils_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch;make btree_interpolatedBinarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolatedBinarySearch.cpp -o btree_interpolatedBinarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolatedBinarySearch.cpp -o btreenode_interpolatedBinarySearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_interpolatedBinarySearch.o
+rm -f btree_interpolatedBinarySearch.a
+ar rcs btree_interpolatedBinarySearch.a btree_interpolatedBinarySearch.o btreenode_interpolatedBinarySearch.o utils_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch;make btree_slopeReuseInterpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_slopeReuseInterpolationSearch.cpp -o btree_slopeReuseInterpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_slopeReuseInterpolationSearch.cpp -o btreenode_slopeReuseInterpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_slopeReuseInterpolationSearch.o
+rm -f btree_slopeReuseInterpolationSearch.a
+ar rcs btree_slopeReuseInterpolationSearch.a btree_slopeReuseInterpolationSearch.o btreenode_slopeReuseInterpolationSearch.o utils_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+cd btree_threePointInterpolationSearch;make btree_threePointInterpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_threePointInterpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_threePointInterpolationSearch.cpp -o btree_threePointInterpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_threePointInterpolationSearch.cpp -o btreenode_threePointInterpolationSearch.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_threePointInterpolationSearch.o
+rm -f btree_threePointInterpolationSearch.a
+ar rcs btree_threePointInterpolationSearch.a btree_threePointInterpolationSearch.o btreenode_threePointInterpolationSearch.o utils_threePointInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_threePointInterpolationSearch'
+cd btree_slopeReuseInterpolationSearchBigNode;make btree_slopeReuseInterpolationSearchBigNode.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearchBigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_slopeReuseInterpolationSearchBigNode.cpp -o btree_slopeReuseInterpolationSearchBigNode.o
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_slopeReuseInterpolationSearchBigNode.cpp -o btreenode_slopeReuseInterpolationSearchBigNode.o
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils_slopeReuseInterpolationSearchBigNode.o
+rm -f btree_slopeReuseInterpolationSearchBigNode.a
+ar rcs btree_slopeReuseInterpolationSearchBigNode.a btree_slopeReuseInterpolationSearchBigNode.o btreenode_slopeReuseInterpolationSearchBigNode.o utils_slopeReuseInterpolationSearchBigNode.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearchBigNode'
+g++ -o main -std=c++20 -Wall -Wextra -g test_main.cpp btree_template/btree_template.a btree_template_bigNode/btree_templateBig.a btree_plain_finished/btree_finished.a btree_binarySearch_noPrefix/btree_binarySearchNoPrefix.a btree_binarySearch/btree_binarySearch.a btree_binarySearch_bigNode/btree_binarySearchBig.a btree_binarySearch_withHints/btree_binarySearchHints.a btree_linearSearch/btree_linearSearch.a btree_linearSearch_bigNode/btree_linearSearchBig.a btree_interpolationSearch/btree_interpolationSearch.a btree_interpolationSearch_bigNode/btree_interpolationSearchBig.a btree_interpolationSearch_withKeyHeads/btree_interpolationSearchKeyHeads.a btree_interpolationSearch_withKeyHeads_bigNode/btree_interpolationSearchKeyHeadsBig.a btree_adaptiveSearch/btree_adaptiveSearch.a btree_interpolatedBinarySearch/btree_interpolatedBinarySearch.a btree_slopeReuseInterpolationSearch/btree_slopeReuseInterpolationSearch.a btree_threePointInterpolationSearch/btree_threePointInterpolationSearch.a btree_slopeReuseInterpolationSearchBigNode/btree_slopeReuseInterpolationSearchBigNode.a
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTUNIFORM with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 11025 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1232
+Mean of Coefficients: 0
+lowest Coefficients: 0
+lowest Coefficients: 0
+InnerNode Analysis with 15 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.933
+lowest numKey in a InnerNode: 13
+highest numKey in a InnerNode: 1378
+Mean of Coefficients: 0
+lowest Coefficients: 0
+highest Coefficients: 0
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 4084 keys in Leaf
+Coefficient of Variation: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 8168 keys in InnerNode
+Coefficient of Variation: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTUNIFORM with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 22050 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1557
+Mean of Coefficients: 0
+lowest Coefficients: 0
+lowest Coefficients: 0
+InnerNode Analysis with 30 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.967
+lowest numKey in a InnerNode: 28
+highest numKey in a InnerNode: 1273
+Mean of Coefficients: 0
+lowest Coefficients: 0
+highest Coefficients: 0
+
+Single Leaf Replication Distribution Analysis for datatype: INTUNIFORM with 4084 keys in Leaf
+Coefficient of Variation: 0
+
+Single InnerNode Replication Distribution Analysis for datatype: INTUNIFORM with 8168 keys in InnerNode
+Coefficient of Variation: 0
+
+Single Node Replication Distribution Analysis for datatype: INTUNIFORM with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 0
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 8189 Leafs in total
+Average amount of Keys in a Leaf: 1221.15
+lowest numKey in a Leaf: 984
+highest numKey in a Leaf: 1884
+Mean of Coefficients: 4.9719
+lowest Coefficients: 4.88669
+lowest Coefficients: 5.0369
+InnerNode Analysis with 9 InnerNodes in total
+Average amount of Keys in a InnerNode: 909.778
+lowest numKey in a InnerNode: 7
+highest numKey in a InnerNode: 1307
+Mean of Coefficients: 0.0611203
+lowest Coefficients: 0.042822
+highest Coefficients: 0.0867564
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 4084 keys in Leaf
+Coefficient of Variation: 0.000236325
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 4084 keys in Leaf
+Coefficient of Variation: 3.63222
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 8168 keys in InnerNode
+Coefficient of Variation: 0.000240202
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 0.00389107
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTLITTLEENDIAN with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 16375 Leafs in total
+Average amount of Keys in a Leaf: 1221.37
+lowest numKey in a Leaf: 963
+highest numKey in a Leaf: 1904
+Mean of Coefficients: 0.435869
+lowest Coefficients: 0.388569
+lowest Coefficients: 0.488968
+InnerNode Analysis with 17 InnerNodes in total
+Average amount of Keys in a InnerNode: 963.176
+lowest numKey in a InnerNode: 15
+highest numKey in a InnerNode: 1367
+Mean of Coefficients: 0.0624507
+lowest Coefficients: 0.0403972
+highest Coefficients: 0.112349
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 4084 keys in Leaf
+Coefficient of Variation: 0.000236325
+
+Single Leaf Replication Distribution Analysis for datatype: INTLITTLEENDIAN (SORTED for Comparison) with 4084 keys in Leaf
+Coefficient of Variation: 3.63222
+Single InnerNode Replication Distribution Analysis for datatype: INTLITTLEENDIAN with 8168 keys in InnerNode
+Coefficient of Variation: 0.000240202
+
+Single Node Replication Distribution Analysis for datatype: INTLITTLEENDIAN with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 0.00389749
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTRANDOM with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 8192 Leafs in total
+Average amount of Keys in a Leaf: 1219.25
+lowest numKey in a Leaf: 982
+highest numKey in a Leaf: 1600
+Mean of Coefficients: 0.997527
+lowest Coefficients: 0.899159
+lowest Coefficients: 1.13907
+InnerNode Analysis with 9 InnerNodes in total
+Average amount of Keys in a InnerNode: 910.111
+lowest numKey in a InnerNode: 7
+highest numKey in a InnerNode: 1270
+Mean of Coefficients: 0.0742564
+lowest Coefficients: 0.0656465
+highest Coefficients: 0.0961985
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 4084 keys in Leaf
+Coefficient of Variation: 0.57159
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 4084 keys in Leaf
+Coefficient of Variation: 1.01749
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 8168 keys in InnerNode
+Coefficient of Variation: 1.02151
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 0.999955
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTRANDOM with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 16383 Leafs in total
+Average amount of Keys in a Leaf: 1217.93
+lowest numKey in a Leaf: 962
+highest numKey in a Leaf: 1898
+Mean of Coefficients: 0.996513
+lowest Coefficients: 0.890894
+lowest Coefficients: 1.19738
+InnerNode Analysis with 17 InnerNodes in total
+Average amount of Keys in a InnerNode: 963.647
+lowest numKey in a InnerNode: 15
+highest numKey in a InnerNode: 1336
+Mean of Coefficients: 0.0751953
+lowest Coefficients: 0.0623381
+highest Coefficients: 0.10221
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM with 4084 keys in Leaf
+Coefficient of Variation: 0.57159
+
+Single Leaf Replication Distribution Analysis for datatype: INTRANDOM (SORTED for Comparison) with 4084 keys in Leaf
+Coefficient of Variation: 0.980144
+
+Single InnerNode Replication Distribution Analysis for datatype: INTRANDOMS with 8168 keys in InnerNode
+Coefficient of Variation: 0.993282
+
+Single Node Replication Distribution Analysis for datatype: INTRANDOM with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 1.0001
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 4008 Leafs in total
+Average amount of Keys in a Leaf: 907.022
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 995
+Mean of Coefficients: 0.0726099
+lowest Coefficients: 0
+lowest Coefficients: 11.0623
+InnerNode Analysis with 6 InnerNodes in total
+Average amount of Keys in a InnerNode: 667.833
+lowest numKey in a InnerNode: 4
+highest numKey in a InnerNode: 1039
+Mean of Coefficients: 1.88497
+lowest Coefficients: 0
+highest Coefficients: 10.8497
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.304569
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 31.1579
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 1079.11
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 110 Leafs in total
+Average amount of Keys in a Leaf: 907.155
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 924
+Mean of Coefficients: 0.232298
+lowest Coefficients: 0
+lowest Coefficients: 16.814
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 109
+lowest numKey in a InnerNode: 109
+highest numKey in a InnerNode: 109
+Mean of Coefficients: 5.627
+lowest Coefficients: 5.627
+highest Coefficients: 5.627
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.418487
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 50.0588
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 1751.87
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 41 Leafs in total
+Average amount of Keys in a Leaf: 926.39
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1702
+Mean of Coefficients: 0.707534
+lowest Coefficients: 0
+lowest Coefficients: 25.1749
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 40
+lowest numKey in a InnerNode: 40
+highest numKey in a InnerNode: 40
+Mean of Coefficients: 2.78075
+lowest Coefficients: 2.78075
+highest Coefficients: 2.78075
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.460415
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 55.193
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 1931.61
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 15 Leafs in total
+Average amount of Keys in a Leaf: 931.867
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1280
+Mean of Coefficients: 1.73297
+lowest Coefficients: 0
+lowest Coefficients: 23.9849
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 14
+lowest numKey in a InnerNode: 14
+highest numKey in a InnerNode: 14
+Mean of Coefficients: 1.90554
+lowest Coefficients: 1.90554
+highest Coefficients: 1.90554
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.535822
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 60.6518
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 2122.61
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 0.5 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 4446 Leafs in total
+Average amount of Keys in a Leaf: 907.141
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1533
+Mean of Coefficients: 0.0659962
+lowest Coefficients: 0
+lowest Coefficients: 13.6658
+InnerNode Analysis with 6 InnerNodes in total
+Average amount of Keys in a InnerNode: 740.833
+lowest numKey in a InnerNode: 4
+highest numKey in a InnerNode: 1477
+Mean of Coefficients: 1.792
+lowest Coefficients: 0
+highest Coefficients: 10.6072
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.304569
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 31.1579
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 1525.95
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.05 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 110 Leafs in total
+Average amount of Keys in a Leaf: 908.055
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1023
+Mean of Coefficients: 0.239744
+lowest Coefficients: 0
+lowest Coefficients: 17.6944
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 109
+lowest numKey in a InnerNode: 109
+highest numKey in a InnerNode: 109
+Mean of Coefficients: 5.39663
+lowest Coefficients: 5.39663
+highest Coefficients: 5.39663
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.418487
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 50.0588
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 2477.52
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.25 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 41 Leafs in total
+Average amount of Keys in a Leaf: 926.488
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1706
+Mean of Coefficients: 0.708276
+lowest Coefficients: 0
+lowest Coefficients: 25.2046
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 40
+lowest numKey in a InnerNode: 40
+highest numKey in a InnerNode: 40
+Mean of Coefficients: 2.77747
+lowest Coefficients: 2.77747
+highest Coefficients: 2.77747
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.460415
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 55.193
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 2731.7
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTFAL with shape: 1.5 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 15 Leafs in total
+Average amount of Keys in a Leaf: 931.867
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1280
+Mean of Coefficients: 1.73297
+lowest Coefficients: 0
+lowest Coefficients: 23.9849
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 14
+lowest numKey in a InnerNode: 14
+highest numKey in a InnerNode: 14
+Mean of Coefficients: 1.90554
+lowest Coefficients: 1.90554
+highest Coefficients: 1.90554
+
+Single Leaf Replication Distribution Analysis for datatype: INTFAL with 4084 keys in Leaf
+Coefficient of Variation: 0.535822
+
+Single InnerNode Replication Distribution Analysis for datatype: INTFAL with 8168 keys in InnerNode
+Coefficient of Variation: 60.6518
+
+Single Node Replication Distribution Analysis for datatype: INTFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 3001.83
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 11025 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1232
+Mean of Coefficients: 0.000224837
+lowest Coefficients: 0
+lowest Coefficients: 1.00256
+InnerNode Analysis with 15 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.933
+lowest numKey in a InnerNode: 13
+highest numKey in a InnerNode: 1378
+Mean of Coefficients: 0.100204
+lowest Coefficients: 0.0101741
+highest Coefficients: 0.917603
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 1.12889
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 1.19805
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 1.78414
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 11025 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1232
+Mean of Coefficients: 0.000882364
+lowest Coefficients: 0
+lowest Coefficients: 6.59576
+InnerNode Analysis with 15 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.933
+lowest numKey in a InnerNode: 13
+highest numKey in a InnerNode: 1378
+Mean of Coefficients: 0.424135
+lowest Coefficients: 0.0256393
+highest Coefficients: 5.04966
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 10.7628
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 14.3755
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 339.562
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 11025 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1232
+Mean of Coefficients: 0.00128713
+lowest Coefficients: 0
+lowest Coefficients: 10.3185
+InnerNode Analysis with 15 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.933
+lowest numKey in a InnerNode: 13
+highest numKey in a InnerNode: 1378
+Mean of Coefficients: 0.655835
+lowest Coefficients: 0
+highest Coefficients: 7.7412
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 18.0465
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 25.0548
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 810.863
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 10000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 1400 Leafs in total
+Average amount of Keys in a Leaf: 907.329
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1367
+Mean of Coefficients: 0.0137597
+lowest Coefficients: 0
+lowest Coefficients: 15.8079
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 1399
+lowest numKey in a InnerNode: 1399
+highest numKey in a InnerNode: 1399
+Mean of Coefficients: 10.9934
+lowest Coefficients: 10.9934
+highest Coefficients: 10.9934
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 27.1242
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 38.2389
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 10000000 keys in 1 'Node'
+Coefficient of Variation: 1328.33
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 0.5 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 22050 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1557
+Mean of Coefficients: 0.000119017
+lowest Coefficients: 0
+lowest Coefficients: 1.02795
+InnerNode Analysis with 30 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.967
+lowest numKey in a InnerNode: 28
+highest numKey in a InnerNode: 1273
+Mean of Coefficients: 0.0567017
+lowest Coefficients: 0.00579017
+highest Coefficients: 0.882156
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 1.12889
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 1.19805
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 1.83418
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.05 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 22050 Leafs in total
+Average amount of Keys in a Leaf: 907.029
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1557
+Mean of Coefficients: 0.000480287
+lowest Coefficients: 0
+lowest Coefficients: 7.25004
+InnerNode Analysis with 30 InnerNodes in total
+Average amount of Keys in a InnerNode: 734.967
+lowest numKey in a InnerNode: 28
+highest numKey in a InnerNode: 1273
+Mean of Coefficients: 0.214535
+lowest Coefficients: 0
+highest Coefficients: 4.47744
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 10.7628
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 14.3755
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 468.588
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.25 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 15473 Leafs in total
+Average amount of Keys in a Leaf: 907.021
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1233
+Mean of Coefficients: 0.000913776
+lowest Coefficients: 0
+lowest Coefficients: 10.3224
+InnerNode Analysis with 21 InnerNodes in total
+Average amount of Keys in a InnerNode: 736.762
+lowest numKey in a InnerNode: 19
+highest numKey in a InnerNode: 1374
+Mean of Coefficients: 0.478687
+lowest Coefficients: 0
+highest Coefficients: 7.72807
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 18.0465
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 25.0548
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 1145.64
+
+
+ANALYSIS on BTree with CONTENT_SIZE = 32672
+BTree Distribution Analysis for datatype: INTCFAL with shape: 1.5 and with 20000000 keys (Node ContentSize = 32672)
+Leaf Analysis with 1400 Leafs in total
+Average amount of Keys in a Leaf: 907.329
+lowest numKey in a Leaf: 907
+highest numKey in a Leaf: 1367
+Mean of Coefficients: 0.0137597
+lowest Coefficients: 0
+lowest Coefficients: 15.8079
+InnerNode Analysis with 1 InnerNodes in total
+Average amount of Keys in a InnerNode: 1399
+lowest numKey in a InnerNode: 1399
+highest numKey in a InnerNode: 1399
+Mean of Coefficients: 10.9934
+lowest Coefficients: 10.9934
+highest Coefficients: 10.9934
+
+Single Leaf Replication Distribution Analysis for datatype: INTCFAL with 4084 keys in Leaf
+Coefficient of Variation: 27.1242
+
+Single InnerNode Replication Distribution Analysis for datatype: INTCFAL with 8168 keys in InnerNode
+Coefficient of Variation: 38.2389
+
+Single Node Replication Distribution Analysis for datatype: INTCFAL with all 20000000 keys in 1 'Node'
+Coefficient of Variation: 1878.54
+

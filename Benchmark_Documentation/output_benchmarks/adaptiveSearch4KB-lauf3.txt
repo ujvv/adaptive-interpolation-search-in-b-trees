@@ -1,0 +1,804 @@
+rm -f main
+rm -f main-optimized
+cd btree_template; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+rm -f btree_template.o btree_template.a btree-optimized_template.o btree-optimized_template.a btreenode_template.o btreenode-optimized_template.o utils_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+rm -f btree_templateBig.o btree_templateBig.a btree-optimized_templateBig.o btree-optimized_templateBig.a btreenode_templateBig.o btreenode-optimized_templateBig.o utils_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+rm -f btree_finished.o btree_finished.a btree-optimized_finished.o btree-optimized_finished.a
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+rm -f btree_binarySearchNoPrefix.o btree_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btree-optimized_binarySearchNoPrefix.a btreenode_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+rm -f btree_binarySearch.o btree_binarySearch.a btree-optimized_binarySearch.o btree-optimized_binarySearch.a btreenode_binarySearch.o btreenode-optimized_binarySearch.o utils_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+rm -f btree_binarySearchBig.o btree_binarySearchBig.a btree-optimized_binarySearchBig.o btree-optimized_binarySearchBig.a btreenode_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+rm -f btree_binarySearchHints.o btree_binarySearchHints.a btree-optimized_binarySearchHints.o btree-optimized_binarySearchHints.a btreenode_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+rm -f btree_linearSearch.o btree_linearSearch.a btree-optimized_linearSearch.o btree-optimized_linearSearch.a btreenode_linearSearch.o btreenode-optimized_linearSearch.o utils_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+rm -f btree_linearSearchBig.o btree_linearSearchBig.a btree-optimized_linearSearchBig.o btree-optimized_linearSearchBig.a btreenode_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+rm -f btree_interpolationSearch.o btree_interpolationSearch.a btree-optimized_interpolationSearch.o btree-optimized_interpolationSearch.a btreenode_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+rm -f btree_interpolationSearchBig.o btree_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btree-optimized_interpolationSearchBig.a btreenode_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+rm -f btree_interpolationSearchKeyHeads.o btree_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btree-optimized_interpolationSearchKeyHeads.a btreenode_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+rm -f btree_interpolationSearchKeyHeadsBig.o btree_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btree-optimized_interpolationSearchKeyHeadsBig.a btreenode_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+rm -f btree_adaptiveSearch.o btree_adaptiveSearch.a btree-optimized_adaptiveSearch.o btree-optimized_adaptiveSearch.a btreenode_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+rm -f btree_interpolatedBinarySearch.o btree_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btree-optimized_interpolatedBinarySearch.a btreenode_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch; make clean
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+rm -f btree_slopeReuseInterpolationSearch.o btree_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btree-optimized_slopeReuseInterpolationSearch.a btreenode_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+cd btree_template;make btree-optimized_template.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+g++ -std=c++20 -Wall -Wextra -g -c btree_template.cpp -o btree-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_template.cpp -o btreenode-optimized_template.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_template.o
+rm -f btree-optimized_template.a
+ar rcs btree-optimized_template.a btree-optimized_template.o btreenode-optimized_template.o utils-optimized_template.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template'
+cd btree_template_bigNode;make btree-optimized_templateBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_templateBigNode.cpp -o btree-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_templateBigNode.cpp -o btreenode-optimized_templateBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_templateBig.o
+rm -f btree-optimized_templateBig.a
+ar rcs btree-optimized_templateBig.a btree-optimized_templateBig.o btreenode-optimized_templateBig.o utils-optimized_templateBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_template_bigNode'
+cd btree_plain_finished;make btree-optimized_finished.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+g++ -Wall -Wextra -g -std=c++20 -c btree.cpp -o btree-optimized_finished.o -O3 -DNDEBUG
+rm -f btree-optimized_finished.a
+ar rcs btree-optimized_finished.a btree-optimized_finished.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_plain_finished'
+cd btree_binarySearch_noPrefix;make btree-optimized_binarySearchNoPrefix.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchNoPrefix.cpp -o btree-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchNoPrefix.cpp -o btreenode-optimized_binarySearchNoPrefix.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchNoPrefix.o
+rm -f btree-optimized_binarySearchNoPrefix.a
+ar rcs btree-optimized_binarySearchNoPrefix.a btree-optimized_binarySearchNoPrefix.o btreenode-optimized_binarySearchNoPrefix.o utils-optimized_binarySearchNoPrefix.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_noPrefix'
+cd btree_binarySearch;make btree-optimized_binarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearch.cpp -o btree-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearch.cpp -o btreenode-optimized_binarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearch.o
+rm -f btree-optimized_binarySearch.a
+ar rcs btree-optimized_binarySearch.a btree-optimized_binarySearch.o btreenode-optimized_binarySearch.o utils-optimized_binarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch'
+cd btree_binarySearch_bigNode;make btree-optimized_binarySearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchBigNode.cpp -o btree-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchBigNode.cpp -o btreenode-optimized_binarySearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchBig.o
+rm -f btree-optimized_binarySearchBig.a
+ar rcs btree-optimized_binarySearchBig.a btree-optimized_binarySearchBig.o btreenode-optimized_binarySearchBig.o utils-optimized_binarySearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_bigNode'
+cd btree_binarySearch_withHints;make btree-optimized_binarySearchHints.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+g++ -std=c++20 -Wall -Wextra -g -c btree_binarySearchHints.cpp -o btree-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_binarySearchHints.cpp -o btreenode-optimized_binarySearchHints.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_binarySearchHints.o
+rm -f btree-optimized_binarySearchHints.a
+ar rcs btree-optimized_binarySearchHints.a btree-optimized_binarySearchHints.o btreenode-optimized_binarySearchHints.o utils-optimized_binarySearchHints.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_binarySearch_withHints'
+cd btree_linearSearch;make btree-optimized_linearSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearch.cpp -o btree-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearch.cpp -o btreenode-optimized_linearSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearch.o
+rm -f btree-optimized_linearSearch.a
+ar rcs btree-optimized_linearSearch.a btree-optimized_linearSearch.o btreenode-optimized_linearSearch.o utils-optimized_linearSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch'
+cd btree_linearSearch_bigNode;make btree-optimized_linearSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_linearSearchBigNode.cpp -o btree-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_linearSearchBigNode.cpp -o btreenode-optimized_linearSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_linearSearchBig.o
+rm -f btree-optimized_linearSearchBig.a
+ar rcs btree-optimized_linearSearchBig.a btree-optimized_linearSearchBig.o btreenode-optimized_linearSearchBig.o utils-optimized_linearSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_linearSearch_bigNode'
+cd btree_interpolationSearch;make btree-optimized_interpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearch.cpp -o btree-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearch.cpp -o btreenode-optimized_interpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearch.o
+rm -f btree-optimized_interpolationSearch.a
+ar rcs btree-optimized_interpolationSearch.a btree-optimized_interpolationSearch.o btreenode-optimized_interpolationSearch.o utils-optimized_interpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch'
+cd btree_interpolationSearch_bigNode;make btree-optimized_interpolationSearchBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchBigNode.cpp -o btree-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchBigNode.cpp -o btreenode-optimized_interpolationSearchBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchBig.o
+rm -f btree-optimized_interpolationSearchBig.a
+ar rcs btree-optimized_interpolationSearchBig.a btree-optimized_interpolationSearchBig.o btreenode-optimized_interpolationSearchBig.o utils-optimized_interpolationSearchBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_bigNode'
+cd btree_interpolationSearch_withKeyHeads;make btree-optimized_interpolationSearchKeyHeads.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeads.cpp -o btree-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeads.cpp -o btreenode-optimized_interpolationSearchKeyHeads.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeads.o
+rm -f btree-optimized_interpolationSearchKeyHeads.a
+ar rcs btree-optimized_interpolationSearchKeyHeads.a btree-optimized_interpolationSearchKeyHeads.o btreenode-optimized_interpolationSearchKeyHeads.o utils-optimized_interpolationSearchKeyHeads.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads'
+cd btree_interpolationSearch_withKeyHeads_bigNode;make btree-optimized_interpolationSearchKeyHeadsBig.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolationSearchKeyHeadsBigNode.cpp -o btree-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolationSearchKeyHeadsBigNode.cpp -o btreenode-optimized_interpolationSearchKeyHeadsBig.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolationSearchKeyHeadsBig.o
+rm -f btree-optimized_interpolationSearchKeyHeadsBig.a
+ar rcs btree-optimized_interpolationSearchKeyHeadsBig.a btree-optimized_interpolationSearchKeyHeadsBig.o btreenode-optimized_interpolationSearchKeyHeadsBig.o utils-optimized_interpolationSearchKeyHeadsBig.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolationSearch_withKeyHeads_bigNode'
+cd btree_adaptiveSearch;make btree-optimized_adaptiveSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_adaptiveSearch.cpp -o btree-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_adaptiveSearch.cpp -o btreenode-optimized_adaptiveSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_adaptiveSearch.o
+rm -f btree-optimized_adaptiveSearch.a
+ar rcs btree-optimized_adaptiveSearch.a btree-optimized_adaptiveSearch.o btreenode-optimized_adaptiveSearch.o utils-optimized_adaptiveSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_adaptiveSearch'
+cd btree_interpolatedBinarySearch;make btree-optimized_interpolatedBinarySearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_interpolatedBinarySearch.cpp -o btree-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_interpolatedBinarySearch.cpp -o btreenode-optimized_interpolatedBinarySearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_interpolatedBinarySearch.o
+rm -f btree-optimized_interpolatedBinarySearch.a
+ar rcs btree-optimized_interpolatedBinarySearch.a btree-optimized_interpolatedBinarySearch.o btreenode-optimized_interpolatedBinarySearch.o utils-optimized_interpolatedBinarySearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_interpolatedBinarySearch'
+cd btree_slopeReuseInterpolationSearch;make btree-optimized_slopeReuseInterpolationSearch.a
+make[1]: Entering directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -std=c++20 -Wall -Wextra -g -c btree_slopeReuseInterpolationSearch.cpp -o btree-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c btreenode_slopeReuseInterpolationSearch.cpp -o btreenode-optimized_slopeReuseInterpolationSearch.o -O3 -DNDEBUG
+g++ -std=c++20 -Wall -Wextra -g -c utils.hpp -o utils-optimized_slopeReuseInterpolationSearch.o
+rm -f btree-optimized_slopeReuseInterpolationSearch.a
+ar rcs btree-optimized_slopeReuseInterpolationSearch.a btree-optimized_slopeReuseInterpolationSearch.o btreenode-optimized_slopeReuseInterpolationSearch.o utils-optimized_slopeReuseInterpolationSearch.o
+make[1]: Leaving directory '/home/ge78kag/adaptive-interpolation-search-in-b-trees/btree_slopeReuseInterpolationSearch'
+g++ -o main-optimized -std=c++20 -Wall -Wextra -g test_main.cpp btree_template/btree-optimized_template.a btree_template_bigNode/btree-optimized_templateBig.a btree_plain_finished/btree-optimized_finished.a btree_binarySearch_noPrefix/btree-optimized_binarySearchNoPrefix.a btree_binarySearch/btree-optimized_binarySearch.a btree_binarySearch_bigNode/btree-optimized_binarySearchBig.a btree_binarySearch_withHints/btree-optimized_binarySearchHints.a btree_linearSearch/btree-optimized_linearSearch.a btree_linearSearch_bigNode/btree-optimized_linearSearchBig.a btree_interpolationSearch/btree-optimized_interpolationSearch.a btree_interpolationSearch_bigNode/btree-optimized_interpolationSearchBig.a btree_interpolationSearch_withKeyHeads/btree-optimized_interpolationSearchKeyHeads.a btree_interpolationSearch_withKeyHeads_bigNode/btree-optimized_interpolationSearchKeyHeadsBig.a btree_adaptiveSearch/btree-optimized_adaptiveSearch.a btree_interpolatedBinarySearch/btree-optimized_interpolatedBinarySearch.a btree_slopeReuseInterpolationSearch/btree-optimized_slopeReuseInterpolationSearch.a
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=100000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.02, 1331.80,   74.14,      2237.68,     35.15,       8.15,          5.89,     244.40, 100000, 1.68, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 970.58,    3.09,      1533.17,     15.38,       4.44,          2.67,     177.17, 100000, 1.58, 1.00, 5.48 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.02, 1153.16,    3.47,      1687.19,     26.98,       8.32,          4.39,     209.62, 100000, 1.46, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=1000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.39, 2154.83,   81.91,      2496.70,     42.53,      25.79,          6.81,     387.09, 1000000, 1.16, 1.00, 5.57 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.31, 1738.39,    4.51,      1761.87,     21.19,      12.03,          3.78,     308.76, 1000000, 1.01, 1.00, 5.63 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.35, 1947.91,    5.13,      1907.41,     31.97,      20.39,          5.53,     346.92, 1000000, 0.98, 1.00, 5.61 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=10000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.15, 4053.39,   88.91,      2709.65,     46.85,      35.25,          7.67,     714.59, 10000000, 0.67, 1.00, 5.67 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     5.97, 3388.97,    8.58,      1967.38,     26.31,      19.45,          4.51,     596.76, 10000000, 0.58, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.32, 4157.50,   10.62,      2115.37,     36.44,      28.02,          6.27,     732.22, 10000000, 0.51, 1.00, 5.68 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=20000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    16.07, 4562.03,   91.10,      2815.26,     48.99,      37.46,          8.04,     803.64, 20000000, 0.62, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    13.53, 3840.49,    9.76,      2031.42,     28.31,      21.86,          4.99,     676.44, 20000000, 0.53, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    15.80, 4484.83,   11.51,      2177.26,     38.31,      30.02,          6.76,     789.88, 20000000, 0.49, 1.00, 5.68 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTUNIFORM=50000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    45.63, 5182.33,   87.18,      2918.03,     50.65,      40.17,          8.43,     912.66, 50000000, 0.56, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    37.07, 4211.68,   10.77,      2077.50,     29.59,      23.93,          5.09,     741.40, 50000000, 0.49, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    44.15, 5017.96,   13.06,      2226.19,     39.64,      32.20,          6.90,     882.88, 50000000, 0.44, 1.00, 5.68 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTLITTLEENDIAN=10000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     8.30, 4706.74,   91.34,      3115.06,     48.02,      35.87,          8.03,     829.70, 10000000, 0.66, 1.00, 5.67 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     9.10, 5172.87,   13.11,      2549.57,     32.32,      25.40,          5.68,     910.11, 10000000, 0.49, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     8.28, 4703.85,   11.88,      2456.51,     38.13,      29.17,          6.60,     828.21, 10000000, 0.52, 1.00, 5.68 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTLITTLEENDIAN=20000000
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    17.11, 4855.26,   93.03,      3002.23,     48.71,      37.67,          8.54,     855.38, 20000000, 0.62, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    16.68, 4739.66,   12.07,      2311.33,     30.81,      24.93,          6.07,     834.15, 20000000, 0.49, 1.00, 5.68 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.72, 4746.92,   12.46,      2331.97,     38.31,      30.51,          7.03,     835.73, 20000000, 0.49, 1.00, 5.68 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.54, 4166.47,   90.16,      2906.20,     47.42,      35.13,          8.11,     754.26, 10000000, 0.70, 1.00, 5.52 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     7.82, 4346.37,   11.18,      2321.54,     30.37,      22.43,          6.17,     782.29, 10000000, 0.53, 1.00, 5.56 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.70, 4272.16,   10.93,      2282.48,     37.79,      28.19,          6.72,     769.63, 10000000, 0.53, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=30
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    17.34, 4802.16,   93.07,      2986.10,     48.64,      37.61,          8.67,     867.11, 20000000, 0.62, 1.00, 5.54 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    17.24, 4807.58,   12.64,      2356.14,     30.88,      24.62,          6.70,     861.88, 20000000, 0.49, 1.00, 5.58 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.85, 4691.04,   12.37,      2320.56,     38.53,      30.42,          7.28,     842.66, 20000000, 0.49, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=10000000 INTRANDOMSEED=66
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.51, 4143.56,   90.52,      2886.83,     47.07,      35.20,          8.06,     751.32, 10000000, 0.70, 1.00, 5.52 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     7.83, 4343.76,   11.21,      2290.79,     29.01,      22.39,          6.14,     782.61, 10000000, 0.53, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.61, 4220.80,   10.66,      2251.32,     36.53,      28.19,          6.67,     760.76, 10000000, 0.53, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTRANDOM=20000000 INTRANDOMSEED=66
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    17.30, 4784.22,   92.60,      2971.93,     48.61,      37.63,          8.71,     864.85, 20000000, 0.62, 1.00, 5.53 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    17.23, 4804.91,   12.66,      2346.98,     30.35,      24.74,          6.71,     861.30, 20000000, 0.49, 1.00, 5.58 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.96, 4719.73,   12.77,      2311.86,     38.05,      30.61,          7.31,     847.98, 20000000, 0.49, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.04, 1909.87,   82.37,      2934.84,     36.03,       9.21,          6.34,     355.00, 100000, 1.54, 1.00, 5.38 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.03, 1404.10,    3.84,      2125.46,     15.88,       4.38,          2.87,     258.98, 100000, 1.51, 1.00, 5.42 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.03, 1538.13,    4.28,      2203.61,     28.29,       9.08,          4.64,     283.36, 100000, 1.43, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.04, 2053.12,   54.62,      3172.37,     36.81,       7.06,          5.83,     381.03, 100000, 1.55, 1.00, 5.39 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 1338.42,    3.67,      2036.68,     15.43,       3.85,          2.68,     246.83, 100000, 1.52, 1.00, 5.42 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.03, 1441.23,    4.24,      2042.19,     24.11,       5.70,          4.28,     265.49, 100000, 1.42, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.03, 1719.58,   27.58,      2718.54,     30.50,       2.76,          4.30,     319.56, 100000, 1.58, 1.00, 5.38 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 1073.72,    2.86,      1770.62,     11.70,       2.20,          1.94,     198.39, 100000, 1.65, 1.00, 5.41 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.02, 963.86,    2.97,      1458.87,     11.72,       1.89,          2.78,     177.57, 100000, 1.51, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=100000 FALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.02, 1029.39,   12.13,      1798.81,     14.60,       1.77,          3.06,     191.84, 100000, 1.75, 1.00, 5.37 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 816.50,    2.63,      1431.63,      6.24,       1.57,          1.58,     151.32, 100000, 1.75, 1.00, 5.40 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.01, 558.43,    1.95,       869.19,      5.02,       1.11,          1.60,     103.32, 100000, 1.56, 1.00, 5.40 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.44, 2393.76,   86.47,      2902.77,     43.18,      25.76,          6.89,     439.61, 1000000, 1.21, 1.00, 5.45 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.37, 2037.56,    5.68,      2180.01,     21.35,      12.20,          3.42,     372.41, 1000000, 1.07, 1.00, 5.47 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.41, 2226.08,    6.31,      2283.31,     31.53,      20.34,          4.85,     407.47, 1000000, 1.03, 1.00, 5.46 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.25, 1379.18,   10.66,      2001.07,     31.82,       4.51,          3.00,     254.19, 1000000, 1.45, 1.00, 5.43 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.17, 937.71,    2.60,      1435.08,     11.59,       2.87,          1.53,     172.45, 1000000, 1.53, 1.00, 5.44 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.11, 606.65,    1.80,       855.98,      6.28,       2.27,          1.52,     111.74, 1000000, 1.41, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.21, 1131.05,    5.90,      1667.19,     14.50,       2.25,          2.59,     208.65, 1000000, 1.47, 1.00, 5.42 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.15, 812.34,    2.21,      1350.41,      6.92,       1.94,          1.49,     149.63, 1000000, 1.66, 1.00, 5.43 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.08, 457.14,    1.36,       674.50,      3.43,       1.45,          1.17,      84.21, 1000000, 1.48, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=1000000 FALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.16, 879.41,    3.58,      1421.04,      5.92,       1.28,          1.16,     162.47, 1000000, 1.62, 1.00, 5.41 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.10, 567.40,    1.56,      1047.28,      2.35,       1.21,          0.57,     104.52, 1000000, 1.85, 1.00, 5.43 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.04, 211.16,    0.68,       350.98,      1.88,       1.15,          0.25,      38.93, 1000000, 1.66, 1.00, 5.42 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     6.13, 3360.04,   38.90,      2829.44,     44.94,      32.86,          6.16,     612.93, 10000000, 0.84, 1.00, 5.48 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     4.96, 2730.73,    7.44,      2244.10,     23.26,      15.45,          3.79,     495.62, 10000000, 0.82, 1.00, 5.51 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     4.57, 2508.58,    6.99,      1994.40,     23.18,      14.84,          4.90,     456.51, 10000000, 0.80, 1.00, 5.50 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     2.38, 1296.59,    4.20,      1638.78,     14.83,       3.11,          2.44,     237.72, 10000000, 1.26, 1.00, 5.45 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     1.99, 1083.66,    2.81,      1287.95,      6.30,       2.60,          1.56,     198.57, 10000000, 1.19, 1.00, 5.46 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     1.31, 719.79,    1.90,       585.34,      2.53,       1.89,          1.15,     131.27, 10000000, 0.81, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     1.95, 1063.48,    3.07,      1393.49,      5.43,       1.97,          0.85,     194.98, 10000000, 1.31, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     1.64, 898.67,    2.30,      1141.16,      2.44,       1.82,          0.44,     164.10, 10000000, 1.27, 1.00, 5.48 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.98, 546.21,    1.46,       410.67,      1.71,       1.71,          0.21,      98.41, 10000000, 0.75, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=10000000 FALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     1.52, 827.39,    2.36,      1040.46,      3.26,       1.75,          0.49,     151.69, 10000000, 1.26, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     1.20, 655.51,    1.75,       727.65,      1.69,       1.69,          0.45,     119.74, 10000000, 1.11, 1.00, 5.47 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.61, 337.93,    0.94,       291.35,      1.51,       1.61,          0.05,      61.34, 10000000, 0.86, 1.00, 5.51 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    11.17, 3056.71,   25.01,      2654.77,     45.41,      32.68,          5.53,     558.37, 20000000, 0.87, 1.00, 5.47 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     9.32, 2564.55,    6.99,      2153.14,     22.50,      15.01,          3.61,     466.08, 20000000, 0.84, 1.00, 5.50 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.49, 2053.81,    5.64,      1730.36,     18.47,      10.92,          4.18,     374.65, 20000000, 0.84, 1.00, 5.48 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     4.68, 1276.21,    3.74,      1748.04,     10.45,       2.64,          2.01,     234.16, 20000000, 1.37, 1.00, 5.45 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     3.71, 1014.49,    2.59,      1206.68,      4.38,       2.33,          1.01,     185.57, 20000000, 1.19, 1.00, 5.47 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     2.23, 615.92,    1.62,       477.51,      2.04,       1.96,          0.64,     111.63, 20000000, 0.78, 1.00, 5.52 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     3.83, 1044.98,    2.88,      1337.42,      4.01,       2.05,          0.72,     191.60, 20000000, 1.28, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     3.23, 886.10,    2.27,      1068.15,      1.95,       1.96,          0.49,     161.72, 20000000, 1.21, 1.00, 5.48 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     2.01, 558.38,    1.46,       390.45,      1.56,       1.86,          0.12,     100.61, 20000000, 0.70, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=20000000 FALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     3.06, 835.68,    2.34,      1014.67,      3.13,       1.91,          0.30,     153.23, 20000000, 1.21, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     2.31, 634.95,    1.70,       673.56,      1.59,       1.86,          0.23,     115.70, 20000000, 1.06, 1.00, 5.49 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     1.24, 342.48,    0.94,       287.47,      1.47,       1.79,          0.04,      62.10, 20000000, 0.84, 1.00, 5.52 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    25.49, 2791.73,   15.13,      2417.32,     45.12,      31.81,          4.98,     509.82, 50000000, 0.87, 1.00, 5.48 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    19.62, 2152.26,    5.96,      1817.36,     22.31,      14.09,          3.38,     392.34, 50000000, 0.84, 1.00, 5.49 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    13.31, 1454.69,    3.99,      1249.34,     15.21,       7.53,          3.43,     266.10, 50000000, 0.86, 1.00, 5.47 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    11.12, 1212.29,    3.32,      1610.07,      6.50,       2.49,          1.36,     222.26, 50000000, 1.33, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     9.00, 986.41,    2.56,      1175.77,      3.01,       2.30,          0.65,     180.07, 50000000, 1.19, 1.00, 5.48 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     5.49, 609.09,    1.61,       436.64,      1.72,       2.06,          0.39,     109.88, 50000000, 0.72, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     9.28, 1011.75,    2.72,      1228.79,      4.14,       2.15,          1.04,     185.49, 50000000, 1.21, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     7.68, 840.15,    2.27,       948.27,      1.79,       2.09,          0.73,     153.49, 50000000, 1.13, 1.00, 5.47 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     5.12, 570.78,    1.49,       379.78,      1.50,       2.00,          0.06,     102.35, 50000000, 0.67, 1.00, 5.58 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTFAL=50000000 FALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.56, 824.43,    2.26,       968.65,      3.09,       2.05,          0.14,     151.16, 50000000, 1.17, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     5.76, 634.98,    1.68,       641.40,      1.51,       2.01,          0.11,     115.17, 50000000, 1.01, 1.00, 5.51 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     3.33, 367.43,    0.99,       284.72,      1.44,       1.95,          0.03,      66.57, 50000000, 0.77, 1.00, 5.52 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.03, 1572.52,   79.78,      2508.78,     34.33,       8.78,          6.15,     292.72, 100000, 1.60, 1.00, 5.37 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 1142.60,    3.78,      1826.44,     14.60,       4.41,          2.68,     211.54, 100000, 1.60, 1.00, 5.40 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.02, 1270.99,    3.39,      1911.79,     25.84,       8.92,          4.46,     234.16, 100000, 1.50, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.03, 1603.25,   71.83,      2661.34,     35.46,       8.68,          6.32,     298.42, 100000, 1.66, 1.00, 5.37 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 1231.95,    3.73,      1937.35,     15.35,       4.36,          2.66,     227.79, 100000, 1.57, 1.00, 5.41 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.02, 1356.92,    3.92,      2018.94,     27.54,       8.85,          4.39,     249.96, 100000, 1.49, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.03, 1690.59,   70.85,      2784.98,     36.39,       8.93,          6.30,     314.45, 100000, 1.65, 1.00, 5.38 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.02, 1303.15,    3.85,      2025.44,     15.31,       4.48,          2.64,     240.56, 100000, 1.55, 1.00, 5.42 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.03, 1427.93,    4.21,      2101.46,     27.23,       8.85,          4.35,     263.03, 100000, 1.47, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=100000 CFALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.03, 1818.17,   67.41,      2935.91,     35.61,       8.63,          6.36,     338.09, 100000, 1.61, 1.00, 5.38 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.03, 1380.97,    3.80,      2083.95,     15.67,       4.52,          3.00,     255.00, 100000, 1.51, 1.00, 5.42 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,  scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.03, 1516.59,    4.28,      2182.75,     27.68,       8.37,          4.61,     279.37, 100000, 1.44, 1.00, 5.43 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.41, 2229.33,   90.36,      2806.11,     42.09,      25.32,          6.73,     409.64, 1000000, 1.26, 1.00, 5.44 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.36, 1954.37,    5.37,      2155.43,     21.80,      12.37,          3.02,     357.47, 1000000, 1.10, 1.00, 5.47 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.39, 2109.69,    5.66,      2263.87,     31.61,      20.02,          4.45,     386.40, 1000000, 1.07, 1.00, 5.46 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.42, 2284.53,   85.70,      2876.28,     42.34,      25.37,          6.92,     419.86, 1000000, 1.26, 1.00, 5.44 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.37, 2014.29,    5.59,      2214.33,     21.76,      12.42,          3.46,     368.73, 1000000, 1.10, 1.00, 5.46 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.40, 2204.05,    6.05,      2338.91,     31.63,      20.19,          5.04,     403.87, 1000000, 1.06, 1.00, 5.46 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.43, 2335.72,   85.13,      2864.04,     42.66,      25.54,          7.10,     429.20, 1000000, 1.23, 1.00, 5.44 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.36, 1985.22,    5.65,      2134.30,     21.28,      12.21,          3.28,     362.96, 1000000, 1.08, 1.00, 5.47 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.40, 2202.99,    6.20,      2270.47,     31.32,      20.23,          5.03,     403.34, 1000000, 1.03, 1.00, 5.46 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=1000000 CFALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     0.44, 2387.76,   81.51,      2927.28,     43.23,      25.72,          6.99,     438.63, 1000000, 1.23, 1.00, 5.44 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     0.37, 2035.83,    5.74,      2211.07,     21.48,      12.17,          3.44,     372.46, 1000000, 1.09, 1.00, 5.47 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,   scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     0.42, 2294.14,    6.57,      2353.51,     31.63,      20.37,          5.17,     420.18, 1000000, 1.03, 1.00, 5.46 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.43, 4094.06,   90.01,      3031.71,     47.53,      34.83,          7.71,     743.36, 10000000, 0.74, 1.00, 5.51 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     6.41, 3559.25,    9.52,      2174.17,     27.25,      19.85,          4.46,     640.96, 10000000, 0.61, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.58, 4204.24,   10.92,      2323.50,     37.25,      28.17,          6.22,     757.81, 10000000, 0.55, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     7.83, 4313.65,   90.11,      3113.98,     47.96,      35.16,          7.98,     782.56, 10000000, 0.72, 1.00, 5.51 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     6.49, 3606.40,    9.50,      2241.28,     27.81,      19.59,          4.16,     649.42, 10000000, 0.62, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     7.86, 4361.62,   11.59,      2388.96,     38.41,      28.17,          5.97,     785.54, 10000000, 0.55, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     8.15, 4488.83,   89.99,      3299.76,     47.89,      35.30,          8.01,     814.78, 10000000, 0.74, 1.00, 5.51 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     6.63, 3681.38,    9.84,      2304.81,     27.79,      19.60,          4.40,     662.86, 10000000, 0.63, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     8.07, 4477.02,   12.15,      2452.83,     38.62,      28.28,          6.28,     807.42, 10000000, 0.55, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=10000000 CFALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     2.10, 1141.47,   12.98,      1525.21,      8.79,       5.45,          1.11,     209.59, 10000000, 1.34, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     1.66, 909.37,    2.52,       926.99,      6.24,       3.40,          0.61,     165.90, 10000000, 1.02, 1.00, 5.48 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     1.68, 921.07,    2.58,       877.77,      7.59,       4.48,          0.84,     167.79, 10000000, 0.95, 1.00, 5.49 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    16.87, 4658.40,   92.96,      3066.47,     49.05,      37.25,          8.29,     843.65, 20000000, 0.66, 1.00, 5.52 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    14.36, 3982.54,   10.74,      2229.15,     28.94,      22.00,          4.91,     717.77, 20000000, 0.56, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.69, 4639.61,   12.55,      2377.63,     38.74,      30.02,          6.74,     834.37, 20000000, 0.51, 1.00, 5.56 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    17.45, 4820.12,   93.24,      3165.13,     49.67,      37.53,          8.19,     872.23, 20000000, 0.66, 1.00, 5.53 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    14.59, 4053.92,   10.75,      2297.96,     29.19,      22.11,          4.27,     729.42, 20000000, 0.57, 1.00, 5.56 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.89, 4702.51,   12.69,      2444.81,     39.17,      30.17,          6.04,     844.71, 20000000, 0.52, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    13.04, 3590.27,   64.44,      2649.61,     38.21,      26.62,          6.06,     652.22, 20000000, 0.74, 1.00, 5.50 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    10.59, 2938.40,    7.90,      1799.26,     21.86,      15.27,          3.68,     529.53, 20000000, 0.61, 1.00, 5.55 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    12.37, 3430.25,    9.38,      1878.51,     29.36,      21.26,          4.98,     618.55, 20000000, 0.55, 1.00, 5.55 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=20000000 CFALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     3.78, 1030.16,    8.02,      1384.32,      7.00,       3.88,          0.59,     189.13, 20000000, 1.34, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     2.86, 785.69,    2.19,       819.55,      2.87,       2.79,          0.32,     142.81, 20000000, 1.04, 1.00, 5.50 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     2.88, 791.58,    2.19,       753.53,      3.52,       3.31,          0.44,     143.76, 20000000, 0.95, 1.00, 5.51 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=50
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    47.72, 5288.74,   89.24,      3104.61,     51.13,      39.96,          8.54,     954.31, 50000000, 0.59, 1.00, 5.54 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    39.44, 4399.84,   11.84,      2324.19,     30.10,      24.09,          4.47,     788.78, 50000000, 0.53, 1.00, 5.58 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    46.75, 5206.18,   14.01,      2475.41,     40.05,      32.24,          6.35,     934.95, 50000000, 0.48, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=105
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    48.58, 5385.53,   89.06,      3187.48,     51.72,      40.31,          8.24,     971.64, 50000000, 0.59, 1.00, 5.54 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    39.80, 4440.29,   11.76,      2375.47,     30.55,      24.17,          4.35,     796.01, 50000000, 0.53, 1.00, 5.58 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    47.08, 5243.39,   14.09,      2526.32,     40.63,      32.46,          6.23,     941.60, 50000000, 0.48, 1.00, 5.57 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=125
+PerformanceTestStandard START
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),    18.71, 2050.08,   26.96,      1956.15,     18.36,      12.09,          2.56,     374.20, 50000000, 0.95, 1.00, 5.48 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),    14.80, 1635.04,    4.48,      1216.31,      9.52,       7.47,          1.52,     295.91, 50000000, 0.74, 1.00, 5.53 
+                      name, time sec,  cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),    16.28, 1803.64,    4.97,      1202.13,     12.53,       9.85,          2.02,     325.51, 50000000, 0.67, 1.00, 5.54 
+PerformanceTestStandard END
+
+
+PERFORMANCETESTS on AdaptiveSearch Btree with CONTENT_SIZE = 4000
+DATATYPE: INTCFAL=50000000 CFALSHAPE=150
+PerformanceTestStandard START
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+insert AdaptiveSearch (AS),     8.76, 954.69,    4.65,      1287.83,      5.08,       2.91,          0.27,     175.22, 50000000, 1.35, 1.00, 5.45 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+lookup AdaptiveSearch (AS),     6.51, 715.68,    1.94,       753.46,      2.04,       2.44,          0.14,     130.12, 50000000, 1.05, 1.00, 5.50 
+                      name, time sec, cycles, kcycles, instructions, L1-misses, LLC-misses, branch-misses, task-clock,    scale,  IPC, CPUs,  GHz 
+remove AdaptiveSearch (AS),     6.52, 718.70,    1.93,       681.63,      2.32,       2.65,          0.19,     130.41, 50000000, 0.95, 1.00, 5.51 
+PerformanceTestStandard END
+
