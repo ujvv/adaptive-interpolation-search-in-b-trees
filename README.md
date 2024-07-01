@@ -34,7 +34,7 @@ Additional btree folders exist for bigger node sizes while benchmarking the same
 
 ## Running Benchmarks
 
-To run the benchmarks, you can use the provided shell scripts and set environment variables to select the specific B-Tree implementation and test type. The main entry point for running tests and benchmarks is test_main.cpp.
+To run the benchmarks, you can use the example shell scripts (ISS.sh, perfTest.sh) and set environment variables to select the specific B-Tree implementation and test type. The main entry point for running tests and benchmarks is test_main.cpp.
 
 ### Environment Variables
 
