@@ -50,8 +50,8 @@
 
 #include "btree_interpolationSequentialSearch/btree_interpolationSequentialSearch.hpp"
 #include "btree_interpolationSequentialSearch/btreenode_interpolationSequentialSearch.hpp"
-
-#include "btree_plain_finished/btree.hpp"
+#include "btree_interpolationSequentialSearchBigNode/btree_interpolationSequentialSearchBigNode.hpp"
+#include "btree_interpolationSequentialSearchBigNode/btreenode_interpolationSequentialSearchBigNode.hpp"
 
 #include <cassert>
 #include <cstring>
@@ -298,27 +298,6 @@ struct BtreeAnalysis {
         return keyDifferences;
     }
 
-};
-
-struct TesterPerformance {
-    BTree *btree;
-
-    TesterPerformance() : btree(btree_create()) {}
-
-    ~TesterPerformance() { btree_destroy(btree); }
-
-    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
-        btree_insert(btree, key.data(), key.size(), value.data(), value.size());
-    }
-
-    void lookup(std::vector<uint8_t> &key) {
-        uint16_t lenOut = 0;
-        btree_lookup(btree, key.data(), key.size(), lenOut);
-    }
-
-    void remove(std::vector<uint8_t> &key) {
-        btree_remove(btree, key.data(), key.size());
-    }
 };
 
 struct TesterPerformanceTempl {
@@ -715,6 +694,28 @@ struct TesterPerformanceInterpolationSequentialSearch {
 
     void remove(std::vector<uint8_t> &key) {
             btree_remove_interpolationSequentialSearch(btreeInterpolationSequentialSearch, key.data(), key.size());
+    }
+};
+
+struct TesterPerformanceInterpolationSequentialSearchBigNode {
+
+    BTreeInterpolationSequentialSearchBigNode *btreeInterpolationSequentialSearchBigNode;
+
+    TesterPerformanceInterpolationSequentialSearchBigNode() : btreeInterpolationSequentialSearchBigNode(btree_create_interpolationSequentialSearchBigNode())  {}
+
+    ~TesterPerformanceInterpolationSequentialSearchBigNode() { btree_destroy_interpolationSequentialSearchBigNode(btreeInterpolationSequentialSearchBigNode); }
+
+    void insert(std::vector<uint8_t> &key, std::vector<uint8_t> &value) {
+        btree_insert_interpolationSequentialSearchBigNode(btreeInterpolationSequentialSearchBigNode, key.data(), key.size(), value.data(), value.size());
+    }
+
+    void lookup(std::vector<uint8_t> &key) {
+        uint16_t lenOutInterpolationSequentialSearchBigNode = 0;
+        btree_lookup_interpolationSequentialSearchBigNode(btreeInterpolationSequentialSearchBigNode, key.data(), key.size(), lenOutInterpolationSequentialSearchBigNode);
+    }
+
+    void remove(std::vector<uint8_t> &key) {
+            btree_remove_interpolationSequentialSearchBigNode(btreeInterpolationSequentialSearchBigNode, key.data(), key.size());
     }
 };
 

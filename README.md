@@ -1,93 +1,85 @@
 # Adaptive Interpolation Search in B-Trees
 
 
+This repository contains the source code and benchmarks for the bachelor thesis titled "Adaptive Interpolation Search Algorithms in B-Trees." The project includes implementations of various search algorithms within B-Trees, and it provides a framework for running benchmarks to compare their performance, analyzing B-tree nodes in various datasets, and testing B-tree implementations.
 
-## Getting started
+## Project Structure
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The repository is organized as follows:
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Benchmark_Documentation/: Documentation of all benchmarks conducted for the thesis.
+- btree_*Search: Different B-Tree implementations with various search algorithms.
+- data/: Stores datasets.
+- Makefile: Makefile for building the project.
+- PerfEvent.hpp: Header for performance event handling.
+- test_main.cpp: Main file for running tests and benchmarks.
 
-## Add your files
+## B-Tree Implementations
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Each B-Tree implementation is located in its respective folder and includes different search algorithms:
 
-```
-cd existing_repo
-git remote add origin https://gitlab.lrz.de/aaronbm/adaptive-interpolation-search-in-b-trees.git
-git branch -M main
-git push -uf origin main
-```
+- btree_binarySearch: Implements binary search.
+-- btree_binarySearch_noPrefix: Binary search without prefix optimization.
+-- btree_binarySearch_withHints: Binary search with hints optimization.
+- btree_interpolatedBinarySearch: Interpolated binary search.
+- btree_interpolationSearch: Implements interpolation search with variable sized keys.
+- btree_interpolationSearch_withKeyHeads: Interpolation search with integer keys.
+- btree_interpolationSequentialSearch: Sequential interpolation search.
+- btree_linearSearch: Implements linear search.
+- btree_slopeReuseInterpolationSearch: Slope reuse interpolation search.
+- btree_template: Template for the B-tree implementations
+- btree_threePointInterpolationSearch: Three-point interpolation search
 
-## Integrate with your tools
+Additional btree folders exist for bigger node sizes while benchmarking the same btree implementation.
 
-- [ ] [Set up project integrations](https://gitlab.lrz.de/aaronbm/adaptive-interpolation-search-in-b-trees/-/settings/integrations)
+## Running Benchmarks
 
-## Collaborate with your team
+To run the benchmarks, you can use the provided shell scripts and set environment variables to select the specific B-Tree implementation and test type. The main entry point for running tests and benchmarks is test_main.cpp.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Environment Variables
 
-## Test and Deploy
+- "ANALYSIS": Run analysis mode
+- "TEST": Run test mode
+- "BINARY": Run benchmarks on binary search B-Tree
+-- "NOPREFIX": Adding this variable removes the prefix optimization from Binary Search
+-- "HINTS": Adding this variable adds the hints optimization to Binary Search
 
-Use the built-in continuous integration in GitLab.
+- "INTERPOLATION": Run benchmarks on interpolation search B-Tree.
+-- "KEYHEADS":  Adding KEYHEADS variable to INTERPOLATION leads to adding key head optimization only accepting interger keys
+- "LINEAR": Run benchmarks on linear search B-Tree.
+- "MAP": Run benchmarks on std::map.
+- "AS": Run benchmarks on adaptive search B-Tree.
+- "IBS": Run benchmarks on interpolated binary search B-Tree.
+- "SIP": Run benchmarks on slope reuse interpolation search B-Tree.
+- "TIP": Run benchmarks on three-point interpolation search B-Tree.
+- "ISS": Run benchmarks on interpolation sequential search B-Tree.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+#### B-Tree Node Size
+- "BIGNODE": Variable needs to be added for benchmarking B-Trees over 65KB node sizes. Node Sizes need to be manually changed in the respective B-tree btreenode_*.hpp file
 
-***
+#### Datasets
+Only 1 Btree but multiple dataset can be benchmarked and analyzed in each run. Datasetsize is set with the environment variable value ("DATASET"=datsetsize)
 
-# Editing this README
+- "INTUNIFORM": Uniformly distributed integers
+- "INTLITTLEENDIAN": Little-endian ordered integers
+- "INTFAL":  Zipf-distributed integers
+-- "FALSHAPE": Shape parameter for the FAL dataset (Note: Use whole numbers, e.g., 50 instead of 0.5)
+- "INTCFAL": Cumulative Zipf-distributed integers
+-- "CFALSHAPE": Shape parameter for the CFAL dataset (Note: Use whole numbers, e.g., 105 instead of 1.05)
+- "INTRANDOM": Randomly distributed integers
+-- "INTRANDOMSEED": Seed for the random number generator
+- "INTRANDOMBYTES": Randomly distributed 4-byte sequences
+- "BYTE":  Fixed-size byte sequences (random bytes)
+-- "BYTESIZE": Size of each byte sequence
+- "VARIABLEBYTE": Variable-size byte sequences (currently limited to size 250)
+- "LONG1":  Long strings of incremental characters
+- "LONG2": Long strings of random characters
+- "FILE": Data read from a file in data folder
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Example Usages
 
-## Suggestions for a good README
+BINARY=1 HINTS=1 INTUNIFORM=2e7 INTRANDOM=1e7 ./main-optimized (Runs benchmarks on Binary Search with Hints optimizaition with uniformly distributed integer dataset with 2e7 entries and random integer dataset with 1e7 entries)
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+ANALYSIS=1 INTFAL=1e7 FALSHAPE=50 ./main (Runs Analysis on B-tree nodes with the fal dataset and shape parameter 0.5)
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+TEST=1 ISS=1 INTRANDOM=2e7 ./main (Runs tests on the ISS B-tree implementation with help of the intrandom dataset)

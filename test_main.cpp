@@ -727,6 +727,26 @@ void runPerformanceTestStandard(vector<vector<uint8_t>> &keys, PerfEvent& perf, 
                 t_interpolationSequentialSearch.remove(keys[i]);
             }
         }
+    } else if (type = ISSBIGNODE) {
+        TesterPerformanceInterpolationSequentialSearchBigNode t_interpolationSequentialSearchBigNode{};
+        {
+            PerfEventBlock peb(perf,count,{"insert InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearchBigNode.insert(keys[i], keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"lookup InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearchBigNode.lookup(keys[i]);
+            }
+        }
+        {
+            PerfEventBlock peb(perf,count,{"remove InterpolationSequentialSearch (ISS)"});
+            for (uint64_t i = 0; i < count; ++i) {
+                t_interpolationSequentialSearchBigNode.remove(keys[i]);
+            }
+        }
     } else {
         std::cout << "MISSING" << std::endl;
     }
@@ -1365,7 +1385,7 @@ int main() {
             std::cout << "PERFORMANCETESTS on LinearSearchBigNode Btree with CONTENT_SIZE = " << t.btreeLinearSearchBigNode->root->CONTENT_SIZE << std::endl;
             type = LINEARSEARCHBIGNODE;
         } else {
-            TesterPerformanceLinearSearch t{};
+            TesterPerformanceLinearSearch t{}; 
             std::cout << "PERFORMANCETESTS on LinearSearch Btree with CONTENT_SIZE = " << t.btreeLinearSearch->root->CONTENT_SIZE << std::endl;
             type = LINEARSEARCH;
         }
@@ -1395,9 +1415,15 @@ int main() {
         std::cout << "PERFORMANCETESTS on ThreePointInterpolationSearch Btree with CONTENT_SIZE = " << t.btreeThreePointInterpolationSearch->root->CONTENT_SIZE << std::endl;
         type = TIP;
     } else if (getenv("ISS")) {
-        TesterPerformanceInterpolationSequentialSearch t{};
-        std::cout << "PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = " << t.btreeInterpolationSequentialSearch->root->CONTENT_SIZE << std::endl;
-        type = ISS;
+        if (getenv("BIGNODE")) {
+            TesterPerformanceInterpolationSequentialSearchBigNode t{};
+            std::cout << "PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = " << t.btreeInterpolationSequentialSearchBigNode->root->CONTENT_SIZE << std::endl;
+            type = ISSBIGNODE;
+        } else {
+            TesterPerformanceInterpolationSequentialSearch t{};
+            std::cout << "PERFORMANCETESTS on InterpolationSequentialSearch Btree with CONTENT_SIZE = " << t.btreeInterpolationSequentialSearch->root->CONTENT_SIZE << std::endl;
+            type = ISS;
+        }
     } else {
         TesterPerformanceTempl t{};
         std::cout << "No BTree type detected for PERFORMANCETESTS! BTreeTemplate will be used with CONTENT_SIZE = " << t.btreeTemplate->root->CONTENT_SIZE << std::endl;
