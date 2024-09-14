@@ -1,7 +1,7 @@
 # Adaptive Interpolation Search in B-Trees
 
 
-This repository contains the source code and benchmarks for the bachelor thesis titled "Adaptive Interpolation Search Algorithms in B-Trees." The project includes implementations of various search algorithms within B-Trees, and it provides a framework for running benchmarks to compare their performance, analyzing B-tree nodes in various datasets, and testing B-tree implementations.
+This repository contains the source code and benchmarks for my bachelor's thesis titled "Adaptive Interpolation Search Algorithms in B-Trees." The project includes implementations of various search algorithms within B-Trees, and it provides a framework for running benchmarks to compare their performance, analyzing B-tree nodes in various datasets, and testing B-tree implementations.
 
 ## Project Structure
 
@@ -18,19 +18,45 @@ The repository is organized as follows:
 
 Each B-Tree implementation is located in its respective folder and includes different search algorithms:
 
-* btree_binarySearch: Implements binary search.
-    * btree_binarySearch_noPrefix: Binary search without prefix optimization.
-    * btree_binarySearch_withHints: Binary search with hints optimization.
-* btree_interpolatedBinarySearch: Interpolated binary search.
-* btree_interpolationSearch: Implements interpolation search with variable sized keys.
-* btree_interpolationSearch_withKeyHeads: Interpolation search with integer keys.
-* btree_interpolationSequentialSearch: Sequential interpolation search.
-* btree_linearSearch: Implements linear search.
-* btree_slopeReuseInterpolationSearch: Slope reuse interpolation search.
+* btree_adaptiveSearch: Adaptive Search (AS) [[1]](#1).
+* btree_binarySearch: Implements Binary Search (with prefix optimization).
+    * btree_binarySearch_noPrefix: Binary Search without prefix optimization.
+    * btree_binarySearch_withHints: Binary Search with hints optimization.
+* btree_interpolatedBinarySearch: Interpolated Binary Search (IBS) [[2]](#2).
+* btree_interpolationSearch: Implements Interpolation Search with variable sized keys.
+* btree_interpolationSearch_withKeyHeads: Interpolation Search with integer keys.
+* btree_interpolationSequentialSearch: Sequential Interpolation Search.
+* btree_linearSearch: Implements Linear Search.
+* btree_slopeReuseInterpolationSearch: Slope reuse interpolation search (SIP) [[3]](#3).
 * btree_template: Template for the B-tree implementations
-* btree_threePointInterpolationSearch: Three-point interpolation search
+* btree_threePointInterpolationSearch: Three-point Interpolation Search (TIP) [[3]](#3)
 
 Additional btree folders exist for bigger node sizes while benchmarking the same btree implementation.
+
+### References
+<a id="1">[1]</a> 
+B. Bonasera, E. Ferrara, G. Fiumara, F. Pagano, and A. Provetti, “Adaptive search
+over sorted sets,” Journal of Discrete Algorithms, vol. 30, pp. 128–133, Jan. 1, 2015,
+issn: 1570-8667. doi: 10.1016/j.jda.2014.12.007. [Online]. Available: https:
+//www.sciencedirect.com/science/article/pii/S1570866714001002 (visited
+on 06/08/2024).
+
+<a id="2">[2]</a> 
+A. S. Mohammed, ¸S. E. Amrahov, and F. V. Çelebi, “Interpolated binary search:
+An efficient hybrid search algorithm on ordered datasets,” Engineering Science
+and Technology, an International Journal, vol. 24, no. 5, pp. 1072–1079, Oct. 2021,
+issn: 22150986. doi: 10.1016/j.jestch.2021.02.009. [Online]. Available: https:
+/ / linkinghub . elsevier . com / retrieve / pii / S221509862100046X (visited on
+06/08/2024).
+
+<a id="3">[3]</a> 
+P. V. Sandt, Y. Chronis, and J. M. Patel, “Efficiently searching in-memory sorted
+arrays: Revenge of the interpolation search?” In Proceedings of the 2019 International
+Conference on Management of Data, Amsterdam Netherlands: ACM, Jun. 25, 2019,
+pp. 36–53, isbn: 978-1-4503-5643-5. doi: 10.1145/3299869.3300075. [Online].
+Available: https://dl.acm.org/doi/10.1145/3299869.3300075 (visited on
+06/07/2024). (GitHub Repository: [github.com/UWHustle/Efficiently-Searching-In-Memory-Sorted-Arrays/tree/master](https://github.com/ujvv/adaptive-interpolation-search-in-b-trees/))
+
 
 ## Running Benchmarks
 
@@ -58,7 +84,7 @@ To run the benchmarks, you can use the example shell scripts (ISS.sh, perfTest.s
 * "BIGNODE": Variable needs to be added for benchmarking B-Trees over 65KB node sizes. Node Sizes need to be manually changed in the respective B-tree btreenode_*.hpp file
 
 #### Datasets
-Only 1 Btree but multiple dataset can be benchmarked and analyzed in each run. Datasetsize is set with the environment variable value ("DATASET"=datsetsize)
+Only 1 Btree but multiple dataset can be benchmarked and analyzed in each run. Dataset size is set with the environment variable value ("DATASET"=datsetsize)
 
 * "INTUNIFORM": Uniformly distributed integers
 * "INTLITTLEENDIAN": Little-endian ordered integers
